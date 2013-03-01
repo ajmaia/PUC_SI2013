@@ -1,47 +1,122 @@
 ﻿/* LEIAUTES PRIMÁRIOS   
 ----------------------------------------------------------*/
-.pagina {
-    width: 90%;
+body 
+{
+    background-color: #FFF;
+    font-size: .85em;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    margin: 0;
+    padding: 0;
+    color: #696969;
+}
+
+.pagina 
+{
+    width: 91%;
     margin-left: auto;
     margin-right: auto;
 }
 
-cabecalho, #cabecalho {
-    position: relative;
-    margin-bottom: 0px;
-    color: #000;
+#cabecalho
+{
+    clear: left;
+    vertical-align: middle;
+    background-color: #2D89EF;
+    font-weight: bold;
+    font-size: large;
+    color: #FFF;
+    height: 30px;
+    margin: 10px;
+    padding: 5px;
+}
+
+#logotipo 
+{
+    clear: left;
+    height: 150px;
+    background-color: #F1F1F1;
+    vertical-align: middle;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 5px;
+}
+
+#pesquisa 
+{
+    clear: left;
+    vertical-align: middle;
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+    background-color: #9F00A7;
+    color: #FFF;
+    height: 30px;
+    padding: 5px;
+    margin: 10px;
+}
+
+#menu
+{
+    clear: left;
+    color: #FFF;
+    height: 50px;
+    padding: 0;
+    margin: 0;
+}
+
+.botao_menu
+{
+    height: 100%;
+    width: 215px;
+    padding: 5px;
+    margin: 10px;
+    float: left;
+}
+
+#conteudo
+{
+    clear: left;
+    height: 250px;
+    margin: 0;
     padding: 0;
 }
 
-cabecalho h1, #cabecalho h1 {
+#principal 
+{
+    height: 100%;
+    width: 65%;
+    background-color: #F1F1F1;
+    vertical-align: middle;
+    margin: 10px;
+    padding: 5px;
+    float: left;
+}
+
+#anuncios 
+{
+    height: 100%;
+    width: 30%;
+    background-color: #F1F1F1;
+    vertical-align: middle;
+    margin: 10px;
+    padding: 5px;
+    float: left;
+}
+
+#rodape
+{
+    clear: left;
+    vertical-align: middle;
+    background-color: #2D89EF;
     font-weight: bold;
-    padding: 5px 0;
-    margin: 0;
-    color: #fff;
-    border: none;
-    line-height: 2em;
-    font-size: 32px !important;
-    text-shadow: 1px 1px 2px #111;
-}
-
-#conteudo {
-    padding: 30px 30px 15px 30px;
-    background-color: #fff;
-    -webkit-border-radius: 4px 0 0 0;
-    -moz-border-radius: 4px 0 0 0;
-    border-radius: 4px 0 0 0;
-}
-
-rodape, 
-#rodape {
-    background-color: #fff;
-    color: #999;
-    padding: 10px 0;
-    text-align: center;
-    line-height: normal;
-    margin: 0 0 30px 0;
-    font-size: .9em;
-    -webkit-border-radius: 0 0 4px 4px;
-    -moz-border-radius: 0 0 4px 4px;
-    border-radius: 0 0 4px 4px;
+    font-size: large;
+    color: #FFF;
+    height: 30px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 5px;
 }

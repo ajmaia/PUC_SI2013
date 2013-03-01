@@ -3,22 +3,29 @@
 <!DOCTYPE html>
 <html>
 <head runat="server">
-    <title><asp:ContentPlaceHolder ID="conteudoTitulo" runat="server" /></title>
-    <link href="../../Content/Portal.css" rel="stylesheet" type="text/css" />
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
     <script src="<%: Url.Content("~/Scripts/jquery-1.7.1.min.js") %>" type="text/javascript"></script>
 </head>
 <body>
     <div class="pagina">
-        <div id="cabecalho">
-            <div id="feeds"></div>
-            <div id="logotipo"></div>
-            <div id="pesquisa"></div>
+        <div id="cabecalho">PROTAL BRAZUCAS 2014 | Notícias, Curiosidades, Jogos e Apostas...</div>
+        <div id="logotipo">LOGO</div>
+        <div id="pesquisa">pesquisa</div>
+        <div id="menu">
+            <div class="botao_menu" style="background-color: aqua;">OPÇAO 01</div>
+            <div class="botao_menu" style="background-color: yellow">OPÇAO 02</div>
+            <div class="botao_menu" style="background-color: green;">OPÇAO 03</div>
+            <div class="botao_menu" style="background-color: fuchsia;">OPÇAO 04</div>
+            <div class="botao_menu" style="background-color: orangered;">OPÇAO 05</div>
         </div>
         <div id="conteudo">
-            <asp:ContentPlaceHolder ID="conteudoPrincipal" runat="server" />
+            <div id="principal">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            </div>
+            <div id="anuncios">ANUNCIO</div>
+            </div
         </div>
-        <div id="anuncios"></div>
-        <div id="rodape"></div>
-    </div>
+        <div id="rodape">RODAPE</div>
 </body>
 </html>
