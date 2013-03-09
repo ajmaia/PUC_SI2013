@@ -296,8 +296,8 @@ body
 {
     clear: left;
     height: 190px;
-    width: 100%;
-    background-color: #F1F1F1;
+    width: 1298px;
+    border: solid 1px #F1F1F1;
     margin-top: 10px;
 }
 
@@ -377,8 +377,8 @@ body
     float: left;
     background-color: #F1F1F1;
     height: 40px;
-    width: 1200px;
-    padding: 5px 10px 5px 10px;
+    width: 1190px;
+    padding: 5px 20px 5px 20px;
     margin: 0 10px 0 10px;
 }
 
@@ -424,38 +424,38 @@ body
 
 #conteudo
 {
+
     clear: left;
-    margin: 0;
+    margin: 10px 0 0 0;
     padding: 0;
+    height: 500px;
+    width: 1300px;
 }
 
 #principal 
 {
+    width: 927px;
     height: 100%;
-    width: 660px;
-    background-color: #F1F1F1;
+    border: solid 1px #F1F1F1;
     vertical-align: middle;
-    padding: 5px;
-    margin: 0 10px 0 5px;
     float: left;
 }
 
 #anuncios 
 {
+    width: 358px;
     height: 100%;
+    border: solid 1px #F1F1F1;
     float: left;
+    margin-left: 10px;
+    text-align: center;
 }
 
 .anuncio
 {
     height: 150px;
-    width: 320px;
-    text-align: center;
-    vertical-align: middle;
-    background-color: #F1F1F1;
-    vertical-align: middle;
+    width: 350px;
     padding: 5px;
-    margin: 0 0 10px 0;
     clear: left;
 }
 
@@ -469,10 +469,8 @@ body
     font-weight: bold;
     font-size: medium;
     color: #FFF;
-    height: 20px;
-    width: 1000px;
-    margin: 10px 0 0 5px;
-    padding: 5px;
+    height: 30px;
+    width: 1300px;
 }
 
 /* CONTROLES DE AUXÍLIO */
@@ -482,6 +480,13 @@ body
     height: 100%;
     width: 10px;
     float: left;
+}
+
+.linha10
+{
+    clear: left;
+    height: 10px;
+    width: 10px;
 }
 
 .clear

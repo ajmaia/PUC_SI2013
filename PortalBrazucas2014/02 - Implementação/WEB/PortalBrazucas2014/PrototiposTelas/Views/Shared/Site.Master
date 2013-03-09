@@ -96,16 +96,12 @@
             </div>
             <div id="seta_selecao_dir"></div>
         </div>
-        <br /><br />
         <div id="conteudo">
             <div id="principal">
                 <asp:ContentPlaceHolder ID="MainContent" runat="server" />
             </div>
-            <div class="espaco10"></div>
+
             <div id="anuncios">
-                <div class="anuncio">
-                    <img src="../../Content/themes/images/anuncios/anuncie_aqui.jpg" />
-                </div>
                 <div class="anuncio">
                     <img src="../../Content/themes/images/anuncios/anuncie_aqui.jpg" />
                 </div>
@@ -114,6 +110,7 @@
                 </div>
             </div>
         </div>
+        <div class="linha10"></div>
         <div id="rodape">RODAPE</div>
     </div>
 </body>
