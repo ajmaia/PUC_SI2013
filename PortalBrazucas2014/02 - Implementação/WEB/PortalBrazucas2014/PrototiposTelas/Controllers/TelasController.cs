@@ -21,5 +21,9 @@ namespace PrototiposTelas.Controllers
             return View();
         }
 
+        public ActionResult Teste()
+        {
+            return View();
+        }
     }
 }

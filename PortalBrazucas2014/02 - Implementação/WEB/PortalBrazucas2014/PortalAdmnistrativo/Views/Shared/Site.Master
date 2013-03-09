@@ -2,32 +2,68 @@
 
 <!DOCTYPE html>
 <html>
-<head runat="server">
+<head id="Head1" runat="server">
     <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
     <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
     <script src="<%: Url.Content("~/Scripts/jquery-1.7.1.min.js") %>" type="text/javascript"></script>
+    <script src="<%: Url.Content("~/Scripts/Site.js") %>" type="text/javascript"></script>
 </head>
 <body>
-    <div class="page">
-        <div id="header">
-            <div id="title">
-                <h1>My MVC Application</h1>
-            </div>
-            <div id="logindisplay">
-                <% Html.RenderPartial("LogOnUserControl"); %>
-            </div> 
-            <div id="menucontainer">
-                <ul id="menu">
-                    <li><%: Html.ActionLink("Home", "Index", "Home")%></li>
-                    <li><%: Html.ActionLink("About", "About", "Home")%></li>
-                </ul>
+    <div class="pagina">
+        <div id="cabecalho">
+            <div id="icone_portal"></div>
+            <div id="icone_idioma"></div>
+            <div id="icone_login" onclick="trocaLogin();"></div>
+            <div id="logado" class="controles_login" style="padding-right: 10px; margin-top: 10px; display: none;">Bem vindo(a) USUÁRIO!</div>
+            <div id="naologado" class="controles_login">
+                <input type="password" value="senha" class="campo_login"/>
+                <input type="text" value="Usuário" class="campo_login"/>
             </div>
         </div>
-        <div id="main">
+        <div id="menu_idioma">
+            <div class="item_menu_cabecalho" style="background-image: url('../../Content/themes/images/idiomas/pt-BR.png');">
+                Português (pt-BR)
+            </div>
+            <div class="item_menu_cabecalho" style="background-image: url('../../Content/themes/images/idiomas/en-US.png');">
+                English (en-US)
+            </div>
+            <div class="item_menu_cabecalho" style="background-image: url('../../Content/themes/images/idiomas/es-ES.png');">
+                Español (es-ES)
+            </div>
+        </div>
+        <div id="logotipo">
+            <div id="imagem_login"></div>
+            <div id="menu">
+                <div class="botao_menu" style="background-color: #7F7F7F; background-image: url('../../Content/themes/images/icones/home_icon.png');">
+                    Gerenciar Bolão
+                </div>
+                <div class="espaco10"></div>
+                <div class="botao_menu" style="background-color: #7F7F7F; background-image: url('../../Content/themes/images/icones/noticias_icon.png');">
+                    Gerenciar História<br />das Seleções
+                </div>
+                <div class="espaco10"></div>
+                <div class="botao_menu" style="background-color: #7F7F7F; background-image: url('../../Content/themes/images/icones/jogos_icon.png');">
+                    Gerenciar Notícias<br />e Comentários
+                </div>
+                <div class="clear"></div>
+                <div class="botao_menu" style="background-color: #7F7F7F; background-image: url('../../Content/themes/images/icones/cidades_icon.png');">
+                    Gerenciar Publicações<br />de Anúncios
+                </div>
+                <div class="espaco10"></div>
+                <div class="botao_menu" style="background-color: #7F7F7F; background-image: url('../../Content/themes/images/icones/bolao_icon.png');">
+                    Gerenciar Tabela<br />de Jogos
+                </div>
+                <div class="espaco10"></div>
+                <div class="botao_menu" style="background-color: #7F7F7F; background-image: url('../../Content/themes/images/icones/cadastro_icon.png');">
+                    Gerenciar Usuários
+                </div>
+            </div>
+        </div>
+        <div id="conteudo">
             <asp:ContentPlaceHolder ID="MainContent" runat="server" />
-            <div id="footer">
-            </div>
         </div>
+        <div class="linha10"></div>
+        <div id="rodape">RODAPE</div>
     </div>
 </body>
 </html>
