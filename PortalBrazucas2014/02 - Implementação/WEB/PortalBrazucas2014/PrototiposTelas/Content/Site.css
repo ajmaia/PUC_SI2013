@@ -1,5 +1,6 @@
-﻿/* LEIAUTES PRIMÁRIOS   
-----------------------------------------------------------*/
+﻿/* -------------------------------------------------------------------------------------------------
+     LEIAUTES PRIMÁRIOS   
+-------------------------------------------------------------------------------------------------*/
 body 
 {
     background-color: #FFF;
@@ -12,73 +13,418 @@ body
 
 .pagina 
 {
-    width: 91%;
+    width: 1300px;
     margin-left: auto;
     margin-right: auto;
 }
+
+/* ÁREA DE CABEÇALHO */
 
 #cabecalho
 {
     clear: left;
     vertical-align: middle;
-    background-color: #2D89EF;
+    background-color: #0e7019;
     font-weight: bold;
     font-size: large;
     color: #FFF;
-    height: 30px;
-    margin: 10px;
-    padding: 5px;
+    height: 40px;
+    width: 100%;
+    margin: 0px;
 }
 
-#logotipo 
+#icone_twitter
 {
-    clear: left;
-    height: 150px;
-    background-color: #F1F1F1;
-    vertical-align: middle;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
-    padding: 5px;
+    height: 40px;
+    width: 40px;
+    float: left;
+    background-image: url("../../Content/themes/images/icones/ico_twitter.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+
+#icone_twitter:hover
+{
+    height: 40px;
+    width: 40px;
+    float: left;
+    background-image: url("../../Content/themes/images/icones/ico_twitter_hover.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+
+#icone_face
+{
+    height: 40px;
+    width: 40px;
+    float: left;
+    background-image: url("../../Content/themes/images/icones/ico_face.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+
+#icone_face:hover
+{
+    height: 40px;
+    width: 40px;
+    float: left;
+    background-image: url("../../Content/themes/images/icones/ico_face_hover.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+
+#icone_feeds
+{
+    height: 40px;
+    width: 40px;
+    float: left;
+    background-image: url("../../Content/themes/images/icones/ico_feeds.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+
+#icone_feeds:hover
+{
+    height: 40px;
+    width: 40px;
+    float: left;
+    background-image: url("../../Content/themes/images/icones/ico_feeds_hover.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
 }
 
 #pesquisa 
 {
-    clear: left;
-    vertical-align: middle;
-    text-align: center;
-    font-weight: bold;
-    font-size: large;
-    background-color: #9F00A7;
-    color: #FFF;
     height: 30px;
-    padding: 5px;
-    margin: 10px;
+    width: 300px;
+    float: left;
+    margin-right: 5px;
+}
+
+.campo_pesquisa
+{
+    margin: 4px;
+    clear:left;
+    height: 28px;
+    width: 260px;
+    font-size: large;
+    border: thin solid #FFF;
+    background-color: #FFF;
+    color: #000;
+}
+
+#icone_login
+{
+    height: 40px;
+    width: 40px;
+    float: right;
+    background-image: url("../../Content/themes/images/icones/ico_login.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+
+#icone_login:hover
+{
+    height: 40px;
+    width: 40px;
+    float: right;
+    background-image: url("../../Content/themes/images/icones/ico_login_hover.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+
+#icone_logout
+{
+    height: 40px;
+    width: 40px;
+    float: right;
+    background-image: url("../../Content/themes/images/icones/ico_logout.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+
+#icone_logout:hover
+{
+    height: 40px;
+    width: 40px;
+    float: right;
+    background-image: url("../../Content/themes/images/icones/ico_logout_hover.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+
+#icone_idioma
+{
+    height: 40px;
+    width: 40px;
+    float: right;
+    background-image: url("../../Content/themes/images/icones/ico_idioma.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+
+#ico_idioma_hover, #icone_idioma:hover
+{
+    height: 40px;
+    width: 40px;
+    float: right;
+    background-image: url("../../Content/themes/images/icones/ico_idioma_hover.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+
+#icone_admin
+{
+    height: 40px;
+    width: 40px;
+    float: right;
+    background-image: url("../../Content/themes/images/icones/ico_config.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    margin-right: 1px;
+}
+
+#ico_admin_hover, #icone_admin:hover
+{
+    height: 40px;
+    width: 40px;
+    float: right;
+    background-image: url("../../Content/themes/images/icones/ico_config_hover.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    margin-right: 1px;
+}
+
+.controles_login
+{
+    height: 30px;
+    width: 300px;
+    float: right;
+    text-align: right;
+}
+
+.campo_login
+{
+    margin: 4px;
+    float: right;
+    height: 28px;
+    width: 125px;
+    font-size: large;
+    border: thin solid #FFF;
+    background-color: #FFF;
+    color: #000;
+}
+
+#menu_admin
+{
+    display: none;
+    margin: 0 0 0 1150px;
+    position: absolute;
+    width: 150px;
+    background-color: #FFF;
+}
+
+#menu_idioma
+{
+    display: none;
+    margin: 0 0 0 1110px;
+    position: absolute;
+    width: 150px;
+    background-color: #FFF;
+}
+
+.item_menu_cabecalho
+{
+    font-size: small;
+    color: #0e7019;
+    height: 25px;
+    padding: 5px 0 0 35px;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    border: 1px solid #0e7019;
+    border-top: none;
+}
+
+.item_menu_cabecalho:hover
+{
+    font-size: small;
+    color: #FFF;
+    height: 25px;
+    padding: 5px 0 0 35px;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #0e7019;
+    cursor: pointer;
+    border: 1px solid #0e7019;
+    border-top: none;
+}
+
+/* ÁREA DO LOGOTIPO E PESQUISA DO SITE */
+
+#logotipo 
+{
+    clear: left;
+    height: 190px;
+    width: 100%;
+    background-color: #F1F1F1;
+    margin-top: 10px;
+}
+
+#imagem_login
+{
+    height: 100%;
+    width:50%;
+    background-image: url('../../Content/themes/images/logo/Brazucas.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    float: left;
 }
 
 #menu
 {
-    clear: left;
+    width: 40%;
+    float: right;
     color: #FFF;
     height: 50px;
     padding: 0;
+    padding-left: 10%;
     margin: 0;
+    float: left;
 }
 
 .botao_menu
 {
-    height: 100%;
-    width: 215px;
-    padding: 5px;
-    margin: 10px;
+    height: 75px;
+    width: 140px;
     float: left;
+    padding: 5px 0 0 10px;
+    margin: 10px 0 0 0;
+    background-position: right;
+    background-repeat: no-repeat;
+    font-size: large;
+    cursor: pointer;
 }
+
+/* ÁREA DAS SELEÇOES E MENUS */
+
+#area_selecoes
+{
+    height: 50px;
+    width:100%;
+    margin-top: 10px;
+}
+
+#seta_selecao_esq
+{
+    height: 100%;
+    width: 25px;
+    float: left;
+    background-color: #F1F1F1;
+    background-image: url("../../Content/themes/images/icones/ico_seta_esq.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+
+#seta_selecao_esq:hover
+{
+    height: 100%;
+    width: 25px;
+    float: left;
+    background-color: #0e7019;
+    background-image: url("../../Content/themes/images/icones/ico_seta_esq_hover.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+
+#selecoes 
+{
+    float: left;
+    background-color: #F1F1F1;
+    height: 40px;
+    width: 1200px;
+    padding: 5px 10px 5px 10px;
+    margin: 0 10px 0 10px;
+}
+
+.bandeiras
+{
+    height: 40px;
+    width: 60px;
+    float: left;
+    margin: 0 5px 0 5px;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+
+#seta_selecao_dir
+{
+    height: 100%;
+    width: 25px;
+    float: right;
+    background-color: #F1F1F1;
+    background-image: url("../../Content/themes/images/icones/ico_seta_dir.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+
+#seta_selecao_dir:hover
+{
+    height: 100%;
+    width: 25px;
+    float: right;
+    background-color: #0e7019;
+    background-image: url("../../Content/themes/images/icones/ico_seta_dir_hover.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+
+/* ÁREA DE CONTEÚDO */
 
 #conteudo
 {
     clear: left;
-    height: 250px;
     margin: 0;
     padding: 0;
 }
@@ -86,37 +432,61 @@ body
 #principal 
 {
     height: 100%;
-    width: 65%;
+    width: 660px;
     background-color: #F1F1F1;
     vertical-align: middle;
-    margin: 10px;
     padding: 5px;
+    margin: 0 10px 0 5px;
     float: left;
 }
 
 #anuncios 
 {
     height: 100%;
-    width: 30%;
-    background-color: #F1F1F1;
-    vertical-align: middle;
-    margin: 10px;
-    padding: 5px;
     float: left;
 }
+
+.anuncio
+{
+    height: 150px;
+    width: 320px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #F1F1F1;
+    vertical-align: middle;
+    padding: 5px;
+    margin: 0 0 10px 0;
+    clear: left;
+}
+
+/* ÁREA DE RODAPÉ */
 
 #rodape
 {
     clear: left;
     vertical-align: middle;
-    background-color: #2D89EF;
+    background-color: #0e7019;
     font-weight: bold;
-    font-size: large;
+    font-size: medium;
     color: #FFF;
-    height: 30px;
-    margin-top: 30px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
+    height: 20px;
+    width: 1000px;
+    margin: 10px 0 0 5px;
     padding: 5px;
+}
+
+/* CONTROLES DE AUXÍLIO */
+
+.espaco10
+{
+    height: 100%;
+    width: 10px;
+    float: left;
+}
+
+.clear
+{
+    clear: left;
+    width: 0;
+    height: 0;
 }

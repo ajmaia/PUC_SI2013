@@ -95,16 +95,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TelasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Portal.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -159,7 +156,77 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\themes\images\anuncios\anuncie_aqui.jpg" />
+    <Content Include="Content\themes\images\bandeiras\flg_africa.png" />
+    <Content Include="Content\themes\images\bandeiras\flg_alemanha.png" />
+    <Content Include="Content\themes\images\bandeiras\flg_argentina.png" />
+    <Content Include="Content\themes\images\bandeiras\flg_australia.png" />
+    <Content Include="Content\themes\images\bandeiras\flg_brasil.png" />
+    <Content Include="Content\themes\images\bandeiras\flg_camaroes.png" />
+    <Content Include="Content\themes\images\bandeiras\flg_chile.png" />
+    <Content Include="Content\themes\images\bandeiras\flg_espanha.png" />
+    <Content Include="Content\themes\images\bandeiras\flg_franca.png" />
+    <Content Include="Content\themes\images\bandeiras\flg_inglaterra.png" />
+    <Content Include="Content\themes\images\bandeiras\flg_portugal.png" />
+    <Content Include="Content\themes\images\icones\Apresentação1.png" />
+    <Content Include="Content\themes\images\icones\firefox.png" />
+    <Content Include="Content\themes\images\icones\ico_config.png" />
+    <Content Include="Content\themes\images\icones\ico_config_hover.png" />
+    <Content Include="Content\themes\images\icones\ico_face.png" />
+    <Content Include="Content\themes\images\icones\ico_face_hover.png" />
+    <Content Include="Content\themes\images\icones\ico_feeds.png" />
+    <Content Include="Content\themes\images\icones\ico_feeds_hover.png" />
+    <Content Include="Content\themes\images\icones\ico_idioma.png" />
+    <Content Include="Content\themes\images\icones\ico_idioma_hover.png" />
+    <Content Include="Content\themes\images\icones\ico_login.png" />
+    <Content Include="Content\themes\images\icones\ico_login_hover.png" />
+    <Content Include="Content\themes\images\icones\ico_logout.png" />
+    <Content Include="Content\themes\images\icones\ico_logout_hover.png" />
+    <Content Include="Content\themes\images\icones\ico_seta_dir.png" />
+    <Content Include="Content\themes\images\icones\ico_seta_dir_hover.png" />
+    <Content Include="Content\themes\images\icones\ico_seta_esq.png" />
+    <Content Include="Content\themes\images\icones\ico_seta_esq_hover.png" />
+    <Content Include="Content\themes\images\icones\ico_twitter.png" />
+    <Content Include="Content\themes\images\icones\ico_twitter_hover.png" />
+    <Content Include="Content\themes\images\icones\ie.png" />
+    <Content Include="Content\themes\images\icones\jogos_icon.png" />
+    <Content Include="Content\themes\images\icones\cidades_icon.png" />
+    <Content Include="Content\themes\images\icones\noticias_icon.png" />
+    <Content Include="Content\themes\images\20130303120001181_easyicon_cn_96.png" />
+    <Content Include="Content\themes\images\idiomas\en-US.png" />
+    <Content Include="Content\themes\images\idiomas\es-ES.png" />
+    <Content Include="Content\themes\images\idiomas\pt-BR.png" />
+    <Content Include="Content\themes\images\logo\Brazucas.png" />
+    <Content Include="Content\themes\images\traduzir_icon.png" />
+    <Content Include="Content\themes\images\20130303120657690_easyicon_cn_512.png" />
+    <Content Include="Content\themes\images\20130303120716254_easyicon_cn_512.png" />
+    <Content Include="Content\themes\images\20130303120721553_easyicon_cn_512.png" />
+    <Content Include="Content\themes\images\20130303120727662_easyicon_cn_512.png" />
+    <Content Include="Content\themes\images\20130303120732373_easyicon_cn_512.png" />
+    <Content Include="Content\themes\images\20130303120742289_easyicon_cn_512.png" />
+    <Content Include="Content\themes\images\20130303120751282_easyicon_cn_512.png" />
+    <Content Include="Content\themes\images\20130303120802349_easyicon_cn_512.png" />
+    <Content Include="Content\themes\images\20130303120807790_easyicon_cn_512.png" />
+    <Content Include="Content\themes\images\icones\bolao_icon.png" />
+    <Content Include="Content\themes\images\icones\cadastro_icon.png" />
+    <Content Include="Content\themes\images\20130303120839179_easyicon_cn_512.png" />
+    <Content Include="Content\themes\images\20130303120844324_easyicon_cn_512.png" />
+    <Content Include="Content\themes\images\20130303120853171_easyicon_cn_512.png" />
+    <Content Include="Content\themes\images\2013030312085712_easyicon_cn_512.png" />
+    <Content Include="Content\themes\images\map_icon.png" />
+    <Content Include="Content\themes\images\facebook_icon.png" />
+    <Content Include="Content\themes\images\users-icon.png" />
+    <Content Include="Content\themes\images\icones\search_icon.png" />
+    <Content Include="Content\themes\images\icones\home_icon.png" />
+    <Content Include="Content\themes\images\Apps-GrooveShark-Metro-icon.png" />
+    <Content Include="Content\themes\images\Apps-Internet-Download-Manager-Metro-icon.png" />
+    <Content Include="Content\themes\images\Apps-Launchy-alt-Metro-icon.png" />
+    <Content Include="Content\themes\images\email.png" />
+    <Content Include="Content\themes\images\Apps-Spotify-Metro-icon.png" />
+    <Content Include="Content\themes\images\search.png" />
+    <Content Include="Content\themes\images\Other-Signal-Metro-icon.png" />
     <Content Include="Global.asax" />
+    <Content Include="Content\themes\images\bandeiras\flg_camaroes.pptx" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
@@ -169,6 +236,8 @@
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\Site.js" />
+    <Content Include="Views\Telas\NomeDaView.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -187,19 +256,14 @@
     <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
     <Content Include="Scripts\MicrosoftMvcValidation.js" />
     <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
-    <Content Include="Views\Account\ChangePassword.aspx" />
-    <Content Include="Views\Account\ChangePasswordSuccess.aspx" />
-    <Content Include="Views\Account\LogOn.aspx" />
-    <Content Include="Views\Account\Register.aspx" />
-    <Content Include="Views\Home\About.aspx" />
-    <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Telas\Index.aspx" />
     <Content Include="Views\Shared\Error.aspx" />
-    <Content Include="Views\Shared\LogOnUserControl.ascx" />
     <Content Include="Views\Shared\Site.Master" />
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -220,7 +284,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>13124</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:2312/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
