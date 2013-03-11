@@ -61,6 +61,33 @@ namespace PortalAdmnistrativo.Resouces {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Código Padrão.
+        /// </summary>
+        public static string CodigoPadrao {
+            get {
+                return ResourceManager.GetString("CodigoPadrao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data de Criação.
+        /// </summary>
+        public static string DataCriacao {
+            get {
+                return ResourceManager.GetString("DataCriacao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status.
+        /// </summary>
+        public static string Status {
+            get {
+                return ResourceManager.GetString("Status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tela Padrão.
         /// </summary>
         public static string Titulo {

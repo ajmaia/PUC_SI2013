@@ -129,4 +129,10 @@
   <data name="btnPesquisar" xml:space="preserve">
     <value>Pesquisar</value>
   </data>
+  <data name="chkExcluiSelecionados" xml:space="preserve">
+    <value>Excluir selecionados</value>
+  </data>
+  <data name="chkMarcarTodos" xml:space="preserve">
+    <value>Selecionar todos</value>
+  </data>
 </root>

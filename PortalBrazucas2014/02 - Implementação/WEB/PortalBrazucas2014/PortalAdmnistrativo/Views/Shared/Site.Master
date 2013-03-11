@@ -33,7 +33,7 @@
             </div>
         </div>
         <div id="logotipo">
-            <div id="imagem_login"></div>
+            <div id="imagem_logo"></div>
             <div id="menu">
                 <div class="botao_menu" style="background-color: #7F7F7F; background-image: url('../../Content/themes/images/icones/home_icon.png');">
                     Gerenciar Bolão

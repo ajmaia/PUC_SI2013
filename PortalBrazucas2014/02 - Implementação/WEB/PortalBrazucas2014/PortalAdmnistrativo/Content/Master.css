@@ -198,11 +198,11 @@ body
     margin-top: 10px;
 }
 
-#imagem_login
+#imagem_logo
 {
     height: 100%;
     width:50%;
-    background-image: url('../../Content/themes/images/logo/Brazucas.png');
+    background-image: url('../../Content/themes/images/logo/logo_admin.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;

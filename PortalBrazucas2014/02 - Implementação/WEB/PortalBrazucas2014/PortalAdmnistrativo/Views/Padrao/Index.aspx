@@ -11,6 +11,6 @@
     </div>
     <div class='painel_titulo'><%: PortalAdmnistrativo.Resouces.Padrao.TituloResultado %></div>
     <div id="resultados">
-        <% Html.RenderPartial("_resultado"); %>
+        <% Html.RenderPartial("_painelResultados"); %>
     </div>
 </asp:Content>

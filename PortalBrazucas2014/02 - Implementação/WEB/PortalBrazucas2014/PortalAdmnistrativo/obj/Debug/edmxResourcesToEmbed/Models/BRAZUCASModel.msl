@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BRAZUCASModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="PADRAO">
+      <EntityTypeMapping TypeName="BRAZUCASModel.Padrao">
+        <MappingFragment StoreEntitySet="PADRAO">
+          <ScalarProperty Name="CodigoPadrao" ColumnName="COD_PADRAO" />
+          <ScalarProperty Name="Titulo" ColumnName="TITULO" />
+          <ScalarProperty Name="DataCriacao" ColumnName="DATA_CRIACAO" />
+          <ScalarProperty Name="Status" ColumnName="STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Teste">
+      <EntityTypeMapping TypeName="BRAZUCASModel.Teste">
+        <MappingFragment StoreEntitySet="Teste">
+          <ScalarProperty Name="CodigoTeste" ColumnName="CodigoTeste" />
+          <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+          <ScalarProperty Name="DataCriacao" ColumnName="DataCriacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

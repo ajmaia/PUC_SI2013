@@ -29,6 +29,17 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PublishDatabaseSettings>
+      <Objects>
+        <ObjectGroup Name="BRAZUCASEntities-Deployment" Order="2">
+          <Destination Path="" />
+          <Object Type="DbFullSql">
+            <PreSource Path="Data Source=VICTORY-HP\MSSQL2008%3bInitial Catalog=BRAZUCAS%3bIntegrated Security=True%3bMultipleActiveResultSets=True%3bApplication Name=EntityFramework" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Debug\AutoScripts\BRAZUCASEntities-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+      </Objects>
+    </PublishDatabaseSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -44,6 +55,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -97,11 +110,11 @@
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\PadraoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Metadata\PadraoMetadata.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resouces\Geral.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -211,9 +224,9 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Scripts\Site.js" />
-    <Content Include="Views\Padrao\Index.aspx" />
-    <Content Include="Views\Padrao\_campos.ascx" />
-    <Content Include="Views\Padrao\_resultado.ascx" />
+    <Content Include="Views\Padrao_\Index.aspx" />
+    <Content Include="Views\Padrao_\_campos.ascx" />
+    <Content Include="Views\Padrao_\_resultado.ascx" />
     <Content Include="Views\Shared\_painelFiltros.ascx" />
     <Content Include="Views\Shared\_painelResultados.ascx" />
     <Content Include="Web.config" />
@@ -264,6 +277,9 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Padrao.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

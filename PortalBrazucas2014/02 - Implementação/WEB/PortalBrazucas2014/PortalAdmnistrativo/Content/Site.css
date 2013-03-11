@@ -68,3 +68,14 @@ div.clear
 {
     clear: both;
 }
+
+
+
+
+.grid_empty
+{
+    padding: 3px;
+    color: #333333;
+    background-color: #CCCCCC;
+    font-weight: bold;
+}

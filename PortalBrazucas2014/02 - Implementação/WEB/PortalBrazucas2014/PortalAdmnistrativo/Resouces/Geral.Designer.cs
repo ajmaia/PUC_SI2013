@@ -95,5 +95,23 @@ namespace PortalAdmnistrativo.Resouces {
                 return ResourceManager.GetString("btnPesquisar", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Excluir selecionados.
+        /// </summary>
+        public static string chkExcluiSelecionados {
+            get {
+                return ResourceManager.GetString("chkExcluiSelecionados", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Selecionar todos.
+        /// </summary>
+        public static string chkMarcarTodos {
+            get {
+                return ResourceManager.GetString("chkMarcarTodos", resourceCulture);
+            }
+        }
     }
 }
