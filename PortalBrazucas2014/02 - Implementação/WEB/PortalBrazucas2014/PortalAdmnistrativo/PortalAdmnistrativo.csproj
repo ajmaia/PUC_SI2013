@@ -224,9 +224,9 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Scripts\Site.js" />
-    <Content Include="Views\Padrao_\Index.aspx" />
-    <Content Include="Views\Padrao_\_campos.ascx" />
-    <Content Include="Views\Padrao_\_resultado.ascx" />
+    <Content Include="Views\Padrao\Index.aspx" />
+    <Content Include="Views\Padrao\_campos.ascx" />
+    <Content Include="Views\Padrao\_resultado.ascx" />
     <Content Include="Views\Shared\_painelFiltros.ascx" />
     <Content Include="Views\Shared\_painelResultados.ascx" />
     <Content Include="Web.config" />
