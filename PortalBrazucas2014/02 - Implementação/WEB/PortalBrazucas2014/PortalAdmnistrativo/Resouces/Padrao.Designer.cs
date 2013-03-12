@@ -70,11 +70,11 @@ namespace PortalAdmnistrativo.Resouces {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Data de Criação.
+        ///   Looks up a localized string similar to Data de Cadastro.
         /// </summary>
-        public static string DataCriacao {
+        public static string DataCadastro {
             get {
-                return ResourceManager.GetString("DataCriacao", resourceCulture);
+                return ResourceManager.GetString("DataCadastro", resourceCulture);
             }
         }
         

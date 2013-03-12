@@ -1,40 +1,31 @@
-﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<PortalAdmnistrativo.Models.RegisterModel>" %>
+﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<PortalAdmnistrativo.Models.Padrao>" %>
 
 <div class="conjunto_campo">
     <div class="campos">
-        <%: Html.LabelFor(m => m.UserName) %>
+        <%: Html.LabelFor(item => item.Titulo) %>
     </div>
     <div class="campos">
-        <%: Html.TextBoxFor(m => m.UserName, new { @class = "controle300" }) %>
-        <%: Html.ValidationMessageFor(m => m.UserName) %>
-    </div>
-</div>
-<div class="conjunto_campo">
-    <div class="campos">
-        <%: Html.LabelFor(m => m.Email) %>
-    </div>
-    <div class="campos">
-        <%: Html.TextBoxFor(m => m.Email, new { @class = "controle930" }) %>
-        <%: Html.ValidationMessageFor(m => m.Email) %>
+        <%: Html.TextBoxFor(item => item.Titulo, new { @class = "controle930" }) %>
+        <%: Html.ValidationMessageFor(item => item.Titulo) %>
     </div>
 </div>
 <div class="clear"></div>
 <div class="conjunto_campo">
     <div class="campos">
-        <%: Html.LabelFor(m => m.Password) %>
+        <%: Html.LabelFor(item => item.DataCadastro) %>
     </div>
     <div class="campos">
-        <%: Html.PasswordFor(m => m.Password, new { @class = "controle500" }) %>
-        <%: Html.ValidationMessageFor(m => m.Password) %>
+        <%: Html.TextBoxFor(item => item.DataCadastro, new { @class = "controle300" }) %>
+        <%: Html.ValidationMessageFor(item => item.DataCadastro) %>
     </div>
 </div>
 <div class="conjunto_campo">
     <div class="campos">
-        <%: Html.LabelFor(m => m.ConfirmPassword) %>
+        <%: Html.LabelFor(item => item.Status) %>
     </div>
     <div class="campos">
-        <%: Html.PasswordFor(m => m.ConfirmPassword, new { @class = "controle500" }) %>
-        <%: Html.ValidationMessageFor(m => m.ConfirmPassword) %>
+        <%: Html.TextBoxFor(item => item.Status, new { @class = "controle500" }) %>
+        <%: Html.ValidationMessageFor(item => item.Status) %>
     </div>
 </div>
                 

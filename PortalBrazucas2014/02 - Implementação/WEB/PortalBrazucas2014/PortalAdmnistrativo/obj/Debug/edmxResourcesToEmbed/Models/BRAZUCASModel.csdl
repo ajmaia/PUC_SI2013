@@ -1,24 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="BRAZUCASModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="Entities" p1:LazyLoadingEnabled="true">
-    <EntitySet Name="PADRAO" EntityType="BRAZUCASModel.Padrao" />
-    <EntitySet Name="Teste" EntityType="BRAZUCASModel.Teste" />
+    <EntitySet Name="Noticia" EntityType="BRAZUCASModel.Noticia" />
+    <EntitySet Name="Padrao" EntityType="BRAZUCASModel.Padrao" />
+    <EntitySet Name="Usuario" EntityType="BRAZUCASModel.Usuario" />
   </EntityContainer>
+  <EntityType Name="Noticia">
+    <Key>
+      <PropertyRef Name="CodigoNoticia" />
+    </Key>
+    <Property Name="CodigoNoticia" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Titulo" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
+    <Property Name="DataPublicacao" Type="DateTime" Precision="3" />
+    <Property Name="Categoria" Type="String" MaxLength="32" Unicode="false" FixedLength="false" />
+    <Property Name="Conteudo" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+  </EntityType>
   <EntityType Name="Padrao">
     <Key>
       <PropertyRef Name="CodigoPadrao" />
     </Key>
     <Property Name="CodigoPadrao" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-    <Property Name="Titulo" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
-    <Property Name="DataCriacao" Type="DateTime" Precision="3" />
+    <Property Name="Titulo" Type="String" MaxLength="128" Unicode="true" FixedLength="true" />
+    <Property Name="DataCadastro" Type="DateTime" Precision="3" />
     <Property Name="Status" Type="Int32" />
   </EntityType>
-  <EntityType Name="Teste">
+  <EntityType Name="Usuario">
     <Key>
-      <PropertyRef Name="CodigoTeste" />
+      <PropertyRef Name="Login" />
     </Key>
-    <Property Name="CodigoTeste" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-    <Property Name="Titulo" Type="String" MaxLength="128" Unicode="true" FixedLength="true" />
-    <Property Name="DataCriacao" Type="DateTime" Precision="0" />
+    <Property Name="Login" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="CnpjCpf" Type="Decimal" Nullable="false" Precision="14" Scale="0" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="52" Unicode="false" FixedLength="false" />
+    <Property Name="Telefone" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="DataNascimento" Type="DateTime" Precision="3" />
+    <Property Name="Sexo" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="Senha" Type="String" MaxLength="24" Unicode="false" FixedLength="false" />
   </EntityType>
 </Schema>

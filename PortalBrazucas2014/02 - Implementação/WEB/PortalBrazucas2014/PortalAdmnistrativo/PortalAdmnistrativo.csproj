@@ -110,11 +110,39 @@
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PadraoController.cs" />
+    <Compile Include="Controllers\_PadraoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\BRAZUCASModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BRAZUCASModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BRAZUCASModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BRAZUCASModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BRAZUCASModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BRAZUCASModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Metadata\PadraoMetadata.cs" />
+    <Compile Include="Models\Noticia.cs">
+      <DependentUpon>BRAZUCASModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NoticiaModel.cs" />
+    <Compile Include="Models\Padrao.cs">
+      <DependentUpon>BRAZUCASModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PadraoModel.cs" />
+    <Compile Include="Models\Usuario.cs">
+      <DependentUpon>BRAZUCASModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resouces\Geral.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -196,6 +224,12 @@
     <Content Include="Content\themes\images\icones\cidades_icon_hover.png" />
     <Content Include="Content\themes\images\icones\home_icon.png" />
     <Content Include="Content\themes\images\icones\home_icon_hover.png" />
+    <Content Include="Content\themes\images\icones\icone_abrir_des.gif" />
+    <Content Include="Content\themes\images\icones\icone_visualizar.gif" />
+    <Content Include="Content\themes\images\icones\ico_delete.gif" />
+    <Content Include="Content\themes\images\icones\ico_delete_off.gif" />
+    <Content Include="Content\themes\images\icones\ico_edit.gif" />
+    <Content Include="Content\themes\images\icones\ico_edit_off.gif" />
     <Content Include="Content\themes\images\icones\ico_idioma.png" />
     <Content Include="Content\themes\images\icones\ico_idioma_hover.png" />
     <Content Include="Content\themes\images\icones\ico_login.png" />
@@ -214,6 +248,23 @@
     <Content Include="Content\themes\images\logo\Brazucas.png" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
+    <EntityDeploy Include="Models\BRAZUCASModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BRAZUCASModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\BRAZUCASModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BRAZUCASModel.edmx</DependentUpon>
+      <LastGenOutput>BRAZUCASModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\BRAZUCASModel.edmx.diagram">
+      <DependentUpon>BRAZUCASModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\BRAZUCASModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BRAZUCASModel.edmx</DependentUpon>
+      <LastGenOutput>BRAZUCASModel.cs</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
@@ -224,6 +275,11 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Scripts\Site.js" />
+    <Content Include="Views\Padrao_\Create.aspx" />
+    <Content Include="Views\Padrao_\Delete.aspx" />
+    <Content Include="Views\Padrao_\Details.aspx" />
+    <Content Include="Views\Padrao_\Edit.aspx" />
+    <Content Include="Views\Padrao_\Index.aspx" />
     <Content Include="Views\Padrao\Index.aspx" />
     <Content Include="Views\Padrao\_campos.ascx" />
     <Content Include="Views\Padrao\_resultado.ascx" />

@@ -71,11 +71,175 @@ div.clear
 
 
 
+/* ESTILOS DO GRID */
 
+.webgrid
+{
+    width: 100%;
+    font-size: 10px;
+}
+.webgrid-header
+{
+    font: bold 15px Verdana, Arial, Helvetica, sans-serif;
+    background-color: #000;
+    color: #FFF;
+    padding: 4px;
+}
+.webgrid-header a
+{
+    color: #DFE8BF;
+    text-decoration: none;
+}
+.webgrid-header a:hover
+{
+    color: #7F7F7F;
+}
 .grid_empty
 {
     padding: 3px;
     color: #333333;
     background-color: #CCCCCC;
     font-weight: bold;
+}
+.webgrid-row
+{
+    font: normal 12px Verdana, Arial, Helvetica, sans-serif;
+    background-color: #bdbdbd;
+    color: #333333;
+}
+.webgrid-row:hover
+{
+    background-color: #7F7F7F;
+    color: #333333;
+}
+.webgrid-row-alt
+{
+    font: normal 12px Verdana, Arial, Helvetica, sans-serif;
+    background-color: #DDDDDD;
+    color: #333333;
+}
+.webgrid-row-alt:hover
+{
+    background-color: #7F7F7F;
+    color: #333333;
+}
+.webgrid-row-sel
+{
+    font: normal 10px Verdana, Arial, Helvetica, sans-serif;
+    background-color: #A1B0C8;
+    color: #333333;
+}
+.webgrid-empty_data
+{
+    font-size: 10px;
+    color: #333333;
+    font-weight: bold;
+}
+.webgrid-footer
+{
+    background-color: #000;
+    color: #FFF;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 4px;
+}
+.webgrid-footer a
+{
+    text-decoration: none;
+    color: #FFF;
+}
+.webgrid-footer a:hover
+{
+    text-decoration: underline;
+    color: #FFF;
+}
+a.webgrid-exluir
+{
+    background: url("../../Content/themes/images/icones/ico_delete.gif") no-repeat top left;
+     display: block;
+     width: 16px;
+     height: 16px;
+     text-indent: -9999px; /* hides the link text */
+     cursor: hand;
+}
+a.webgrid-exluir-off
+{
+    background: url("../../Content/themes/images/icones/ico_delete_off.gif") no-repeat top left;
+     display: block;
+     width: 16px;
+     height: 16px;
+     text-indent: -9999px; /* hides the link text */
+     cursor: hand;
+}
+a.webgrid-visualizar
+{
+     background: url("../../Content/themes/images/icones/icone_visualizar.gif") no-repeat top left;
+     display: block;
+     width: 16px;
+     height: 16px;
+     text-indent: -9999px; /* hides the link text */
+     cursor: hand;
+}
+a.webgrid-visualizar-off
+{
+     background: url("../../Content/themes/images/icones/icone_visualizar_off.gif") no-repeat top left;
+     display: block;
+     width: 16px;
+     height: 16px;
+     text-indent: -9999px; /* hides the link text */
+     cursor: hand;
+}
+a.webgrid-editar
+{
+    background: url("../../Content/themes/images/icones/ico_edit.gif") no-repeat top left;
+     display: block;
+     width: 16px;
+     height: 16px;
+     text-indent: -9999px; /* hides the link text */
+     cursor: hand;
+}
+a.webgrid-editar-off
+{
+    background: url("../../Content/themes/images/icones/ico_edit_off.gif") no-repeat top left;
+     display: block;
+     width: 16px;
+     height: 16px;
+     text-indent: -9999px; /* hides the link text */
+     cursor: hand;
+}
+.webgrid-botoes
+{
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    text-align: center;
+}
+.webgrid-coluna120
+{
+    width: 120px;
+}
+
+.webgrid-coluna150
+{
+    width: 150px;
+}
+.webgrid-coluna200
+{
+    width: 200px;
+}
+.webgrid-coluna300
+{
+    width: 300px;
+}
+.webgrid-coluna400
+{
+    width: 400px;
+}
+.webgrid-coluna500
+{
+    width: 500px;
+}
+.check-box-off
+{
+    display: none;
 }

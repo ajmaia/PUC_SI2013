@@ -113,5 +113,14 @@ namespace PortalAdmnistrativo.Resouces {
                 return ResourceManager.GetString("chkMarcarTodos", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Não há registros a serem exibidos.
+        /// </summary>
+        public static string grdGridVazio {
+            get {
+                return ResourceManager.GetString("grdGridVazio", resourceCulture);
+            }
+        }
     }
 }

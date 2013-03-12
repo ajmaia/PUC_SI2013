@@ -135,4 +135,7 @@
   <data name="chkMarcarTodos" xml:space="preserve">
     <value>Selecionar todos</value>
   </data>
+  <data name="grdGridVazio" xml:space="preserve">
+    <value>Não há registros a serem exibidos</value>
+  </data>
 </root>

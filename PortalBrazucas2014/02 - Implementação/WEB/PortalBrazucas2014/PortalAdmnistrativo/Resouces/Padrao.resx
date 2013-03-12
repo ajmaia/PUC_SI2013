@@ -120,8 +120,8 @@
   <data name="CodigoPadrao" xml:space="preserve">
     <value>Código Padrão</value>
   </data>
-  <data name="DataCriacao" xml:space="preserve">
-    <value>Data de Criação</value>
+  <data name="DataCadastro" xml:space="preserve">
+    <value>Data de Cadastro</value>
   </data>
   <data name="Status" xml:space="preserve">
     <value>Status</value>

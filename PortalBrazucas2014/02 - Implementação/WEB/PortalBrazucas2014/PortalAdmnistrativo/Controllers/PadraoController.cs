@@ -1,27 +1,44 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PortalAdmnistrativo.Models;
 
 namespace PortalAdmnistrativo.Controllers
-{
+{ 
     public class PadraoController : Controller
     {
+        private Entities db = new Entities();
+
         //
         // GET: /Padrao/
 
-        public ActionResult Index()
+        public ViewResult Index()
         {
+            var parametros = new Padrao();
+            this.ViewBag.Parametros = parametros;
+            this.ViewBag.Resultados = parametros.buscar();
+
             return View();
+        }
+
+        public ActionResult Buscar(Padrao parametros)
+        {
+            this.ViewBag.Resultado = parametros.buscar();
+
+            return View("Index");
         }
 
         //
         // GET: /Padrao/Details/5
 
-        public ActionResult Details(int id)
+        public ViewResult Details(int id)
         {
-            return View();
+            Padrao padrao = db.Padrao.Find(id);
+            return View(padrao);
         }
 
         //
@@ -36,18 +53,16 @@ namespace PortalAdmnistrativo.Controllers
         // POST: /Padrao/Create
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Padrao padrao)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add insert logic here
+                db.Padrao.Add(padrao);
+                db.SaveChanges();
+                return RedirectToAction("Index");  
+            }
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return View(padrao);
         }
         
         //
@@ -55,25 +70,23 @@ namespace PortalAdmnistrativo.Controllers
  
         public ActionResult Edit(int id)
         {
-            return View();
+            Padrao padrao = db.Padrao.Find(id);
+            return View(padrao);
         }
 
         //
         // POST: /Padrao/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Padrao padrao)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
- 
+                db.Entry(padrao).State = EntityState.Modified;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View(padrao);
         }
 
         //
@@ -81,25 +94,26 @@ namespace PortalAdmnistrativo.Controllers
  
         public ActionResult Delete(int id)
         {
-            return View();
+            Padrao padrao = db.Padrao.Find(id);
+            return View(padrao);
         }
 
         //
         // POST: /Padrao/Delete/5
 
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int id)
+        {            
+            Padrao padrao = db.Padrao.Find(id);
+            db.Padrao.Remove(padrao);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        protected override void Dispose(bool disposing)
         {
-            try
-            {
-                // TODO: Add delete logic here
- 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            db.Dispose();
+            base.Dispose(disposing);
         }
     }
 }

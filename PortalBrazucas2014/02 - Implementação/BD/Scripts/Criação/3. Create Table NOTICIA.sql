@@ -1,0 +1,22 @@
+USE [BRAZUCAS]
+GO
+
+CREATE TABLE dbo.Noticia
+	(
+	CodigoNoticia int NOT NULL IDENTITY (1, 1),
+	Titulo varchar(128) NULL,
+	DataPublicacao datetime NULL,
+	Categoria varchar(32) NULL,
+	Conteudo text NULL
+	)  ON [PRIMARY]
+	 TEXTIMAGE_ON [PRIMARY]
+GO
+ALTER TABLE dbo.Noticia ADD CONSTRAINT
+	PK_Noticia PRIMARY KEY CLUSTERED 
+	(
+	CodigoNoticia
+	) WITH( STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+
+GO
+ALTER TABLE dbo.Noticia SET (LOCK_ESCALATION = TABLE)
+GO

@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BRAZUCASModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="BRAZUCASModelStoreContainer">
+          <EntitySet Name="Noticia" EntityType="BRAZUCASModel.Store.Noticia" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Padrao" EntityType="BRAZUCASModel.Store.Padrao" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Usuario" EntityType="BRAZUCASModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="Noticia">
+          <Key>
+            <PropertyRef Name="CodigoNoticia" />
+          </Key>
+          <Property Name="CodigoNoticia" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Titulo" Type="varchar" MaxLength="128" />
+          <Property Name="DataPublicacao" Type="datetime" />
+          <Property Name="Categoria" Type="varchar" MaxLength="32" />
+          <Property Name="Conteudo" Type="text" />
+        </EntityType>
+        <EntityType Name="Padrao">
+          <Key>
+            <PropertyRef Name="CodigoPadrao" />
+          </Key>
+          <Property Name="CodigoPadrao" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Titulo" Type="nchar" MaxLength="128" />
+          <Property Name="DataCadastro" Type="datetime" />
+          <Property Name="Status" Type="int" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Login" />
+          </Key>
+          <Property Name="Login" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="CnpjCpf" Type="numeric" Nullable="false" Precision="14" />
+          <Property Name="Nome" Type="varchar" Nullable="false" MaxLength="128" />
+          <Property Name="Email" Type="varchar" MaxLength="52" />
+          <Property Name="Telefone" Type="numeric" Precision="10" />
+          <Property Name="DataNascimento" Type="datetime" />
+          <Property Name="Sexo" Type="char" MaxLength="1" />
+          <Property Name="Senha" Type="varchar" MaxLength="24" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BRAZUCASModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Entities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Noticia" EntityType="BRAZUCASModel.Noticia" />
+          <EntitySet Name="Padrao" EntityType="BRAZUCASModel.Padrao" />
+          <EntitySet Name="Usuario" EntityType="BRAZUCASModel.Usuario" />
+        </EntityContainer>
+        <EntityType Name="Noticia">
+          <Key>
+            <PropertyRef Name="CodigoNoticia" />
+          </Key>
+          <Property Name="CodigoNoticia" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Titulo" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
+          <Property Name="DataPublicacao" Type="DateTime" Precision="3" />
+          <Property Name="Categoria" Type="String" MaxLength="32" Unicode="false" FixedLength="false" />
+          <Property Name="Conteudo" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Padrao">
+          <Key>
+            <PropertyRef Name="CodigoPadrao" />
+          </Key>
+          <Property Name="CodigoPadrao" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Titulo" Type="String" MaxLength="128" Unicode="true" FixedLength="true" />
+          <Property Name="DataCadastro" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Login" />
+          </Key>
+          <Property Name="Login" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="CnpjCpf" Type="Decimal" Nullable="false" Precision="14" Scale="0" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="52" Unicode="false" FixedLength="false" />
+          <Property Name="Telefone" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="DataNascimento" Type="DateTime" Precision="3" />
+          <Property Name="Sexo" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="Senha" Type="String" MaxLength="24" Unicode="false" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BRAZUCASModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="Noticia">
+            <EntityTypeMapping TypeName="BRAZUCASModel.Noticia">
+              <MappingFragment StoreEntitySet="Noticia">
+                <ScalarProperty Name="CodigoNoticia" ColumnName="CodigoNoticia" />
+                <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+                <ScalarProperty Name="DataPublicacao" ColumnName="DataPublicacao" />
+                <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+                <ScalarProperty Name="Conteudo" ColumnName="Conteudo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Padrao">
+            <EntityTypeMapping TypeName="BRAZUCASModel.Padrao">
+              <MappingFragment StoreEntitySet="Padrao">
+                <ScalarProperty Name="CodigoPadrao" ColumnName="CodigoPadrao" />
+                <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+                <ScalarProperty Name="DataCadastro" ColumnName="DataCadastro" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="BRAZUCASModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="CnpjCpf" ColumnName="CnpjCpf" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+                <ScalarProperty Name="DataNascimento" ColumnName="DataNascimento" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="Senha" ColumnName="Senha" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
