@@ -1,24 +1,21 @@
-USE [BRAZUCAS]
+---------------------------------------------------------------------------------------------
+-- CRIAÇÃO DA TABELA USUÁRIO ----------------------------------------------------------------
+---------------------------------------------------------------------------------------------
+
+USE BRAZUCAS
 GO
 
-CREATE TABLE dbo.Usuario
-	(
-	Login varchar(8) NOT NULL,
-	CnpjCpf numeric(14, 0) NOT NULL,
-	Nome varchar(128) NOT NULL,
-	Email varchar(52) NULL,
-	Telefone numeric(10, 0) NULL,
-	DataNascimento datetime NULL,
-	Sexo char(1) NULL,
-	Senha varchar(24) NULL
-	)  ON [PRIMARY]
-GO
-ALTER TABLE dbo.Usuario ADD CONSTRAINT
-	PK_Usuario PRIMARY KEY CLUSTERED 
-	(
-	Login
-	) WITH( STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+CREATE TABLE [dbo].[Usuario](
+	[LoginUsuario] [VARCHAR](8) NOT NULL,
+	[CpfCnpj] [NUMERIC](14,0) NOT NULL,
+	[NomeRazaoSocial] [VARCHAR] (128) NOT NULL,
+	[DataNascimento] [DATETIME] NULL,
+	[Sexo] [CHAR](1) NULL,
+	[TipoPerfil] [VARCHAR](16) NOT NULL
+ CONSTRAINT [PK_Usuario] PRIMARY KEY CLUSTERED 
+(
+	[LoginUsuario] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
 
-GO
-ALTER TABLE dbo.Usuario SET (LOCK_ESCALATION = TABLE)
 GO

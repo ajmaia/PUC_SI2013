@@ -14,13 +14,24 @@ namespace PortalAdmnistrativo.Models
     
     public partial class Usuario
     {
-        public string Login { get; set; }
-        public decimal CnpjCpf { get; set; }
-        public string Nome { get; set; }
-        public string Email { get; set; }
-        public Nullable<decimal> Telefone { get; set; }
+        public Usuario()
+        {
+            this.Anuncio = new HashSet<Anuncio>();
+            this.Comentario = new HashSet<Comentario>();
+            this.PalpiteJogo = new HashSet<PalpiteJogo>();
+            this.PontuacaoBolao = new HashSet<PontuacaoBolao>();
+        }
+    
+        public string LoginUsuario { get; set; }
+        public decimal CpfCnpj { get; set; }
+        public string NomeRazaoSocial { get; set; }
         public Nullable<System.DateTime> DataNascimento { get; set; }
         public string Sexo { get; set; }
-        public string Senha { get; set; }
+        public string TipoPerfil { get; set; }
+    
+        public virtual ICollection<Anuncio> Anuncio { get; set; }
+        public virtual ICollection<Comentario> Comentario { get; set; }
+        public virtual ICollection<PalpiteJogo> PalpiteJogo { get; set; }
+        public virtual ICollection<PontuacaoBolao> PontuacaoBolao { get; set; }
     }
 }

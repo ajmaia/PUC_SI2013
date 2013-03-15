@@ -61,6 +61,15 @@ namespace PortalAdmnistrativo.Resouces {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cancelar.
+        /// </summary>
+        public static string btnCancelar {
+            get {
+                return ResourceManager.GetString("btnCancelar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Excluir.
         /// </summary>
         public static string btnExcluir {
@@ -97,6 +106,15 @@ namespace PortalAdmnistrativo.Resouces {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Salvar.
+        /// </summary>
+        public static string btnSalvar {
+            get {
+                return ResourceManager.GetString("btnSalvar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Excluir selecionados.
         /// </summary>
         public static string chkExcluiSelecionados {
@@ -120,6 +138,42 @@ namespace PortalAdmnistrativo.Resouces {
         public static string grdGridVazio {
             get {
                 return ResourceManager.GetString("grdGridVazio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deseja realmente excluir o(s) registro(s) selecionado(s)?.
+        /// </summary>
+        public static string msgConfirmaExclusao {
+            get {
+                return ResourceManager.GetString("msgConfirmaExclusao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pesquisar.
+        /// </summary>
+        public static string pnlTituloBusca {
+            get {
+                return ResourceManager.GetString("pnlTituloBusca", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Incluir.
+        /// </summary>
+        public static string pnlTituloInclusao {
+            get {
+                return ResourceManager.GetString("pnlTituloInclusao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Resultados.
+        /// </summary>
+        public static string pnlTituloResultado {
+            get {
+                return ResourceManager.GetString("pnlTituloResultado", resourceCulture);
             }
         }
     }

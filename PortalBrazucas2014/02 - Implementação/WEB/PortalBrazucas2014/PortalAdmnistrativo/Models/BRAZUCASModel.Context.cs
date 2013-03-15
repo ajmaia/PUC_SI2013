@@ -25,8 +25,19 @@ namespace PortalAdmnistrativo.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public DbSet<Anuncio> Anuncio { get; set; }
+        public DbSet<Categoria> Categoria { get; set; }
+        public DbSet<Cidade> Cidade { get; set; }
+        public DbSet<Comentario> Comentario { get; set; }
+        public DbSet<Grupo> Grupo { get; set; }
+        public DbSet<Historia> Historia { get; set; }
+        public DbSet<Jogo> Jogo { get; set; }
         public DbSet<Noticia> Noticia { get; set; }
-        public DbSet<Padrao> Padrao { get; set; }
+        public DbSet<PalpiteJogo> PalpiteJogo { get; set; }
+        public DbSet<PontuacaoBolao> PontuacaoBolao { get; set; }
+        public DbSet<Selecao> Selecao { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
+        public DbSet<Bolao> Bolao { get; set; }
+        public DbSet<DesempenhoSelecao> DesempenhoSelecao { get; set; }
     }
 }

@@ -14,10 +14,21 @@ namespace PortalAdmnistrativo.Models
     
     public partial class Noticia
     {
+        public Noticia()
+        {
+            this.Comentario = new HashSet<Comentario>();
+        }
+    
         public int CodigoNoticia { get; set; }
         public string Titulo { get; set; }
-        public Nullable<System.DateTime> DataPublicacao { get; set; }
-        public string Categoria { get; set; }
+        public string CaminhoImagem { get; set; }
         public string Conteudo { get; set; }
+        public System.DateTime DataPublicacao { get; set; }
+        public string Autor { get; set; }
+        public int CodigoCategoria { get; set; }
+        public string DescricaoCategoria { get; set; }
+    
+        public virtual Categoria Categoria { get; set; }
+        public virtual ICollection<Comentario> Comentario { get; set; }
     }
 }

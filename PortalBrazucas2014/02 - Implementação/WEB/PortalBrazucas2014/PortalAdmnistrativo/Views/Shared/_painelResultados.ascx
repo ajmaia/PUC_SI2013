@@ -78,6 +78,83 @@
                 $("#divExcluirSelecionados").hide();
             }
         });
+
+        $(".check-box").click(function () {
+            var exibe = false;
+
+            $("input[type=checkbox][name='CodigoGrid']:checked").each(function () {
+                exibe = true;
+            });
+
+            if (exibe) {
+                $("#divExcluirSelecionados").show();
+            }
+            else {
+                $("#divExcluirSelecionados").hide();
+            }
+        });
     });
 
+    function carregarPopUp(cod, acao) {
+        $("body").append("<div id='popup'></div>")
+
+        var wid = acao == "Excluir" ? 400 : 400;
+
+        $.ajax({
+            url: "/" + '<%: ViewContext.RouteData.Values["controller"].ToString() %>' + "/" + acao,
+            data: {
+                id: cod
+            },
+            success: function (data) {
+                $("#popup")
+                    .dialog({
+                        close: function () {
+                            $(this).remove();
+                        },
+                        resizable: false,
+                        modal: true,
+                        width: 580,
+                        height: wid,
+                        title: acao
+                    })
+                    .html(data);
+            },
+            type: "GET",
+            async: false
+        });
+    }
+
+    function excluirSelecionados() {
+
+        var codsMarcados = "";
+
+        $("input[type=checkbox][name='CodigoGrid']:checked").each(function () {
+            codsMarcados = codsMarcados + ($(this).val()) + ";";
+        });
+
+        $("body").append("<div id='popup'></div>");
+
+        $.ajax({
+            url: "/" + '<%: ViewContext.RouteData.Values["controller"].ToString() %>' + "/ExcluirSelecionados",
+            data: {
+                listaCods: codsMarcados
+            },
+            success: function (data) {
+                $("#popup")
+                    .dialog({
+                        close: function () {
+                            $(this).remove();
+                        },
+                        resizable: false,
+                        modal: true,
+                        width: 580,
+                        height: 400,
+                        title: "Excluir Selecionados"
+                    })
+                    .html(data);
+            },
+            type: "GET",
+            async: false
+        });
+    }
 </script>

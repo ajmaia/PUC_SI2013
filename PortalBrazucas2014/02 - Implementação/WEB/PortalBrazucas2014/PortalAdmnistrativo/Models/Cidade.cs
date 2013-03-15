@@ -12,11 +12,21 @@ namespace PortalAdmnistrativo.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Padrao
+    public partial class Cidade
     {
-        public int CodigoPadrao { get; set; }
-        public string Titulo { get; set; }
-        public Nullable<System.DateTime> DataCadastro { get; set; }
-        public Nullable<int> Status { get; set; }
+        public Cidade()
+        {
+            this.Jogo = new HashSet<Jogo>();
+        }
+    
+        public int CodigoCidade { get; set; }
+        public string Nome { get; set; }
+        public string UF { get; set; }
+        public string CaminhoImagem { get; set; }
+        public string NomeEstado { get; set; }
+        public Nullable<int> CapacidadeEstadio { get; set; }
+        public string InformacoesEstadio { get; set; }
+    
+        public virtual ICollection<Jogo> Jogo { get; set; }
     }
 }

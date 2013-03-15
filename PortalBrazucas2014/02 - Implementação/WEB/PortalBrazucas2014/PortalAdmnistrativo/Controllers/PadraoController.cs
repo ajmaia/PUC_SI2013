@@ -13,9 +13,10 @@ namespace PortalAdmnistrativo.Controllers
     {
         private Entities db = new Entities();
 
-        //
-        // GET: /Padrao/
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public ViewResult Index()
         {
             var parametros = new Padrao();
@@ -25,12 +26,22 @@ namespace PortalAdmnistrativo.Controllers
             return View();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="parametros"></param>
+        /// <returns></returns>
         public ActionResult Buscar(Padrao parametros)
         {
             this.ViewBag.Resultado = parametros.buscar();
 
             return View("Index");
         }
+
+
+
+
+
 
         //
         // GET: /Padrao/Details/5

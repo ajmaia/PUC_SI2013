@@ -8,6 +8,8 @@ namespace PortalAdmnistrativo.Models
 {
     public partial class Noticia
     {
+        public string CaminhoImagem;
+
         public IQueryable<Noticia> buscar()
         {
 

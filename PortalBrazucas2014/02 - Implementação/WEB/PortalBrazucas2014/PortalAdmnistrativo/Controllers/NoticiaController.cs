@@ -1,0 +1,176 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using PortalAdmnistrativo.Models;
+
+namespace PortalAdmnistrativo.Controllers
+{ 
+    public class NoticiaController : Controller
+    {
+        private Entities db = new Entities();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public ViewResult Index()
+        {
+            var parametros = new Noticia();
+            this.ViewBag.Parametros = parametros;
+            this.ViewBag.Resultados = parametros.buscar();
+
+            return View();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="parametros"></param>
+        /// <returns></returns>
+        public ActionResult Buscar(Noticia parametros)
+        {
+            this.ViewBag.Resultado = parametros.buscar();
+
+            return View("Index");
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Create()
+        {
+            return PartialView("_incluir");
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="noticia"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult Create(Noticia noticia)
+        {
+            //if (ModelState.IsValid)
+            //{
+            //    db.Noticia.AddObject(noticia);
+            //    db.SaveChanges();
+            //    return RedirectToAction("Index");
+            //}
+
+            return PartialView("_incluir", noticia);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public ActionResult Editar(int id)
+        {
+            Noticia noticia = db.Noticia.Single(n => n.CodigoNoticia == id);
+            return PartialView("_editar", noticia);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="hospital"></param>
+        /// <returns></returns>
+        [HttpPost, ActionName("Editar")]
+        public ActionResult EditConfirmed(Noticia noticia)
+        {
+            //if (ModelState.IsValid)
+            //{
+            //    db.Noticia.Attach(noticia);
+            //    db.ObjectStateManager.ChangeObjectState(noticia, EntityState.Modified);
+            //    db.SaveChanges();
+            //    return RedirectToAction("Index");
+            //}
+
+            return RedirectToAction("Erro");
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="listaCodigos"></param>
+        /// <returns></returns>
+        public ActionResult ExcluirSelecionados(string listaCodigos)
+        {
+            List<Noticia> listaNoticia = new List<Noticia>();
+
+            int codigoNoticia;
+
+            foreach (var item in listaCodigos.TrimEnd(';').Split(';'))
+            {
+                codigoNoticia = Convert.ToInt32(item);
+                listaNoticia.Add(db.Noticia.Single(h => h.CodigoNoticia == codigoNoticia));
+            }
+
+            var lista = listaNoticia.AsEnumerable<Noticia>();
+
+            return PartialView("_excluir", lista);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public ActionResult Excluir(int id)
+        {
+            IEnumerable<Noticia> noticia = db.Noticia.Where(h => h.CodigoNoticia == id);
+            return PartialView("_excluir", noticia);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpPost, ActionName("Excluir")]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            //Noticia noticia = db.Noticia.Single(h => h.CodigoNoticia == id);
+            //db.Noticia.DeleteObject(noticia);
+            //db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="listaCnpj"></param>
+        /// <returns></returns>
+        [HttpPost, ActionName("ExcluirSelecionados")]
+        public ActionResult DeleteConfirmed(string listaCodigos)
+        {
+            int codigoNoticia;
+
+            foreach (var item in listaCodigos.TrimEnd(';').Split(';'))
+            {
+                codigoNoticia = Convert.ToInt32(item);
+                //db.Noticia.DeleteObject(db.Noticia.Single(h => h.CodigoNoticia == codigoNoticia));
+            }
+
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="disposing"></param>
+        protected override void Dispose(bool disposing)
+        {
+            db.Dispose();
+            base.Dispose(disposing);
+        }
+    }
+}
