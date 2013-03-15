@@ -117,6 +117,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Anuncio.cs">
+      <DependentUpon>BRAZUCASModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Bolao.cs">
+      <DependentUpon>BRAZUCASModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\BRAZUCASModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -132,15 +138,42 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BRAZUCASModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Categoria.cs">
+      <DependentUpon>BRAZUCASModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cidade.cs">
+      <DependentUpon>BRAZUCASModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Comentario.cs">
+      <DependentUpon>BRAZUCASModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DesempenhoSelecao.cs">
+      <DependentUpon>BRAZUCASModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Grupo.cs">
+      <DependentUpon>BRAZUCASModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Historia.cs">
+      <DependentUpon>BRAZUCASModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Jogo.cs">
+      <DependentUpon>BRAZUCASModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Metadata\PadraoMetadata.cs" />
     <Compile Include="Models\Noticia.cs">
       <DependentUpon>BRAZUCASModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\NoticiaModel.cs" />
-    <Compile Include="Models\Padrao.cs">
+    <Compile Include="Models\PadraoModel.cs" />
+    <Compile Include="Models\PalpiteJogo.cs">
       <DependentUpon>BRAZUCASModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\PadraoModel.cs" />
+    <Compile Include="Models\PontuacaoBolao.cs">
+      <DependentUpon>BRAZUCASModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Selecao.cs">
+      <DependentUpon>BRAZUCASModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Usuario.cs">
       <DependentUpon>BRAZUCASModel.tt</DependentUpon>
     </Compile>
