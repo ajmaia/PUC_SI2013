@@ -20,5 +20,4 @@ SELECT
 	[GolsRealizados],
 	[GolsSofridos]
 FROM [dbo].[Selecao]
-ORDER BY [RankingFIFA]
 GO

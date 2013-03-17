@@ -208,7 +208,7 @@ CREATE TABLE [dbo].[Historia](
 GO
 
 ---------------------------------------------------------------------------------------------
--- CRIAÇÃO DA TABELA SELECAO -----------------------------------------------------------------
+-- CRIAÇÃO DA TABELA SELECAO ----------------------------------------------------------------
 ---------------------------------------------------------------------------------------------
 
 USE BRAZUCAS
@@ -279,6 +279,8 @@ GO
 CREATE TABLE [dbo].[Jogo](
 	[CodigoJogo] [INT] IDENTITY(1,1) NOT NULL,
 	[CodigoCidade] [INT] NOT NULL,
+	[NomeCidade] [VARCHAR](128) NOT NULL,
+	[LocalVendaIngresso] [VARCHAR] (128) NULL,
 	[Rodada] [INT] NOT NULL,
 	[CodigoSelecaoA] [INT] NOT NULL,
 	[NomeSelecaoA] [VARCHAR](128) NOT NULL,
@@ -411,4 +413,27 @@ SELECT
 		)
 	) AS [RelativoColocadoAnterior]
 FROM [dbo].[PontuacaoBolao]
+GO
+
+---------------------------------------------------------------------------------------------
+-- CRIAÇÃO DA TABELA VW_INGRESSO ------------------------------------------------------------
+---------------------------------------------------------------------------------------------
+
+USE BRAZUCAS
+GO
+
+CREATE VIEW [dbo].[Ingresso]
+AS
+
+SELECT
+	[CodigoJogo],
+	[NomeCidade],
+	[LocalVendaIngresso],
+	[Rodada],
+	[CodigoSelecaoA],
+	[NomeSelecaoA],
+	[CodigoSelecaoB],
+	[NomeSelecaoB],
+	[DataHora]
+FROM  [dbo].[Jogo]
 GO

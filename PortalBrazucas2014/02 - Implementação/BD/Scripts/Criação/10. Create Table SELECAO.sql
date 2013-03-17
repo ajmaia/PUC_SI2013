@@ -10,8 +10,16 @@ CREATE TABLE [dbo].[Selecao](
 	[Nome] [VARCHAR](128) NOT NULL,
 	[Pais] [VARCHAR](16) NOT NULL,
 	[CaminhoImagem] [VARCHAR](128) NULL,
-	[CodigoGrupo] [INT] IDENTITY(1,1) NOT NULL,
-	[DescricaoGrupo] [VARCHAR] (128) NOT NULL
+	[CodigoGrupo] [INT] NOT NULL,
+	[DescricaoGrupo] [VARCHAR] (128) NOT NULL,
+	[RankingFIFA] [INT] NOT NULL,
+	[QuantidadeJogos] [INT] NULL,
+	[Vitorias] [INT] NULL,
+	[Empates] [INT] NULL,
+	[Derrotas] [INT] NULL,
+	[GolsRealizados] [INT] NULL,
+	[GolsSofridos] [INT] NULL,
+	[CodigoHistoria] [INT] NOT NULL
  CONSTRAINT [PK_Selecao] PRIMARY KEY CLUSTERED 
 (
 	[CodigoSelecao] ASC
@@ -20,6 +28,10 @@ CREATE TABLE [dbo].[Selecao](
 
 GO
 
-ALTER TABLE [dbo].[Selecao]  WITH CHECK ADD  CONSTRAINT [FK_Selecao_Grupo] FOREIGN KEY([CodigoNoticia])
+ALTER TABLE [dbo].[Selecao]  WITH CHECK ADD  CONSTRAINT [FK_Selecao_Grupo] FOREIGN KEY([CodigoSelecao])
 REFERENCES [dbo].[Grupo] ([CodigoGrupo])
+GO
+
+ALTER TABLE [dbo].[Selecao]  WITH CHECK ADD  CONSTRAINT [FK_Selecao_Historia] FOREIGN KEY([CodigoHistoria])
+REFERENCES [dbo].[Historia] ([CodigoHistoria])
 GO
