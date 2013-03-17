@@ -3,17 +3,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using PortalAdmnistrativo.Models.Metadata;
 
 namespace PortalAdmnistrativo.Models
 {
+    [MetadataType(typeof(NoticiaMetadata))]
     public partial class Noticia
     {
-        public string CaminhoImagem;
+        public string DataPublicacaoString
+        {
+            get
+            {
+                if(DataPublicacao >= DateTime.Parse("2013-01-01"))
+                    return DataPublicacao.ToShortDateString();
+                else
+                    return string.Empty;
+            }
+            set
+            {
+                if (value != null)
+                    DataPublicacao = DateTime.Parse(value);
+            }
+        }
 
         public IQueryable<Noticia> buscar()
         {
-
             Entities entity = new Entities();
+
             var query = entity.Noticia.AsQueryable<Noticia>();
 
             if (this.CodigoNoticia != 0)
@@ -22,10 +38,10 @@ namespace PortalAdmnistrativo.Models
             if (!String.IsNullOrEmpty(this.Titulo))
                 query = query.Where(item => item.Titulo == this.Titulo);
 
-            if (!String.IsNullOrEmpty(this.Categoria))
-                query = query.Where(item => item.Categoria == this.Categoria);
+            if (this.CodigoCategoria != 0)
+                query = query.Where(item => item.CodigoCategoria == this.CodigoCategoria);
 
-            if (this.DataPublicacao != null)
+            if (this.DataPublicacao >= DateTime.Parse("2013-01-01"))
                 query = query.Where(item => item.DataPublicacao == this.DataPublicacao);
 
             return query;

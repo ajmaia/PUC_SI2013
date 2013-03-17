@@ -15,7 +15,24 @@
         <%: Html.LabelFor(item => item.DataPublicacao) %>
     </div>
     <div class="campos">
-        <%: Html.TextBoxFor(item => item.DataPublicacao, new { @class = "controle300" }) %>
+        <%: Html.TextBoxFor(item => item.DataPublicacaoString, new { @class = "datePicker" }) %>
+        <script type="text/javascript">
+            $(".datePicker").datepicker({
+                showOn: "both",
+                buttonImage: "/Content/themes/images/icones/ico_calendar.gif",
+                buttonImageOnly: true,
+                gotoCurrent: true,
+                dateFormat: "dd/mm/yy"
+            });
+
+            $(".datePicker").autocomplete({
+                showOn: "both",
+                buttonImage: "/Content/themes/images/icones/ico_calendar.gif",
+                buttonImageOnly: true,
+                gotoCurrent: true,
+                dateFormat: "dd/mm/yy"
+            });
+        </script>
         <%: Html.ValidationMessageFor(item => item.DataPublicacao) %>
     </div>
 </div>
@@ -24,25 +41,7 @@
         <%: Html.LabelFor(item => item.Categoria) %>
     </div>
     <div class="campos">
-        <%: Html.TextBoxFor(item => item.Categoria, new { @class = "controle500" }) %>
+        <%: Html.DropDownListFor(item => item.CodigoCategoria, new SelectList(ViewBag.ListaCategorias, "Value", "Text"), PortalAdmnistrativo.Resouces.Geral.optSelecionarTodos, new { @class = "controle500" }) %>
         <%: Html.ValidationMessageFor(item => item.Categoria) %>
     </div>
-</div>
-<div class="conjunto_campo">
-    <div class="campos">
-        <%: Html.LabelFor(item => item.Conteudo) %>
-    </div>
-    <div class="campos">
-        <%: Html.TextBoxFor(item => item.Conteudo, new { @class = "controle500" }) %>
-        <%: Html.ValidationMessageFor(item => item.Conteudo) %>
-    </div>
-</div>    
-<div class="conjunto_campo">
-    <div class="campos">
-        <%: Html.LabelFor(item => item.CaminhoImagem) %>
-    </div>
-    <div class="campos">
-        <%: Html.TextBoxFor(item => item.CaminhoImagem, new { @class = "controle500" }) %>
-        <%: Html.ValidationMessageFor(item => item.CaminhoImagem) %>
-    </div>
-</div>                  
+</div>               

@@ -48,28 +48,29 @@
         <div id="logotipo">
             <div id="imagem_logo"></div>
             <div id="menu">
-                <div class="botao_menu" style="background-color: #7F7F7F; background-image: url('../../Content/themes/images/icones/home_icon.png');">
-                    Gerenciar Bolão
+
+                <div class="botao_menu" style="background-image: url('../../Content/themes/images/icones/home_icon.png');" onclick="javascript: window.location.href='/Noticia';">
+                    <%: PortalAdmnistrativo.Resouces.Geral.mnuGerenciarNoticias %>
                 </div>
                 <div class="espaco10"></div>
-                <div class="botao_menu" style="background-color: #7F7F7F; background-image: url('../../Content/themes/images/icones/noticias_icon.png');">
-                    Gerenciar História<br />das Seleções
+                <div class="botao_menu" style="background-image: url('../../Content/themes/images/icones/noticias_icon.png');" onclick="javascript: window.location.href='/Noticia';">
+                    <%--Gerenciar História<br />das Seleções--%>
                 </div>
                 <div class="espaco10"></div>
-                <div class="botao_menu" style="background-color: #7F7F7F; background-image: url('../../Content/themes/images/icones/jogos_icon.png');">
-                    Gerenciar Notícias<br />e Comentários
+                <div class="botao_menu" style="background-image: url('../../Content/themes/images/icones/jogos_icon.png');" onclick="javascript: window.location.href='/Noticia';">
+                    <%--Gerenciar Bolão--%>
                 </div>
                 <div class="clear"></div>
-                <div class="botao_menu" style="background-color: #7F7F7F; background-image: url('../../Content/themes/images/icones/cidades_icon.png');">
-                    Gerenciar Publicações<br />de Anúncios
+                <div class="botao_menu" style="background-image: url('../../Content/themes/images/icones/cidades_icon.png');" onclick="javascript: window.location.href='/Noticia';">
+                    <%--Gerenciar Publicações<br />de Anúncios--%>
                 </div>
                 <div class="espaco10"></div>
-                <div class="botao_menu" style="background-color: #7F7F7F; background-image: url('../../Content/themes/images/icones/bolao_icon.png');">
-                    Gerenciar Tabela<br />de Jogos
+                <div class="botao_menu" style="background-image: url('../../Content/themes/images/icones/bolao_icon.png');" onclick="javascript: window.location.href='/Noticia';">
+                    <%--Gerenciar Tabela<br />de Jogos--%>
                 </div>
                 <div class="espaco10"></div>
-                <div class="botao_menu" style="background-color: #7F7F7F; background-image: url('../../Content/themes/images/icones/cadastro_icon.png');">
-                    Gerenciar Usuários
+                <div class="botao_menu" style="background-image: url('../../Content/themes/images/icones/cadastro_icon.png');" onclick="javascript: window.location.href='/Noticia';">
+                    <%--Gerenciar Usuários--%>
                 </div>
             </div>
         </div>

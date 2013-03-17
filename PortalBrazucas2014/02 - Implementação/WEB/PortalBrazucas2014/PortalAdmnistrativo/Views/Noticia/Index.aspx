@@ -14,9 +14,8 @@
         <% Html.RenderPartial("_painelResultados", (IEnumerable<PortalAdmnistrativo.Models.Noticia>)ViewBag.Resultados); %>
     </div>
 
-        <div class="clear"></div>
-        <div class="campo_botao">
-            <input type="submit" class="button" value="<%: PortalAdmnistrativo.Resouces.Geral.btnIncluir %>" onclick="javascript:carregarPopUpIncluir();"/>
-        </div>
-
+    <div class="clear"></div>
+    <div class="campo_botao">
+        <input type="submit" class="button" value="<%: PortalAdmnistrativo.Resouces.Geral.btnIncluir %>" onclick="javascript:carregarPopUpIncluir();"/>
+    </div>
 </asp:Content>

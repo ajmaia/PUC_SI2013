@@ -111,8 +111,6 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NoticiaController.cs" />
-    <Compile Include="Controllers\PadraoController.cs" />
-    <Compile Include="Controllers\_PadraoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -147,6 +145,9 @@
     <Compile Include="Models\Comentario.cs">
       <DependentUpon>BRAZUCASModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CategoriaModel.cs" />
+    <Compile Include="Models\AnuncioModel.cs" />
+    <Compile Include="Models\ComentarioModel.cs" />
     <Compile Include="Models\DesempenhoSelecao.cs">
       <DependentUpon>BRAZUCASModel.tt</DependentUpon>
     </Compile>
@@ -156,15 +157,20 @@
     <Compile Include="Models\Historia.cs">
       <DependentUpon>BRAZUCASModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Ingresso.cs">
+      <DependentUpon>BRAZUCASModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Jogo.cs">
       <DependentUpon>BRAZUCASModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Metadata\PadraoMetadata.cs" />
+    <Compile Include="Models\Metadata\CategoriaMetadata.cs" />
+    <Compile Include="Models\Metadata\AnuncioMetadata.cs" />
+    <Compile Include="Models\Metadata\ComentarioMetadata.cs" />
+    <Compile Include="Models\Metadata\NoticiaMetadata.cs" />
     <Compile Include="Models\Noticia.cs">
       <DependentUpon>BRAZUCASModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\NoticiaModel.cs" />
-    <Compile Include="Models\PadraoModel.cs" />
     <Compile Include="Models\PalpiteJogo.cs">
       <DependentUpon>BRAZUCASModel.tt</DependentUpon>
     </Compile>
@@ -178,6 +184,21 @@
       <DependentUpon>BRAZUCASModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resouces\Categoria.Designer.cs">
+      <DependentUpon>Categoria.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resouces\Anuncio.Designer.cs">
+      <DependentUpon>Anuncio.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resouces\Comentario.Designer.cs">
+      <DependentUpon>Comentario.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Resouces\Geral.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -192,11 +213,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Noticia.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resouces\Padrao.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Padrao.resx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -265,6 +281,7 @@
     <Content Include="Content\themes\images\icones\home_icon_hover.png" />
     <Content Include="Content\themes\images\icones\icone_abrir_des.gif" />
     <Content Include="Content\themes\images\icones\icone_visualizar.gif" />
+    <Content Include="Content\themes\images\icones\ico_calendar.gif" />
     <Content Include="Content\themes\images\icones\ico_delete.gif" />
     <Content Include="Content\themes\images\icones\ico_delete_off.gif" />
     <Content Include="Content\themes\images\icones\ico_edit.gif" />
@@ -321,6 +338,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Scripts\Site.js" />
+    <Content Include="Views\Imagens\agua_abertura.png" />
     <Content Include="Views\Noticia\Create.aspx" />
     <Content Include="Views\Noticia\Delete.aspx" />
     <Content Include="Views\Noticia\Details.aspx" />
@@ -330,11 +348,6 @@
     <Content Include="Views\Noticia\_resultado.ascx" />
     <Content Include="Views\Noticia\_excluir.ascx" />
     <Content Include="Views\Noticia\_incluir.ascx" />
-    <Content Include="Views\Padrao_\Create.aspx" />
-    <Content Include="Views\Padrao_\Delete.aspx" />
-    <Content Include="Views\Padrao_\Details.aspx" />
-    <Content Include="Views\Padrao_\Edit.aspx" />
-    <Content Include="Views\Padrao_\Index.aspx" />
     <Content Include="Views\Padrao\Index.aspx" />
     <Content Include="Views\Padrao\_campos.ascx" />
     <Content Include="Views\Padrao\_resultado.ascx" />
@@ -379,6 +392,18 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resouces\Categoria.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Categoria.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resouces\Anuncio.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Anuncio.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resouces\Comentario.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Comentario.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resouces\Geral.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Geral.Designer.cs</LastGenOutput>
@@ -390,10 +415,6 @@
     <EmbeddedResource Include="Resouces\Noticia.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Noticia.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resouces\Padrao.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Padrao.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

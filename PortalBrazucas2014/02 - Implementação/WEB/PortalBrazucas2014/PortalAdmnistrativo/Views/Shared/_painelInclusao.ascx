@@ -1,5 +1,6 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<dynamic>" %>
 
+<div id="painelInclusao">
 <%
     using (Html.BeginForm()) {
 %>
@@ -12,3 +13,4 @@
     </div>
 
 <%  } %>
+</div>

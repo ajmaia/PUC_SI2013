@@ -1,40 +1,450 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="BRAZUCASModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityContainer Name="Entities" p1:LazyLoadingEnabled="true">
+  <EntityContainer Name="Entities" p1:LazyLoadingEnabled="true" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+    <EntitySet Name="Anuncio" EntityType="BRAZUCASModel.Anuncio" />
+    <EntitySet Name="Categoria" EntityType="BRAZUCASModel.Categoria" />
+    <EntitySet Name="Cidade" EntityType="BRAZUCASModel.Cidade" />
+    <EntitySet Name="Comentario" EntityType="BRAZUCASModel.Comentario" />
+    <EntitySet Name="Grupo" EntityType="BRAZUCASModel.Grupo" />
+    <EntitySet Name="Historia" EntityType="BRAZUCASModel.Historia" />
+    <EntitySet Name="Jogo" EntityType="BRAZUCASModel.Jogo" />
     <EntitySet Name="Noticia" EntityType="BRAZUCASModel.Noticia" />
-    <EntitySet Name="Padrao" EntityType="BRAZUCASModel.Padrao" />
+    <EntitySet Name="PalpiteJogo" EntityType="BRAZUCASModel.PalpiteJogo" />
+    <EntitySet Name="PontuacaoBolao" EntityType="BRAZUCASModel.PontuacaoBolao" />
+    <EntitySet Name="Selecao" EntityType="BRAZUCASModel.Selecao" />
     <EntitySet Name="Usuario" EntityType="BRAZUCASModel.Usuario" />
+    <EntitySet Name="Bolao" EntityType="BRAZUCASModel.Bolao" />
+    <EntitySet Name="DesempenhoSelecao" EntityType="BRAZUCASModel.DesempenhoSelecao" />
+    <EntitySet Name="Ingresso" EntityType="BRAZUCASModel.Ingresso" />
+    <AssociationSet Name="FK_Anuncio_Categoria" Association="BRAZUCASModel.FK_Anuncio_Categoria">
+      <End Role="Categoria" EntitySet="Categoria" />
+      <End Role="Anuncio" EntitySet="Anuncio" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Anuncio_Usuario" Association="BRAZUCASModel.FK_Anuncio_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Anuncio" EntitySet="Anuncio" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Noticia_Categoria" Association="BRAZUCASModel.FK_Noticia_Categoria">
+      <End Role="Categoria" EntitySet="Categoria" />
+      <End Role="Noticia" EntitySet="Noticia" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Jogo_Cidade" Association="BRAZUCASModel.FK_Jogo_Cidade">
+      <End Role="Cidade" EntitySet="Cidade" />
+      <End Role="Jogo" EntitySet="Jogo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comentario_Noticia" Association="BRAZUCASModel.FK_Comentario_Noticia">
+      <End Role="Noticia" EntitySet="Noticia" />
+      <End Role="Comentario" EntitySet="Comentario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comentario_Usuario" Association="BRAZUCASModel.FK_Comentario_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Comentario" EntitySet="Comentario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Selecao_Grupo" Association="BRAZUCASModel.FK_Selecao_Grupo">
+      <End Role="Grupo" EntitySet="Grupo" />
+      <End Role="Selecao" EntitySet="Selecao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Selecao_Historia" Association="BRAZUCASModel.FK_Selecao_Historia">
+      <End Role="Historia" EntitySet="Historia" />
+      <End Role="Selecao" EntitySet="Selecao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Jogo_SelecaoA" Association="BRAZUCASModel.FK_Jogo_SelecaoA">
+      <End Role="Selecao" EntitySet="Selecao" />
+      <End Role="Jogo" EntitySet="Jogo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Jogo_SelecaoB" Association="BRAZUCASModel.FK_Jogo_SelecaoB">
+      <End Role="Selecao" EntitySet="Selecao" />
+      <End Role="Jogo" EntitySet="Jogo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Palpite_Jogo" Association="BRAZUCASModel.FK_Palpite_Jogo">
+      <End Role="Jogo" EntitySet="Jogo" />
+      <End Role="PalpiteJogo" EntitySet="PalpiteJogo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Palpite_Usuario" Association="BRAZUCASModel.FK_Palpite_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="PalpiteJogo" EntitySet="PalpiteJogo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pontuacao_Usuario" Association="BRAZUCASModel.FK_Pontuacao_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="PontuacaoBolao" EntitySet="PontuacaoBolao" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Anuncio">
+    <Key>
+      <PropertyRef Name="CodigoAnuncio" />
+    </Key>
+    <Property Name="CodigoAnuncio" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Titulo" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+    <Property Name="CaminhoImagem" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
+    <Property Name="Conteudo" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+    <Property Name="DataPublicacao" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LoginCriacao" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="StatusAprovacao" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="UsuarioAprovacao" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="CodigoCategoria" Type="Int32" Nullable="false" />
+    <Property Name="DescricaoCategoria" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Categoria" Relationship="BRAZUCASModel.FK_Anuncio_Categoria" FromRole="Anuncio" ToRole="Categoria" />
+    <NavigationProperty Name="Usuario" Relationship="BRAZUCASModel.FK_Anuncio_Usuario" FromRole="Anuncio" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="Categoria">
+    <Key>
+      <PropertyRef Name="CodigoCategoria" />
+    </Key>
+    <Property Name="CodigoCategoria" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="DescricaoCategoria" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Anuncio" Relationship="BRAZUCASModel.FK_Anuncio_Categoria" FromRole="Categoria" ToRole="Anuncio" />
+    <NavigationProperty Name="Noticia" Relationship="BRAZUCASModel.FK_Noticia_Categoria" FromRole="Categoria" ToRole="Noticia" />
+  </EntityType>
+  <EntityType Name="Cidade">
+    <Key>
+      <PropertyRef Name="CodigoCidade" />
+    </Key>
+    <Property Name="CodigoCidade" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+    <Property Name="UF" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="true" />
+    <Property Name="CaminhoImagem" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
+    <Property Name="NomeEstado" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
+    <Property Name="CapacidadeEstadio" Type="Int32" />
+    <Property Name="InformacoesEstadio" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Jogo" Relationship="BRAZUCASModel.FK_Jogo_Cidade" FromRole="Cidade" ToRole="Jogo" />
+  </EntityType>
+  <EntityType Name="Comentario">
+    <Key>
+      <PropertyRef Name="CodigoComentario" />
+    </Key>
+    <Property Name="CodigoComentario" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Conteudo" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="LoginCriacao" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="NomeLoginCriacao" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+    <Property Name="DataCriacao" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="StatusAprovacao" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="UsuarioAprovacao" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="CodigoNoticia" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Noticia" Relationship="BRAZUCASModel.FK_Comentario_Noticia" FromRole="Comentario" ToRole="Noticia" />
+    <NavigationProperty Name="Usuario" Relationship="BRAZUCASModel.FK_Comentario_Usuario" FromRole="Comentario" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="Grupo">
+    <Key>
+      <PropertyRef Name="CodigoGrupo" />
+    </Key>
+    <Property Name="CodigoGrupo" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="DescricaoGrupo" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Selecao" Relationship="BRAZUCASModel.FK_Selecao_Grupo" FromRole="Grupo" ToRole="Selecao" />
+  </EntityType>
+  <EntityType Name="Historia">
+    <Key>
+      <PropertyRef Name="CodigoHistoria" />
+    </Key>
+    <Property Name="CodigoHistoria" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="HistoriaSelecao" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Pais" Type="String" Nullable="false" MaxLength="16" Unicode="false" FixedLength="false" />
+    <Property Name="HistoriaPais" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="CaminhoImagem" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Selecao" Relationship="BRAZUCASModel.FK_Selecao_Historia" FromRole="Historia" ToRole="Selecao" />
+  </EntityType>
+  <EntityType Name="Jogo">
+    <Key>
+      <PropertyRef Name="CodigoJogo" />
+    </Key>
+    <Property Name="CodigoJogo" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CodigoCidade" Type="Int32" Nullable="false" />
+    <Property Name="NomeCidade" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+    <Property Name="LocalVendaIngresso" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
+    <Property Name="Rodada" Type="Int32" Nullable="false" />
+    <Property Name="CodigoSelecaoA" Type="Int32" Nullable="false" />
+    <Property Name="NomeSelecaoA" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+    <Property Name="GolsSelecaoA" Type="Int32" />
+    <Property Name="CodigoSelecaoB" Type="Int32" Nullable="false" />
+    <Property Name="NomeSelecaoB" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+    <Property Name="GolsSelecaoB" Type="Int32" />
+    <Property Name="DataHora" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CaminhoImagem" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Cidade" Relationship="BRAZUCASModel.FK_Jogo_Cidade" FromRole="Jogo" ToRole="Cidade" />
+    <NavigationProperty Name="Selecao" Relationship="BRAZUCASModel.FK_Jogo_SelecaoA" FromRole="Jogo" ToRole="Selecao" />
+    <NavigationProperty Name="Selecao1" Relationship="BRAZUCASModel.FK_Jogo_SelecaoB" FromRole="Jogo" ToRole="Selecao" />
+    <NavigationProperty Name="PalpiteJogo" Relationship="BRAZUCASModel.FK_Palpite_Jogo" FromRole="Jogo" ToRole="PalpiteJogo" />
+  </EntityType>
   <EntityType Name="Noticia">
     <Key>
       <PropertyRef Name="CodigoNoticia" />
     </Key>
     <Property Name="CodigoNoticia" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-    <Property Name="Titulo" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
-    <Property Name="DataPublicacao" Type="DateTime" Precision="3" />
-    <Property Name="Categoria" Type="String" MaxLength="32" Unicode="false" FixedLength="false" />
-    <Property Name="Conteudo" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Titulo" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+    <Property Name="CaminhoImagem" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
+    <Property Name="Conteudo" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+    <Property Name="DataPublicacao" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Autor" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+    <Property Name="CodigoCategoria" Type="Int32" Nullable="false" />
+    <Property Name="DescricaoCategoria" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Categoria" Relationship="BRAZUCASModel.FK_Noticia_Categoria" FromRole="Noticia" ToRole="Categoria" />
+    <NavigationProperty Name="Comentario" Relationship="BRAZUCASModel.FK_Comentario_Noticia" FromRole="Noticia" ToRole="Comentario" />
   </EntityType>
-  <EntityType Name="Padrao">
+  <EntityType Name="PalpiteJogo">
     <Key>
-      <PropertyRef Name="CodigoPadrao" />
+      <PropertyRef Name="CodigoPalpite" />
     </Key>
-    <Property Name="CodigoPadrao" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-    <Property Name="Titulo" Type="String" MaxLength="128" Unicode="true" FixedLength="true" />
-    <Property Name="DataCadastro" Type="DateTime" Precision="3" />
-    <Property Name="Status" Type="Int32" />
+    <Property Name="CodigoPalpite" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="codigoJogo" Type="Int32" Nullable="false" />
+    <Property Name="LoginUsuario" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="DataAposta" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Jogo" Relationship="BRAZUCASModel.FK_Palpite_Jogo" FromRole="PalpiteJogo" ToRole="Jogo" />
+    <NavigationProperty Name="Usuario" Relationship="BRAZUCASModel.FK_Palpite_Usuario" FromRole="PalpiteJogo" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="PontuacaoBolao">
+    <Key>
+      <PropertyRef Name="CodigoBolao" />
+    </Key>
+    <Property Name="CodigoBolao" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="LoginUsuario" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="NomeRazaoSocial" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+    <Property Name="AcertosPlacarCompleto" Type="Int32" />
+    <Property Name="AcertosResultadoPlacarParcial" Type="Int32" />
+    <Property Name="AcertosResultado" Type="Int32" />
+    <Property Name="RankingBolao" Type="Int32" />
+    <NavigationProperty Name="Usuario" Relationship="BRAZUCASModel.FK_Pontuacao_Usuario" FromRole="PontuacaoBolao" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="Selecao">
+    <Key>
+      <PropertyRef Name="CodigoSelecao" />
+    </Key>
+    <Property Name="CodigoSelecao" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+    <Property Name="Pais" Type="String" Nullable="false" MaxLength="16" Unicode="false" FixedLength="false" />
+    <Property Name="CaminhoImagem" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
+    <Property Name="CodigoGrupo" Type="Int32" Nullable="false" />
+    <Property Name="DescricaoGrupo" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+    <Property Name="RankingFIFA" Type="Int32" Nullable="false" />
+    <Property Name="QuantidadeJogos" Type="Int32" />
+    <Property Name="Vitorias" Type="Int32" />
+    <Property Name="Empates" Type="Int32" />
+    <Property Name="Derrotas" Type="Int32" />
+    <Property Name="GolsRealizados" Type="Int32" />
+    <Property Name="GolsSofridos" Type="Int32" />
+    <Property Name="CodigoHistoria" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Grupo" Relationship="BRAZUCASModel.FK_Selecao_Grupo" FromRole="Selecao" ToRole="Grupo" />
+    <NavigationProperty Name="Historia" Relationship="BRAZUCASModel.FK_Selecao_Historia" FromRole="Selecao" ToRole="Historia" />
+    <NavigationProperty Name="Jogo" Relationship="BRAZUCASModel.FK_Jogo_SelecaoA" FromRole="Selecao" ToRole="Jogo" />
+    <NavigationProperty Name="Jogo1" Relationship="BRAZUCASModel.FK_Jogo_SelecaoB" FromRole="Selecao" ToRole="Jogo" />
   </EntityType>
   <EntityType Name="Usuario">
     <Key>
-      <PropertyRef Name="Login" />
+      <PropertyRef Name="LoginUsuario" />
     </Key>
-    <Property Name="Login" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
-    <Property Name="CnpjCpf" Type="Decimal" Nullable="false" Precision="14" Scale="0" />
-    <Property Name="Nome" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
-    <Property Name="Email" Type="String" MaxLength="52" Unicode="false" FixedLength="false" />
-    <Property Name="Telefone" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="LoginUsuario" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="CpfCnpj" Type="Decimal" Nullable="false" Precision="14" Scale="0" />
+    <Property Name="NomeRazaoSocial" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
     <Property Name="DataNascimento" Type="DateTime" Precision="3" />
     <Property Name="Sexo" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
-    <Property Name="Senha" Type="String" MaxLength="24" Unicode="false" FixedLength="false" />
+    <Property Name="TipoPerfil" Type="String" Nullable="false" MaxLength="16" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Anuncio" Relationship="BRAZUCASModel.FK_Anuncio_Usuario" FromRole="Usuario" ToRole="Anuncio" />
+    <NavigationProperty Name="Comentario" Relationship="BRAZUCASModel.FK_Comentario_Usuario" FromRole="Usuario" ToRole="Comentario" />
+    <NavigationProperty Name="PalpiteJogo" Relationship="BRAZUCASModel.FK_Palpite_Usuario" FromRole="Usuario" ToRole="PalpiteJogo" />
+    <NavigationProperty Name="PontuacaoBolao" Relationship="BRAZUCASModel.FK_Pontuacao_Usuario" FromRole="Usuario" ToRole="PontuacaoBolao" />
   </EntityType>
+  <EntityType Name="Bolao">
+    <Key>
+      <PropertyRef Name="LoginUsuario" />
+      <PropertyRef Name="NomeRazaoSocial" />
+    </Key>
+    <Property Name="RankingBolao" Type="Int32" />
+    <Property Name="LoginUsuario" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="NomeRazaoSocial" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+    <Property Name="Pontuacao" Type="Int32" />
+    <Property Name="RelativoPrimeiroColocado" Type="Int32" />
+    <Property Name="RelativoColocadoAnterior" Type="Int32" />
+  </EntityType>
+  <EntityType Name="DesempenhoSelecao">
+    <Key>
+      <PropertyRef Name="RankingFIFA" />
+      <PropertyRef Name="Nome" />
+      <PropertyRef Name="Pais" />
+    </Key>
+    <Property Name="RankingFIFA" Type="Int32" Nullable="false" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+    <Property Name="Pais" Type="String" Nullable="false" MaxLength="16" Unicode="false" FixedLength="false" />
+    <Property Name="CaminhoImagem" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
+    <Property Name="QuantidadeJogos" Type="Int32" />
+    <Property Name="Vitorias" Type="Int32" />
+    <Property Name="Empates" Type="Int32" />
+    <Property Name="Derrotas" Type="Int32" />
+    <Property Name="GolsRealizados" Type="Int32" />
+    <Property Name="GolsSofridos" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Ingresso">
+    <Key>
+      <PropertyRef Name="CodigoJogo" />
+      <PropertyRef Name="NomeCidade" />
+      <PropertyRef Name="Rodada" />
+      <PropertyRef Name="CodigoSelecaoA" />
+      <PropertyRef Name="NomeSelecaoA" />
+      <PropertyRef Name="CodigoSelecaoB" />
+      <PropertyRef Name="NomeSelecaoB" />
+      <PropertyRef Name="DataHora" />
+    </Key>
+    <Property Name="CodigoJogo" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="NomeCidade" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+    <Property Name="LocalVendaIngresso" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
+    <Property Name="Rodada" Type="Int32" Nullable="false" />
+    <Property Name="CodigoSelecaoA" Type="Int32" Nullable="false" />
+    <Property Name="NomeSelecaoA" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+    <Property Name="CodigoSelecaoB" Type="Int32" Nullable="false" />
+    <Property Name="NomeSelecaoB" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+    <Property Name="DataHora" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <Association Name="FK_Anuncio_Categoria">
+    <End Role="Categoria" Type="BRAZUCASModel.Categoria" Multiplicity="1" />
+    <End Role="Anuncio" Type="BRAZUCASModel.Anuncio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categoria">
+        <PropertyRef Name="CodigoCategoria" />
+      </Principal>
+      <Dependent Role="Anuncio">
+        <PropertyRef Name="CodigoCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Anuncio_Usuario">
+    <End Role="Usuario" Type="BRAZUCASModel.Usuario" Multiplicity="1" />
+    <End Role="Anuncio" Type="BRAZUCASModel.Anuncio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="LoginUsuario" />
+      </Principal>
+      <Dependent Role="Anuncio">
+        <PropertyRef Name="LoginCriacao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Noticia_Categoria">
+    <End Role="Categoria" Type="BRAZUCASModel.Categoria" Multiplicity="1" />
+    <End Role="Noticia" Type="BRAZUCASModel.Noticia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categoria">
+        <PropertyRef Name="CodigoCategoria" />
+      </Principal>
+      <Dependent Role="Noticia">
+        <PropertyRef Name="CodigoCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Jogo_Cidade">
+    <End Role="Cidade" Type="BRAZUCASModel.Cidade" Multiplicity="1" />
+    <End Role="Jogo" Type="BRAZUCASModel.Jogo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cidade">
+        <PropertyRef Name="CodigoCidade" />
+      </Principal>
+      <Dependent Role="Jogo">
+        <PropertyRef Name="CodigoCidade" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comentario_Noticia">
+    <End Role="Noticia" Type="BRAZUCASModel.Noticia" Multiplicity="1" />
+    <End Role="Comentario" Type="BRAZUCASModel.Comentario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Noticia">
+        <PropertyRef Name="CodigoNoticia" />
+      </Principal>
+      <Dependent Role="Comentario">
+        <PropertyRef Name="CodigoNoticia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comentario_Usuario">
+    <End Role="Usuario" Type="BRAZUCASModel.Usuario" Multiplicity="1" />
+    <End Role="Comentario" Type="BRAZUCASModel.Comentario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="LoginUsuario" />
+      </Principal>
+      <Dependent Role="Comentario">
+        <PropertyRef Name="LoginCriacao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Selecao_Grupo">
+    <End Role="Grupo" Type="BRAZUCASModel.Grupo" Multiplicity="1" />
+    <End Role="Selecao" Type="BRAZUCASModel.Selecao" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Grupo">
+        <PropertyRef Name="CodigoGrupo" />
+      </Principal>
+      <Dependent Role="Selecao">
+        <PropertyRef Name="CodigoSelecao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Selecao_Historia">
+    <End Role="Historia" Type="BRAZUCASModel.Historia" Multiplicity="1" />
+    <End Role="Selecao" Type="BRAZUCASModel.Selecao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Historia">
+        <PropertyRef Name="CodigoHistoria" />
+      </Principal>
+      <Dependent Role="Selecao">
+        <PropertyRef Name="CodigoHistoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Jogo_SelecaoA">
+    <End Role="Selecao" Type="BRAZUCASModel.Selecao" Multiplicity="1" />
+    <End Role="Jogo" Type="BRAZUCASModel.Jogo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Selecao">
+        <PropertyRef Name="CodigoSelecao" />
+      </Principal>
+      <Dependent Role="Jogo">
+        <PropertyRef Name="CodigoSelecaoA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Jogo_SelecaoB">
+    <End Role="Selecao" Type="BRAZUCASModel.Selecao" Multiplicity="1" />
+    <End Role="Jogo" Type="BRAZUCASModel.Jogo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Selecao">
+        <PropertyRef Name="CodigoSelecao" />
+      </Principal>
+      <Dependent Role="Jogo">
+        <PropertyRef Name="CodigoSelecaoB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Palpite_Jogo">
+    <End Role="Jogo" Type="BRAZUCASModel.Jogo" Multiplicity="1" />
+    <End Role="PalpiteJogo" Type="BRAZUCASModel.PalpiteJogo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Jogo">
+        <PropertyRef Name="CodigoJogo" />
+      </Principal>
+      <Dependent Role="PalpiteJogo">
+        <PropertyRef Name="codigoJogo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Palpite_Usuario">
+    <End Role="Usuario" Type="BRAZUCASModel.Usuario" Multiplicity="1" />
+    <End Role="PalpiteJogo" Type="BRAZUCASModel.PalpiteJogo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="LoginUsuario" />
+      </Principal>
+      <Dependent Role="PalpiteJogo">
+        <PropertyRef Name="LoginUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pontuacao_Usuario">
+    <End Role="Usuario" Type="BRAZUCASModel.Usuario" Multiplicity="1" />
+    <End Role="PontuacaoBolao" Type="BRAZUCASModel.PontuacaoBolao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="LoginUsuario" />
+      </Principal>
+      <Dependent Role="PontuacaoBolao">
+        <PropertyRef Name="LoginUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

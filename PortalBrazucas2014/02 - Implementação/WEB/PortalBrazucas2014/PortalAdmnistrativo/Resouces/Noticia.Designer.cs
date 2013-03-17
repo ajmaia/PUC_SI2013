@@ -61,6 +61,24 @@ namespace PortalAdmnistrativo.Resouces {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Autor.
+        /// </summary>
+        public static string Autor {
+            get {
+                return ResourceManager.GetString("Autor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caminho da Imagem.
+        /// </summary>
+        public static string CaminhoImagem {
+            get {
+                return ResourceManager.GetString("CaminhoImagem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Administração de Notícia.
         /// </summary>
         public static string CasoUso {
@@ -70,11 +88,11 @@ namespace PortalAdmnistrativo.Resouces {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Categoria.
+        ///   Looks up a localized string similar to Código Notícia.
         /// </summary>
-        public static string Categoria {
+        public static string CodigoNoticia {
             get {
-                return ResourceManager.GetString("Categoria", resourceCulture);
+                return ResourceManager.GetString("CodigoNoticia", resourceCulture);
             }
         }
         

@@ -42,6 +42,19 @@
       [DesempenhoSelecao].[GolsSofridos] AS [GolsSofridos]
       FROM [dbo].[DesempenhoSelecao] AS [DesempenhoSelecao]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="Ingresso" EntityType="BRAZUCASModel.Store.Ingresso" store:Type="Views" store:Schema="dbo" store:Name="Ingresso">
+            <DefiningQuery>SELECT 
+      [Ingresso].[CodigoJogo] AS [CodigoJogo], 
+      [Ingresso].[NomeCidade] AS [NomeCidade], 
+      [Ingresso].[LocalVendaIngresso] AS [LocalVendaIngresso], 
+      [Ingresso].[Rodada] AS [Rodada], 
+      [Ingresso].[CodigoSelecaoA] AS [CodigoSelecaoA], 
+      [Ingresso].[NomeSelecaoA] AS [NomeSelecaoA], 
+      [Ingresso].[CodigoSelecaoB] AS [CodigoSelecaoB], 
+      [Ingresso].[NomeSelecaoB] AS [NomeSelecaoB], 
+      [Ingresso].[DataHora] AS [DataHora]
+      FROM [dbo].[Ingresso] AS [Ingresso]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_Anuncio_Categoria" Association="BRAZUCASModel.Store.FK_Anuncio_Categoria">
             <End Role="Categoria" EntitySet="Categoria" />
             <End Role="Anuncio" EntitySet="Anuncio" />
@@ -165,6 +178,8 @@
           </Key>
           <Property Name="CodigoJogo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="CodigoCidade" Type="int" Nullable="false" />
+          <Property Name="NomeCidade" Type="varchar" Nullable="false" MaxLength="128" />
+          <Property Name="LocalVendaIngresso" Type="varchar" MaxLength="128" />
           <Property Name="Rodada" Type="int" Nullable="false" />
           <Property Name="CodigoSelecaoA" Type="int" Nullable="false" />
           <Property Name="NomeSelecaoA" Type="varchar" Nullable="false" MaxLength="128" />
@@ -273,6 +288,30 @@
           <Property Name="Derrotas" Type="int" />
           <Property Name="GolsRealizados" Type="int" />
           <Property Name="GolsSofridos" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'BRAZUCAS.dbo.Ingresso' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="Ingresso">
+          <Key>
+            <PropertyRef Name="CodigoJogo" />
+            <PropertyRef Name="NomeCidade" />
+            <PropertyRef Name="Rodada" />
+            <PropertyRef Name="CodigoSelecaoA" />
+            <PropertyRef Name="NomeSelecaoA" />
+            <PropertyRef Name="CodigoSelecaoB" />
+            <PropertyRef Name="NomeSelecaoB" />
+            <PropertyRef Name="DataHora" />
+          </Key>
+          <Property Name="CodigoJogo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="NomeCidade" Type="varchar" Nullable="false" MaxLength="128" />
+          <Property Name="LocalVendaIngresso" Type="varchar" MaxLength="128" />
+          <Property Name="Rodada" Type="int" Nullable="false" />
+          <Property Name="CodigoSelecaoA" Type="int" Nullable="false" />
+          <Property Name="NomeSelecaoA" Type="varchar" Nullable="false" MaxLength="128" />
+          <Property Name="CodigoSelecaoB" Type="int" Nullable="false" />
+          <Property Name="NomeSelecaoB" Type="varchar" Nullable="false" MaxLength="128" />
+          <Property Name="DataHora" Type="datetime" Nullable="false" />
         </EntityType>
         <Association Name="FK_Anuncio_Categoria">
           <End Role="Categoria" Type="BRAZUCASModel.Store.Categoria" Multiplicity="1" />
@@ -435,7 +474,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BRAZUCASModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="Entities" p1:LazyLoadingEnabled="true">
+        <EntityContainer Name="Entities" p1:LazyLoadingEnabled="true" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
           <EntitySet Name="Anuncio" EntityType="BRAZUCASModel.Anuncio" />
           <EntitySet Name="Categoria" EntityType="BRAZUCASModel.Categoria" />
           <EntitySet Name="Cidade" EntityType="BRAZUCASModel.Cidade" />
@@ -450,6 +489,7 @@
           <EntitySet Name="Usuario" EntityType="BRAZUCASModel.Usuario" />
           <EntitySet Name="Bolao" EntityType="BRAZUCASModel.Bolao" />
           <EntitySet Name="DesempenhoSelecao" EntityType="BRAZUCASModel.DesempenhoSelecao" />
+          <EntitySet Name="Ingresso" EntityType="BRAZUCASModel.Ingresso" />
           <AssociationSet Name="FK_Anuncio_Categoria" Association="BRAZUCASModel.FK_Anuncio_Categoria">
             <End Role="Categoria" EntitySet="Categoria" />
             <End Role="Anuncio" EntitySet="Anuncio" />
@@ -582,6 +622,8 @@
           </Key>
           <Property Name="CodigoJogo" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="CodigoCidade" Type="Int32" Nullable="false" />
+          <Property Name="NomeCidade" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+          <Property Name="LocalVendaIngresso" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
           <Property Name="Rodada" Type="Int32" Nullable="false" />
           <Property Name="CodigoSelecaoA" Type="Int32" Nullable="false" />
           <Property Name="NomeSelecaoA" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
@@ -701,6 +743,27 @@
           <Property Name="Derrotas" Type="Int32" />
           <Property Name="GolsRealizados" Type="Int32" />
           <Property Name="GolsSofridos" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Ingresso">
+          <Key>
+            <PropertyRef Name="CodigoJogo" />
+            <PropertyRef Name="NomeCidade" />
+            <PropertyRef Name="Rodada" />
+            <PropertyRef Name="CodigoSelecaoA" />
+            <PropertyRef Name="NomeSelecaoA" />
+            <PropertyRef Name="CodigoSelecaoB" />
+            <PropertyRef Name="NomeSelecaoB" />
+            <PropertyRef Name="DataHora" />
+          </Key>
+          <Property Name="CodigoJogo" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="NomeCidade" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+          <Property Name="LocalVendaIngresso" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
+          <Property Name="Rodada" Type="Int32" Nullable="false" />
+          <Property Name="CodigoSelecaoA" Type="Int32" Nullable="false" />
+          <Property Name="NomeSelecaoA" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+          <Property Name="CodigoSelecaoB" Type="Int32" Nullable="false" />
+          <Property Name="NomeSelecaoB" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+          <Property Name="DataHora" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <Association Name="FK_Anuncio_Categoria">
           <End Role="Categoria" Type="BRAZUCASModel.Categoria" Multiplicity="1" />
@@ -939,6 +1002,8 @@
               <MappingFragment StoreEntitySet="Jogo">
                 <ScalarProperty Name="CodigoJogo" ColumnName="CodigoJogo" />
                 <ScalarProperty Name="CodigoCidade" ColumnName="CodigoCidade" />
+                <ScalarProperty Name="NomeCidade" ColumnName="NomeCidade" />
+                <ScalarProperty Name="LocalVendaIngresso" ColumnName="LocalVendaIngresso" />
                 <ScalarProperty Name="Rodada" ColumnName="Rodada" />
                 <ScalarProperty Name="CodigoSelecaoA" ColumnName="CodigoSelecaoA" />
                 <ScalarProperty Name="NomeSelecaoA" ColumnName="NomeSelecaoA" />
@@ -1048,6 +1113,21 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Ingresso">
+            <EntityTypeMapping TypeName="BRAZUCASModel.Ingresso">
+              <MappingFragment StoreEntitySet="Ingresso">
+                <ScalarProperty Name="CodigoJogo" ColumnName="CodigoJogo" />
+                <ScalarProperty Name="NomeCidade" ColumnName="NomeCidade" />
+                <ScalarProperty Name="LocalVendaIngresso" ColumnName="LocalVendaIngresso" />
+                <ScalarProperty Name="Rodada" ColumnName="Rodada" />
+                <ScalarProperty Name="CodigoSelecaoA" ColumnName="CodigoSelecaoA" />
+                <ScalarProperty Name="NomeSelecaoA" ColumnName="NomeSelecaoA" />
+                <ScalarProperty Name="CodigoSelecaoB" ColumnName="CodigoSelecaoB" />
+                <ScalarProperty Name="NomeSelecaoB" ColumnName="NomeSelecaoB" />
+                <ScalarProperty Name="DataHora" ColumnName="DataHora" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1062,7 +1142,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>

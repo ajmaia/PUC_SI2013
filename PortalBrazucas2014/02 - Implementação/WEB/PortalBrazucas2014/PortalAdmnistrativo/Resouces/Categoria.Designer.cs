@@ -22,14 +22,14 @@ namespace PortalAdmnistrativo.Resouces {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Padrao {
+    public class Categoria {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Padrao() {
+        internal Categoria() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace PortalAdmnistrativo.Resouces {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PortalAdmnistrativo.Resouces.Padrao", typeof(Padrao).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PortalAdmnistrativo.Resouces.Categoria", typeof(Categoria).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,56 +61,29 @@ namespace PortalAdmnistrativo.Resouces {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Código Padrão.
+        ///   Looks up a localized string similar to Administração de Categoria.
         /// </summary>
-        public static string CodigoPadrao {
+        public static string CasoUso {
             get {
-                return ResourceManager.GetString("CodigoPadrao", resourceCulture);
+                return ResourceManager.GetString("CasoUso", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Data de Cadastro.
+        ///   Looks up a localized string similar to Código Categoria.
         /// </summary>
-        public static string DataCadastro {
+        public static string CodigoCategoria {
             get {
-                return ResourceManager.GetString("DataCadastro", resourceCulture);
+                return ResourceManager.GetString("CodigoCategoria", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Status.
+        ///   Looks up a localized string similar to Descrição Categoria.
         /// </summary>
-        public static string Status {
+        public static string DescricaoCategoria {
             get {
-                return ResourceManager.GetString("Status", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Tela Padrão.
-        /// </summary>
-        public static string Titulo {
-            get {
-                return ResourceManager.GetString("Titulo", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Pesquisa.
-        /// </summary>
-        public static string TituloBusca {
-            get {
-                return ResourceManager.GetString("TituloBusca", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Resultados.
-        /// </summary>
-        public static string TituloResultado {
-            get {
-                return ResourceManager.GetString("TituloResultado", resourceCulture);
+                return ResourceManager.GetString("DescricaoCategoria", resourceCulture);
             }
         }
     }

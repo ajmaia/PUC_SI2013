@@ -142,11 +142,38 @@ namespace PortalAdmnistrativo.Resouces {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Notícias e Comentários.
+        /// </summary>
+        public static string mnuGerenciarNoticias {
+            get {
+                return ResourceManager.GetString("mnuGerenciarNoticias", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Deseja realmente excluir o(s) registro(s) selecionado(s)?.
         /// </summary>
         public static string msgConfirmaExclusao {
             get {
                 return ResourceManager.GetString("msgConfirmaExclusao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Todos.
+        /// </summary>
+        public static string optSelecionarTodos {
+            get {
+                return ResourceManager.GetString("optSelecionarTodos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Selecione.
+        /// </summary>
+        public static string optSelecioneAlgum {
+            get {
+                return ResourceManager.GetString("optSelecioneAlgum", resourceCulture);
             }
         }
         

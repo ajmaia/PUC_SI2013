@@ -39,5 +39,6 @@ namespace PortalAdmnistrativo.Models
         public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Bolao> Bolao { get; set; }
         public DbSet<DesempenhoSelecao> DesempenhoSelecao { get; set; }
+        public DbSet<Ingresso> Ingresso { get; set; }
     }
 }

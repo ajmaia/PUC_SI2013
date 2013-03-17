@@ -13,6 +13,17 @@ namespace PortalAdmnistrativo.Controllers
     {
         private Entities db = new Entities();
 
+        protected IQueryable listaCategorias()
+        {
+            var context = new Entities();
+
+            var resultado = (from item in context.Categoria
+                             orderby item.DescricaoCategoria
+                             select new { Text = item.DescricaoCategoria, Value = item.CodigoCategoria });
+
+            return resultado;
+        }
+
         /// <summary>
         /// 
         /// </summary>
@@ -22,6 +33,7 @@ namespace PortalAdmnistrativo.Controllers
             var parametros = new Noticia();
             this.ViewBag.Parametros = parametros;
             this.ViewBag.Resultados = parametros.buscar();
+            this.ViewBag.ListaCategorias = listaCategorias();
 
             return View();
         }
@@ -33,9 +45,11 @@ namespace PortalAdmnistrativo.Controllers
         /// <returns></returns>
         public ActionResult Buscar(Noticia parametros)
         {
+            this.ViewBag.ListaCategorias = listaCategorias();
+            this.ViewBag.Parametros = parametros;
             this.ViewBag.Resultado = parametros.buscar();
 
-            return View("Index");
+            return View("Index", this.ViewBag.Resultado);
         }
 
         /// <summary>
@@ -44,7 +58,8 @@ namespace PortalAdmnistrativo.Controllers
         /// <returns></returns>
         public ActionResult Create()
         {
-            return PartialView("_incluir");
+            this.ViewBag.ListaCategorias = listaCategorias();
+            return PartialView("_painelInclusao");
         }
 
         /// <summary>
@@ -55,14 +70,16 @@ namespace PortalAdmnistrativo.Controllers
         [HttpPost]
         public ActionResult Create(Noticia noticia)
         {
-            //if (ModelState.IsValid)
-            //{
-            //    db.Noticia.AddObject(noticia);
-            //    db.SaveChanges();
-            //    return RedirectToAction("Index");
-            //}
+            noticia.DataPublicacaoString = DateTime.Now.ToShortTimeString();
 
-            return PartialView("_incluir", noticia);
+            if (ModelState.IsValid)
+            {
+                db.Noticia.Add(noticia);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return PartialView("_painelInclusao", noticia);
         }
 
         /// <summary>

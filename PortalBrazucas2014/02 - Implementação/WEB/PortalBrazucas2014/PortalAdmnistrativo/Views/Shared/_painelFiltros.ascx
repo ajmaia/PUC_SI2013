@@ -6,11 +6,10 @@
         ViewContext.RouteData.Values["controller"].ToString(),
         new AjaxOptions
         {
-            InsertionMode = InsertionMode.InsertBefore,
-            UpdateTargetId = "resultados",
+            InsertionMode = InsertionMode.Replace,
+            UpdateTargetId = "resultado",
             HttpMethod = "POST",
-            OnBegin = string.Format("$('#resultados').exibirCarregando();"),
-            OnSuccess = string.Format("$('#resultados').ocultarCarregando();atualizarResultados();")
+            OnSuccess = string.Format("$('#resultado').load('_painelResultados');")
         }))
     {
 %>
@@ -30,7 +29,7 @@
 
     function carregarPopUpIncluir() {
         $("body").append("<div id='popupIncluir'></div>")
-
+        
         var urlCaminho = "/" + '<%: ViewContext.RouteData.Values["controller"].ToString() %>' + "/Create"
 
         $.ajax({
@@ -45,15 +44,7 @@
                     modal: true,
                     width: 900,
                     height: 500,
-                    title: '<%: String.Format("{0} {1}", PortalAdmnistrativo.Resouces.Geral.pnlTituloInclusao, ViewContext.RouteData.Values["controller"].ToString()) %>',
-                    buttons: {
-                        Salvar: function () {
-                            $(this).dialog("close");
-                        },
-                        Cancelar: function () {
-                            $(this).dialog("close");
-                        }
-                    }
+                    title: '<%: String.Format("{0} {1}", PortalAdmnistrativo.Resouces.Geral.pnlTituloInclusao, ViewContext.RouteData.Values["controller"].ToString()) %>'
                 })
                 .html(data);
             },

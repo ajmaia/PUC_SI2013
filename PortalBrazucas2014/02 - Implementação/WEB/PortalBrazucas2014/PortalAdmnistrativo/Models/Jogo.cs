@@ -21,6 +21,8 @@ namespace PortalAdmnistrativo.Models
     
         public int CodigoJogo { get; set; }
         public int CodigoCidade { get; set; }
+        public string NomeCidade { get; set; }
+        public string LocalVendaIngresso { get; set; }
         public int Rodada { get; set; }
         public int CodigoSelecaoA { get; set; }
         public string NomeSelecaoA { get; set; }

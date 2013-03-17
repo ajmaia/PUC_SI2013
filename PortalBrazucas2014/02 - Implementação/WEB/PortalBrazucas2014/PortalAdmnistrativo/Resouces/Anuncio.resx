@@ -117,22 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CodigoPadrao" xml:space="preserve">
-    <value>Código Padrão</value>
+  <data name="CasoUso" xml:space="preserve">
+    <value>Administração de Anúncios</value>
   </data>
-  <data name="DataCadastro" xml:space="preserve">
-    <value>Data de Cadastro</value>
+  <data name="CodigoAnuncio" xml:space="preserve">
+    <value>Código Anuncio</value>
   </data>
-  <data name="Status" xml:space="preserve">
-    <value>Status</value>
+  <data name="Conteudo" xml:space="preserve">
+    <value>Conteúdo do Anúncio</value>
+  </data>
+  <data name="DataPublicacao" xml:space="preserve">
+    <value>Data Publicação</value>
+  </data>
+  <data name="pnlTituloExclusao" xml:space="preserve">
+    <value>Excluir Anúncios</value>
+  </data>
+  <data name="pnlTituloInclusao" xml:space="preserve">
+    <value>Incluir Novo Anúncio</value>
   </data>
   <data name="Titulo" xml:space="preserve">
-    <value>Tela Padrão</value>
+    <value>Titulo Anúncio</value>
   </data>
-  <data name="TituloBusca" xml:space="preserve">
-    <value>Pesquisa</value>
+  <data name="CaminhoImagem" xml:space="preserve">
+    <value>Caminho da Imagem</value>
   </data>
-  <data name="TituloResultado" xml:space="preserve">
-    <value>Resultados</value>
+  <data name="LoginCriacao" xml:space="preserve">
+    <value>Login Criação</value>
+  </data>
+  <data name="StatusAprovacao" xml:space="preserve">
+    <value>Status Aprovação</value>
+  </data>
+  <data name="UsuarioAprovacao" xml:space="preserve">
+    <value>Usuário Aprovação</value>
   </data>
 </root>
