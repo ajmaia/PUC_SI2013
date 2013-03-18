@@ -339,6 +339,7 @@
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Scripts\Site.js" />
     <Content Include="Views\Imagens\agua_abertura.png" />
+    <Content Include="Views\Noticia\_editar.ascx" />
     <Content Include="Views\Noticia\Create.aspx" />
     <Content Include="Views\Noticia\Delete.aspx" />
     <Content Include="Views\Noticia\Details.aspx" />

@@ -13,6 +13,26 @@ namespace PortalAdmnistrativo.Controllers
     {
         private Entities db = new Entities();
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="codCategoria"></param>
+        /// <returns></returns>
+        protected string retornaCategorias(int codCategoria)
+        {
+            var context = new Entities();
+
+            var resultado = (from item in context.Categoria
+                             where item.CodigoCategoria == codCategoria
+                             select item.DescricaoCategoria);
+
+            return resultado.Single();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         protected IQueryable listaCategorias()
         {
             var context = new Entities();
@@ -71,6 +91,7 @@ namespace PortalAdmnistrativo.Controllers
         public ActionResult Create(Noticia noticia)
         {
             noticia.DataPublicacaoString = DateTime.Now.ToShortTimeString();
+            noticia.DescricaoCategoria = retornaCategorias(noticia.CodigoCategoria);
 
             if (ModelState.IsValid)
             {
@@ -89,25 +110,25 @@ namespace PortalAdmnistrativo.Controllers
         /// <returns></returns>
         public ActionResult Editar(int id)
         {
+            this.ViewBag.ListaCategorias = listaCategorias();
             Noticia noticia = db.Noticia.Single(n => n.CodigoNoticia == id);
-            return PartialView("_editar", noticia);
+            return PartialView("_painelEdicao", noticia);
         }
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="hospital"></param>
+        /// <param name="noticia"></param>
         /// <returns></returns>
         [HttpPost, ActionName("Editar")]
         public ActionResult EditConfirmed(Noticia noticia)
         {
-            //if (ModelState.IsValid)
-            //{
-            //    db.Noticia.Attach(noticia);
-            //    db.ObjectStateManager.ChangeObjectState(noticia, EntityState.Modified);
-            //    db.SaveChanges();
-            //    return RedirectToAction("Index");
-            //}
+            if (ModelState.IsValid)
+            {
+                db.Noticia.Attach(noticia);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
 
             return RedirectToAction("Erro");
         }
@@ -142,7 +163,7 @@ namespace PortalAdmnistrativo.Controllers
         public ActionResult Excluir(int id)
         {
             IEnumerable<Noticia> noticia = db.Noticia.Where(h => h.CodigoNoticia == id);
-            return PartialView("_excluir", noticia);
+            return PartialView("_painelExclusao", noticia);
         }
 
         /// <summary>
@@ -151,7 +172,7 @@ namespace PortalAdmnistrativo.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpPost, ActionName("Excluir")]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(Noticia entidade)
         {
             //Noticia noticia = db.Noticia.Single(h => h.CodigoNoticia == id);
             //db.Noticia.DeleteObject(noticia);

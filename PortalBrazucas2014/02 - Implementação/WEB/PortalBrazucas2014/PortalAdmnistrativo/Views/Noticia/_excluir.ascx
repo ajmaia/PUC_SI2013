@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<IEnumerable<PortalAdmnistrativo.Models.Padrao>>" %>
+﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<IEnumerable<PortalAdmnistrativo.Models.Noticia>>" %>
 
 <%
     var idItem = "item_" + Guid.NewGuid().ToString().Substring(0, 5).Replace("-", "");
@@ -13,9 +13,9 @@
               selectedRowStyle: "webgrid-row-sel",
               footerStyle: "webgrid-footer",
               columns: grid.Columns(
-                grid.Column(columnName: "Titulo", header: PortalAdmnistrativo.Resouces.Noticia.Titulo, format: (item) => item.Titulo, style: "webgrid-coluna300"),
-                grid.Column(columnName: "DataPublicacao", header: PortalAdmnistrativo.Resouces.Noticia.DataPublicacao, format: (item) => item.DataPublicacao, style: "webgrid-coluna120"),
-                grid.Column(columnName: "Categoria", header: PortalAdmnistrativo.Resouces.Noticia.Categoria, format: (item) => item.Categoria, style: "webgrid-coluna120")
+                  grid.Column(columnName: "Titulo", header: PortalAdmnistrativo.Resouces.Noticia.Titulo, format: (item) => item.Titulo, style: "webgrid-coluna300"),
+                  grid.Column(columnName: "DataPublicacao", header: PortalAdmnistrativo.Resouces.Noticia.DataPublicacao, format: (item) => item.DataPublicacao, style: "webgrid-coluna120"),
+                  grid.Column(columnName: "DescricaoCategoria", header: PortalAdmnistrativo.Resouces.Categoria.DescricaoCategoria, format: (item) => item.DescricaoCategoria, style: "webgrid-coluna120")
               ))
 %>
 

@@ -26,9 +26,12 @@ namespace PortalAdmnistrativo.Models
             }
         }
 
+        
+
         public IQueryable<Noticia> buscar()
         {
             Entities entity = new Entities();
+            DateTime proxDia = this.DataPublicacao.AddDays(1);
 
             var query = entity.Noticia.AsQueryable<Noticia>();
 
@@ -42,7 +45,7 @@ namespace PortalAdmnistrativo.Models
                 query = query.Where(item => item.CodigoCategoria == this.CodigoCategoria);
 
             if (this.DataPublicacao >= DateTime.Parse("2013-01-01"))
-                query = query.Where(item => item.DataPublicacao == this.DataPublicacao);
+                query = query.Where(item => item.DataPublicacao >= this.DataPublicacao & item.DataPublicacao < proxDia);
 
             return query;
         }

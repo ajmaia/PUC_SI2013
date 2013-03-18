@@ -44,7 +44,15 @@
                     modal: true,
                     width: 900,
                     height: 500,
-                    title: '<%: String.Format("{0} {1}", PortalAdmnistrativo.Resouces.Geral.pnlTituloInclusao, ViewContext.RouteData.Values["controller"].ToString()) %>'
+                    title: '<%: String.Format("{0} {1}", PortalAdmnistrativo.Resouces.Geral.pnlTituloInclusao, ViewContext.RouteData.Values["controller"].ToString()) %>',
+                    buttons: {
+                        Salvar: function () {
+                            $('#incluir').submit();
+                        },
+                        Cancelar: function () {
+                            $(this).dialog("close");
+                        }
+                    }
                 })
                 .html(data);
             },

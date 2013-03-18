@@ -187,6 +187,24 @@ namespace PortalAdmnistrativo.Resouces {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Editar.
+        /// </summary>
+        public static string pnlTituloEdicao {
+            get {
+                return ResourceManager.GetString("pnlTituloEdicao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Excluir.
+        /// </summary>
+        public static string pnlTituloExclusao {
+            get {
+                return ResourceManager.GetString("pnlTituloExclusao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Incluir.
         /// </summary>
         public static string pnlTituloInclusao {

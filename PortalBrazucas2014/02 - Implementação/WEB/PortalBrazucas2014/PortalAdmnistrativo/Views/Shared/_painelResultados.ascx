@@ -97,8 +97,19 @@
 
     function carregarPopUp(cod, acao) {
         $("body").append("<div id='popup'></div>")
+        
+        var wid = 0;
+        <% var tipo = ""; %>
 
-        var wid = acao == "Excluir" ? 400 : 400;
+        if(acao == "Excluir")
+        {
+            wid = 400;
+            <% tipo = PortalAdmnistrativo.Resouces.Geral.pnlTituloExclusao; %>
+        }
+        else {
+            wid = 400;
+            <% tipo = PortalAdmnistrativo.Resouces.Geral.pnlTituloEdicao; %>
+        }
 
         $.ajax({
             url: "/" + '<%: ViewContext.RouteData.Values["controller"].ToString() %>' + "/" + acao,
@@ -115,7 +126,15 @@
                         modal: true,
                         width: 580,
                         height: wid,
-                        title: acao
+                        title: '<%: String.Format("{0} {1}", tipo, ViewContext.RouteData.Values["controller"].ToString()) %>',
+                        buttons: {
+                            Ok: function () {
+                                $('#acaoGrid').submit();
+                            },
+                            Cancelar: function () {
+                                $(this).dialog("close");
+                            }
+                        }
                     })
                     .html(data);
             },
@@ -157,4 +176,5 @@
             async: false
         });
     }
+
 </script>

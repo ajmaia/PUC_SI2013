@@ -159,6 +159,12 @@
   <data name="pnlTituloBusca" xml:space="preserve">
     <value>Pesquisar</value>
   </data>
+  <data name="pnlTituloEdicao" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="pnlTituloExclusao" xml:space="preserve">
+    <value>Excluir</value>
+  </data>
   <data name="pnlTituloInclusao" xml:space="preserve">
     <value>Incluir</value>
   </data>
