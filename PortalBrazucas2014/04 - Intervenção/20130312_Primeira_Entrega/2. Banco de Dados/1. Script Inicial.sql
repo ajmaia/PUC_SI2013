@@ -201,12 +201,7 @@ CREATE TABLE [dbo].[Historia](
 	[HistoriaPais] [TEXT] NULL,
 	[CaminhoImagem] [VARCHAR](128) NULL,
 	[RankingFIFA] [INT] NOT NULL,
-	[QuantidadeJogosHistorico] [INT] NULL,
-	[VitoriasHistorico] [INT] NULL,
-	[EmpatesHistorico] [INT] NULL,
-	[DerrotasHistorico] [INT] NULL,
-	[GolsRealizadosHistorico] [INT] NULL,
-	[GolsSofridosHistorico] [INT] NULL
+	[TitulosConquistados] [VARCHAR](128) NULL
  CONSTRAINT [PK_HistoriaSelecao] PRIMARY KEY CLUSTERED 
 (
 	[CodigoHistoria] ASC
@@ -250,31 +245,6 @@ GO
 
 ALTER TABLE [dbo].[Selecao]  WITH CHECK ADD  CONSTRAINT [FK_Selecao_Historia] FOREIGN KEY([CodigoHistoria])
 REFERENCES [dbo].[Historia] ([CodigoHistoria])
-GO
-
----------------------------------------------------------------------------------------------
--- CRIAÇÃO DA TABELA VW_DESEMPENHOSELECAO ---------------------------------------------------
----------------------------------------------------------------------------------------------
-
-USE BRAZUCAS
-GO
-
-CREATE VIEW [dbo].[DesempenhoSelecao]
-AS
-
-SELECT
-	His.[RankingFIFA],
-	Sel.[Nome],
-	Sel.[Pais],
-	Sel.[CaminhoImagem],
-	His.[QuantidadeJogosHistorico],
-	His.[VitoriasHistorico],
-	His.[EmpatesHistorico],
-	His.[DerrotasHistorico],
-	His.[GolsRealizadosHistorico],
-	His.[GolsSofridosHistorico]
-FROM [dbo].[Selecao] AS Sel
-INNER JOIN [dbo].[Historia] AS His ON His.[CodigoHistoria] = Sel.[CodigoHistoria]
 GO
 
 ---------------------------------------------------------------------------------------------
@@ -356,7 +326,7 @@ USE BRAZUCAS
 GO
 
 CREATE TABLE [dbo].[PontuacaoBolao](
-	[CodigoBolao] [INT] IDENTITY(1,1) NOT NULL,
+	[CodigoPontuacaoBolao] [INT] IDENTITY(1,1) NOT NULL,
 	[LoginUsuario] [VARCHAR](8) NOT NULL,
 	[NomeRazaoSocial] [VARCHAR] (128) NOT NULL,
 	[AcertosPlacarCompleto] [INT] NULL,
@@ -365,10 +335,13 @@ CREATE TABLE [dbo].[PontuacaoBolao](
 	[RankingBolao] [INT] NULL
  CONSTRAINT [PK_PontuacaoBolao] PRIMARY KEY CLUSTERED 
 (
-	[CodigoBolao] ASC
+	[CodigoPontuacaoBolao] ASC
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
+GO
+
+CREATE UNIQUE INDEX AK_LoginUsuario ON [PontuacaoBolao] ([LoginUsuario]); 
 GO
 
 ALTER TABLE [dbo].[PontuacaoBolao]  WITH CHECK ADD  CONSTRAINT [FK_Pontuacao_Usuario] FOREIGN KEY([LoginUsuario])
