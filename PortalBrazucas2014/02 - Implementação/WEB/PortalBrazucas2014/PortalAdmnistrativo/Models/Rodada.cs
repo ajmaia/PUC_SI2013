@@ -12,18 +12,17 @@ namespace PortalAdmnistrativo.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Categoria
+    public partial class Rodada
     {
-        public Categoria()
-        {
-            this.Anuncios = new HashSet<Anuncio>();
-            this.Noticias = new HashSet<Noticia>();
-        }
-    
-        public int CodigoCategoria { get; set; }
-        public string DescricaoCategoria { get; set; }
-    
-        public virtual ICollection<Anuncio> Anuncios { get; set; }
-        public virtual ICollection<Noticia> Noticias { get; set; }
+        public int Rodada1 { get; set; }
+        public string Fase { get; set; }
+        public int CodigoSelecao { get; set; }
+        public string NomeSelecao { get; set; }
+        public int CodigoGrupo { get; set; }
+        public Nullable<int> Empates { get; set; }
+        public Nullable<int> Vitorias { get; set; }
+        public Nullable<int> Derrotas { get; set; }
+        public Nullable<int> GolsRealizados { get; set; }
+        public Nullable<int> GolsSofridos { get; set; }
     }
 }

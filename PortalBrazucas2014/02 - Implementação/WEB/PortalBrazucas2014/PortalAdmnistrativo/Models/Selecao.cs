@@ -16,8 +16,8 @@ namespace PortalAdmnistrativo.Models
     {
         public Selecao()
         {
-            this.Jogo = new HashSet<Jogo>();
-            this.Jogo1 = new HashSet<Jogo>();
+            this.Jogoes = new HashSet<Jogo>();
+            this.Jogoes1 = new HashSet<Jogo>();
         }
     
         public int CodigoSelecao { get; set; }
@@ -26,7 +26,6 @@ namespace PortalAdmnistrativo.Models
         public string CaminhoImagem { get; set; }
         public int CodigoGrupo { get; set; }
         public string DescricaoGrupo { get; set; }
-        public int RankingFIFA { get; set; }
         public Nullable<int> QuantidadeJogos { get; set; }
         public Nullable<int> Vitorias { get; set; }
         public Nullable<int> Empates { get; set; }
@@ -37,7 +36,7 @@ namespace PortalAdmnistrativo.Models
     
         public virtual Grupo Grupo { get; set; }
         public virtual Historia Historia { get; set; }
-        public virtual ICollection<Jogo> Jogo { get; set; }
-        public virtual ICollection<Jogo> Jogo1 { get; set; }
+        public virtual ICollection<Jogo> Jogoes { get; set; }
+        public virtual ICollection<Jogo> Jogoes1 { get; set; }
     }
 }

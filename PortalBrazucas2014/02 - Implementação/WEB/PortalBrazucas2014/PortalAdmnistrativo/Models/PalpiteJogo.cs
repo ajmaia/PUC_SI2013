@@ -18,6 +18,8 @@ namespace PortalAdmnistrativo.Models
         public int codigoJogo { get; set; }
         public string LoginUsuario { get; set; }
         public System.DateTime DataAposta { get; set; }
+        public int PalpiteGolsSelecaoA { get; set; }
+        public int PalpiteGolsSelecaoB { get; set; }
     
         public virtual Jogo Jogo { get; set; }
         public virtual Usuario Usuario { get; set; }

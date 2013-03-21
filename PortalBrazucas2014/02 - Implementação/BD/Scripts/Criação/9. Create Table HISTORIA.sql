@@ -10,7 +10,14 @@ CREATE TABLE [dbo].[Historia](
 	[HistoriaSelecao] [TEXT] NULL,
 	[Pais] [VARCHAR](16) NOT NULL,
 	[HistoriaPais] [TEXT] NULL,
-	[CaminhoImagem] [VARCHAR](128) NULL
+	[CaminhoImagem] [VARCHAR](128) NULL,
+	[RankingFIFA] [INT] NOT NULL,
+	[QuantidadeJogosHistorico] [INT] NULL,
+	[VitoriasHistorico] [INT] NULL,
+	[EmpatesHistorico] [INT] NULL,
+	[DerrotasHistorico] [INT] NULL,
+	[GolsRealizadosHistorico] [INT] NULL,
+	[GolsSofridosHistorico] [INT] NULL
  CONSTRAINT [PK_HistoriaSelecao] PRIMARY KEY CLUSTERED 
 (
 	[CodigoHistoria] ASC

@@ -9,15 +9,16 @@ CREATE VIEW [dbo].[DesempenhoSelecao]
 AS
 
 SELECT
-	[RankingFIFA],
-	[Nome],
-	[Pais],
-	[CaminhoImagem],
-	[QuantidadeJogos],
-	[Vitorias],
-	[Empates],
-	[Derrotas],
-	[GolsRealizados],
-	[GolsSofridos]
-FROM [dbo].[Selecao]
+	His.[RankingFIFA],
+	Sel.[Nome],
+	Sel.[Pais],
+	Sel.[CaminhoImagem],
+	His.[QuantidadeJogosHistorico],
+	His.[VitoriasHistorico],
+	His.[EmpatesHistorico],
+	His.[DerrotasHistorico],
+	His.[GolsRealizadosHistorico],
+	His.[GolsSofridosHistorico]
+FROM [dbo].[Selecao] AS Sel
+INNER JOIN [dbo].[Historia] AS His ON His.[CodigoHistoria] = Sel.[CodigoHistoria]
 GO

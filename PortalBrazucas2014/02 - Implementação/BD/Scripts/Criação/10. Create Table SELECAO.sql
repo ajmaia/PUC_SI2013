@@ -12,7 +12,6 @@ CREATE TABLE [dbo].[Selecao](
 	[CaminhoImagem] [VARCHAR](128) NULL,
 	[CodigoGrupo] [INT] NOT NULL,
 	[DescricaoGrupo] [VARCHAR] (128) NOT NULL,
-	[RankingFIFA] [INT] NOT NULL,
 	[QuantidadeJogos] [INT] NULL,
 	[Vitorias] [INT] NULL,
 	[Empates] [INT] NULL,

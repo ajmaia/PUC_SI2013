@@ -16,7 +16,7 @@ namespace PortalAdmnistrativo.Models
     {
         public Historia()
         {
-            this.Selecao = new HashSet<Selecao>();
+            this.Selecaos = new HashSet<Selecao>();
         }
     
         public int CodigoHistoria { get; set; }
@@ -24,7 +24,14 @@ namespace PortalAdmnistrativo.Models
         public string Pais { get; set; }
         public string HistoriaPais { get; set; }
         public string CaminhoImagem { get; set; }
+        public int RankingFIFA { get; set; }
+        public Nullable<int> QuantidadeJogosHistorico { get; set; }
+        public Nullable<int> VitoriasHistorico { get; set; }
+        public Nullable<int> EmpatesHistorico { get; set; }
+        public Nullable<int> DerrotasHistorico { get; set; }
+        public Nullable<int> GolsRealizadosHistorico { get; set; }
+        public Nullable<int> GolsSofridosHistorico { get; set; }
     
-        public virtual ICollection<Selecao> Selecao { get; set; }
+        public virtual ICollection<Selecao> Selecaos { get; set; }
     }
 }

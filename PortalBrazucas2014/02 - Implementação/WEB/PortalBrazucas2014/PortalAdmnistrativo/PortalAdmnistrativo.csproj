@@ -139,14 +139,14 @@
     <Compile Include="Models\Categoria.cs">
       <DependentUpon>BRAZUCASModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CategoriaModel.cs" />
+    <Compile Include="Models\AnuncioModel.cs" />
     <Compile Include="Models\Cidade.cs">
       <DependentUpon>BRAZUCASModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Comentario.cs">
       <DependentUpon>BRAZUCASModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CategoriaModel.cs" />
-    <Compile Include="Models\AnuncioModel.cs" />
     <Compile Include="Models\ComentarioModel.cs" />
     <Compile Include="Models\DesempenhoSelecao.cs">
       <DependentUpon>BRAZUCASModel.tt</DependentUpon>
@@ -175,6 +175,9 @@
       <DependentUpon>BRAZUCASModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PontuacaoBolao.cs">
+      <DependentUpon>BRAZUCASModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Rodada.cs">
       <DependentUpon>BRAZUCASModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Selecao.cs">

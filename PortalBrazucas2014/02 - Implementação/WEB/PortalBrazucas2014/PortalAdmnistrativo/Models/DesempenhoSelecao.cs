@@ -18,11 +18,11 @@ namespace PortalAdmnistrativo.Models
         public string Nome { get; set; }
         public string Pais { get; set; }
         public string CaminhoImagem { get; set; }
-        public Nullable<int> QuantidadeJogos { get; set; }
-        public Nullable<int> Vitorias { get; set; }
-        public Nullable<int> Empates { get; set; }
-        public Nullable<int> Derrotas { get; set; }
-        public Nullable<int> GolsRealizados { get; set; }
-        public Nullable<int> GolsSofridos { get; set; }
+        public Nullable<int> QuantidadeJogosHistorico { get; set; }
+        public Nullable<int> VitoriasHistorico { get; set; }
+        public Nullable<int> EmpatesHistorico { get; set; }
+        public Nullable<int> DerrotasHistorico { get; set; }
+        public Nullable<int> GolsRealizadosHistorico { get; set; }
+        public Nullable<int> GolsSofridosHistorico { get; set; }
     }
 }

@@ -16,7 +16,7 @@ namespace PortalAdmnistrativo.Models
     {
         public Jogo()
         {
-            this.PalpiteJogo = new HashSet<PalpiteJogo>();
+            this.PalpiteJogoes = new HashSet<PalpiteJogo>();
         }
     
         public int CodigoJogo { get; set; }
@@ -36,6 +36,6 @@ namespace PortalAdmnistrativo.Models
         public virtual Cidade Cidade { get; set; }
         public virtual Selecao Selecao { get; set; }
         public virtual Selecao Selecao1 { get; set; }
-        public virtual ICollection<PalpiteJogo> PalpiteJogo { get; set; }
+        public virtual ICollection<PalpiteJogo> PalpiteJogoes { get; set; }
     }
 }
