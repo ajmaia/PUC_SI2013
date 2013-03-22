@@ -26,8 +26,6 @@ namespace PortalAdmnistrativo.Models
             }
         }
 
-        
-
         public IQueryable<Noticia> buscar()
         {
             Entities entity = new Entities();
@@ -49,5 +47,65 @@ namespace PortalAdmnistrativo.Models
 
             return query;
         }
+
+        public bool criar()
+        {
+            try
+            {
+                Entities entity = new Entities();
+
+                entity.PR_INSERIR_NOTICIA(this.Titulo, this.CaminhoImagem, this.Conteudo,
+                    this.DataPublicacao, this.Autor, this.CodigoCategoria, this.DescricaoCategoria);
+
+                entity.SaveChanges();
+
+                return true;
+            }
+            catch (Exception)
+            {
+                // TODO: adicionar tratamentos
+                return false;
+            }
+        }
+
+        public bool atualizar()
+        {
+            try
+            {
+                Entities entity = new Entities();
+
+                entity.PR_EDITAR_NOTICIA(this.CodigoNoticia, this.Titulo, this.CaminhoImagem, this.Conteudo,
+                    this.DataPublicacao, this.Autor, this.CodigoCategoria, this.DescricaoCategoria);
+
+                entity.SaveChanges();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // TODO: adicionar tratamentos
+                return false;
+            }
+        }
+
+        public bool apagar()
+        {
+            try
+            {
+                Entities entity = new Entities();
+
+                entity.PR_EXCLUIR_NOTICIA(this.CodigoNoticia);
+
+                entity.SaveChanges();
+
+                return true;
+            }
+            catch (Exception)
+            {
+                // TODO: adicionar tratamentos
+                return false;
+            }
+        }
+
     }
 }

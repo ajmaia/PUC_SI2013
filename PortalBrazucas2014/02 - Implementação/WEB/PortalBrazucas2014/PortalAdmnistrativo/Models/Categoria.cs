@@ -16,14 +16,14 @@ namespace PortalAdmnistrativo.Models
     {
         public Categoria()
         {
-            this.Anuncios = new HashSet<Anuncio>();
-            this.Noticias = new HashSet<Noticia>();
+            this.Anuncio = new HashSet<Anuncio>();
+            this.Noticia = new HashSet<Noticia>();
         }
     
         public int CodigoCategoria { get; set; }
         public string DescricaoCategoria { get; set; }
     
-        public virtual ICollection<Anuncio> Anuncios { get; set; }
-        public virtual ICollection<Noticia> Noticias { get; set; }
+        public virtual ICollection<Anuncio> Anuncio { get; set; }
+        public virtual ICollection<Noticia> Noticia { get; set; }
     }
 }

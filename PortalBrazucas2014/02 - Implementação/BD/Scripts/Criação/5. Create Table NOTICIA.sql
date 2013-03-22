@@ -9,7 +9,7 @@ CREATE TABLE [dbo].[Noticia](
 	[CodigoNoticia] [INT] IDENTITY(1,1) NOT NULL,
 	[Titulo] [VARCHAR] (128) NOT NULL,
 	[CaminhoImagem] [VARCHAR] (128) NULL,
-	[Conteudo] [VARCHAR] (128) NOT NULL,
+	[Conteudo] [TEXT] NOT NULL,
 	[DataPublicacao] [DATETIME] NOT NULL,
 	[Autor] [VARCHAR] (128) NOT NULL,
 	[CodigoCategoria] [INT] NOT NULL,

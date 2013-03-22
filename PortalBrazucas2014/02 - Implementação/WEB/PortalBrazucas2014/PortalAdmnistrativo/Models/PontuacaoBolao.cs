@@ -14,7 +14,7 @@ namespace PortalAdmnistrativo.Models
     
     public partial class PontuacaoBolao
     {
-        public int CodigoBolao { get; set; }
+        public int CodigoPontuacaoBolao { get; set; }
         public string LoginUsuario { get; set; }
         public string NomeRazaoSocial { get; set; }
         public Nullable<int> AcertosPlacarCompleto { get; set; }

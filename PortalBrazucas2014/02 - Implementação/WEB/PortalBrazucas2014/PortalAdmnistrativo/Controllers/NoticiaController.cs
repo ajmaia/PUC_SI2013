@@ -123,13 +123,10 @@ namespace PortalAdmnistrativo.Controllers
         [HttpPost, ActionName("Editar")]
         public ActionResult EditConfirmed(Noticia noticia)
         {
-            if (ModelState.IsValid)
-            {
-                db.Noticia.Attach(noticia);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
 
+            if (noticia.atualizar())
+                return RedirectToAction("Index");
+            
             return RedirectToAction("Erro");
         }
 
@@ -174,10 +171,10 @@ namespace PortalAdmnistrativo.Controllers
         [HttpPost, ActionName("Excluir")]
         public ActionResult DeleteConfirmed(Noticia entidade)
         {
-            //Noticia noticia = db.Noticia.Single(h => h.CodigoNoticia == id);
-            //db.Noticia.DeleteObject(noticia);
-            //db.SaveChanges();
-            return RedirectToAction("Index");
+            if (entidade.apagar())
+                return RedirectToAction("Index");
+
+            return RedirectToAction("Erro");
         }
 
         /// <summary>

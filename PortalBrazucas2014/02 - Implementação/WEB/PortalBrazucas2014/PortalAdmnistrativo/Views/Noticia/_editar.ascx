@@ -5,6 +5,7 @@
         <%: Html.LabelFor(item => item.CodigoNoticia) %>
     </div>
     <div class="campos">
+        <%: Html.HiddenFor(model => model.CodigoNoticia) %>
         <%: Html.DisplayFor(item => item.CodigoNoticia, new { @class = "controle500" }) %>
         <%: Html.ValidationMessageFor(item => item.CodigoNoticia) %>
     </div>

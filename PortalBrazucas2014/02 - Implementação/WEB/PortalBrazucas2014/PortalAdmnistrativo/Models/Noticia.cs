@@ -16,7 +16,7 @@ namespace PortalAdmnistrativo.Models
     {
         public Noticia()
         {
-            this.Comentarios = new HashSet<Comentario>();
+            this.Comentario = new HashSet<Comentario>();
         }
     
         public int CodigoNoticia { get; set; }
@@ -29,6 +29,6 @@ namespace PortalAdmnistrativo.Models
         public string DescricaoCategoria { get; set; }
     
         public virtual Categoria Categoria { get; set; }
-        public virtual ICollection<Comentario> Comentarios { get; set; }
+        public virtual ICollection<Comentario> Comentario { get; set; }
     }
 }

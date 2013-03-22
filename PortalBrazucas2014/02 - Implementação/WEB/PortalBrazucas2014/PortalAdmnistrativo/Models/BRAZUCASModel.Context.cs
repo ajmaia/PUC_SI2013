@@ -12,6 +12,9 @@ namespace PortalAdmnistrativo.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Objects;
+    using System.Data.Objects.DataClasses;
+    using System.Linq;
     
     public partial class Entities : DbContext
     {
@@ -25,21 +28,186 @@ namespace PortalAdmnistrativo.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<Anuncio> Anuncios { get; set; }
-        public DbSet<Categoria> Categorias { get; set; }
-        public DbSet<Cidade> Cidades { get; set; }
-        public DbSet<Comentario> Comentarios { get; set; }
-        public DbSet<Grupo> Grupoes { get; set; }
-        public DbSet<Historia> Historias { get; set; }
-        public DbSet<Jogo> Jogoes { get; set; }
-        public DbSet<Noticia> Noticias { get; set; }
-        public DbSet<PalpiteJogo> PalpiteJogoes { get; set; }
-        public DbSet<PontuacaoBolao> PontuacaoBolaos { get; set; }
-        public DbSet<Selecao> Selecaos { get; set; }
-        public DbSet<Usuario> Usuarios { get; set; }
-        public DbSet<Bolao> Bolaos { get; set; }
-        public DbSet<DesempenhoSelecao> DesempenhoSelecaos { get; set; }
-        public DbSet<Ingresso> Ingressoes { get; set; }
-        public DbSet<Rodada> Rodadas { get; set; }
+        public DbSet<Anuncio> Anuncio { get; set; }
+        public DbSet<Categoria> Categoria { get; set; }
+        public DbSet<Cidade> Cidade { get; set; }
+        public DbSet<Comentario> Comentario { get; set; }
+        public DbSet<Grupo> Grupo { get; set; }
+        public DbSet<Historia> Historia { get; set; }
+        public DbSet<Jogo> Jogo { get; set; }
+        public DbSet<Noticia> Noticia { get; set; }
+        public DbSet<PalpiteJogo> PalpiteJogo { get; set; }
+        public DbSet<PontuacaoBolao> PontuacaoBolao { get; set; }
+        public DbSet<Selecao> Selecao { get; set; }
+        public DbSet<Usuario> Usuario { get; set; }
+        public DbSet<Bolao> Bolao { get; set; }
+        public DbSet<Ingresso> Ingresso { get; set; }
+        public DbSet<Rodada> Rodada { get; set; }
+    
+        public virtual int PR_EDITAR_ANUNCIO(Nullable<int> codigoAnuncio, string titulo, string caminhoImagem, string conteudo, Nullable<System.DateTime> dataPublicacao, string loginCriacao, string statusAprovacao, string usuarioAprovacao, Nullable<int> codigoCategoria, string descricaoCategoria)
+        {
+            var codigoAnuncioParameter = codigoAnuncio.HasValue ?
+                new ObjectParameter("CodigoAnuncio", codigoAnuncio) :
+                new ObjectParameter("CodigoAnuncio", typeof(int));
+    
+            var tituloParameter = titulo != null ?
+                new ObjectParameter("Titulo", titulo) :
+                new ObjectParameter("Titulo", typeof(string));
+    
+            var caminhoImagemParameter = caminhoImagem != null ?
+                new ObjectParameter("CaminhoImagem", caminhoImagem) :
+                new ObjectParameter("CaminhoImagem", typeof(string));
+    
+            var conteudoParameter = conteudo != null ?
+                new ObjectParameter("Conteudo", conteudo) :
+                new ObjectParameter("Conteudo", typeof(string));
+    
+            var dataPublicacaoParameter = dataPublicacao.HasValue ?
+                new ObjectParameter("DataPublicacao", dataPublicacao) :
+                new ObjectParameter("DataPublicacao", typeof(System.DateTime));
+    
+            var loginCriacaoParameter = loginCriacao != null ?
+                new ObjectParameter("LoginCriacao", loginCriacao) :
+                new ObjectParameter("LoginCriacao", typeof(string));
+    
+            var statusAprovacaoParameter = statusAprovacao != null ?
+                new ObjectParameter("StatusAprovacao", statusAprovacao) :
+                new ObjectParameter("StatusAprovacao", typeof(string));
+    
+            var usuarioAprovacaoParameter = usuarioAprovacao != null ?
+                new ObjectParameter("UsuarioAprovacao", usuarioAprovacao) :
+                new ObjectParameter("UsuarioAprovacao", typeof(string));
+    
+            var codigoCategoriaParameter = codigoCategoria.HasValue ?
+                new ObjectParameter("CodigoCategoria", codigoCategoria) :
+                new ObjectParameter("CodigoCategoria", typeof(int));
+    
+            var descricaoCategoriaParameter = descricaoCategoria != null ?
+                new ObjectParameter("DescricaoCategoria", descricaoCategoria) :
+                new ObjectParameter("DescricaoCategoria", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PR_EDITAR_ANUNCIO", codigoAnuncioParameter, tituloParameter, caminhoImagemParameter, conteudoParameter, dataPublicacaoParameter, loginCriacaoParameter, statusAprovacaoParameter, usuarioAprovacaoParameter, codigoCategoriaParameter, descricaoCategoriaParameter);
+        }
+    
+        public virtual int PR_EDITAR_NOTICIA(int codigoNoticia, string titulo, string caminhoImagem, string conteudo, System.DateTime dataPublicacao, string autor, int codigoCategoria, string descricaoCategoria)
+        {
+            var codigoNoticiaParameter = new ObjectParameter("CodigoNoticia", codigoNoticia);
+    
+            var tituloParameter = titulo != null ?
+                new ObjectParameter("Titulo", titulo) :
+                new ObjectParameter("Titulo", typeof(string));
+    
+            var caminhoImagemParameter = caminhoImagem != null ?
+                new ObjectParameter("CaminhoImagem", caminhoImagem) :
+                new ObjectParameter("CaminhoImagem", typeof(string));
+    
+            var conteudoParameter = conteudo != null ?
+                new ObjectParameter("Conteudo", conteudo) :
+                new ObjectParameter("Conteudo", typeof(string));
+    
+            var dataPublicacaoParameter = new ObjectParameter("DataPublicacao", dataPublicacao);
+    
+            var autorParameter = autor != null ?
+                new ObjectParameter("Autor", autor) :
+                new ObjectParameter("Autor", typeof(string));
+    
+            var codigoCategoriaParameter = new ObjectParameter("CodigoCategoria", codigoCategoria);
+    
+            var descricaoCategoriaParameter = descricaoCategoria != null ?
+                new ObjectParameter("DescricaoCategoria", descricaoCategoria) :
+                new ObjectParameter("DescricaoCategoria", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PR_EDITAR_NOTICIA", codigoNoticiaParameter, tituloParameter, caminhoImagemParameter, conteudoParameter, dataPublicacaoParameter, autorParameter, codigoCategoriaParameter, descricaoCategoriaParameter);
+        }
+    
+        public virtual int PR_EXCLUIR_ANUNCIO(int codigoAnuncio)
+        {
+            var codigoAnuncioParameter = new ObjectParameter("CodigoAnuncio", codigoAnuncio);
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PR_EXCLUIR_ANUNCIO", codigoAnuncioParameter);
+        }
+    
+        public virtual int PR_EXCLUIR_COMENTARIO(Nullable<int> codigoComentario)
+        {
+            var codigoComentarioParameter = codigoComentario.HasValue ?
+                new ObjectParameter("CodigoComentario", codigoComentario) :
+                new ObjectParameter("CodigoComentario", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PR_EXCLUIR_COMENTARIO", codigoComentarioParameter);
+        }
+    
+        public virtual int PR_EXCLUIR_NOTICIA(int codigoNoticia)
+        {
+            var codigoNoticiaParameter = new ObjectParameter("CodigoNoticia", codigoNoticia)
+                ;
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PR_EXCLUIR_NOTICIA", codigoNoticiaParameter);
+        }
+    
+        public virtual int PR_INSERIR_ANUNCIO(string titulo, string caminhoImagem, string conteudo, System.DateTime dataPublicacao, string loginCriacao, string statusAprovacao, string usuarioAprovacao, int codigoCategoria, string descricaoCategoria)
+        {
+            var tituloParameter = titulo != null ?
+                new ObjectParameter("Titulo", titulo) :
+                new ObjectParameter("Titulo", typeof(string));
+    
+            var caminhoImagemParameter = caminhoImagem != null ?
+                new ObjectParameter("CaminhoImagem", caminhoImagem) :
+                new ObjectParameter("CaminhoImagem", typeof(string));
+    
+            var conteudoParameter = conteudo != null ?
+                new ObjectParameter("Conteudo", conteudo) :
+                new ObjectParameter("Conteudo", typeof(string));
+    
+            var dataPublicacaoParameter = new ObjectParameter("DataPublicacao", dataPublicacao);
+    
+            var loginCriacaoParameter = loginCriacao != null ?
+                new ObjectParameter("LoginCriacao", loginCriacao) :
+                new ObjectParameter("LoginCriacao", typeof(string));
+    
+            var statusAprovacaoParameter = statusAprovacao != null ?
+                new ObjectParameter("StatusAprovacao", statusAprovacao) :
+                new ObjectParameter("StatusAprovacao", typeof(string));
+    
+            var usuarioAprovacaoParameter = usuarioAprovacao != null ?
+                new ObjectParameter("UsuarioAprovacao", usuarioAprovacao) :
+                new ObjectParameter("UsuarioAprovacao", typeof(string));
+    
+            var codigoCategoriaParameter = new ObjectParameter("CodigoCategoria", codigoCategoria);
+    
+            var descricaoCategoriaParameter = descricaoCategoria != null ?
+                new ObjectParameter("DescricaoCategoria", descricaoCategoria) :
+                new ObjectParameter("DescricaoCategoria", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PR_INSERIR_ANUNCIO", tituloParameter, caminhoImagemParameter, conteudoParameter, dataPublicacaoParameter, loginCriacaoParameter, statusAprovacaoParameter, usuarioAprovacaoParameter, codigoCategoriaParameter, descricaoCategoriaParameter);
+        }
+    
+        public virtual int PR_INSERIR_NOTICIA(string titulo, string caminhoImagem, string conteudo, System.DateTime dataPublicacao, string autor, int codigoCategoria, string descricaoCategoria)
+        {
+            var tituloParameter = titulo != null ?
+                new ObjectParameter("Titulo", titulo) :
+                new ObjectParameter("Titulo", typeof(string));
+    
+            var caminhoImagemParameter = caminhoImagem != null ?
+                new ObjectParameter("CaminhoImagem", caminhoImagem) :
+                new ObjectParameter("CaminhoImagem", typeof(string));
+    
+            var conteudoParameter = conteudo != null ?
+                new ObjectParameter("Conteudo", conteudo) :
+                new ObjectParameter("Conteudo", typeof(string));
+    
+            var dataPublicacaoParameter = new ObjectParameter("DataPublicacao", dataPublicacao);
+    
+            var autorParameter = autor != null ?
+                new ObjectParameter("Autor", autor) :
+                new ObjectParameter("Autor", typeof(string));
+    
+            var codigoCategoriaParameter = new ObjectParameter("CodigoCategoria", codigoCategoria);
+    
+            var descricaoCategoriaParameter = descricaoCategoria != null ?
+                new ObjectParameter("DescricaoCategoria", descricaoCategoria) :
+                new ObjectParameter("DescricaoCategoria", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PR_INSERIR_NOTICIA", tituloParameter, caminhoImagemParameter, conteudoParameter, dataPublicacaoParameter, autorParameter, codigoCategoriaParameter, descricaoCategoriaParameter);
+        }
     }
 }

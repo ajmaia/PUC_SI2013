@@ -16,7 +16,7 @@ namespace PortalAdmnistrativo.Models
     {
         public Cidade()
         {
-            this.Jogoes = new HashSet<Jogo>();
+            this.Jogo = new HashSet<Jogo>();
         }
     
         public int CodigoCidade { get; set; }
@@ -27,6 +27,6 @@ namespace PortalAdmnistrativo.Models
         public Nullable<int> CapacidadeEstadio { get; set; }
         public string InformacoesEstadio { get; set; }
     
-        public virtual ICollection<Jogo> Jogoes { get; set; }
+        public virtual ICollection<Jogo> Jogo { get; set; }
     }
 }

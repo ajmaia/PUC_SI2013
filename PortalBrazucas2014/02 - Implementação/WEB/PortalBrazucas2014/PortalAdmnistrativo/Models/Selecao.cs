@@ -16,8 +16,8 @@ namespace PortalAdmnistrativo.Models
     {
         public Selecao()
         {
-            this.Jogoes = new HashSet<Jogo>();
-            this.Jogoes1 = new HashSet<Jogo>();
+            this.Jogo = new HashSet<Jogo>();
+            this.Jogo1 = new HashSet<Jogo>();
         }
     
         public int CodigoSelecao { get; set; }
@@ -36,7 +36,7 @@ namespace PortalAdmnistrativo.Models
     
         public virtual Grupo Grupo { get; set; }
         public virtual Historia Historia { get; set; }
-        public virtual ICollection<Jogo> Jogoes { get; set; }
-        public virtual ICollection<Jogo> Jogoes1 { get; set; }
+        public virtual ICollection<Jogo> Jogo { get; set; }
+        public virtual ICollection<Jogo> Jogo1 { get; set; }
     }
 }

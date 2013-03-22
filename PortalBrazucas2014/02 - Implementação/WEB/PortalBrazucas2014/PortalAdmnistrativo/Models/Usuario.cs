@@ -16,10 +16,10 @@ namespace PortalAdmnistrativo.Models
     {
         public Usuario()
         {
-            this.Anuncios = new HashSet<Anuncio>();
-            this.Comentarios = new HashSet<Comentario>();
-            this.PalpiteJogoes = new HashSet<PalpiteJogo>();
-            this.PontuacaoBolaos = new HashSet<PontuacaoBolao>();
+            this.Anuncio = new HashSet<Anuncio>();
+            this.Comentario = new HashSet<Comentario>();
+            this.PalpiteJogo = new HashSet<PalpiteJogo>();
+            this.PontuacaoBolao = new HashSet<PontuacaoBolao>();
         }
     
         public string LoginUsuario { get; set; }
@@ -30,9 +30,9 @@ namespace PortalAdmnistrativo.Models
         public string Sexo { get; set; }
         public string TipoPerfil { get; set; }
     
-        public virtual ICollection<Anuncio> Anuncios { get; set; }
-        public virtual ICollection<Comentario> Comentarios { get; set; }
-        public virtual ICollection<PalpiteJogo> PalpiteJogoes { get; set; }
-        public virtual ICollection<PontuacaoBolao> PontuacaoBolaos { get; set; }
+        public virtual ICollection<Anuncio> Anuncio { get; set; }
+        public virtual ICollection<Comentario> Comentario { get; set; }
+        public virtual ICollection<PalpiteJogo> PalpiteJogo { get; set; }
+        public virtual ICollection<PontuacaoBolao> PontuacaoBolao { get; set; }
     }
 }

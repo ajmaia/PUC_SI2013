@@ -148,9 +148,6 @@
       <DependentUpon>BRAZUCASModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ComentarioModel.cs" />
-    <Compile Include="Models\DesempenhoSelecao.cs">
-      <DependentUpon>BRAZUCASModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Grupo.cs">
       <DependentUpon>BRAZUCASModel.tt</DependentUpon>
     </Compile>
@@ -440,7 +437,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>32270</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:2468/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

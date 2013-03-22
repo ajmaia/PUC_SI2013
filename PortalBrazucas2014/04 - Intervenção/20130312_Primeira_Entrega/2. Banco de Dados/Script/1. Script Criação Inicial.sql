@@ -63,7 +63,7 @@ CREATE TABLE [dbo].[Anuncio](
 	[CodigoAnuncio] [INT] IDENTITY(1,1) NOT NULL,
 	[Titulo] [VARCHAR] (128) NOT NULL,
 	[CaminhoImagem] [VARCHAR] (128) NULL,
-	[Conteudo] [VARCHAR] (128) NOT NULL,
+	[Conteudo] [TEXT] NOT NULL,
 	[DataPublicacao] [DATETIME] NOT NULL,
 	[LoginCriacao] [VARCHAR](8) NOT NULL,
 	[StatusAprovacao] [CHAR](1) NULL,
@@ -97,7 +97,7 @@ CREATE TABLE [dbo].[Noticia](
 	[CodigoNoticia] [INT] IDENTITY(1,1) NOT NULL,
 	[Titulo] [VARCHAR] (128) NOT NULL,
 	[CaminhoImagem] [VARCHAR] (128) NULL,
-	[Conteudo] [VARCHAR] (128) NOT NULL,
+	[Conteudo] [TEXT] NOT NULL,
 	[DataPublicacao] [DATETIME] NOT NULL,
 	[Autor] [VARCHAR] (128) NOT NULL,
 	[CodigoCategoria] [INT] NOT NULL,
@@ -432,7 +432,7 @@ CREATE VIEW [dbo].[Rodada]
 AS
 
 SELECT
-	[Rodada],
+	[DescricaoRodada],
 	[Fase],
 	[CodigoSelecao],
 	[NomeSelecao],
@@ -445,7 +445,7 @@ SELECT
 FROM 
 (
 	SELECT 
-		[Rodada],
+		[Rodada] AS [DescricaoRodada],
 		(CASE WHEN SelA.[CodigoGrupo] = SelB.[CodigoGrupo] THEN 'Grupos' 
 			  ELSE 'Eliminatórias' END)	AS [Fase],
 		SelA.[CodigoSelecao],
@@ -463,7 +463,7 @@ FROM
 	UNION ALL
 	
 	SELECT 
-		[Rodada],
+		[Rodada] AS [DescricaoRodada],
 		(CASE WHEN SelA.[CodigoGrupo] = SelB.[CodigoGrupo] THEN 'Grupos' 
 			  ELSE 'Eliminatórias' END)	AS [Fase],
 		SelB.[CodigoSelecao],
@@ -478,7 +478,7 @@ FROM
 	INNER JOIN [dbo].[Selecao] AS SelA (NOLOCK) ON [CodigoSelecaoA] = SelA.[CodigoSelecao]
 	INNER JOIN [dbo].[Selecao] AS SelB (NOLOCK) ON [CodigoSelecaoB] = SelB.[CodigoSelecao]
 ) AS [TabelaAux]
-GROUP BY [Rodada]
+GROUP BY [DescricaoRodada]
 		,[Fase]
 		,[CodigoSelecao]
 		,[NomeSelecao]

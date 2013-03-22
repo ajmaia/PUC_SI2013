@@ -23,20 +23,6 @@
       [Bolao].[RelativoColocadoAnterior] AS [RelativoColocadoAnterior]
       FROM [dbo].[Bolao] AS [Bolao]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="DesempenhoSelecao" EntityType="BRAZUCASModel.Store.DesempenhoSelecao" store:Type="Views" store:Schema="dbo" store:Name="DesempenhoSelecao">
-      <DefiningQuery>SELECT 
-      [DesempenhoSelecao].[RankingFIFA] AS [RankingFIFA], 
-      [DesempenhoSelecao].[Nome] AS [Nome], 
-      [DesempenhoSelecao].[Pais] AS [Pais], 
-      [DesempenhoSelecao].[CaminhoImagem] AS [CaminhoImagem], 
-      [DesempenhoSelecao].[QuantidadeJogos] AS [QuantidadeJogos], 
-      [DesempenhoSelecao].[Vitorias] AS [Vitorias], 
-      [DesempenhoSelecao].[Empates] AS [Empates], 
-      [DesempenhoSelecao].[Derrotas] AS [Derrotas], 
-      [DesempenhoSelecao].[GolsRealizados] AS [GolsRealizados], 
-      [DesempenhoSelecao].[GolsSofridos] AS [GolsSofridos]
-      FROM [dbo].[DesempenhoSelecao] AS [DesempenhoSelecao]</DefiningQuery>
-    </EntitySet>
     <EntitySet Name="Ingresso" EntityType="BRAZUCASModel.Store.Ingresso" store:Type="Views" store:Schema="dbo" store:Name="Ingresso">
       <DefiningQuery>SELECT 
       [Ingresso].[CodigoJogo] AS [CodigoJogo], 
@@ -49,6 +35,20 @@
       [Ingresso].[NomeSelecaoB] AS [NomeSelecaoB], 
       [Ingresso].[DataHora] AS [DataHora]
       FROM [dbo].[Ingresso] AS [Ingresso]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Rodada" EntityType="BRAZUCASModel.Store.Rodada" store:Type="Views" store:Schema="dbo" store:Name="Rodada">
+      <DefiningQuery>SELECT 
+      [Rodada].[DescricaoRodada] AS [DescricaoRodada], 
+      [Rodada].[Fase] AS [Fase], 
+      [Rodada].[CodigoSelecao] AS [CodigoSelecao], 
+      [Rodada].[NomeSelecao] AS [NomeSelecao], 
+      [Rodada].[CodigoGrupo] AS [CodigoGrupo], 
+      [Rodada].[Empates] AS [Empates], 
+      [Rodada].[Vitorias] AS [Vitorias], 
+      [Rodada].[Derrotas] AS [Derrotas], 
+      [Rodada].[GolsRealizados] AS [GolsRealizados], 
+      [Rodada].[GolsSofridos] AS [GolsSofridos]
+      FROM [dbo].[Rodada] AS [Rodada]</DefiningQuery>
     </EntitySet>
     <AssociationSet Name="FK_Anuncio_Categoria" Association="BRAZUCASModel.Store.FK_Anuncio_Categoria">
       <End Role="Categoria" EntitySet="Categoria" />
@@ -110,7 +110,7 @@
     <Property Name="CodigoAnuncio" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Titulo" Type="varchar" Nullable="false" MaxLength="128" />
     <Property Name="CaminhoImagem" Type="varchar" MaxLength="128" />
-    <Property Name="Conteudo" Type="varchar" Nullable="false" MaxLength="128" />
+    <Property Name="Conteudo" Type="text" Nullable="false" />
     <Property Name="DataPublicacao" Type="datetime" Nullable="false" />
     <Property Name="LoginCriacao" Type="varchar" Nullable="false" MaxLength="8" />
     <Property Name="StatusAprovacao" Type="char" MaxLength="1" />
@@ -133,7 +133,7 @@
     <Property Name="Nome" Type="varchar" Nullable="false" MaxLength="128" />
     <Property Name="UF" Type="char" Nullable="false" MaxLength="2" />
     <Property Name="CaminhoImagem" Type="varchar" MaxLength="128" />
-    <Property Name="NomeEstado" Type="varchar" MaxLength="128" />
+    <Property Name="NomeEstadio" Type="varchar" MaxLength="128" />
     <Property Name="CapacidadeEstadio" Type="int" />
     <Property Name="InformacoesEstadio" Type="varchar" MaxLength="128" />
   </EntityType>
@@ -166,6 +166,8 @@
     <Property Name="Pais" Type="varchar" Nullable="false" MaxLength="16" />
     <Property Name="HistoriaPais" Type="text" />
     <Property Name="CaminhoImagem" Type="varchar" MaxLength="128" />
+    <Property Name="RankingFIFA" Type="int" Nullable="false" />
+    <Property Name="TitulosConquistados" Type="varchar" MaxLength="128" />
   </EntityType>
   <EntityType Name="Jogo">
     <Key>
@@ -192,7 +194,7 @@
     <Property Name="CodigoNoticia" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Titulo" Type="varchar" Nullable="false" MaxLength="128" />
     <Property Name="CaminhoImagem" Type="varchar" MaxLength="128" />
-    <Property Name="Conteudo" Type="varchar" Nullable="false" MaxLength="128" />
+    <Property Name="Conteudo" Type="text" Nullable="false" />
     <Property Name="DataPublicacao" Type="datetime" Nullable="false" />
     <Property Name="Autor" Type="varchar" Nullable="false" MaxLength="128" />
     <Property Name="CodigoCategoria" Type="int" Nullable="false" />
@@ -206,12 +208,14 @@
     <Property Name="codigoJogo" Type="int" Nullable="false" />
     <Property Name="LoginUsuario" Type="varchar" Nullable="false" MaxLength="8" />
     <Property Name="DataAposta" Type="datetime" Nullable="false" />
+    <Property Name="PalpiteGolsSelecaoA" Type="int" Nullable="false" />
+    <Property Name="PalpiteGolsSelecaoB" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="PontuacaoBolao">
     <Key>
-      <PropertyRef Name="CodigoBolao" />
+      <PropertyRef Name="CodigoPontuacaoBolao" />
     </Key>
-    <Property Name="CodigoBolao" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CodigoPontuacaoBolao" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="LoginUsuario" Type="varchar" Nullable="false" MaxLength="8" />
     <Property Name="NomeRazaoSocial" Type="varchar" Nullable="false" MaxLength="128" />
     <Property Name="AcertosPlacarCompleto" Type="int" />
@@ -229,7 +233,6 @@
     <Property Name="CaminhoImagem" Type="varchar" MaxLength="128" />
     <Property Name="CodigoGrupo" Type="int" Nullable="false" />
     <Property Name="DescricaoGrupo" Type="varchar" Nullable="false" MaxLength="128" />
-    <Property Name="RankingFIFA" Type="int" Nullable="false" />
     <Property Name="QuantidadeJogos" Type="int" />
     <Property Name="Vitorias" Type="int" />
     <Property Name="Empates" Type="int" />
@@ -245,6 +248,7 @@
     <Property Name="LoginUsuario" Type="varchar" Nullable="false" MaxLength="8" />
     <Property Name="CpfCnpj" Type="numeric" Nullable="false" Precision="14" />
     <Property Name="NomeRazaoSocial" Type="varchar" Nullable="false" MaxLength="128" />
+    <Property Name="Email" Type="varchar" Nullable="false" MaxLength="128" />
     <Property Name="DataNascimento" Type="datetime" />
     <Property Name="Sexo" Type="char" MaxLength="1" />
     <Property Name="TipoPerfil" Type="varchar" Nullable="false" MaxLength="16" />
@@ -263,26 +267,6 @@
     <Property Name="Pontuacao" Type="int" />
     <Property Name="RelativoPrimeiroColocado" Type="int" />
     <Property Name="RelativoColocadoAnterior" Type="int" />
-  </EntityType>
-  <!--Errors Found During Generation:
-      warning 6002: The table/view 'BRAZUCAS.dbo.DesempenhoSelecao' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
-  <EntityType Name="DesempenhoSelecao">
-    <Key>
-      <PropertyRef Name="RankingFIFA" />
-      <PropertyRef Name="Nome" />
-      <PropertyRef Name="Pais" />
-    </Key>
-    <Property Name="RankingFIFA" Type="int" Nullable="false" />
-    <Property Name="Nome" Type="varchar" Nullable="false" MaxLength="128" />
-    <Property Name="Pais" Type="varchar" Nullable="false" MaxLength="16" />
-    <Property Name="CaminhoImagem" Type="varchar" MaxLength="128" />
-    <Property Name="QuantidadeJogos" Type="int" />
-    <Property Name="Vitorias" Type="int" />
-    <Property Name="Empates" Type="int" />
-    <Property Name="Derrotas" Type="int" />
-    <Property Name="GolsRealizados" Type="int" />
-    <Property Name="GolsSofridos" Type="int" />
   </EntityType>
   <!--Errors Found During Generation:
       warning 6002: The table/view 'BRAZUCAS.dbo.Ingresso' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
@@ -307,6 +291,28 @@
     <Property Name="CodigoSelecaoB" Type="int" Nullable="false" />
     <Property Name="NomeSelecaoB" Type="varchar" Nullable="false" MaxLength="128" />
     <Property Name="DataHora" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'BRAZUCAS.dbo.Rodada' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Rodada">
+    <Key>
+      <PropertyRef Name="DescricaoRodada" />
+      <PropertyRef Name="Fase" />
+      <PropertyRef Name="CodigoSelecao" />
+      <PropertyRef Name="NomeSelecao" />
+      <PropertyRef Name="CodigoGrupo" />
+    </Key>
+    <Property Name="DescricaoRodada" Type="int" Nullable="false" />
+    <Property Name="Fase" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="CodigoSelecao" Type="int" Nullable="false" />
+    <Property Name="NomeSelecao" Type="varchar" Nullable="false" MaxLength="128" />
+    <Property Name="CodigoGrupo" Type="int" Nullable="false" />
+    <Property Name="Empates" Type="int" />
+    <Property Name="Vitorias" Type="int" />
+    <Property Name="Derrotas" Type="int" />
+    <Property Name="GolsRealizados" Type="int" />
+    <Property Name="GolsSofridos" Type="int" />
   </EntityType>
   <Association Name="FK_Anuncio_Categoria">
     <End Role="Categoria" Type="BRAZUCASModel.Store.Categoria" Multiplicity="1" />
@@ -464,4 +470,55 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="PR_EDITAR_ANUNCIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CodigoAnuncio" Type="int" Mode="In" />
+    <Parameter Name="Titulo" Type="varchar" Mode="In" />
+    <Parameter Name="CaminhoImagem" Type="varchar" Mode="In" />
+    <Parameter Name="Conteudo" Type="text" Mode="In" />
+    <Parameter Name="DataPublicacao" Type="datetime" Mode="In" />
+    <Parameter Name="LoginCriacao" Type="varchar" Mode="In" />
+    <Parameter Name="StatusAprovacao" Type="char" Mode="In" />
+    <Parameter Name="UsuarioAprovacao" Type="varchar" Mode="In" />
+    <Parameter Name="CodigoCategoria" Type="int" Mode="In" />
+    <Parameter Name="DescricaoCategoria" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="PR_EDITAR_NOTICIA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CodigoNoticia" Type="int" Mode="In" />
+    <Parameter Name="Titulo" Type="varchar" Mode="In" />
+    <Parameter Name="CaminhoImagem" Type="varchar" Mode="In" />
+    <Parameter Name="Conteudo" Type="text" Mode="In" />
+    <Parameter Name="DataPublicacao" Type="datetime" Mode="In" />
+    <Parameter Name="Autor" Type="varchar" Mode="In" />
+    <Parameter Name="CodigoCategoria" Type="int" Mode="In" />
+    <Parameter Name="DescricaoCategoria" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="PR_EXCLUIR_ANUNCIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CodigoAnuncio" Type="int" Mode="In" />
+  </Function>
+  <Function Name="PR_EXCLUIR_COMENTARIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CodigoComentario" Type="int" Mode="In" />
+  </Function>
+  <Function Name="PR_EXCLUIR_NOTICIA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CodigoNoticia" Type="int" Mode="In" />
+  </Function>
+  <Function Name="PR_INSERIR_ANUNCIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Titulo" Type="varchar" Mode="In" />
+    <Parameter Name="CaminhoImagem" Type="varchar" Mode="In" />
+    <Parameter Name="Conteudo" Type="text" Mode="In" />
+    <Parameter Name="DataPublicacao" Type="datetime" Mode="In" />
+    <Parameter Name="LoginCriacao" Type="varchar" Mode="In" />
+    <Parameter Name="StatusAprovacao" Type="char" Mode="In" />
+    <Parameter Name="UsuarioAprovacao" Type="varchar" Mode="In" />
+    <Parameter Name="CodigoCategoria" Type="int" Mode="In" />
+    <Parameter Name="DescricaoCategoria" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="PR_INSERIR_NOTICIA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Titulo" Type="varchar" Mode="In" />
+    <Parameter Name="CaminhoImagem" Type="varchar" Mode="In" />
+    <Parameter Name="Conteudo" Type="text" Mode="In" />
+    <Parameter Name="DataPublicacao" Type="datetime" Mode="In" />
+    <Parameter Name="Autor" Type="varchar" Mode="In" />
+    <Parameter Name="CodigoCategoria" Type="int" Mode="In" />
+    <Parameter Name="DescricaoCategoria" Type="varchar" Mode="In" />
+  </Function>
 </Schema>

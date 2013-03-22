@@ -16,6 +16,36 @@
           <ScalarProperty Name="DescricaoCategoria" ColumnName="DescricaoCategoria" />
         </MappingFragment>
       </EntityTypeMapping>
+      <EntityTypeMapping TypeName="BRAZUCASModel.Anuncio">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="BRAZUCASModel.Store.PR_INSERIR_ANUNCIO">
+            <ScalarProperty Name="DescricaoCategoria" ParameterName="DescricaoCategoria" />
+            <ScalarProperty Name="CodigoCategoria" ParameterName="CodigoCategoria" />
+            <ScalarProperty Name="UsuarioAprovacao" ParameterName="UsuarioAprovacao" />
+            <ScalarProperty Name="StatusAprovacao" ParameterName="StatusAprovacao" />
+            <ScalarProperty Name="LoginCriacao" ParameterName="LoginCriacao" />
+            <ScalarProperty Name="DataPublicacao" ParameterName="DataPublicacao" />
+            <ScalarProperty Name="Conteudo" ParameterName="Conteudo" />
+            <ScalarProperty Name="CaminhoImagem" ParameterName="CaminhoImagem" />
+            <ScalarProperty Name="Titulo" ParameterName="Titulo" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="BRAZUCASModel.Store.PR_EDITAR_ANUNCIO">
+            <ScalarProperty Name="DescricaoCategoria" ParameterName="DescricaoCategoria" Version="Current" />
+            <ScalarProperty Name="CodigoCategoria" ParameterName="CodigoCategoria" Version="Current" />
+            <ScalarProperty Name="UsuarioAprovacao" ParameterName="UsuarioAprovacao" Version="Current" />
+            <ScalarProperty Name="StatusAprovacao" ParameterName="StatusAprovacao" Version="Current" />
+            <ScalarProperty Name="LoginCriacao" ParameterName="LoginCriacao" Version="Current" />
+            <ScalarProperty Name="DataPublicacao" ParameterName="DataPublicacao" Version="Current" />
+            <ScalarProperty Name="Conteudo" ParameterName="Conteudo" Version="Current" />
+            <ScalarProperty Name="CaminhoImagem" ParameterName="CaminhoImagem" Version="Current" />
+            <ScalarProperty Name="Titulo" ParameterName="Titulo" Version="Current" />
+            <ScalarProperty Name="CodigoAnuncio" ParameterName="CodigoAnuncio" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="BRAZUCASModel.Store.PR_EXCLUIR_ANUNCIO">
+            <ScalarProperty Name="CodigoAnuncio" ParameterName="CodigoAnuncio" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Categoria">
       <EntityTypeMapping TypeName="BRAZUCASModel.Categoria">
@@ -32,7 +62,7 @@
           <ScalarProperty Name="Nome" ColumnName="Nome" />
           <ScalarProperty Name="UF" ColumnName="UF" />
           <ScalarProperty Name="CaminhoImagem" ColumnName="CaminhoImagem" />
-          <ScalarProperty Name="NomeEstado" ColumnName="NomeEstado" />
+          <ScalarProperty Name="NomeEstadio" ColumnName="NomeEstadio" />
           <ScalarProperty Name="CapacidadeEstadio" ColumnName="CapacidadeEstadio" />
           <ScalarProperty Name="InformacoesEstadio" ColumnName="InformacoesEstadio" />
         </MappingFragment>
@@ -68,6 +98,8 @@
           <ScalarProperty Name="Pais" ColumnName="Pais" />
           <ScalarProperty Name="HistoriaPais" ColumnName="HistoriaPais" />
           <ScalarProperty Name="CaminhoImagem" ColumnName="CaminhoImagem" />
+          <ScalarProperty Name="RankingFIFA" ColumnName="RankingFIFA" />
+          <ScalarProperty Name="TitulosConquistados" ColumnName="TitulosConquistados" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -103,6 +135,32 @@
           <ScalarProperty Name="DescricaoCategoria" ColumnName="DescricaoCategoria" />
         </MappingFragment>
       </EntityTypeMapping>
+      <EntityTypeMapping TypeName="BRAZUCASModel.Noticia">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="BRAZUCASModel.Store.PR_INSERIR_NOTICIA">
+            <ScalarProperty Name="DescricaoCategoria" ParameterName="DescricaoCategoria" />
+            <ScalarProperty Name="CodigoCategoria" ParameterName="CodigoCategoria" />
+            <ScalarProperty Name="Autor" ParameterName="Autor" />
+            <ScalarProperty Name="DataPublicacao" ParameterName="DataPublicacao" />
+            <ScalarProperty Name="Conteudo" ParameterName="Conteudo" />
+            <ScalarProperty Name="CaminhoImagem" ParameterName="CaminhoImagem" />
+            <ScalarProperty Name="Titulo" ParameterName="Titulo" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="BRAZUCASModel.Store.PR_EDITAR_NOTICIA">
+            <ScalarProperty Name="DescricaoCategoria" ParameterName="DescricaoCategoria" Version="Current" />
+            <ScalarProperty Name="CodigoCategoria" ParameterName="CodigoCategoria" Version="Current" />
+            <ScalarProperty Name="Autor" ParameterName="Autor" Version="Current" />
+            <ScalarProperty Name="DataPublicacao" ParameterName="DataPublicacao" Version="Original" />
+            <ScalarProperty Name="Conteudo" ParameterName="Conteudo" Version="Current" />
+            <ScalarProperty Name="CaminhoImagem" ParameterName="CaminhoImagem" Version="Current" />
+            <ScalarProperty Name="Titulo" ParameterName="Titulo" Version="Current" />
+            <ScalarProperty Name="CodigoNoticia" ParameterName="CodigoNoticia" Version="Original" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="BRAZUCASModel.Store.PR_EXCLUIR_NOTICIA">
+            <ScalarProperty Name="CodigoNoticia" ParameterName="CodigoNoticia" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="PalpiteJogo">
       <EntityTypeMapping TypeName="BRAZUCASModel.PalpiteJogo">
@@ -111,13 +169,15 @@
           <ScalarProperty Name="codigoJogo" ColumnName="codigoJogo" />
           <ScalarProperty Name="LoginUsuario" ColumnName="LoginUsuario" />
           <ScalarProperty Name="DataAposta" ColumnName="DataAposta" />
+          <ScalarProperty Name="PalpiteGolsSelecaoA" ColumnName="PalpiteGolsSelecaoA" />
+          <ScalarProperty Name="PalpiteGolsSelecaoB" ColumnName="PalpiteGolsSelecaoB" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="PontuacaoBolao">
       <EntityTypeMapping TypeName="BRAZUCASModel.PontuacaoBolao">
         <MappingFragment StoreEntitySet="PontuacaoBolao">
-          <ScalarProperty Name="CodigoBolao" ColumnName="CodigoBolao" />
+          <ScalarProperty Name="CodigoPontuacaoBolao" ColumnName="CodigoPontuacaoBolao" />
           <ScalarProperty Name="LoginUsuario" ColumnName="LoginUsuario" />
           <ScalarProperty Name="NomeRazaoSocial" ColumnName="NomeRazaoSocial" />
           <ScalarProperty Name="AcertosPlacarCompleto" ColumnName="AcertosPlacarCompleto" />
@@ -136,7 +196,6 @@
           <ScalarProperty Name="CaminhoImagem" ColumnName="CaminhoImagem" />
           <ScalarProperty Name="CodigoGrupo" ColumnName="CodigoGrupo" />
           <ScalarProperty Name="DescricaoGrupo" ColumnName="DescricaoGrupo" />
-          <ScalarProperty Name="RankingFIFA" ColumnName="RankingFIFA" />
           <ScalarProperty Name="QuantidadeJogos" ColumnName="QuantidadeJogos" />
           <ScalarProperty Name="Vitorias" ColumnName="Vitorias" />
           <ScalarProperty Name="Empates" ColumnName="Empates" />
@@ -153,6 +212,7 @@
           <ScalarProperty Name="LoginUsuario" ColumnName="LoginUsuario" />
           <ScalarProperty Name="CpfCnpj" ColumnName="CpfCnpj" />
           <ScalarProperty Name="NomeRazaoSocial" ColumnName="NomeRazaoSocial" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="DataNascimento" ColumnName="DataNascimento" />
           <ScalarProperty Name="Sexo" ColumnName="Sexo" />
           <ScalarProperty Name="TipoPerfil" ColumnName="TipoPerfil" />
@@ -171,22 +231,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="DesempenhoSelecao">
-      <EntityTypeMapping TypeName="BRAZUCASModel.DesempenhoSelecao">
-        <MappingFragment StoreEntitySet="DesempenhoSelecao">
-          <ScalarProperty Name="RankingFIFA" ColumnName="RankingFIFA" />
-          <ScalarProperty Name="Nome" ColumnName="Nome" />
-          <ScalarProperty Name="Pais" ColumnName="Pais" />
-          <ScalarProperty Name="CaminhoImagem" ColumnName="CaminhoImagem" />
-          <ScalarProperty Name="QuantidadeJogos" ColumnName="QuantidadeJogos" />
-          <ScalarProperty Name="Vitorias" ColumnName="Vitorias" />
-          <ScalarProperty Name="Empates" ColumnName="Empates" />
-          <ScalarProperty Name="Derrotas" ColumnName="Derrotas" />
-          <ScalarProperty Name="GolsRealizados" ColumnName="GolsRealizados" />
-          <ScalarProperty Name="GolsSofridos" ColumnName="GolsSofridos" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Ingresso">
       <EntityTypeMapping TypeName="BRAZUCASModel.Ingresso">
         <MappingFragment StoreEntitySet="Ingresso">
@@ -202,5 +246,28 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Rodada">
+      <EntityTypeMapping TypeName="BRAZUCASModel.Rodada">
+        <MappingFragment StoreEntitySet="Rodada">
+          <ScalarProperty Name="DescricaoRodada" ColumnName="DescricaoRodada" />
+          <ScalarProperty Name="Fase" ColumnName="Fase" />
+          <ScalarProperty Name="CodigoSelecao" ColumnName="CodigoSelecao" />
+          <ScalarProperty Name="NomeSelecao" ColumnName="NomeSelecao" />
+          <ScalarProperty Name="CodigoGrupo" ColumnName="CodigoGrupo" />
+          <ScalarProperty Name="Empates" ColumnName="Empates" />
+          <ScalarProperty Name="Vitorias" ColumnName="Vitorias" />
+          <ScalarProperty Name="Derrotas" ColumnName="Derrotas" />
+          <ScalarProperty Name="GolsRealizados" ColumnName="GolsRealizados" />
+          <ScalarProperty Name="GolsSofridos" ColumnName="GolsSofridos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="PR_EDITAR_ANUNCIO" FunctionName="BRAZUCASModel.Store.PR_EDITAR_ANUNCIO" />
+    <FunctionImportMapping FunctionImportName="PR_EDITAR_NOTICIA" FunctionName="BRAZUCASModel.Store.PR_EDITAR_NOTICIA" />
+    <FunctionImportMapping FunctionImportName="PR_EXCLUIR_ANUNCIO" FunctionName="BRAZUCASModel.Store.PR_EXCLUIR_ANUNCIO" />
+    <FunctionImportMapping FunctionImportName="PR_EXCLUIR_COMENTARIO" FunctionName="BRAZUCASModel.Store.PR_EXCLUIR_COMENTARIO" />
+    <FunctionImportMapping FunctionImportName="PR_EXCLUIR_NOTICIA" FunctionName="BRAZUCASModel.Store.PR_EXCLUIR_NOTICIA" />
+    <FunctionImportMapping FunctionImportName="PR_INSERIR_ANUNCIO" FunctionName="BRAZUCASModel.Store.PR_INSERIR_ANUNCIO" />
+    <FunctionImportMapping FunctionImportName="PR_INSERIR_NOTICIA" FunctionName="BRAZUCASModel.Store.PR_INSERIR_NOTICIA" />
   </EntityContainerMapping>
 </Mapping>

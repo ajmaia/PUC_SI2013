@@ -14,7 +14,7 @@ namespace PortalAdmnistrativo.Models
     
     public partial class Rodada
     {
-        public int Rodada1 { get; set; }
+        public int DescricaoRodada { get; set; }
         public string Fase { get; set; }
         public int CodigoSelecao { get; set; }
         public string NomeSelecao { get; set; }
