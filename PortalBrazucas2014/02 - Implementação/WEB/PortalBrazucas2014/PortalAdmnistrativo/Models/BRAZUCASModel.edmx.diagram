@@ -11,7 +11,7 @@
         <EntityTypeShape EntityType="BRAZUCASModel.Comentario" Width="1.5" PointX="6" PointY="6.25" IsExpanded="true" />
         <EntityTypeShape EntityType="BRAZUCASModel.Grupo" Width="1.5" PointX="1.5" PointY="28" IsExpanded="true" />
         <EntityTypeShape EntityType="BRAZUCASModel.Historia" Width="1.5" PointX="1.5" PointY="30.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="BRAZUCASModel.Jogo" Width="1.5" PointX="0.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BRAZUCASModel.Jogo" Width="1.5" PointX="10.625" PointY="12.25" IsExpanded="true" />
         <EntityTypeShape EntityType="BRAZUCASModel.Noticia" Width="1.5" PointX="3.75" PointY="10.25" IsExpanded="true" />
         <EntityTypeShape EntityType="BRAZUCASModel.PalpiteJogo" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
         <EntityTypeShape EntityType="BRAZUCASModel.PontuacaoBolao" Width="1.5" PointX="3" PointY="16.375" IsExpanded="true" />

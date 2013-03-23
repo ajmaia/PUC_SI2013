@@ -13,6 +13,7 @@
               selectedRowStyle: "webgrid-row-sel",
               footerStyle: "webgrid-footer",
               columns: grid.Columns(
+                  grid.Column(columnName: "CodigoNoticia", header: PortalAdmnistrativo.Resouces.Noticia.CodigoNoticia, format: (item) => item.CodigoNoticia, style: "webgrid-coluna120"),  
                   grid.Column(columnName: "Titulo", header: PortalAdmnistrativo.Resouces.Noticia.Titulo, format: (item) => item.Titulo, style: "webgrid-coluna300"),
                   grid.Column(columnName: "DataPublicacao", header: PortalAdmnistrativo.Resouces.Noticia.DataPublicacao, format: (item) => item.DataPublicacao, style: "webgrid-coluna120"),
                   grid.Column(columnName: "DescricaoCategoria", header: PortalAdmnistrativo.Resouces.Categoria.DescricaoCategoria, format: (item) => item.DescricaoCategoria, style: "webgrid-coluna120")

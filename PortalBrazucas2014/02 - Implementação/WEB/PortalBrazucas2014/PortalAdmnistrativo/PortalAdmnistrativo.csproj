@@ -148,6 +148,17 @@
       <DependentUpon>BRAZUCASModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ComentarioModel.cs" />
+    <Compile Include="Models\BolaoModel.cs" />
+    <Compile Include="Models\CidadeModel.cs" />
+    <Compile Include="Models\JogoModel.cs" />
+    <Compile Include="Models\PalpiteJogoModel.cs" />
+    <Compile Include="Models\PontuacaoBolaoModel.cs" />
+    <Compile Include="Models\RodadaModel.cs" />
+    <Compile Include="Models\UsuarioModel.cs" />
+    <Compile Include="Models\GrupoModel.cs" />
+    <Compile Include="Models\HistoriaModel.cs" />
+    <Compile Include="Models\IngressoModel.cs" />
+    <Compile Include="Models\SelecaoModel.cs" />
     <Compile Include="Models\Grupo.cs">
       <DependentUpon>BRAZUCASModel.tt</DependentUpon>
     </Compile>
@@ -351,10 +362,6 @@
     <Content Include="Scripts\Site.js" />
     <Content Include="Views\Imagens\agua_abertura.png" />
     <Content Include="Views\Noticia\_editar.ascx" />
-    <Content Include="Views\Noticia\Create.aspx" />
-    <Content Include="Views\Noticia\Delete.aspx" />
-    <Content Include="Views\Noticia\Details.aspx" />
-    <Content Include="Views\Noticia\Edit.aspx" />
     <Content Include="Views\Noticia\Index.aspx" />
     <Content Include="Views\Noticia\_campos.ascx" />
     <Content Include="Views\Noticia\_resultado.ascx" />

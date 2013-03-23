@@ -8,4 +8,8 @@
         <% Html.RenderPartial("_excluir"); %>
     </div>
 
+    <div class="campo_botao">
+        <input type="submit" class="button" value="Excluir"/>
+    </div>
+
 <%  } %>

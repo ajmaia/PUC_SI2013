@@ -126,6 +126,8 @@ namespace PortalAdmnistrativo.Controllers
 
             if (ModelState.IsValid)
             {
+                noticia.DescricaoCategoria = retornaCategorias(noticia.CodigoCategoria);
+
                 db.Noticia.Attach(noticia);
                 db.ObjectStateManager.ChangeObjectState(noticia, EntityState.Modified);
                 db.SaveChanges();
@@ -174,9 +176,10 @@ namespace PortalAdmnistrativo.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpPost, ActionName("Excluir")]
-        public ActionResult DeleteConfirmed(Noticia entidade)
+        public ActionResult DeleteConfirmed(int id)
         {
-            db.Noticia.DeleteObject(entidade);
+            Noticia noticia = db.Noticia.Single(n => n.CodigoNoticia == id);
+            db.Noticia.DeleteObject(noticia);
             db.SaveChanges();
 
             return RedirectToAction("Erro");

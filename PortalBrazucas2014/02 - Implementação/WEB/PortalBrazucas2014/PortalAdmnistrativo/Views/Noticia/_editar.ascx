@@ -3,9 +3,12 @@
 <div class="conjunto_campo">
     <div class="campos">
         <%: Html.LabelFor(item => item.CodigoNoticia) %>
+        -
+        <%: Html.LabelFor(model => model.DataPublicacaoString) %>
     </div>
     <div class="campos">
         <%: Html.HiddenFor(model => model.CodigoNoticia) %>
+        <%: Html.HiddenFor(model => model.DataPublicacao) %>
         <%: Html.DisplayFor(item => item.CodigoNoticia, new { @class = "controle500" }) %>
         <%: Html.ValidationMessageFor(item => item.CodigoNoticia) %>
     </div>

@@ -59,7 +59,7 @@
 </div>
 <div class="clear"></div>
 <div class="campo_botao" id="divExcluirSelecionados">
-    <input type="submit" class="button" value="<%: PortalAdmnistrativo.Resouces.Geral.chkExcluiSelecionados %>"/>
+    <input type="submit" class="button" value="<%: PortalAdmnistrativo.Resouces.Geral.chkExcluiSelecionados %>" onclick="javascript: excluirSelecionados();"/>
 </div>
 
 
@@ -150,7 +150,7 @@
         $("input[type=checkbox][name='CodigoGrid']:checked").each(function () {
             codsMarcados = codsMarcados + ($(this).val()) + ";";
         });
-
+        alert(listaCods);
         $("body").append("<div id='popup'></div>");
 
         $.ajax({
@@ -168,7 +168,15 @@
                         modal: true,
                         width: 580,
                         height: 400,
-                        title: "Excluir Selecionados"
+                        title: '<%: String.Format("{0} {1}", PortalAdmnistrativo.Resouces.Geral.pnlTituloExclusao, ViewContext.RouteData.Values["controller"].ToString()) %>',
+                        buttons: {
+                            Ok: function () {
+                                $('#acaoGrid').submit();
+                            },
+                            Cancelar: function () {
+                                $(this).dialog("close");
+                            }
+                        }
                     })
                     .html(data);
             },
