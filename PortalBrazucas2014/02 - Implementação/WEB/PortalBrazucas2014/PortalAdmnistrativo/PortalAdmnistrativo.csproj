@@ -163,6 +163,17 @@
     <Compile Include="Models\Metadata\CategoriaMetadata.cs" />
     <Compile Include="Models\Metadata\AnuncioMetadata.cs" />
     <Compile Include="Models\Metadata\ComentarioMetadata.cs" />
+    <Compile Include="Models\Metadata\RodadaMetadata.cs" />
+    <Compile Include="Models\Metadata\UsuarioMetadata.cs" />
+    <Compile Include="Models\Metadata\BolaoMetadata.cs" />
+    <Compile Include="Models\Metadata\GrupoMetadata.cs" />
+    <Compile Include="Models\Metadata\HistoriaMetadata.cs" />
+    <Compile Include="Models\Metadata\SelecaoMetadata.cs" />
+    <Compile Include="Models\Metadata\JogoMetadata.cs" />
+    <Compile Include="Models\Metadata\PontuacaoBolaoMetadata.cs" />
+    <Compile Include="Models\Metadata\PalpiteJogoMetadata.cs" />
+    <Compile Include="Models\Metadata\CidadeMetadata.cs" />
+    <Compile Include="Models\Metadata\IngressoMetadata.cs" />
     <Compile Include="Models\Metadata\NoticiaMetadata.cs" />
     <Compile Include="Models\Noticia.cs">
       <DependentUpon>BRAZUCASModel.tt</DependentUpon>

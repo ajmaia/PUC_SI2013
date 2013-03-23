@@ -8,7 +8,7 @@ using PortalAdmnistrativo.Models.Metadata;
 namespace PortalAdmnistrativo.Models
 {
     [MetadataType(typeof(CategoriaMetadata))]
-    public partial class Categoria
+    public partial class Categoria_
     {
 
         public IQueryable<Categoria> buscar()

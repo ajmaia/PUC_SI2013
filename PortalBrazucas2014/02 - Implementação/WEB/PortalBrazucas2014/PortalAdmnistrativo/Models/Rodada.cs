@@ -11,7 +11,9 @@ namespace PortalAdmnistrativo.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
+    [MetadataType(typeof(RodadaMetadata))]
     public partial class Rodada
     {
         public int DescricaoRodada { get; set; }

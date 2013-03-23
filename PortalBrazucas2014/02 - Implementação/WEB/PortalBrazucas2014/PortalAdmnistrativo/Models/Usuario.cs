@@ -11,7 +11,10 @@ namespace PortalAdmnistrativo.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using PortalAdmnistrativo.Models.Metadata;
+
+    [MetadataType(typeof(UsuarioMetadata))]
     public partial class Usuario
     {
         public Usuario()

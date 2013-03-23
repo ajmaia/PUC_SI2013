@@ -11,7 +11,9 @@ namespace PortalAdmnistrativo.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
+    [MetadataType(typeof(PontuacaoBolaoMetadata))]
     public partial class PontuacaoBolao
     {
         public int CodigoPontuacaoBolao { get; set; }

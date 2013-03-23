@@ -16,36 +16,6 @@
           <ScalarProperty Name="DescricaoCategoria" ColumnName="DescricaoCategoria" />
         </MappingFragment>
       </EntityTypeMapping>
-      <EntityTypeMapping TypeName="BRAZUCASModel.Anuncio">
-        <ModificationFunctionMapping>
-          <InsertFunction FunctionName="BRAZUCASModel.Store.PR_INSERIR_ANUNCIO">
-            <ScalarProperty Name="DescricaoCategoria" ParameterName="DescricaoCategoria" />
-            <ScalarProperty Name="CodigoCategoria" ParameterName="CodigoCategoria" />
-            <ScalarProperty Name="UsuarioAprovacao" ParameterName="UsuarioAprovacao" />
-            <ScalarProperty Name="StatusAprovacao" ParameterName="StatusAprovacao" />
-            <ScalarProperty Name="LoginCriacao" ParameterName="LoginCriacao" />
-            <ScalarProperty Name="DataPublicacao" ParameterName="DataPublicacao" />
-            <ScalarProperty Name="Conteudo" ParameterName="Conteudo" />
-            <ScalarProperty Name="CaminhoImagem" ParameterName="CaminhoImagem" />
-            <ScalarProperty Name="Titulo" ParameterName="Titulo" />
-          </InsertFunction>
-          <UpdateFunction FunctionName="BRAZUCASModel.Store.PR_EDITAR_ANUNCIO">
-            <ScalarProperty Name="DescricaoCategoria" ParameterName="DescricaoCategoria" Version="Current" />
-            <ScalarProperty Name="CodigoCategoria" ParameterName="CodigoCategoria" Version="Current" />
-            <ScalarProperty Name="UsuarioAprovacao" ParameterName="UsuarioAprovacao" Version="Current" />
-            <ScalarProperty Name="StatusAprovacao" ParameterName="StatusAprovacao" Version="Current" />
-            <ScalarProperty Name="LoginCriacao" ParameterName="LoginCriacao" Version="Current" />
-            <ScalarProperty Name="DataPublicacao" ParameterName="DataPublicacao" Version="Current" />
-            <ScalarProperty Name="Conteudo" ParameterName="Conteudo" Version="Current" />
-            <ScalarProperty Name="CaminhoImagem" ParameterName="CaminhoImagem" Version="Current" />
-            <ScalarProperty Name="Titulo" ParameterName="Titulo" Version="Current" />
-            <ScalarProperty Name="CodigoAnuncio" ParameterName="CodigoAnuncio" Version="Current" />
-          </UpdateFunction>
-          <DeleteFunction FunctionName="BRAZUCASModel.Store.PR_EXCLUIR_ANUNCIO">
-            <ScalarProperty Name="CodigoAnuncio" ParameterName="CodigoAnuncio" />
-          </DeleteFunction>
-        </ModificationFunctionMapping>
-      </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Categoria">
       <EntityTypeMapping TypeName="BRAZUCASModel.Categoria">
@@ -134,32 +104,6 @@
           <ScalarProperty Name="CodigoCategoria" ColumnName="CodigoCategoria" />
           <ScalarProperty Name="DescricaoCategoria" ColumnName="DescricaoCategoria" />
         </MappingFragment>
-      </EntityTypeMapping>
-      <EntityTypeMapping TypeName="BRAZUCASModel.Noticia">
-        <ModificationFunctionMapping>
-          <InsertFunction FunctionName="BRAZUCASModel.Store.PR_INSERIR_NOTICIA">
-            <ScalarProperty Name="DescricaoCategoria" ParameterName="DescricaoCategoria" />
-            <ScalarProperty Name="CodigoCategoria" ParameterName="CodigoCategoria" />
-            <ScalarProperty Name="Autor" ParameterName="Autor" />
-            <ScalarProperty Name="DataPublicacao" ParameterName="DataPublicacao" />
-            <ScalarProperty Name="Conteudo" ParameterName="Conteudo" />
-            <ScalarProperty Name="CaminhoImagem" ParameterName="CaminhoImagem" />
-            <ScalarProperty Name="Titulo" ParameterName="Titulo" />
-          </InsertFunction>
-          <UpdateFunction FunctionName="BRAZUCASModel.Store.PR_EDITAR_NOTICIA">
-            <ScalarProperty Name="DescricaoCategoria" ParameterName="DescricaoCategoria" Version="Current" />
-            <ScalarProperty Name="CodigoCategoria" ParameterName="CodigoCategoria" Version="Current" />
-            <ScalarProperty Name="Autor" ParameterName="Autor" Version="Current" />
-            <ScalarProperty Name="DataPublicacao" ParameterName="DataPublicacao" Version="Original" />
-            <ScalarProperty Name="Conteudo" ParameterName="Conteudo" Version="Current" />
-            <ScalarProperty Name="CaminhoImagem" ParameterName="CaminhoImagem" Version="Current" />
-            <ScalarProperty Name="Titulo" ParameterName="Titulo" Version="Current" />
-            <ScalarProperty Name="CodigoNoticia" ParameterName="CodigoNoticia" Version="Original" />
-          </UpdateFunction>
-          <DeleteFunction FunctionName="BRAZUCASModel.Store.PR_EXCLUIR_NOTICIA">
-            <ScalarProperty Name="CodigoNoticia" ParameterName="CodigoNoticia" />
-          </DeleteFunction>
-        </ModificationFunctionMapping>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="PalpiteJogo">
@@ -262,12 +206,5 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="PR_EDITAR_ANUNCIO" FunctionName="BRAZUCASModel.Store.PR_EDITAR_ANUNCIO" />
-    <FunctionImportMapping FunctionImportName="PR_EDITAR_NOTICIA" FunctionName="BRAZUCASModel.Store.PR_EDITAR_NOTICIA" />
-    <FunctionImportMapping FunctionImportName="PR_EXCLUIR_ANUNCIO" FunctionName="BRAZUCASModel.Store.PR_EXCLUIR_ANUNCIO" />
-    <FunctionImportMapping FunctionImportName="PR_EXCLUIR_COMENTARIO" FunctionName="BRAZUCASModel.Store.PR_EXCLUIR_COMENTARIO" />
-    <FunctionImportMapping FunctionImportName="PR_EXCLUIR_NOTICIA" FunctionName="BRAZUCASModel.Store.PR_EXCLUIR_NOTICIA" />
-    <FunctionImportMapping FunctionImportName="PR_INSERIR_ANUNCIO" FunctionName="BRAZUCASModel.Store.PR_INSERIR_ANUNCIO" />
-    <FunctionImportMapping FunctionImportName="PR_INSERIR_NOTICIA" FunctionName="BRAZUCASModel.Store.PR_INSERIR_NOTICIA" />
   </EntityContainerMapping>
 </Mapping>

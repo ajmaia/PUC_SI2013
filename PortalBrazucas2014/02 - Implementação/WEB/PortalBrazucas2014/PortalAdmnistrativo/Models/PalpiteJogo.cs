@@ -11,7 +11,9 @@ namespace PortalAdmnistrativo.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
+    [MetadataType(typeof(PalpiteJogoMetadata))]
     public partial class PalpiteJogo
     {
         public int CodigoPalpite { get; set; }

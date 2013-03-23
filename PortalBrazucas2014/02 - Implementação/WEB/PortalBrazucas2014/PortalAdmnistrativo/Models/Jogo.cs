@@ -11,7 +11,9 @@ namespace PortalAdmnistrativo.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
+    [MetadataType(typeof(JogoMetadata))]
     public partial class Jogo
     {
         public Jogo()

@@ -11,7 +11,10 @@ namespace PortalAdmnistrativo.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using PortalAdmnistrativo.Models.Metadata;
+    using System.ComponentModel.DataAnnotations;
+
+    [MetadataType(typeof(NoticiaMetadata))]
     public partial class Noticia
     {
         public Noticia()

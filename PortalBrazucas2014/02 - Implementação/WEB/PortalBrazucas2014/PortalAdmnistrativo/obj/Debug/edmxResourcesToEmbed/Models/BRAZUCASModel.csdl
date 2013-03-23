@@ -68,57 +68,6 @@
       <End Role="Usuario" EntitySet="Usuario" />
       <End Role="PontuacaoBolao" EntitySet="PontuacaoBolao" />
     </AssociationSet>
-    <FunctionImport Name="PR_EDITAR_ANUNCIO">
-      <Parameter Name="CodigoAnuncio" Mode="In" Type="Int32" />
-      <Parameter Name="Titulo" Mode="In" Type="String" />
-      <Parameter Name="CaminhoImagem" Mode="In" Type="String" />
-      <Parameter Name="Conteudo" Mode="In" Type="String" />
-      <Parameter Name="DataPublicacao" Mode="In" Type="DateTime" />
-      <Parameter Name="LoginCriacao" Mode="In" Type="String" />
-      <Parameter Name="StatusAprovacao" Mode="In" Type="String" />
-      <Parameter Name="UsuarioAprovacao" Mode="In" Type="String" />
-      <Parameter Name="CodigoCategoria" Mode="In" Type="Int32" />
-      <Parameter Name="DescricaoCategoria" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="PR_EDITAR_NOTICIA">
-      <Parameter Name="CodigoNoticia" Mode="In" Type="Int32" />
-      <Parameter Name="Titulo" Mode="In" Type="String" />
-      <Parameter Name="CaminhoImagem" Mode="In" Type="String" />
-      <Parameter Name="Conteudo" Mode="In" Type="String" />
-      <Parameter Name="DataPublicacao" Mode="In" Type="DateTime" />
-      <Parameter Name="Autor" Mode="In" Type="String" />
-      <Parameter Name="CodigoCategoria" Mode="In" Type="Int32" />
-      <Parameter Name="DescricaoCategoria" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="PR_EXCLUIR_ANUNCIO">
-      <Parameter Name="CodigoAnuncio" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="PR_EXCLUIR_COMENTARIO">
-      <Parameter Name="CodigoComentario" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="PR_EXCLUIR_NOTICIA">
-      <Parameter Name="CodigoNoticia" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="PR_INSERIR_ANUNCIO">
-      <Parameter Name="Titulo" Mode="In" Type="String" />
-      <Parameter Name="CaminhoImagem" Mode="In" Type="String" />
-      <Parameter Name="Conteudo" Mode="In" Type="String" />
-      <Parameter Name="DataPublicacao" Mode="In" Type="DateTime" />
-      <Parameter Name="LoginCriacao" Mode="In" Type="String" />
-      <Parameter Name="StatusAprovacao" Mode="In" Type="String" />
-      <Parameter Name="UsuarioAprovacao" Mode="In" Type="String" />
-      <Parameter Name="CodigoCategoria" Mode="In" Type="Int32" />
-      <Parameter Name="DescricaoCategoria" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="PR_INSERIR_NOTICIA">
-      <Parameter Name="Titulo" Mode="In" Type="String" />
-      <Parameter Name="CaminhoImagem" Mode="In" Type="String" />
-      <Parameter Name="Conteudo" Mode="In" Type="String" />
-      <Parameter Name="DataPublicacao" Mode="In" Type="DateTime" />
-      <Parameter Name="Autor" Mode="In" Type="String" />
-      <Parameter Name="CodigoCategoria" Mode="In" Type="Int32" />
-      <Parameter Name="DescricaoCategoria" Mode="In" Type="String" />
-    </FunctionImport>
   </EntityContainer>
   <EntityType Name="Anuncio">
     <Key>

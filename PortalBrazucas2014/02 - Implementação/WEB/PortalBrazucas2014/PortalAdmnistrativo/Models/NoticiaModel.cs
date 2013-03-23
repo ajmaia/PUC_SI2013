@@ -8,13 +8,13 @@ using PortalAdmnistrativo.Models.Metadata;
 namespace PortalAdmnistrativo.Models
 {
     [MetadataType(typeof(NoticiaMetadata))]
-    public partial class Noticia
+    public partial class Noticia_
     {
         public string DataPublicacaoString
         {
             get
             {
-                if(DataPublicacao >= DateTime.Parse("2013-01-01"))
+                if(this.d DataPublicacao >= DateTime.Parse("2013-01-01"))
                     return DataPublicacao.ToShortDateString();
                 else
                     return string.Empty;

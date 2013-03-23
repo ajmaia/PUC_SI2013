@@ -11,7 +11,10 @@ namespace PortalAdmnistrativo.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using PortalAdmnistrativo.Models.Metadata;
+
+    [MetadataType(typeof(ComentarioMetadata))]
     public partial class Comentario
     {
         public int CodigoComentario { get; set; }

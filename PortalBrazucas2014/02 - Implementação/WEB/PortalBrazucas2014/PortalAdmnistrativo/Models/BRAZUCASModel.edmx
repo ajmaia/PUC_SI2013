@@ -475,57 +475,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="PR_EDITAR_ANUNCIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="CodigoAnuncio" Type="int" Mode="In" />
-          <Parameter Name="Titulo" Type="varchar" Mode="In" />
-          <Parameter Name="CaminhoImagem" Type="varchar" Mode="In" />
-          <Parameter Name="Conteudo" Type="text" Mode="In" />
-          <Parameter Name="DataPublicacao" Type="datetime" Mode="In" />
-          <Parameter Name="LoginCriacao" Type="varchar" Mode="In" />
-          <Parameter Name="StatusAprovacao" Type="char" Mode="In" />
-          <Parameter Name="UsuarioAprovacao" Type="varchar" Mode="In" />
-          <Parameter Name="CodigoCategoria" Type="int" Mode="In" />
-          <Parameter Name="DescricaoCategoria" Type="varchar" Mode="In" />
-        </Function>
-        <Function Name="PR_EDITAR_NOTICIA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="CodigoNoticia" Type="int" Mode="In" />
-          <Parameter Name="Titulo" Type="varchar" Mode="In" />
-          <Parameter Name="CaminhoImagem" Type="varchar" Mode="In" />
-          <Parameter Name="Conteudo" Type="text" Mode="In" />
-          <Parameter Name="DataPublicacao" Type="datetime" Mode="In" />
-          <Parameter Name="Autor" Type="varchar" Mode="In" />
-          <Parameter Name="CodigoCategoria" Type="int" Mode="In" />
-          <Parameter Name="DescricaoCategoria" Type="varchar" Mode="In" />
-        </Function>
-        <Function Name="PR_EXCLUIR_ANUNCIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="CodigoAnuncio" Type="int" Mode="In" />
-        </Function>
-        <Function Name="PR_EXCLUIR_COMENTARIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="CodigoComentario" Type="int" Mode="In" />
-        </Function>
-        <Function Name="PR_EXCLUIR_NOTICIA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="CodigoNoticia" Type="int" Mode="In" />
-        </Function>
-        <Function Name="PR_INSERIR_ANUNCIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="Titulo" Type="varchar" Mode="In" />
-          <Parameter Name="CaminhoImagem" Type="varchar" Mode="In" />
-          <Parameter Name="Conteudo" Type="text" Mode="In" />
-          <Parameter Name="DataPublicacao" Type="datetime" Mode="In" />
-          <Parameter Name="LoginCriacao" Type="varchar" Mode="In" />
-          <Parameter Name="StatusAprovacao" Type="char" Mode="In" />
-          <Parameter Name="UsuarioAprovacao" Type="varchar" Mode="In" />
-          <Parameter Name="CodigoCategoria" Type="int" Mode="In" />
-          <Parameter Name="DescricaoCategoria" Type="varchar" Mode="In" />
-        </Function>
-        <Function Name="PR_INSERIR_NOTICIA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="Titulo" Type="varchar" Mode="In" />
-          <Parameter Name="CaminhoImagem" Type="varchar" Mode="In" />
-          <Parameter Name="Conteudo" Type="text" Mode="In" />
-          <Parameter Name="DataPublicacao" Type="datetime" Mode="In" />
-          <Parameter Name="Autor" Type="varchar" Mode="In" />
-          <Parameter Name="CodigoCategoria" Type="int" Mode="In" />
-          <Parameter Name="DescricaoCategoria" Type="varchar" Mode="In" />
-        </Function>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
@@ -599,57 +548,6 @@
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="PontuacaoBolao" EntitySet="PontuacaoBolao" />
           </AssociationSet>
-          <FunctionImport Name="PR_EDITAR_ANUNCIO">
-            <Parameter Name="CodigoAnuncio" Mode="In" Type="Int32" />
-            <Parameter Name="Titulo" Mode="In" Type="String" />
-            <Parameter Name="CaminhoImagem" Mode="In" Type="String" />
-            <Parameter Name="Conteudo" Mode="In" Type="String" />
-            <Parameter Name="DataPublicacao" Mode="In" Type="DateTime" />
-            <Parameter Name="LoginCriacao" Mode="In" Type="String" />
-            <Parameter Name="StatusAprovacao" Mode="In" Type="String" />
-            <Parameter Name="UsuarioAprovacao" Mode="In" Type="String" />
-            <Parameter Name="CodigoCategoria" Mode="In" Type="Int32" />
-            <Parameter Name="DescricaoCategoria" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="PR_EDITAR_NOTICIA">
-            <Parameter Name="CodigoNoticia" Mode="In" Type="Int32" />
-            <Parameter Name="Titulo" Mode="In" Type="String" />
-            <Parameter Name="CaminhoImagem" Mode="In" Type="String" />
-            <Parameter Name="Conteudo" Mode="In" Type="String" />
-            <Parameter Name="DataPublicacao" Mode="In" Type="DateTime" />
-            <Parameter Name="Autor" Mode="In" Type="String" />
-            <Parameter Name="CodigoCategoria" Mode="In" Type="Int32" />
-            <Parameter Name="DescricaoCategoria" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="PR_EXCLUIR_ANUNCIO">
-            <Parameter Name="CodigoAnuncio" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="PR_EXCLUIR_COMENTARIO">
-            <Parameter Name="CodigoComentario" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="PR_EXCLUIR_NOTICIA">
-            <Parameter Name="CodigoNoticia" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="PR_INSERIR_ANUNCIO">
-            <Parameter Name="Titulo" Mode="In" Type="String" />
-            <Parameter Name="CaminhoImagem" Mode="In" Type="String" />
-            <Parameter Name="Conteudo" Mode="In" Type="String" />
-            <Parameter Name="DataPublicacao" Mode="In" Type="DateTime" />
-            <Parameter Name="LoginCriacao" Mode="In" Type="String" />
-            <Parameter Name="StatusAprovacao" Mode="In" Type="String" />
-            <Parameter Name="UsuarioAprovacao" Mode="In" Type="String" />
-            <Parameter Name="CodigoCategoria" Mode="In" Type="Int32" />
-            <Parameter Name="DescricaoCategoria" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="PR_INSERIR_NOTICIA">
-            <Parameter Name="Titulo" Mode="In" Type="String" />
-            <Parameter Name="CaminhoImagem" Mode="In" Type="String" />
-            <Parameter Name="Conteudo" Mode="In" Type="String" />
-            <Parameter Name="DataPublicacao" Mode="In" Type="DateTime" />
-            <Parameter Name="Autor" Mode="In" Type="String" />
-            <Parameter Name="CodigoCategoria" Mode="In" Type="Int32" />
-            <Parameter Name="DescricaoCategoria" Mode="In" Type="String" />
-          </FunctionImport>
         </EntityContainer>
         <EntityType Name="Anuncio">
           <Key>
@@ -1056,36 +954,6 @@
                 <ScalarProperty Name="DescricaoCategoria" ColumnName="DescricaoCategoria" />
               </MappingFragment>
             </EntityTypeMapping>
-            <EntityTypeMapping TypeName="BRAZUCASModel.Anuncio">
-              <ModificationFunctionMapping>
-                <InsertFunction FunctionName="BRAZUCASModel.Store.PR_INSERIR_ANUNCIO">
-                  <ScalarProperty Name="DescricaoCategoria" ParameterName="DescricaoCategoria" />
-                  <ScalarProperty Name="CodigoCategoria" ParameterName="CodigoCategoria" />
-                  <ScalarProperty Name="UsuarioAprovacao" ParameterName="UsuarioAprovacao" />
-                  <ScalarProperty Name="StatusAprovacao" ParameterName="StatusAprovacao" />
-                  <ScalarProperty Name="LoginCriacao" ParameterName="LoginCriacao" />
-                  <ScalarProperty Name="DataPublicacao" ParameterName="DataPublicacao" />
-                  <ScalarProperty Name="Conteudo" ParameterName="Conteudo" />
-                  <ScalarProperty Name="CaminhoImagem" ParameterName="CaminhoImagem" />
-                  <ScalarProperty Name="Titulo" ParameterName="Titulo" />
-                </InsertFunction>
-                <UpdateFunction FunctionName="BRAZUCASModel.Store.PR_EDITAR_ANUNCIO">
-                  <ScalarProperty Name="DescricaoCategoria" ParameterName="DescricaoCategoria" Version="Current" />
-                  <ScalarProperty Name="CodigoCategoria" ParameterName="CodigoCategoria" Version="Current" />
-                  <ScalarProperty Name="UsuarioAprovacao" ParameterName="UsuarioAprovacao" Version="Current" />
-                  <ScalarProperty Name="StatusAprovacao" ParameterName="StatusAprovacao" Version="Current" />
-                  <ScalarProperty Name="LoginCriacao" ParameterName="LoginCriacao" Version="Current" />
-                  <ScalarProperty Name="DataPublicacao" ParameterName="DataPublicacao" Version="Current" />
-                  <ScalarProperty Name="Conteudo" ParameterName="Conteudo" Version="Current" />
-                  <ScalarProperty Name="CaminhoImagem" ParameterName="CaminhoImagem" Version="Current" />
-                  <ScalarProperty Name="Titulo" ParameterName="Titulo" Version="Current" />
-                  <ScalarProperty Name="CodigoAnuncio" ParameterName="CodigoAnuncio" Version="Current" />
-                </UpdateFunction>
-                <DeleteFunction FunctionName="BRAZUCASModel.Store.PR_EXCLUIR_ANUNCIO">
-                  <ScalarProperty Name="CodigoAnuncio" ParameterName="CodigoAnuncio" />
-                </DeleteFunction>
-              </ModificationFunctionMapping>
-            </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Categoria">
             <EntityTypeMapping TypeName="BRAZUCASModel.Categoria">
@@ -1174,32 +1042,6 @@
                 <ScalarProperty Name="CodigoCategoria" ColumnName="CodigoCategoria" />
                 <ScalarProperty Name="DescricaoCategoria" ColumnName="DescricaoCategoria" />
               </MappingFragment>
-            </EntityTypeMapping>
-            <EntityTypeMapping TypeName="BRAZUCASModel.Noticia">
-              <ModificationFunctionMapping>
-                <InsertFunction FunctionName="BRAZUCASModel.Store.PR_INSERIR_NOTICIA">
-                  <ScalarProperty Name="DescricaoCategoria" ParameterName="DescricaoCategoria" />
-                  <ScalarProperty Name="CodigoCategoria" ParameterName="CodigoCategoria" />
-                  <ScalarProperty Name="Autor" ParameterName="Autor" />
-                  <ScalarProperty Name="DataPublicacao" ParameterName="DataPublicacao" />
-                  <ScalarProperty Name="Conteudo" ParameterName="Conteudo" />
-                  <ScalarProperty Name="CaminhoImagem" ParameterName="CaminhoImagem" />
-                  <ScalarProperty Name="Titulo" ParameterName="Titulo" />
-                </InsertFunction>
-                <UpdateFunction FunctionName="BRAZUCASModel.Store.PR_EDITAR_NOTICIA">
-                  <ScalarProperty Name="DescricaoCategoria" ParameterName="DescricaoCategoria" Version="Current" />
-                  <ScalarProperty Name="CodigoCategoria" ParameterName="CodigoCategoria" Version="Current" />
-                  <ScalarProperty Name="Autor" ParameterName="Autor" Version="Current" />
-                  <ScalarProperty Name="DataPublicacao" ParameterName="DataPublicacao" Version="Original" />
-                  <ScalarProperty Name="Conteudo" ParameterName="Conteudo" Version="Current" />
-                  <ScalarProperty Name="CaminhoImagem" ParameterName="CaminhoImagem" Version="Current" />
-                  <ScalarProperty Name="Titulo" ParameterName="Titulo" Version="Current" />
-                  <ScalarProperty Name="CodigoNoticia" ParameterName="CodigoNoticia" Version="Original" />
-                </UpdateFunction>
-                <DeleteFunction FunctionName="BRAZUCASModel.Store.PR_EXCLUIR_NOTICIA">
-                  <ScalarProperty Name="CodigoNoticia" ParameterName="CodigoNoticia" />
-                </DeleteFunction>
-              </ModificationFunctionMapping>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PalpiteJogo">
@@ -1302,13 +1144,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="PR_EDITAR_ANUNCIO" FunctionName="BRAZUCASModel.Store.PR_EDITAR_ANUNCIO" />
-          <FunctionImportMapping FunctionImportName="PR_EDITAR_NOTICIA" FunctionName="BRAZUCASModel.Store.PR_EDITAR_NOTICIA" />
-          <FunctionImportMapping FunctionImportName="PR_EXCLUIR_ANUNCIO" FunctionName="BRAZUCASModel.Store.PR_EXCLUIR_ANUNCIO" />
-          <FunctionImportMapping FunctionImportName="PR_EXCLUIR_COMENTARIO" FunctionName="BRAZUCASModel.Store.PR_EXCLUIR_COMENTARIO" />
-          <FunctionImportMapping FunctionImportName="PR_EXCLUIR_NOTICIA" FunctionName="BRAZUCASModel.Store.PR_EXCLUIR_NOTICIA" />
-          <FunctionImportMapping FunctionImportName="PR_INSERIR_ANUNCIO" FunctionName="BRAZUCASModel.Store.PR_INSERIR_ANUNCIO" />
-          <FunctionImportMapping FunctionImportName="PR_INSERIR_NOTICIA" FunctionName="BRAZUCASModel.Store.PR_INSERIR_NOTICIA" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1325,7 +1160,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
-        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Default" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
