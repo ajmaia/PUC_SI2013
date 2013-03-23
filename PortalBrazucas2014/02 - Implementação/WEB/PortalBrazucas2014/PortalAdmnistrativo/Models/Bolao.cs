@@ -17,11 +17,6 @@ namespace PortalAdmnistrativo.Models
     [MetadataType(typeof(BolaoMetadata))]
     public partial class Bolao
     {
-        public Nullable<int> RankingBolao { get; set; }
-        public string LoginUsuario { get; set; }
-        public string NomeRazaoSocial { get; set; }
-        public Nullable<int> Pontuacao { get; set; }
-        public Nullable<int> RelativoPrimeiroColocado { get; set; }
-        public Nullable<int> RelativoColocadoAnterior { get; set; }
+
     }
 }

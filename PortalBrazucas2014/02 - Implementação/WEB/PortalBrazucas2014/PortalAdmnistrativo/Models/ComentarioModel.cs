@@ -7,8 +7,7 @@ using PortalAdmnistrativo.Models.Metadata;
 
 namespace PortalAdmnistrativo.Models
 {
-    [MetadataType(typeof(ComentarioMetadata))]
-    public partial class Comentario_
+    public partial class Comentario
     {
 
         public IQueryable<Comentario> buscar()

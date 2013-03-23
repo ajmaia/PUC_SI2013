@@ -95,7 +95,7 @@ namespace PortalAdmnistrativo.Controllers
 
             if (ModelState.IsValid)
             {
-                db.Noticia.Add(noticia);
+                db.Noticia.AddObject(noticia);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -124,8 +124,13 @@ namespace PortalAdmnistrativo.Controllers
         public ActionResult EditConfirmed(Noticia noticia)
         {
 
-            if (noticia.atualizar())
+            if (ModelState.IsValid)
+            {
+                db.Noticia.Attach(noticia);
+                db.ObjectStateManager.ChangeObjectState(noticia, EntityState.Modified);
+                db.SaveChanges();
                 return RedirectToAction("Index");
+            }
             
             return RedirectToAction("Erro");
         }
@@ -171,8 +176,8 @@ namespace PortalAdmnistrativo.Controllers
         [HttpPost, ActionName("Excluir")]
         public ActionResult DeleteConfirmed(Noticia entidade)
         {
-            if (entidade.apagar())
-                return RedirectToAction("Index");
+            db.Noticia.DeleteObject(entidade);
+            db.SaveChanges();
 
             return RedirectToAction("Erro");
         }
@@ -190,7 +195,7 @@ namespace PortalAdmnistrativo.Controllers
             foreach (var item in listaCodigos.TrimEnd(';').Split(';'))
             {
                 codigoNoticia = Convert.ToInt32(item);
-                //db.Noticia.DeleteObject(db.Noticia.Single(h => h.CodigoNoticia == codigoNoticia));
+                db.Noticia.DeleteObject(db.Noticia.Single(h => h.CodigoNoticia == codigoNoticia));
             }
 
             db.SaveChanges();

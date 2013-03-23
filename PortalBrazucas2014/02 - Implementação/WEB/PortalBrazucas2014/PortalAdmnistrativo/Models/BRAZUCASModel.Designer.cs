@@ -455,7 +455,7 @@ namespace PortalAdmnistrativo.Models
 
     #region Entities
     
-    /// <summary>
+    /// <summ   ary>
     /// No Metadata Documentation available.
     /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="BRAZUCASModel", Name="Anuncio")]

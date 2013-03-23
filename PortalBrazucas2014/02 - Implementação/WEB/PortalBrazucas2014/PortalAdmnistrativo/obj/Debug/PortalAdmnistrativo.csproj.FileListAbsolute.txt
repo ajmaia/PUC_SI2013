@@ -1,3 +1,11 @@
+C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalAdmnistrativo\obj\Debug\PortalAdmnistrativo.Resouces.Categoria.resources
+C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalAdmnistrativo\obj\Debug\PortalAdmnistrativo.Resouces.Anuncio.resources
+C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalAdmnistrativo\obj\Debug\PortalAdmnistrativo.Resouces.Comentario.resources
+C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalAdmnistrativo\obj\Debug\PortalAdmnistrativo.Resouces.Geral.resources
+C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalAdmnistrativo\obj\Debug\PortalAdmnistrativo.Resouces.Home.resources
+C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalAdmnistrativo\obj\Debug\PortalAdmnistrativo.Resouces.Noticia.resources
+C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalAdmnistrativo\obj\Debug\PortalAdmnistrativo.csproj.GenerateResource.Cache
+C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalAdmnistrativo\obj\Debug\PortalAdmnistrativo.csprojResolveAssemblyReference.cache
 C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalAdmnistrativo\bin\PortalAdmnistrativo.dll
 C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalAdmnistrativo\bin\PortalAdmnistrativo.pdb
 C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalAdmnistrativo\bin\EntityFramework.dll
@@ -16,13 +24,5 @@ C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\Portal
 C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalAdmnistrativo\bin\System.Web.WebPages.xml
 C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalAdmnistrativo\bin\System.Web.WebPages.Deployment.xml
 C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalAdmnistrativo\bin\System.Web.WebPages.Razor.xml
-C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalAdmnistrativo\obj\Debug\PortalAdmnistrativo.csprojResolveAssemblyReference.cache
-C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalAdmnistrativo\obj\Debug\PortalAdmnistrativo.Resouces.Categoria.resources
-C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalAdmnistrativo\obj\Debug\PortalAdmnistrativo.Resouces.Anuncio.resources
-C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalAdmnistrativo\obj\Debug\PortalAdmnistrativo.Resouces.Comentario.resources
-C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalAdmnistrativo\obj\Debug\PortalAdmnistrativo.Resouces.Geral.resources
-C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalAdmnistrativo\obj\Debug\PortalAdmnistrativo.Resouces.Home.resources
-C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalAdmnistrativo\obj\Debug\PortalAdmnistrativo.Resouces.Noticia.resources
-C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalAdmnistrativo\obj\Debug\PortalAdmnistrativo.csproj.GenerateResource.Cache
 C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalAdmnistrativo\obj\Debug\PortalAdmnistrativo.dll
 C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalAdmnistrativo\obj\Debug\PortalAdmnistrativo.pdb

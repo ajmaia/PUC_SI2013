@@ -17,9 +17,5 @@ namespace PortalAdmnistrativo.Models
     [MetadataType(typeof(GrupoMetadata))]
     public partial class Grupo
     {
-        public int CodigoGrupo { get; set; }
-        public string DescricaoGrupo { get; set; }
-    
-        public virtual Selecao Selecao { get; set; }
     }
 }

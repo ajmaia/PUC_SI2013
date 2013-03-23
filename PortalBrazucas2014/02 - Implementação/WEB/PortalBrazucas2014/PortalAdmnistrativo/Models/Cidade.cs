@@ -17,19 +17,6 @@ namespace PortalAdmnistrativo.Models
     [MetadataType(typeof(CidadeMetadata))]
     public partial class Cidade
     {
-        public Cidade()
-        {
-            this.Jogo = new HashSet<Jogo>();
-        }
-    
-        public int CodigoCidade { get; set; }
-        public string Nome { get; set; }
-        public string UF { get; set; }
-        public string CaminhoImagem { get; set; }
-        public string NomeEstadio { get; set; }
-        public Nullable<int> CapacidadeEstadio { get; set; }
-        public string InformacoesEstadio { get; set; }
-    
-        public virtual ICollection<Jogo> Jogo { get; set; }
+
     }
 }

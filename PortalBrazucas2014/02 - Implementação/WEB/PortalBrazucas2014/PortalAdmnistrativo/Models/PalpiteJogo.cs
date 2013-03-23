@@ -12,18 +12,11 @@ namespace PortalAdmnistrativo.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using PortalAdmnistrativo.Models.Metadata;
 
     [MetadataType(typeof(PalpiteJogoMetadata))]
     public partial class PalpiteJogo
     {
-        public int CodigoPalpite { get; set; }
-        public int codigoJogo { get; set; }
-        public string LoginUsuario { get; set; }
-        public System.DateTime DataAposta { get; set; }
-        public int PalpiteGolsSelecaoA { get; set; }
-        public int PalpiteGolsSelecaoB { get; set; }
-    
-        public virtual Jogo Jogo { get; set; }
-        public virtual Usuario Usuario { get; set; }
+
     }
 }

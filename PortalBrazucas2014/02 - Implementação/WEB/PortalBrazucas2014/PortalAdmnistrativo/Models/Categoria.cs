@@ -17,16 +17,6 @@ namespace PortalAdmnistrativo.Models
     [MetadataType(typeof(CategoriaMetadata))]
     public partial class Categoria
     {
-        public Categoria()
-        {
-            this.Anuncio = new HashSet<Anuncio>();
-            this.Noticia = new HashSet<Noticia>();
-        }
-    
-        public int CodigoCategoria { get; set; }
-        public string DescricaoCategoria { get; set; }
-    
-        public virtual ICollection<Anuncio> Anuncio { get; set; }
-        public virtual ICollection<Noticia> Noticia { get; set; }
+
     }
 }
