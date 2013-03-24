@@ -191,6 +191,7 @@
     <Compile Include="Models\Selecao.cs">
       <DependentUpon>BRAZUCASModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\TabelaJogoModel.cs" />
     <Compile Include="Models\Usuario.cs">
       <DependentUpon>BRAZUCASModel.tt</DependentUpon>
     </Compile>
