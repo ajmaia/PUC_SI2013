@@ -25,3 +25,12 @@ C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\Portal
 C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalAdmnistrativo\obj\Debug\PortalAdmnistrativo.csproj.GenerateResource.Cache
 C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalAdmnistrativo\obj\Debug\PortalAdmnistrativo.dll
 C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalAdmnistrativo\obj\Debug\PortalAdmnistrativo.pdb
+C:\Users\Lorena\Source\portal\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalAdmnistrativo\obj\Debug\PortalAdmnistrativo.csprojResolveAssemblyReference.cache
+C:\Users\Lorena\Source\portal\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalAdmnistrativo\obj\Debug\PortalAdmnistrativo.Resouces.Categoria.resources
+C:\Users\Lorena\Source\portal\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalAdmnistrativo\obj\Debug\PortalAdmnistrativo.Resouces.Anuncio.resources
+C:\Users\Lorena\Source\portal\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalAdmnistrativo\obj\Debug\PortalAdmnistrativo.Resouces.Comentario.resources
+C:\Users\Lorena\Source\portal\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalAdmnistrativo\obj\Debug\PortalAdmnistrativo.Resouces.Geral.resources
+C:\Users\Lorena\Source\portal\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalAdmnistrativo\obj\Debug\PortalAdmnistrativo.Resouces.Home.resources
+C:\Users\Lorena\Source\portal\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalAdmnistrativo\obj\Debug\PortalAdmnistrativo.Resouces.Noticia.resources
+C:\Users\Lorena\Source\portal\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalAdmnistrativo\obj\Debug\PortalAdmnistrativo.csproj.GenerateResource.Cache
+C:\Users\Lorena\Source\portal\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalAdmnistrativo\obj\Debug\PortalAdmnistrativo.dll
