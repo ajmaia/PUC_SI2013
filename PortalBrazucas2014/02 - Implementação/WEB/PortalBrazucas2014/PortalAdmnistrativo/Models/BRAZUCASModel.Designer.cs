@@ -14,6 +14,7 @@ using System.Data.Objects;
 using System.Data.Objects.DataClasses;
 using System.Linq;
 using System.Runtime.Serialization;
+using System.Web.Mvc;
 using System.Xml.Serialization;
 
 [assembly: EdmSchemaAttribute()]
@@ -572,6 +573,7 @@ namespace PortalAdmnistrativo.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
+        [AllowHtml]
         public global::System.String Conteudo
         {
             get
@@ -1427,6 +1429,7 @@ namespace PortalAdmnistrativo.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
+        [AllowHtml]
         public global::System.String Conteudo
         {
             get
@@ -2928,6 +2931,7 @@ namespace PortalAdmnistrativo.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
+        [AllowHtml]
         public global::System.String Conteudo
         {
             get
