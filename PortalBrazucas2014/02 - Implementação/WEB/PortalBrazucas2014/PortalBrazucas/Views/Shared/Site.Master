@@ -2,32 +2,117 @@
 
 <!DOCTYPE html>
 <html>
-<head runat="server">
+<head id="Head1" runat="server">
     <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
     <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/Portal.css" rel="stylesheet" type="text/css" />
     <script src="<%: Url.Content("~/Scripts/jquery-1.7.1.min.js") %>" type="text/javascript"></script>
+    <script src="<%: Url.Content("~/Scripts/Site.js") %>" type="text/javascript"></script>
 </head>
 <body>
-    <div class="page">
-        <div id="header">
-            <div id="title">
-                <h1>My MVC Application</h1>
+    <div class="pagina">
+        <div id="cabecalho">
+            <div id="icone_twitter"></div>
+            <div id="icone_face"></div>
+            <div id="icone_feeds"></div>
+            <div id="pesquisa">
+                <input type="text" value="" class="campo_pesquisa"/>
             </div>
-            <div id="logindisplay">
-                <% Html.RenderPartial("LogOnUserControl"); %>
-            </div> 
-            <div id="menucontainer">
-                <ul id="menu">
-                    <li><%: Html.ActionLink("Home", "Index", "Home")%></li>
-                    <li><%: Html.ActionLink("About", "About", "Home")%></li>
-                </ul>
-            </div>
-        </div>
-        <div id="main">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
-            <div id="footer">
+            <div id="icone_admin"></div>
+            <div id="icone_idioma"></div>
+            <div id="icone_login" onclick="trocaLogin();"></div>
+            <div id="logado" class="controles_login" style="padding-right: 10px; margin-top: 10px; display: none;">Bem vindo(a) USUÁRIO!</div>
+            <div id="naologado" class="controles_login">
+                <input type="text" value="senha" class="campo_login"/>
+                <input type="password" value="Usuário" class="campo_login"/>
             </div>
         </div>
+        <div id="menu_admin">
+            <div class="item_menu_cabecalho" style="background-image: url('../../Content/themes/images/icones/firefox.png');">
+                Mozila Firefox
+            </div>
+            <div class="item_menu_cabecalho" style="background-image: url('../../Content/themes/images/icones/ie.png');">
+                Internet Explorer
+            </div>
+        </div>
+        <div id="menu_idioma">
+            <div class="item_menu_cabecalho" style="background-image: url('../../Content/themes/images/idiomas/pt-BR.png');">
+                Português (pt-BR)
+            </div>
+            <div class="item_menu_cabecalho" style="background-image: url('../../Content/themes/images/idiomas/en-US.png');">
+                English (en-US)
+            </div>
+            <div class="item_menu_cabecalho" style="background-image: url('../../Content/themes/images/idiomas/es-ES.png');">
+                Español (es-ES)
+            </div>
+        </div>
+        <div id="logotipo">
+            <div id="imagem_login"></div>
+            <div id="menu">
+                <div class="botao_menu" style="background-color: #FF3636; background-image: url('../../Content/themes/images/icones/home_icon.png');">
+                    Início
+                </div>
+                <div class="espaco10"></div>
+                <div class="botao_menu" style="background-color: #248FD3; background-image: url('../../Content/themes/images/icones/noticias_icon.png');">
+                    Notícias
+                </div>
+                <div class="espaco10"></div>
+                <div class="botao_menu" style="background-color: #9c0990; background-image: url('../../Content/themes/images/icones/jogos_icon.png');">
+                    Classificação<br />e Jogos
+                </div>
+                <div class="clear"></div>
+                <div class="botao_menu" style="background-color: #E3961A; background-image: url('../../Content/themes/images/icones/cidades_icon.png');">
+                    Cidades Sede
+                </div>
+                <div class="espaco10"></div>
+                <div class="botao_menu" style="background-color: #00FF21; background-image: url('../../Content/themes/images/icones/bolao_icon.png');">
+                    Bolão
+                </div>
+                <div class="espaco10"></div>
+                <div class="botao_menu" style="background-color: #FF006E; background-image: url('../../Content/themes/images/icones/cadastro_icon.png');">
+                    Cadastro
+                </div>
+            </div>
+        </div>
+        <div id="area_selecoes">
+            <div id="seta_selecao_esq"></div>
+            <div id="selecoes">
+                <div class="bandeiras" style="background-image: url('../../Content/themes/images/bandeiras/flg_brasil.png');"></div>
+                <div class="bandeiras" style="background-image: url('../../Content/themes/images/bandeiras/flg_africa.png');"></div>
+                <div class="bandeiras" style="background-image: url('../../Content/themes/images/bandeiras/flg_portugal.png');"></div>
+                <div class="bandeiras" style="background-image: url('../../Content/themes/images/bandeiras/flg_australia.png');"></div>
+                <div class="bandeiras" style="background-image: url('../../Content/themes/images/bandeiras/flg_chile.png');"></div>
+                <div class="bandeiras" style="background-image: url('../../Content/themes/images/bandeiras/flg_espanha.png');"></div>
+                <div class="bandeiras" style="background-image: url('../../Content/themes/images/bandeiras/flg_franca.png');"></div>
+                <div class="bandeiras" style="background-image: url('../../Content/themes/images/bandeiras/flg_inglaterra.png');"></div>
+                <div class="bandeiras" style="background-image: url('../../Content/themes/images/bandeiras/flg_alemanha.png');"></div>
+                <div class="bandeiras" style="background-image: url('../../Content/themes/images/bandeiras/flg_camaroes.png');"></div>
+                <div class="bandeiras" style="background-image: url('../../Content/themes/images/bandeiras/flg_franca.png');"></div>
+                <div class="bandeiras" style="background-image: url('../../Content/themes/images/bandeiras/flg_brasil.png');"></div>
+                <div class="bandeiras" style="background-image: url('../../Content/themes/images/bandeiras/flg_inglaterra.png');"></div>
+                <div class="bandeiras" style="background-image: url('../../Content/themes/images/bandeiras/flg_alemanha.png');"></div>
+                <div class="bandeiras" style="background-image: url('../../Content/themes/images/bandeiras/flg_camaroes.png');"></div>
+                <div class="bandeiras" style="background-image: url('../../Content/themes/images/bandeiras/flg_franca.png');"></div>
+                <div class="bandeiras" style="background-image: url('../../Content/themes/images/bandeiras/flg_brasil.png');"></div>
+            </div>
+            <div id="seta_selecao_dir"></div>
+        </div>
+        <div id="conteudo">
+            <div id="principal">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            </div>
+
+            <div id="anuncios">
+                <div class="anuncio">
+                    <img src="../../Content/themes/images/anuncios/anuncie_aqui.jpg" />
+                </div>
+                <div class="anuncio">
+                    <img src="../../Content/themes/images/anuncios/anuncie_aqui.jpg" />
+                </div>
+            </div>
+        </div>
+        <div class="linha10"></div>
+        <div id="rodape">RODAPE</div>
     </div>
 </body>
 </html>

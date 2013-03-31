@@ -11,17 +11,12 @@ namespace PortalAdmnistrativo.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using PortalAdmnistrativo.Models.Metadata;
+
+    [MetadataType(typeof(PontuacaoBolaoMetadata))]
     public partial class PontuacaoBolao
     {
-        public int CodigoBolao { get; set; }
-        public string LoginUsuario { get; set; }
-        public string NomeRazaoSocial { get; set; }
-        public Nullable<int> AcertosPlacarCompleto { get; set; }
-        public Nullable<int> AcertosResultadoPlacarParcial { get; set; }
-        public Nullable<int> AcertosResultado { get; set; }
-        public Nullable<int> RankingBolao { get; set; }
-    
-        public virtual Usuario Usuario { get; set; }
+
     }
 }

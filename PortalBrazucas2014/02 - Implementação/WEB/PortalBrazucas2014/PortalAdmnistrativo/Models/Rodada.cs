@@ -11,18 +11,12 @@ namespace PortalAdmnistrativo.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using PortalAdmnistrativo.Models.Metadata;
+
+    [MetadataType(typeof(RodadaMetadata))]
     public partial class Rodada
     {
-        public int Rodada1 { get; set; }
-        public string Fase { get; set; }
-        public int CodigoSelecao { get; set; }
-        public string NomeSelecao { get; set; }
-        public int CodigoGrupo { get; set; }
-        public Nullable<int> Empates { get; set; }
-        public Nullable<int> Vitorias { get; set; }
-        public Nullable<int> Derrotas { get; set; }
-        public Nullable<int> GolsRealizados { get; set; }
-        public Nullable<int> GolsSofridos { get; set; }
+
     }
 }

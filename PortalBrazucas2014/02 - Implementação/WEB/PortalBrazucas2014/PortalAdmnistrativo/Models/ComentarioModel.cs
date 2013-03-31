@@ -2,14 +2,26 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.ComponentModel.DataAnnotations;
-using PortalAdmnistrativo.Models.Metadata;
 
 namespace PortalAdmnistrativo.Models
 {
-    [MetadataType(typeof(ComentarioMetadata))]
     public partial class Comentario
     {
+        public string DataCriacaoString
+        {
+            get
+            {
+                if (DataCriacao >= DateTime.Parse("2013-01-01"))
+                    return DataCriacao.ToLongDateString();
+                else
+                    return string.Empty;
+            }
+            set
+            {
+                if (value != null)
+                    DataCriacao = DateTime.Parse(value);
+            }
+        }
 
         public IQueryable<Comentario> buscar()
         {

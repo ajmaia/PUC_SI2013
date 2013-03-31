@@ -59,7 +59,7 @@
 </div>
 <div class="clear"></div>
 <div class="campo_botao" id="divExcluirSelecionados">
-    <input type="submit" class="button" value="<%: PortalAdmnistrativo.Resouces.Geral.chkExcluiSelecionados %>"/>
+    <input type="submit" class="button" value="<%: PortalAdmnistrativo.Resouces.Geral.chkExcluiSelecionados %>" onclick="javascript: excluirSelecionados();"/>
 </div>
 
 
@@ -98,16 +98,16 @@
     function carregarPopUp(cod, acao) {
         $("body").append("<div id='popup'></div>")
         
-        var wid = 0;
+        var hei = 0;
         <% var tipo = ""; %>
 
         if(acao == "Excluir")
         {
-            wid = 400;
+            hei = 300;
             <% tipo = PortalAdmnistrativo.Resouces.Geral.pnlTituloExclusao; %>
         }
         else {
-            wid = 400;
+            hei = 600;
             <% tipo = PortalAdmnistrativo.Resouces.Geral.pnlTituloEdicao; %>
         }
 
@@ -124,8 +124,8 @@
                         },
                         resizable: false,
                         modal: true,
-                        width: 580,
-                        height: wid,
+                        width: 800,
+                        height: hei,
                         title: '<%: String.Format("{0} {1}", tipo, ViewContext.RouteData.Values["controller"].ToString()) %>',
                         buttons: {
                             Ok: function () {
@@ -150,7 +150,7 @@
         $("input[type=checkbox][name='CodigoGrid']:checked").each(function () {
             codsMarcados = codsMarcados + ($(this).val()) + ";";
         });
-
+        alert(listaCods);
         $("body").append("<div id='popup'></div>");
 
         $.ajax({
@@ -168,7 +168,15 @@
                         modal: true,
                         width: 580,
                         height: 400,
-                        title: "Excluir Selecionados"
+                        title: '<%: String.Format("{0} {1}", PortalAdmnistrativo.Resouces.Geral.pnlTituloExclusao, ViewContext.RouteData.Values["controller"].ToString()) %>',
+                        buttons: {
+                            Ok: function () {
+                                $('#acaoGrid').submit();
+                            },
+                            Cancelar: function () {
+                                $(this).dialog("close");
+                            }
+                        }
                     })
                     .html(data);
             },

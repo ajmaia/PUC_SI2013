@@ -11,17 +11,12 @@ namespace PortalAdmnistrativo.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using PortalAdmnistrativo.Models.Metadata;
+
+    [MetadataType(typeof(IngressoMetadata))]
     public partial class Ingresso
     {
-        public int CodigoJogo { get; set; }
-        public string NomeCidade { get; set; }
-        public string LocalVendaIngresso { get; set; }
-        public int Rodada { get; set; }
-        public int CodigoSelecaoA { get; set; }
-        public string NomeSelecaoA { get; set; }
-        public int CodigoSelecaoB { get; set; }
-        public string NomeSelecaoB { get; set; }
-        public System.DateTime DataHora { get; set; }
+        
     }
 }

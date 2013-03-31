@@ -11,21 +11,12 @@ namespace PortalAdmnistrativo.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using PortalAdmnistrativo.Models.Metadata;
+
+    [MetadataType(typeof(AnuncioMetadata))]
     public partial class Anuncio
     {
-        public int CodigoAnuncio { get; set; }
-        public string Titulo { get; set; }
-        public string CaminhoImagem { get; set; }
-        public string Conteudo { get; set; }
-        public System.DateTime DataPublicacao { get; set; }
-        public string LoginCriacao { get; set; }
-        public string StatusAprovacao { get; set; }
-        public string UsuarioAprovacao { get; set; }
-        public int CodigoCategoria { get; set; }
-        public string DescricaoCategoria { get; set; }
-    
-        public virtual Categoria Categoria { get; set; }
-        public virtual Usuario Usuario { get; set; }
+
     }
 }

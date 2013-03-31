@@ -11,27 +11,12 @@ namespace PortalAdmnistrativo.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using PortalAdmnistrativo.Models.Metadata;
+
+    [MetadataType(typeof(HistoriaMetadata))]
     public partial class Historia
     {
-        public Historia()
-        {
-            this.Selecaos = new HashSet<Selecao>();
-        }
-    
-        public int CodigoHistoria { get; set; }
-        public string HistoriaSelecao { get; set; }
-        public string Pais { get; set; }
-        public string HistoriaPais { get; set; }
-        public string CaminhoImagem { get; set; }
-        public int RankingFIFA { get; set; }
-        public Nullable<int> QuantidadeJogosHistorico { get; set; }
-        public Nullable<int> VitoriasHistorico { get; set; }
-        public Nullable<int> EmpatesHistorico { get; set; }
-        public Nullable<int> DerrotasHistorico { get; set; }
-        public Nullable<int> GolsRealizadosHistorico { get; set; }
-        public Nullable<int> GolsSofridosHistorico { get; set; }
-    
-        public virtual ICollection<Selecao> Selecaos { get; set; }
+
     }
 }

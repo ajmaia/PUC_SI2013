@@ -42,8 +42,8 @@
                     },
                     resizable: false,
                     modal: true,
-                    width: 900,
-                    height: 500,
+                    width: 800,
+                    height: 600,
                     title: '<%: String.Format("{0} {1}", PortalAdmnistrativo.Resouces.Geral.pnlTituloInclusao, ViewContext.RouteData.Values["controller"].ToString()) %>',
                     buttons: {
                         Salvar: function () {

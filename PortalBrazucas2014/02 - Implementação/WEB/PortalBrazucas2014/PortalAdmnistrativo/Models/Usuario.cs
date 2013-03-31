@@ -11,28 +11,12 @@ namespace PortalAdmnistrativo.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using PortalAdmnistrativo.Models.Metadata;
+
+    [MetadataType(typeof(UsuarioMetadata))]
     public partial class Usuario
     {
-        public Usuario()
-        {
-            this.Anuncios = new HashSet<Anuncio>();
-            this.Comentarios = new HashSet<Comentario>();
-            this.PalpiteJogoes = new HashSet<PalpiteJogo>();
-            this.PontuacaoBolaos = new HashSet<PontuacaoBolao>();
-        }
-    
-        public string LoginUsuario { get; set; }
-        public decimal CpfCnpj { get; set; }
-        public string NomeRazaoSocial { get; set; }
-        public string Email { get; set; }
-        public Nullable<System.DateTime> DataNascimento { get; set; }
-        public string Sexo { get; set; }
-        public string TipoPerfil { get; set; }
-    
-        public virtual ICollection<Anuncio> Anuncios { get; set; }
-        public virtual ICollection<Comentario> Comentarios { get; set; }
-        public virtual ICollection<PalpiteJogo> PalpiteJogoes { get; set; }
-        public virtual ICollection<PontuacaoBolao> PontuacaoBolaos { get; set; }
+
     }
 }

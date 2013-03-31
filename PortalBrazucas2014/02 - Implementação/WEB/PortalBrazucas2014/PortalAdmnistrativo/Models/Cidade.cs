@@ -11,22 +11,12 @@ namespace PortalAdmnistrativo.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using PortalAdmnistrativo.Models.Metadata;
+
+    [MetadataType(typeof(CidadeMetadata))]
     public partial class Cidade
     {
-        public Cidade()
-        {
-            this.Jogoes = new HashSet<Jogo>();
-        }
-    
-        public int CodigoCidade { get; set; }
-        public string Nome { get; set; }
-        public string UF { get; set; }
-        public string CaminhoImagem { get; set; }
-        public string NomeEstadio { get; set; }
-        public Nullable<int> CapacidadeEstadio { get; set; }
-        public string InformacoesEstadio { get; set; }
-    
-        public virtual ICollection<Jogo> Jogoes { get; set; }
+
     }
 }

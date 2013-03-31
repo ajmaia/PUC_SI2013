@@ -11,32 +11,12 @@ namespace PortalAdmnistrativo.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using PortalAdmnistrativo.Models.Metadata;
+
+    [MetadataType(typeof(SelecaoMetadata))]
     public partial class Selecao
     {
-        public Selecao()
-        {
-            this.Jogoes = new HashSet<Jogo>();
-            this.Jogoes1 = new HashSet<Jogo>();
-        }
-    
-        public int CodigoSelecao { get; set; }
-        public string Nome { get; set; }
-        public string Pais { get; set; }
-        public string CaminhoImagem { get; set; }
-        public int CodigoGrupo { get; set; }
-        public string DescricaoGrupo { get; set; }
-        public Nullable<int> QuantidadeJogos { get; set; }
-        public Nullable<int> Vitorias { get; set; }
-        public Nullable<int> Empates { get; set; }
-        public Nullable<int> Derrotas { get; set; }
-        public Nullable<int> GolsRealizados { get; set; }
-        public Nullable<int> GolsSofridos { get; set; }
-        public int CodigoHistoria { get; set; }
-    
-        public virtual Grupo Grupo { get; set; }
-        public virtual Historia Historia { get; set; }
-        public virtual ICollection<Jogo> Jogoes { get; set; }
-        public virtual ICollection<Jogo> Jogoes1 { get; set; }
+
     }
 }

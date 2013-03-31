@@ -18,4 +18,8 @@ C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\Portal
 C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalBrazucas\bin\System.Web.WebPages.Razor.xml
 C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalBrazucas\obj\Debug\PortalBrazucas.dll
 C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalBrazucas\obj\Debug\PortalBrazucas.pdb
+C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalBrazucas\bin\PortalAdmnistrativo.dll
+C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalBrazucas\bin\PortalAdmnistrativo.pdb
 C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalBrazucas\obj\Debug\PortalBrazucas.csprojResolveAssemblyReference.cache
+C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalBrazucas\obj\Debug\PortalBrazucas.Resource.PortalResource.resources
+C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalBrazucas\obj\Debug\PortalBrazucas.csproj.GenerateResource.Cache

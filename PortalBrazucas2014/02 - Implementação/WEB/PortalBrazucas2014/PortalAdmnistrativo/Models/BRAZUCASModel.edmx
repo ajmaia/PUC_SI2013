@@ -28,20 +28,6 @@
       [Bolao].[RelativoColocadoAnterior] AS [RelativoColocadoAnterior]
       FROM [dbo].[Bolao] AS [Bolao]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="DesempenhoSelecao" EntityType="BRAZUCASModel.Store.DesempenhoSelecao" store:Type="Views" store:Schema="dbo" store:Name="DesempenhoSelecao">
-            <DefiningQuery>SELECT 
-      [DesempenhoSelecao].[RankingFIFA] AS [RankingFIFA], 
-      [DesempenhoSelecao].[Nome] AS [Nome], 
-      [DesempenhoSelecao].[Pais] AS [Pais], 
-      [DesempenhoSelecao].[CaminhoImagem] AS [CaminhoImagem], 
-      [DesempenhoSelecao].[QuantidadeJogosHistorico] AS [QuantidadeJogosHistorico], 
-      [DesempenhoSelecao].[VitoriasHistorico] AS [VitoriasHistorico], 
-      [DesempenhoSelecao].[EmpatesHistorico] AS [EmpatesHistorico], 
-      [DesempenhoSelecao].[DerrotasHistorico] AS [DerrotasHistorico], 
-      [DesempenhoSelecao].[GolsRealizadosHistorico] AS [GolsRealizadosHistorico], 
-      [DesempenhoSelecao].[GolsSofridosHistorico] AS [GolsSofridosHistorico]
-      FROM [dbo].[DesempenhoSelecao] AS [DesempenhoSelecao]</DefiningQuery>
-          </EntitySet>
           <EntitySet Name="Ingresso" EntityType="BRAZUCASModel.Store.Ingresso" store:Type="Views" store:Schema="dbo" store:Name="Ingresso">
             <DefiningQuery>SELECT 
       [Ingresso].[CodigoJogo] AS [CodigoJogo], 
@@ -57,7 +43,7 @@
           </EntitySet>
           <EntitySet Name="Rodada" EntityType="BRAZUCASModel.Store.Rodada" store:Type="Views" store:Schema="dbo" store:Name="Rodada">
             <DefiningQuery>SELECT 
-      [Rodada].[Rodada] AS [Rodada], 
+      [Rodada].[DescricaoRodada] AS [DescricaoRodada], 
       [Rodada].[Fase] AS [Fase], 
       [Rodada].[CodigoSelecao] AS [CodigoSelecao], 
       [Rodada].[NomeSelecao] AS [NomeSelecao], 
@@ -129,7 +115,7 @@
           <Property Name="CodigoAnuncio" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Titulo" Type="varchar" Nullable="false" MaxLength="128" />
           <Property Name="CaminhoImagem" Type="varchar" MaxLength="128" />
-          <Property Name="Conteudo" Type="varchar" Nullable="false" MaxLength="128" />
+          <Property Name="Conteudo" Type="text" Nullable="false" />
           <Property Name="DataPublicacao" Type="datetime" Nullable="false" />
           <Property Name="LoginCriacao" Type="varchar" Nullable="false" MaxLength="8" />
           <Property Name="StatusAprovacao" Type="char" MaxLength="1" />
@@ -186,12 +172,7 @@
           <Property Name="HistoriaPais" Type="text" />
           <Property Name="CaminhoImagem" Type="varchar" MaxLength="128" />
           <Property Name="RankingFIFA" Type="int" Nullable="false" />
-          <Property Name="QuantidadeJogosHistorico" Type="int" />
-          <Property Name="VitoriasHistorico" Type="int" />
-          <Property Name="EmpatesHistorico" Type="int" />
-          <Property Name="DerrotasHistorico" Type="int" />
-          <Property Name="GolsRealizadosHistorico" Type="int" />
-          <Property Name="GolsSofridosHistorico" Type="int" />
+          <Property Name="TitulosConquistados" Type="varchar" MaxLength="128" />
         </EntityType>
         <EntityType Name="Jogo">
           <Key>
@@ -218,7 +199,7 @@
           <Property Name="CodigoNoticia" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Titulo" Type="varchar" Nullable="false" MaxLength="128" />
           <Property Name="CaminhoImagem" Type="varchar" MaxLength="128" />
-          <Property Name="Conteudo" Type="varchar" Nullable="false" MaxLength="128" />
+          <Property Name="Conteudo" Type="text" Nullable="false" />
           <Property Name="DataPublicacao" Type="datetime" Nullable="false" />
           <Property Name="Autor" Type="varchar" Nullable="false" MaxLength="128" />
           <Property Name="CodigoCategoria" Type="int" Nullable="false" />
@@ -237,9 +218,9 @@
         </EntityType>
         <EntityType Name="PontuacaoBolao">
           <Key>
-            <PropertyRef Name="CodigoBolao" />
+            <PropertyRef Name="CodigoPontuacaoBolao" />
           </Key>
-          <Property Name="CodigoBolao" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CodigoPontuacaoBolao" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="LoginUsuario" Type="varchar" Nullable="false" MaxLength="8" />
           <Property Name="NomeRazaoSocial" Type="varchar" Nullable="false" MaxLength="128" />
           <Property Name="AcertosPlacarCompleto" Type="int" />
@@ -293,26 +274,6 @@
           <Property Name="RelativoColocadoAnterior" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'BRAZUCAS.dbo.DesempenhoSelecao' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
-        <EntityType Name="DesempenhoSelecao">
-          <Key>
-            <PropertyRef Name="RankingFIFA" />
-            <PropertyRef Name="Nome" />
-            <PropertyRef Name="Pais" />
-          </Key>
-          <Property Name="RankingFIFA" Type="int" Nullable="false" />
-          <Property Name="Nome" Type="varchar" Nullable="false" MaxLength="128" />
-          <Property Name="Pais" Type="varchar" Nullable="false" MaxLength="16" />
-          <Property Name="CaminhoImagem" Type="varchar" MaxLength="128" />
-          <Property Name="QuantidadeJogosHistorico" Type="int" />
-          <Property Name="VitoriasHistorico" Type="int" />
-          <Property Name="EmpatesHistorico" Type="int" />
-          <Property Name="DerrotasHistorico" Type="int" />
-          <Property Name="GolsRealizadosHistorico" Type="int" />
-          <Property Name="GolsSofridosHistorico" Type="int" />
-        </EntityType>
-        <!--Errors Found During Generation:
       warning 6002: The table/view 'BRAZUCAS.dbo.Ingresso' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="Ingresso">
@@ -341,13 +302,13 @@
       -->
         <EntityType Name="Rodada">
           <Key>
-            <PropertyRef Name="Rodada" />
+            <PropertyRef Name="DescricaoRodada" />
             <PropertyRef Name="Fase" />
             <PropertyRef Name="CodigoSelecao" />
             <PropertyRef Name="NomeSelecao" />
             <PropertyRef Name="CodigoGrupo" />
           </Key>
-          <Property Name="Rodada" Type="int" Nullable="false" />
+          <Property Name="DescricaoRodada" Type="int" Nullable="false" />
           <Property Name="Fase" Type="varchar" Nullable="false" MaxLength="13" />
           <Property Name="CodigoSelecao" Type="int" Nullable="false" />
           <Property Name="NomeSelecao" Type="varchar" Nullable="false" MaxLength="128" />
@@ -520,73 +481,72 @@
     <edmx:ConceptualModels>
       <Schema Namespace="BRAZUCASModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="Entities" p1:LazyLoadingEnabled="true">
-          <EntitySet Name="Anuncios" EntityType="BRAZUCASModel.Anuncio" />
-          <EntitySet Name="Categorias" EntityType="BRAZUCASModel.Categoria" />
-          <EntitySet Name="Cidades" EntityType="BRAZUCASModel.Cidade" />
-          <EntitySet Name="Comentarios" EntityType="BRAZUCASModel.Comentario" />
-          <EntitySet Name="Grupoes" EntityType="BRAZUCASModel.Grupo" />
-          <EntitySet Name="Historias" EntityType="BRAZUCASModel.Historia" />
-          <EntitySet Name="Jogoes" EntityType="BRAZUCASModel.Jogo" />
-          <EntitySet Name="Noticias" EntityType="BRAZUCASModel.Noticia" />
-          <EntitySet Name="PalpiteJogoes" EntityType="BRAZUCASModel.PalpiteJogo" />
-          <EntitySet Name="PontuacaoBolaos" EntityType="BRAZUCASModel.PontuacaoBolao" />
-          <EntitySet Name="Selecaos" EntityType="BRAZUCASModel.Selecao" />
-          <EntitySet Name="Usuarios" EntityType="BRAZUCASModel.Usuario" />
-          <EntitySet Name="Bolaos" EntityType="BRAZUCASModel.Bolao" />
-          <EntitySet Name="DesempenhoSelecaos" EntityType="BRAZUCASModel.DesempenhoSelecao" />
-          <EntitySet Name="Ingressoes" EntityType="BRAZUCASModel.Ingresso" />
-          <EntitySet Name="Rodadas" EntityType="BRAZUCASModel.Rodada" />
+          <EntitySet Name="Anuncio" EntityType="BRAZUCASModel.Anuncio" />
+          <EntitySet Name="Categoria" EntityType="BRAZUCASModel.Categoria" />
+          <EntitySet Name="Cidade" EntityType="BRAZUCASModel.Cidade" />
+          <EntitySet Name="Comentario" EntityType="BRAZUCASModel.Comentario" />
+          <EntitySet Name="Grupo" EntityType="BRAZUCASModel.Grupo" />
+          <EntitySet Name="Historia" EntityType="BRAZUCASModel.Historia" />
+          <EntitySet Name="Jogo" EntityType="BRAZUCASModel.Jogo" />
+          <EntitySet Name="Noticia" EntityType="BRAZUCASModel.Noticia" />
+          <EntitySet Name="PalpiteJogo" EntityType="BRAZUCASModel.PalpiteJogo" />
+          <EntitySet Name="PontuacaoBolao" EntityType="BRAZUCASModel.PontuacaoBolao" />
+          <EntitySet Name="Selecao" EntityType="BRAZUCASModel.Selecao" />
+          <EntitySet Name="Usuario" EntityType="BRAZUCASModel.Usuario" />
+          <EntitySet Name="Bolao" EntityType="BRAZUCASModel.Bolao" />
+          <EntitySet Name="Ingresso" EntityType="BRAZUCASModel.Ingresso" />
+          <EntitySet Name="Rodada" EntityType="BRAZUCASModel.Rodada" />
           <AssociationSet Name="FK_Anuncio_Categoria" Association="BRAZUCASModel.FK_Anuncio_Categoria">
-            <End Role="Categoria" EntitySet="Categorias" />
-            <End Role="Anuncio" EntitySet="Anuncios" />
+            <End Role="Categoria" EntitySet="Categoria" />
+            <End Role="Anuncio" EntitySet="Anuncio" />
           </AssociationSet>
           <AssociationSet Name="FK_Anuncio_Usuario" Association="BRAZUCASModel.FK_Anuncio_Usuario">
-            <End Role="Usuario" EntitySet="Usuarios" />
-            <End Role="Anuncio" EntitySet="Anuncios" />
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Anuncio" EntitySet="Anuncio" />
           </AssociationSet>
           <AssociationSet Name="FK_Noticia_Categoria" Association="BRAZUCASModel.FK_Noticia_Categoria">
-            <End Role="Categoria" EntitySet="Categorias" />
-            <End Role="Noticia" EntitySet="Noticias" />
+            <End Role="Categoria" EntitySet="Categoria" />
+            <End Role="Noticia" EntitySet="Noticia" />
           </AssociationSet>
           <AssociationSet Name="FK_Jogo_Cidade" Association="BRAZUCASModel.FK_Jogo_Cidade">
-            <End Role="Cidade" EntitySet="Cidades" />
-            <End Role="Jogo" EntitySet="Jogoes" />
+            <End Role="Cidade" EntitySet="Cidade" />
+            <End Role="Jogo" EntitySet="Jogo" />
           </AssociationSet>
           <AssociationSet Name="FK_Comentario_Noticia" Association="BRAZUCASModel.FK_Comentario_Noticia">
-            <End Role="Noticia" EntitySet="Noticias" />
-            <End Role="Comentario" EntitySet="Comentarios" />
+            <End Role="Noticia" EntitySet="Noticia" />
+            <End Role="Comentario" EntitySet="Comentario" />
           </AssociationSet>
           <AssociationSet Name="FK_Comentario_Usuario" Association="BRAZUCASModel.FK_Comentario_Usuario">
-            <End Role="Usuario" EntitySet="Usuarios" />
-            <End Role="Comentario" EntitySet="Comentarios" />
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Comentario" EntitySet="Comentario" />
           </AssociationSet>
           <AssociationSet Name="FK_Selecao_Grupo" Association="BRAZUCASModel.FK_Selecao_Grupo">
-            <End Role="Grupo" EntitySet="Grupoes" />
-            <End Role="Selecao" EntitySet="Selecaos" />
+            <End Role="Grupo" EntitySet="Grupo" />
+            <End Role="Selecao" EntitySet="Selecao" />
           </AssociationSet>
           <AssociationSet Name="FK_Selecao_Historia" Association="BRAZUCASModel.FK_Selecao_Historia">
-            <End Role="Historia" EntitySet="Historias" />
-            <End Role="Selecao" EntitySet="Selecaos" />
+            <End Role="Historia" EntitySet="Historia" />
+            <End Role="Selecao" EntitySet="Selecao" />
           </AssociationSet>
           <AssociationSet Name="FK_Jogo_SelecaoA" Association="BRAZUCASModel.FK_Jogo_SelecaoA">
-            <End Role="Selecao" EntitySet="Selecaos" />
-            <End Role="Jogo" EntitySet="Jogoes" />
+            <End Role="Selecao" EntitySet="Selecao" />
+            <End Role="Jogo" EntitySet="Jogo" />
           </AssociationSet>
           <AssociationSet Name="FK_Jogo_SelecaoB" Association="BRAZUCASModel.FK_Jogo_SelecaoB">
-            <End Role="Selecao" EntitySet="Selecaos" />
-            <End Role="Jogo" EntitySet="Jogoes" />
+            <End Role="Selecao" EntitySet="Selecao" />
+            <End Role="Jogo" EntitySet="Jogo" />
           </AssociationSet>
           <AssociationSet Name="FK_Palpite_Jogo" Association="BRAZUCASModel.FK_Palpite_Jogo">
-            <End Role="Jogo" EntitySet="Jogoes" />
-            <End Role="PalpiteJogo" EntitySet="PalpiteJogoes" />
+            <End Role="Jogo" EntitySet="Jogo" />
+            <End Role="PalpiteJogo" EntitySet="PalpiteJogo" />
           </AssociationSet>
           <AssociationSet Name="FK_Palpite_Usuario" Association="BRAZUCASModel.FK_Palpite_Usuario">
-            <End Role="Usuario" EntitySet="Usuarios" />
-            <End Role="PalpiteJogo" EntitySet="PalpiteJogoes" />
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="PalpiteJogo" EntitySet="PalpiteJogo" />
           </AssociationSet>
           <AssociationSet Name="FK_Pontuacao_Usuario" Association="BRAZUCASModel.FK_Pontuacao_Usuario">
-            <End Role="Usuario" EntitySet="Usuarios" />
-            <End Role="PontuacaoBolao" EntitySet="PontuacaoBolaos" />
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="PontuacaoBolao" EntitySet="PontuacaoBolao" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Anuncio">
@@ -596,7 +556,7 @@
           <Property Name="CodigoAnuncio" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="Titulo" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
           <Property Name="CaminhoImagem" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
-          <Property Name="Conteudo" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+          <Property Name="Conteudo" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
           <Property Name="DataPublicacao" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="LoginCriacao" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
           <Property Name="StatusAprovacao" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
@@ -612,8 +572,8 @@
           </Key>
           <Property Name="CodigoCategoria" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="DescricaoCategoria" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="Anuncios" Relationship="BRAZUCASModel.FK_Anuncio_Categoria" FromRole="Categoria" ToRole="Anuncio" />
-          <NavigationProperty Name="Noticias" Relationship="BRAZUCASModel.FK_Noticia_Categoria" FromRole="Categoria" ToRole="Noticia" />
+          <NavigationProperty Name="Anuncio" Relationship="BRAZUCASModel.FK_Anuncio_Categoria" FromRole="Categoria" ToRole="Anuncio" />
+          <NavigationProperty Name="Noticia" Relationship="BRAZUCASModel.FK_Noticia_Categoria" FromRole="Categoria" ToRole="Noticia" />
         </EntityType>
         <EntityType Name="Cidade">
           <Key>
@@ -626,7 +586,7 @@
           <Property Name="NomeEstadio" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
           <Property Name="CapacidadeEstadio" Type="Int32" />
           <Property Name="InformacoesEstadio" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="Jogoes" Relationship="BRAZUCASModel.FK_Jogo_Cidade" FromRole="Cidade" ToRole="Jogo" />
+          <NavigationProperty Name="Jogo" Relationship="BRAZUCASModel.FK_Jogo_Cidade" FromRole="Cidade" ToRole="Jogo" />
         </EntityType>
         <EntityType Name="Comentario">
           <Key>
@@ -661,13 +621,8 @@
           <Property Name="HistoriaPais" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
           <Property Name="CaminhoImagem" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
           <Property Name="RankingFIFA" Type="Int32" Nullable="false" />
-          <Property Name="QuantidadeJogosHistorico" Type="Int32" />
-          <Property Name="VitoriasHistorico" Type="Int32" />
-          <Property Name="EmpatesHistorico" Type="Int32" />
-          <Property Name="DerrotasHistorico" Type="Int32" />
-          <Property Name="GolsRealizadosHistorico" Type="Int32" />
-          <Property Name="GolsSofridosHistorico" Type="Int32" />
-          <NavigationProperty Name="Selecaos" Relationship="BRAZUCASModel.FK_Selecao_Historia" FromRole="Historia" ToRole="Selecao" />
+          <Property Name="TitulosConquistados" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Selecao" Relationship="BRAZUCASModel.FK_Selecao_Historia" FromRole="Historia" ToRole="Selecao" />
         </EntityType>
         <EntityType Name="Jogo">
           <Key>
@@ -689,7 +644,7 @@
           <NavigationProperty Name="Cidade" Relationship="BRAZUCASModel.FK_Jogo_Cidade" FromRole="Jogo" ToRole="Cidade" />
           <NavigationProperty Name="Selecao" Relationship="BRAZUCASModel.FK_Jogo_SelecaoA" FromRole="Jogo" ToRole="Selecao" />
           <NavigationProperty Name="Selecao1" Relationship="BRAZUCASModel.FK_Jogo_SelecaoB" FromRole="Jogo" ToRole="Selecao" />
-          <NavigationProperty Name="PalpiteJogoes" Relationship="BRAZUCASModel.FK_Palpite_Jogo" FromRole="Jogo" ToRole="PalpiteJogo" />
+          <NavigationProperty Name="PalpiteJogo" Relationship="BRAZUCASModel.FK_Palpite_Jogo" FromRole="Jogo" ToRole="PalpiteJogo" />
         </EntityType>
         <EntityType Name="Noticia">
           <Key>
@@ -698,13 +653,13 @@
           <Property Name="CodigoNoticia" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="Titulo" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
           <Property Name="CaminhoImagem" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
-          <Property Name="Conteudo" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+          <Property Name="Conteudo" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
           <Property Name="DataPublicacao" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Autor" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
           <Property Name="CodigoCategoria" Type="Int32" Nullable="false" />
           <Property Name="DescricaoCategoria" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="Categoria" Relationship="BRAZUCASModel.FK_Noticia_Categoria" FromRole="Noticia" ToRole="Categoria" />
-          <NavigationProperty Name="Comentarios" Relationship="BRAZUCASModel.FK_Comentario_Noticia" FromRole="Noticia" ToRole="Comentario" />
+          <NavigationProperty Name="Comentario" Relationship="BRAZUCASModel.FK_Comentario_Noticia" FromRole="Noticia" ToRole="Comentario" />
         </EntityType>
         <EntityType Name="PalpiteJogo">
           <Key>
@@ -721,9 +676,9 @@
         </EntityType>
         <EntityType Name="PontuacaoBolao">
           <Key>
-            <PropertyRef Name="CodigoBolao" />
+            <PropertyRef Name="CodigoPontuacaoBolao" />
           </Key>
-          <Property Name="CodigoBolao" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="CodigoPontuacaoBolao" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="LoginUsuario" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
           <Property Name="NomeRazaoSocial" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
           <Property Name="AcertosPlacarCompleto" Type="Int32" />
@@ -751,8 +706,8 @@
           <Property Name="CodigoHistoria" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Grupo" Relationship="BRAZUCASModel.FK_Selecao_Grupo" FromRole="Selecao" ToRole="Grupo" />
           <NavigationProperty Name="Historia" Relationship="BRAZUCASModel.FK_Selecao_Historia" FromRole="Selecao" ToRole="Historia" />
-          <NavigationProperty Name="Jogoes" Relationship="BRAZUCASModel.FK_Jogo_SelecaoA" FromRole="Selecao" ToRole="Jogo" />
-          <NavigationProperty Name="Jogoes1" Relationship="BRAZUCASModel.FK_Jogo_SelecaoB" FromRole="Selecao" ToRole="Jogo" />
+          <NavigationProperty Name="Jogo" Relationship="BRAZUCASModel.FK_Jogo_SelecaoA" FromRole="Selecao" ToRole="Jogo" />
+          <NavigationProperty Name="Jogo1" Relationship="BRAZUCASModel.FK_Jogo_SelecaoB" FromRole="Selecao" ToRole="Jogo" />
         </EntityType>
         <EntityType Name="Usuario">
           <Key>
@@ -765,10 +720,10 @@
           <Property Name="DataNascimento" Type="DateTime" Precision="3" />
           <Property Name="Sexo" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
           <Property Name="TipoPerfil" Type="String" Nullable="false" MaxLength="16" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="Anuncios" Relationship="BRAZUCASModel.FK_Anuncio_Usuario" FromRole="Usuario" ToRole="Anuncio" />
-          <NavigationProperty Name="Comentarios" Relationship="BRAZUCASModel.FK_Comentario_Usuario" FromRole="Usuario" ToRole="Comentario" />
-          <NavigationProperty Name="PalpiteJogoes" Relationship="BRAZUCASModel.FK_Palpite_Usuario" FromRole="Usuario" ToRole="PalpiteJogo" />
-          <NavigationProperty Name="PontuacaoBolaos" Relationship="BRAZUCASModel.FK_Pontuacao_Usuario" FromRole="Usuario" ToRole="PontuacaoBolao" />
+          <NavigationProperty Name="Anuncio" Relationship="BRAZUCASModel.FK_Anuncio_Usuario" FromRole="Usuario" ToRole="Anuncio" />
+          <NavigationProperty Name="Comentario" Relationship="BRAZUCASModel.FK_Comentario_Usuario" FromRole="Usuario" ToRole="Comentario" />
+          <NavigationProperty Name="PalpiteJogo" Relationship="BRAZUCASModel.FK_Palpite_Usuario" FromRole="Usuario" ToRole="PalpiteJogo" />
+          <NavigationProperty Name="PontuacaoBolao" Relationship="BRAZUCASModel.FK_Pontuacao_Usuario" FromRole="Usuario" ToRole="PontuacaoBolao" />
         </EntityType>
         <EntityType Name="Bolao">
           <Key>
@@ -781,23 +736,6 @@
           <Property Name="Pontuacao" Type="Int32" />
           <Property Name="RelativoPrimeiroColocado" Type="Int32" />
           <Property Name="RelativoColocadoAnterior" Type="Int32" />
-        </EntityType>
-        <EntityType Name="DesempenhoSelecao">
-          <Key>
-            <PropertyRef Name="RankingFIFA" />
-            <PropertyRef Name="Nome" />
-            <PropertyRef Name="Pais" />
-          </Key>
-          <Property Name="RankingFIFA" Type="Int32" Nullable="false" />
-          <Property Name="Nome" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
-          <Property Name="Pais" Type="String" Nullable="false" MaxLength="16" Unicode="false" FixedLength="false" />
-          <Property Name="CaminhoImagem" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
-          <Property Name="QuantidadeJogosHistorico" Type="Int32" />
-          <Property Name="VitoriasHistorico" Type="Int32" />
-          <Property Name="EmpatesHistorico" Type="Int32" />
-          <Property Name="DerrotasHistorico" Type="Int32" />
-          <Property Name="GolsRealizadosHistorico" Type="Int32" />
-          <Property Name="GolsSofridosHistorico" Type="Int32" />
         </EntityType>
         <EntityType Name="Ingresso">
           <Key>
@@ -822,13 +760,13 @@
         </EntityType>
         <EntityType Name="Rodada">
           <Key>
-            <PropertyRef Name="Rodada1" />
+            <PropertyRef Name="DescricaoRodada" />
             <PropertyRef Name="Fase" />
             <PropertyRef Name="CodigoSelecao" />
             <PropertyRef Name="NomeSelecao" />
             <PropertyRef Name="CodigoGrupo" />
           </Key>
-          <Property Name="Rodada1" Type="Int32" Nullable="false" />
+          <Property Name="DescricaoRodada" Type="Int32" Nullable="false" />
           <Property Name="Fase" Type="String" Nullable="false" MaxLength="13" Unicode="false" FixedLength="false" />
           <Property Name="CodigoSelecao" Type="Int32" Nullable="false" />
           <Property Name="NomeSelecao" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
@@ -913,7 +851,7 @@
         </Association>
         <Association Name="FK_Selecao_Grupo">
           <End Role="Grupo" Type="BRAZUCASModel.Grupo" Multiplicity="1" />
-          <End Role="Selecao" Type="BRAZUCASModel.Selecao" Multiplicity="*" />
+          <End Role="Selecao" Type="BRAZUCASModel.Selecao" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="Grupo">
               <PropertyRef Name="CodigoGrupo" />
@@ -1001,7 +939,7 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="BRAZUCASModelStoreContainer" CdmEntityContainer="Entities">
-          <EntitySetMapping Name="Anuncios">
+          <EntitySetMapping Name="Anuncio">
             <EntityTypeMapping TypeName="BRAZUCASModel.Anuncio">
               <MappingFragment StoreEntitySet="Anuncio">
                 <ScalarProperty Name="CodigoAnuncio" ColumnName="CodigoAnuncio" />
@@ -1017,7 +955,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Categorias">
+          <EntitySetMapping Name="Categoria">
             <EntityTypeMapping TypeName="BRAZUCASModel.Categoria">
               <MappingFragment StoreEntitySet="Categoria">
                 <ScalarProperty Name="CodigoCategoria" ColumnName="CodigoCategoria" />
@@ -1025,7 +963,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Cidades">
+          <EntitySetMapping Name="Cidade">
             <EntityTypeMapping TypeName="BRAZUCASModel.Cidade">
               <MappingFragment StoreEntitySet="Cidade">
                 <ScalarProperty Name="CodigoCidade" ColumnName="CodigoCidade" />
@@ -1038,7 +976,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Comentarios">
+          <EntitySetMapping Name="Comentario">
             <EntityTypeMapping TypeName="BRAZUCASModel.Comentario">
               <MappingFragment StoreEntitySet="Comentario">
                 <ScalarProperty Name="CodigoComentario" ColumnName="CodigoComentario" />
@@ -1052,7 +990,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Grupoes">
+          <EntitySetMapping Name="Grupo">
             <EntityTypeMapping TypeName="BRAZUCASModel.Grupo">
               <MappingFragment StoreEntitySet="Grupo">
                 <ScalarProperty Name="CodigoGrupo" ColumnName="CodigoGrupo" />
@@ -1060,7 +998,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Historias">
+          <EntitySetMapping Name="Historia">
             <EntityTypeMapping TypeName="BRAZUCASModel.Historia">
               <MappingFragment StoreEntitySet="Historia">
                 <ScalarProperty Name="CodigoHistoria" ColumnName="CodigoHistoria" />
@@ -1069,16 +1007,11 @@
                 <ScalarProperty Name="HistoriaPais" ColumnName="HistoriaPais" />
                 <ScalarProperty Name="CaminhoImagem" ColumnName="CaminhoImagem" />
                 <ScalarProperty Name="RankingFIFA" ColumnName="RankingFIFA" />
-                <ScalarProperty Name="QuantidadeJogosHistorico" ColumnName="QuantidadeJogosHistorico" />
-                <ScalarProperty Name="VitoriasHistorico" ColumnName="VitoriasHistorico" />
-                <ScalarProperty Name="EmpatesHistorico" ColumnName="EmpatesHistorico" />
-                <ScalarProperty Name="DerrotasHistorico" ColumnName="DerrotasHistorico" />
-                <ScalarProperty Name="GolsRealizadosHistorico" ColumnName="GolsRealizadosHistorico" />
-                <ScalarProperty Name="GolsSofridosHistorico" ColumnName="GolsSofridosHistorico" />
+                <ScalarProperty Name="TitulosConquistados" ColumnName="TitulosConquistados" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Jogoes">
+          <EntitySetMapping Name="Jogo">
             <EntityTypeMapping TypeName="BRAZUCASModel.Jogo">
               <MappingFragment StoreEntitySet="Jogo">
                 <ScalarProperty Name="CodigoJogo" ColumnName="CodigoJogo" />
@@ -1097,7 +1030,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Noticias">
+          <EntitySetMapping Name="Noticia">
             <EntityTypeMapping TypeName="BRAZUCASModel.Noticia">
               <MappingFragment StoreEntitySet="Noticia">
                 <ScalarProperty Name="CodigoNoticia" ColumnName="CodigoNoticia" />
@@ -1111,7 +1044,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="PalpiteJogoes">
+          <EntitySetMapping Name="PalpiteJogo">
             <EntityTypeMapping TypeName="BRAZUCASModel.PalpiteJogo">
               <MappingFragment StoreEntitySet="PalpiteJogo">
                 <ScalarProperty Name="CodigoPalpite" ColumnName="CodigoPalpite" />
@@ -1123,10 +1056,10 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="PontuacaoBolaos">
+          <EntitySetMapping Name="PontuacaoBolao">
             <EntityTypeMapping TypeName="BRAZUCASModel.PontuacaoBolao">
               <MappingFragment StoreEntitySet="PontuacaoBolao">
-                <ScalarProperty Name="CodigoBolao" ColumnName="CodigoBolao" />
+                <ScalarProperty Name="CodigoPontuacaoBolao" ColumnName="CodigoPontuacaoBolao" />
                 <ScalarProperty Name="LoginUsuario" ColumnName="LoginUsuario" />
                 <ScalarProperty Name="NomeRazaoSocial" ColumnName="NomeRazaoSocial" />
                 <ScalarProperty Name="AcertosPlacarCompleto" ColumnName="AcertosPlacarCompleto" />
@@ -1136,7 +1069,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Selecaos">
+          <EntitySetMapping Name="Selecao">
             <EntityTypeMapping TypeName="BRAZUCASModel.Selecao">
               <MappingFragment StoreEntitySet="Selecao">
                 <ScalarProperty Name="CodigoSelecao" ColumnName="CodigoSelecao" />
@@ -1155,7 +1088,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Usuarios">
+          <EntitySetMapping Name="Usuario">
             <EntityTypeMapping TypeName="BRAZUCASModel.Usuario">
               <MappingFragment StoreEntitySet="Usuario">
                 <ScalarProperty Name="LoginUsuario" ColumnName="LoginUsuario" />
@@ -1168,7 +1101,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Bolaos">
+          <EntitySetMapping Name="Bolao">
             <EntityTypeMapping TypeName="BRAZUCASModel.Bolao">
               <MappingFragment StoreEntitySet="Bolao">
                 <ScalarProperty Name="RankingBolao" ColumnName="RankingBolao" />
@@ -1180,23 +1113,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="DesempenhoSelecaos">
-            <EntityTypeMapping TypeName="BRAZUCASModel.DesempenhoSelecao">
-              <MappingFragment StoreEntitySet="DesempenhoSelecao">
-                <ScalarProperty Name="RankingFIFA" ColumnName="RankingFIFA" />
-                <ScalarProperty Name="Nome" ColumnName="Nome" />
-                <ScalarProperty Name="Pais" ColumnName="Pais" />
-                <ScalarProperty Name="CaminhoImagem" ColumnName="CaminhoImagem" />
-                <ScalarProperty Name="QuantidadeJogosHistorico" ColumnName="QuantidadeJogosHistorico" />
-                <ScalarProperty Name="VitoriasHistorico" ColumnName="VitoriasHistorico" />
-                <ScalarProperty Name="EmpatesHistorico" ColumnName="EmpatesHistorico" />
-                <ScalarProperty Name="DerrotasHistorico" ColumnName="DerrotasHistorico" />
-                <ScalarProperty Name="GolsRealizadosHistorico" ColumnName="GolsRealizadosHistorico" />
-                <ScalarProperty Name="GolsSofridosHistorico" ColumnName="GolsSofridosHistorico" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Ingressoes">
+          <EntitySetMapping Name="Ingresso">
             <EntityTypeMapping TypeName="BRAZUCASModel.Ingresso">
               <MappingFragment StoreEntitySet="Ingresso">
                 <ScalarProperty Name="CodigoJogo" ColumnName="CodigoJogo" />
@@ -1211,10 +1128,10 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Rodadas">
+          <EntitySetMapping Name="Rodada">
             <EntityTypeMapping TypeName="BRAZUCASModel.Rodada">
               <MappingFragment StoreEntitySet="Rodada">
-                <ScalarProperty Name="Rodada1" ColumnName="Rodada" />
+                <ScalarProperty Name="DescricaoRodada" ColumnName="DescricaoRodada" />
                 <ScalarProperty Name="Fase" ColumnName="Fase" />
                 <ScalarProperty Name="CodigoSelecao" ColumnName="CodigoSelecao" />
                 <ScalarProperty Name="NomeSelecao" ColumnName="NomeSelecao" />
@@ -1243,7 +1160,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
-        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Default" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->

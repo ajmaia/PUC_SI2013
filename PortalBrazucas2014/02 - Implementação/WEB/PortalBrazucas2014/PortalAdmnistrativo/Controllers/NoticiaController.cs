@@ -95,7 +95,7 @@ namespace PortalAdmnistrativo.Controllers
 
             if (ModelState.IsValid)
             {
-                db.Noticia.Add(noticia);
+                db.Noticia.AddObject(noticia);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -123,13 +123,17 @@ namespace PortalAdmnistrativo.Controllers
         [HttpPost, ActionName("Editar")]
         public ActionResult EditConfirmed(Noticia noticia)
         {
+
             if (ModelState.IsValid)
             {
+                noticia.DescricaoCategoria = retornaCategorias(noticia.CodigoCategoria);
+
                 db.Noticia.Attach(noticia);
+                db.ObjectStateManager.ChangeObjectState(noticia, EntityState.Modified);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            
             return RedirectToAction("Erro");
         }
 
@@ -172,12 +176,13 @@ namespace PortalAdmnistrativo.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpPost, ActionName("Excluir")]
-        public ActionResult DeleteConfirmed(Noticia entidade)
+        public ActionResult DeleteConfirmed(int id)
         {
-            //Noticia noticia = db.Noticia.Single(h => h.CodigoNoticia == id);
-            //db.Noticia.DeleteObject(noticia);
-            //db.SaveChanges();
-            return RedirectToAction("Index");
+            Noticia noticia = db.Noticia.Single(n => n.CodigoNoticia == id);
+            db.Noticia.DeleteObject(noticia);
+            db.SaveChanges();
+
+            return RedirectToAction("Erro");
         }
 
         /// <summary>
@@ -193,7 +198,7 @@ namespace PortalAdmnistrativo.Controllers
             foreach (var item in listaCodigos.TrimEnd(';').Split(';'))
             {
                 codigoNoticia = Convert.ToInt32(item);
-                //db.Noticia.DeleteObject(db.Noticia.Single(h => h.CodigoNoticia == codigoNoticia));
+                db.Noticia.DeleteObject(db.Noticia.Single(h => h.CodigoNoticia == codigoNoticia));
             }
 
             db.SaveChanges();

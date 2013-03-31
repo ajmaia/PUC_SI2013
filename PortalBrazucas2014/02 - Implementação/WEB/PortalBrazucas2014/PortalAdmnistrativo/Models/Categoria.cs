@@ -11,19 +11,12 @@ namespace PortalAdmnistrativo.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using PortalAdmnistrativo.Models.Metadata;
+
+    [MetadataType(typeof(CategoriaMetadata))]
     public partial class Categoria
     {
-        public Categoria()
-        {
-            this.Anuncios = new HashSet<Anuncio>();
-            this.Noticias = new HashSet<Noticia>();
-        }
-    
-        public int CodigoCategoria { get; set; }
-        public string DescricaoCategoria { get; set; }
-    
-        public virtual ICollection<Anuncio> Anuncios { get; set; }
-        public virtual ICollection<Noticia> Noticias { get; set; }
+
     }
 }

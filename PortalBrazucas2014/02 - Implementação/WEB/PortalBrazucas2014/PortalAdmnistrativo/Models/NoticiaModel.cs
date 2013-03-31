@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.ComponentModel.DataAnnotations;
-using PortalAdmnistrativo.Models.Metadata;
+using System.Web.Mvc.Html;
 
 namespace PortalAdmnistrativo.Models
 {
-    [MetadataType(typeof(NoticiaMetadata))]
     public partial class Noticia
     {
         public string DataPublicacaoString
@@ -25,8 +23,6 @@ namespace PortalAdmnistrativo.Models
                     DataPublicacao = DateTime.Parse(value);
             }
         }
-
-        
 
         public IQueryable<Noticia> buscar()
         {

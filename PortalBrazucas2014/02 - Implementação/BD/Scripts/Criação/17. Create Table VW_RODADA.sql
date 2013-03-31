@@ -9,7 +9,7 @@ CREATE VIEW [dbo].[Rodada]
 AS
 
 SELECT
-	[Rodada],
+	[DescricaoRodada],
 	[Fase],
 	[CodigoSelecao],
 	[NomeSelecao],
@@ -22,7 +22,7 @@ SELECT
 FROM 
 (
 	SELECT 
-		[Rodada],
+		[Rodada] AS [DescricaoRodada],
 		(CASE WHEN SelA.[CodigoGrupo] = SelB.[CodigoGrupo] THEN 'Grupos' 
 			  ELSE 'Eliminatórias' END)	AS [Fase],
 		SelA.[CodigoSelecao],
@@ -40,7 +40,7 @@ FROM
 	UNION ALL
 	
 	SELECT 
-		[Rodada],
+		[Rodada] AS [DescricaoRodada],
 		(CASE WHEN SelA.[CodigoGrupo] = SelB.[CodigoGrupo] THEN 'Grupos' 
 			  ELSE 'Eliminatórias' END)	AS [Fase],
 		SelB.[CodigoSelecao],
@@ -55,7 +55,7 @@ FROM
 	INNER JOIN [dbo].[Selecao] AS SelA (NOLOCK) ON [CodigoSelecaoA] = SelA.[CodigoSelecao]
 	INNER JOIN [dbo].[Selecao] AS SelB (NOLOCK) ON [CodigoSelecaoB] = SelB.[CodigoSelecao]
 ) AS [TabelaAux]
-GROUP BY [Rodada]
+GROUP BY [DescricaoRodada]
 		,[Fase]
 		,[CodigoSelecao]
 		,[NomeSelecao]

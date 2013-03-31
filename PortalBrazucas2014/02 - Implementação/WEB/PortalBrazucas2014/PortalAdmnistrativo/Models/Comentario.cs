@@ -11,19 +11,12 @@ namespace PortalAdmnistrativo.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using PortalAdmnistrativo.Models.Metadata;
+
+    [MetadataType(typeof(ComentarioMetadata))]
     public partial class Comentario
     {
-        public int CodigoComentario { get; set; }
-        public string Conteudo { get; set; }
-        public string LoginCriacao { get; set; }
-        public string NomeLoginCriacao { get; set; }
-        public System.DateTime DataCriacao { get; set; }
-        public string StatusAprovacao { get; set; }
-        public string UsuarioAprovacao { get; set; }
-        public int CodigoNoticia { get; set; }
-    
-        public virtual Noticia Noticia { get; set; }
-        public virtual Usuario Usuario { get; set; }
+
     }
 }

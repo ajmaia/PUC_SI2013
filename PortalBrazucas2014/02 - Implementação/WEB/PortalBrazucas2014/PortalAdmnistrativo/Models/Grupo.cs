@@ -11,12 +11,11 @@ namespace PortalAdmnistrativo.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using PortalAdmnistrativo.Models.Metadata;
+
+    [MetadataType(typeof(GrupoMetadata))]
     public partial class Grupo
     {
-        public int CodigoGrupo { get; set; }
-        public string DescricaoGrupo { get; set; }
-    
-        public virtual Selecao Selecao { get; set; }
     }
 }
