@@ -20,10 +20,30 @@ namespace PortalBrazucas.Controllers
 
         public ViewResult Noticia(int codNoticia)
         {
-            this.ViewBag.Noticia = db.Noticia.Single(n => n.CodigoNoticia == codNoticia);
-            this.ViewBag.Comentarios = db.Comentario.Where(c => c.CodigoNoticia == codNoticia).AsEnumerable<Comentario>();
+            Comentario novoComentario = new Comentario();
+            novoComentario.CodigoNoticia = codNoticia;
+            novoComentario.LoginCriacao = "ajmaia";
+            novoComentario.NomeLoginCriacao = "Alexandre";
 
+            this.ViewBag.Noticia = db.Noticia.Single(n => n.CodigoNoticia == codNoticia);
+            this.ViewBag.Comentarios = db.Comentario.Where(c => c.CodigoNoticia == codNoticia && c.StatusAprovacao == "1").AsEnumerable<Comentario>();
+            this.ViewBag.NovoComentario = novoComentario;
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult NovoComentario(Comentario comentario)
+        {
+            comentario.DataCriacaoString = DateTime.Now.ToShortTimeString();
+
+            if (ModelState.IsValid)
+            {
+                db.Comentario.AddObject(comentario);
+                db.SaveChanges();
+                return RedirectToAction("Noticia", comentario.CodigoNoticia);
+            }
+
+            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)

@@ -3,12 +3,10 @@
 <h1><%: Model.Titulo %></h1>
 
 <h3>
-    Autor: <%: Model.Autor %>
+    <%: Model.DescricaoCategoria %>
     <br />
-    Categoria: <%: Model.DescricaoCategoria %>
+    Autor: <%: Model.Autor %>    
 </h3>
-
-
 
 <%
     ConteudoNoticia.Text = Model.Conteudo;

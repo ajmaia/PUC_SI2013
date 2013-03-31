@@ -15,6 +15,18 @@
     background-repeat: no-repeat;
 }
 
+div.detalhes_contario
+{
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+div.conteudo_comentario
+{
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
 div.painel_campos
 {
     width: 99%;
@@ -52,6 +64,12 @@ div.conjunto_campo
 .controle500 input
 {
     width: 500px;
+}
+.controle875,
+.controle875 label
+.controle875 input
+{
+    width: 875px;
 }
 .controle930,
 .controle930 label

@@ -95,7 +95,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\HistoriaSelecaoController.cs" />
     <Compile Include="Controllers\NoticiaComentarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -221,15 +220,11 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Scripts\Site.js" />
-    <Content Include="Views\HistoriaSelecao\Create.aspx" />
-    <Content Include="Views\HistoriaSelecao\Delete.aspx" />
-    <Content Include="Views\HistoriaSelecao\Details.aspx" />
-    <Content Include="Views\HistoriaSelecao\Edit.aspx" />
-    <Content Include="Views\HistoriaSelecao\Index.aspx" />
     <Content Include="Views\Imagens\agua_abertura.png" />
     <Content Include="Views\NoticiaComentario\Index.aspx" />
     <Content Include="Views\NoticiaComentario\Noticia.aspx" />
     <Content Include="Views\NoticiaComentario\_painelComentarios.ascx" />
+    <Content Include="Views\NoticiaComentario\_painelIncluirComentario.ascx" />
     <Content Include="Views\NoticiaComentario\_painelNoticia.ascx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

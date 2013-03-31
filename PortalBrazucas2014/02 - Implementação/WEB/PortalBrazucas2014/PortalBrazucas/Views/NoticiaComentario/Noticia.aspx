@@ -15,4 +15,7 @@
     <div id="painel_comentarios">
         <% Html.RenderPartial("_painelComentarios", (IEnumerable<PortalAdmnistrativo.Models.Comentario>)ViewBag.Comentarios); %>
     </div>
+    <div>
+        <% Html.RenderPartial("_painelIncluirComentario", (PortalAdmnistrativo.Models.Comentario)ViewBag.NovoComentario); %>
+    </div>
 </asp:Content>

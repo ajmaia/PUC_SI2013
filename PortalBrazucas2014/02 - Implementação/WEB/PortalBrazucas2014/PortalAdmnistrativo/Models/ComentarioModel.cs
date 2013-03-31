@@ -23,7 +23,7 @@ namespace PortalAdmnistrativo.Models
             }
         }
 
-        public IQueryable<Comentario> buscar()
+        public IQueryable<Comentario> buscar(bool somenteAprovados = false)
         {
             Entities entity = new Entities();
 
@@ -41,6 +41,8 @@ namespace PortalAdmnistrativo.Models
             if (this.DataCriacao != null)
                 query = query.Where(item => item.DataCriacao == this.DataCriacao);
 
+            if (somenteAprovados)
+                query = query.Where(item => item.StatusAprovacao == "1");
             return query;
         }
     }
