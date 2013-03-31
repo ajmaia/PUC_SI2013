@@ -7,6 +7,21 @@ namespace PortalAdmnistrativo.Models
 {
     public partial class Comentario
     {
+        public string DataCriacaoString
+        {
+            get
+            {
+                if (DataCriacao >= DateTime.Parse("2013-01-01"))
+                    return DataCriacao.ToLongDateString();
+                else
+                    return string.Empty;
+            }
+            set
+            {
+                if (value != null)
+                    DataCriacao = DateTime.Parse(value);
+            }
+        }
 
         public IQueryable<Comentario> buscar()
         {

@@ -115,6 +115,15 @@ namespace PortalAdmnistrativo.Resouces {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nome.
+        /// </summary>
+        public static string NomeLoginCriacao {
+            get {
+                return ResourceManager.GetString("NomeLoginCriacao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Excluir Comentários.
         /// </summary>
         public static string pnlTituloExclusao {

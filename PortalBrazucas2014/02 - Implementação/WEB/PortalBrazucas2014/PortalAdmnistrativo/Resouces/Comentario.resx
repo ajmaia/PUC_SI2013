@@ -150,4 +150,7 @@
   <data name="UsuarioAprovacao" xml:space="preserve">
     <value>Usuário Aprovação</value>
   </data>
+  <data name="NomeLoginCriacao" xml:space="preserve">
+    <value>Nome</value>
+  </data>
 </root>

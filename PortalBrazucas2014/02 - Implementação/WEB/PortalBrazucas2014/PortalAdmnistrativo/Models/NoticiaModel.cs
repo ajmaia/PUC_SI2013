@@ -8,17 +8,6 @@ namespace PortalAdmnistrativo.Models
 {
     public partial class Noticia
     {
-        public HtmlString ConteudoHtml
-        {
-            get
-            {
-                return new HtmlString(Conteudo);
-            }
-            set
-            {
-                Conteudo = value.ToHtmlString();
-            }
-        }
         public string DataPublicacaoString
         {
             get

@@ -319,6 +319,7 @@
     <Content Include="Content\themes\images\icones\ico_logout_hover.png" />
     <Content Include="Content\themes\images\icones\ico_portal.png" />
     <Content Include="Content\themes\images\icones\ico_portal_hover.png" />
+    <Content Include="Content\themes\images\icones\ico_seta_painel.png" />
     <Content Include="Content\themes\images\icones\jogos_icon.png" />
     <Content Include="Content\themes\images\icones\jogos_icon_hover.png" />
     <Content Include="Content\themes\images\icones\noticias_icon.png" />
