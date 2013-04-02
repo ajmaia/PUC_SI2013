@@ -97,6 +97,7 @@
   <ItemGroup>
     <Compile Include="Controllers\AnuncioPortalController.cs" />
     <Compile Include="Controllers\NoticiaComentarioController.cs" />
+    <Compile Include="Controllers\SelecaoPortalController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -232,6 +233,11 @@
     <Content Include="Views\NoticiaComentario\_painelComentarios.ascx" />
     <Content Include="Views\NoticiaComentario\_painelIncluirComentario.ascx" />
     <Content Include="Views\NoticiaComentario\_painelNoticia.ascx" />
+    <Content Include="Views\SelecaoPortal\Create.aspx" />
+    <Content Include="Views\SelecaoPortal\Delete.aspx" />
+    <Content Include="Views\SelecaoPortal\Details.aspx" />
+    <Content Include="Views\SelecaoPortal\Edit.aspx" />
+    <Content Include="Views\SelecaoPortal\Index.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

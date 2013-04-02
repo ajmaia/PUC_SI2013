@@ -116,6 +116,7 @@
     <Compile Include="Controllers\ComentarioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NoticiaController.cs" />
+    <Compile Include="Controllers\SelecaoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -651,6 +652,12 @@
     <Content Include="Views\Padrao\Index.aspx" />
     <Content Include="Views\Padrao\_campos.ascx" />
     <Content Include="Views\Padrao\_resultado.ascx" />
+    <Content Include="Views\Selecao\Create.aspx" />
+    <Content Include="Views\Selecao\Delete.aspx" />
+    <Content Include="Views\Selecao\Details.aspx" />
+    <Content Include="Views\Selecao\Edit.aspx" />
+    <Content Include="Views\Selecao\FaseGrupo.aspx" />
+    <Content Include="Views\Selecao\Index.aspx" />
     <Content Include="Views\Shared\_painelEdicao.ascx" />
     <Content Include="Views\Shared\_painelExclusao.ascx" />
     <Content Include="Views\Shared\_painelFiltros.ascx" />
