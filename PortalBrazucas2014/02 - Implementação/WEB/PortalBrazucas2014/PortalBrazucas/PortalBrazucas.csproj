@@ -95,6 +95,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AnuncioPortalController.cs" />
     <Compile Include="Controllers\NoticiaComentarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -220,6 +221,11 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Scripts\Site.js" />
+    <Content Include="Views\AnuncioPortal\Create.aspx" />
+    <Content Include="Views\AnuncioPortal\Delete.aspx" />
+    <Content Include="Views\AnuncioPortal\Details.aspx" />
+    <Content Include="Views\AnuncioPortal\Edit.aspx" />
+    <Content Include="Views\AnuncioPortal\Index.aspx" />
     <Content Include="Views\Imagens\agua_abertura.png" />
     <Content Include="Views\NoticiaComentario\Index.aspx" />
     <Content Include="Views\NoticiaComentario\Noticia.aspx" />

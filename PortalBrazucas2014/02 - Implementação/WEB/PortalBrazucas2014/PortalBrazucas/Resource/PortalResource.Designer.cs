@@ -61,6 +61,15 @@ namespace PortalBrazucas.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Seu comentário foi registrado e está pendente de aprovação.
+        /// </summary>
+        public static string AguardandoAprovacaoComentario {
+            get {
+                return ResourceManager.GetString("AguardandoAprovacaoComentario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Comentários.
         /// </summary>
         public static string TituloExibirComentario {

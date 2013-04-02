@@ -61,6 +61,15 @@ namespace PortalAdmnistrativo.Resouces {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Salvar Comentário.
+        /// </summary>
+        public static string btnIncluir {
+            get {
+                return ResourceManager.GetString("btnIncluir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Administração de Comentários.
         /// </summary>
         public static string CasoUso {
@@ -102,6 +111,15 @@ namespace PortalAdmnistrativo.Resouces {
         public static string DataCriacao {
             get {
                 return ResourceManager.GetString("DataCriacao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gerenciar Comentarios.
+        /// </summary>
+        public static string GerenciarComentarios {
+            get {
+                return ResourceManager.GetString("GerenciarComentarios", resourceCulture);
             }
         }
         

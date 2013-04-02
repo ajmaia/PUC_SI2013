@@ -24,6 +24,7 @@ namespace PortalBrazucas.Controllers
             novoComentario.CodigoNoticia = codNoticia;
             novoComentario.LoginCriacao = "ajmaia";
             novoComentario.NomeLoginCriacao = "Alexandre";
+            novoComentario.DataCriacaoString = DateTime.Now.ToShortTimeString();
 
             this.ViewBag.Noticia = db.Noticia.Single(n => n.CodigoNoticia == codNoticia);
             this.ViewBag.Comentarios = db.Comentario.Where(c => c.CodigoNoticia == codNoticia && c.StatusAprovacao == "1").AsEnumerable<Comentario>();
@@ -40,7 +41,17 @@ namespace PortalBrazucas.Controllers
             {
                 db.Comentario.AddObject(comentario);
                 db.SaveChanges();
-                return RedirectToAction("Noticia", comentario.CodigoNoticia);
+
+                Comentario novoComentario = new Comentario();
+                novoComentario.CodigoNoticia = comentario.CodigoNoticia;
+                novoComentario.LoginCriacao = "ajmaia";
+                novoComentario.NomeLoginCriacao = "Alexandre";
+                novoComentario.DataCriacaoString = DateTime.Now.ToShortTimeString();
+
+                this.ViewBag.Noticia = db.Noticia.Single(n => n.CodigoNoticia == comentario.CodigoNoticia);
+                this.ViewBag.Comentarios = db.Comentario.Where(c => c.CodigoNoticia == comentario.CodigoNoticia && c.StatusAprovacao == "1").AsEnumerable<Comentario>();
+
+                return View("Noticia", comentario.CodigoNoticia);
             }
 
             return RedirectToAction("Index");

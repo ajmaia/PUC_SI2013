@@ -207,6 +207,58 @@ a.webgrid-editar-off
      text-indent: -9999px; /* hides the link text */
      cursor: hand;
 }
+a.webgrid-comentario
+{
+    background: url("../../Content/themes/images/icones/ico_comentario.gif") no-repeat top left;
+     display: block;
+     width: 16px;
+     height: 16px;
+     text-indent: -9999px; /* hides the link text */
+     cursor: hand;
+}
+a.webgrid-comentario-off
+{
+    background: url("../../Content/themes/images/icones/ico_comentario_off.gif") no-repeat top left;
+     display: block;
+     width: 16px;
+     height: 16px;
+     text-indent: -9999px; /* hides the link text */
+     cursor: hand;
+}
+a.webgrid-aprovar
+{
+    background: url("../../Content/themes/images/icones/ico_aprovar.gif") no-repeat top left;
+     display: block;
+     width: 16px;
+     height: 16px;
+     text-indent: -9999px; /* hides the link text */
+     cursor: hand;
+}
+a.webgrid-aprovar-off
+{
+    background: url("../../Content/themes/images/icones/ico_aprovar_off.gif") no-repeat top left;
+     display: block;
+     width: 16px;
+     height: 16px;
+     text-indent: -9999px; /* hides the link text */
+}
+a.webgrid-reprovar
+{
+    background: url("../../Content/themes/images/icones/ico_reprovar.gif") no-repeat top left;
+     display: block;
+     width: 16px;
+     height: 16px;
+     text-indent: -9999px; /* hides the link text */
+     cursor: hand;
+}
+a.webgrid-reprovar-off
+{
+    background: url("../../Content/themes/images/icones/ico_reprovar_off.gif") no-repeat top left;
+     display: block;
+     width: 16px;
+     height: 16px;
+     text-indent: -9999px; /* hides the link text */
+}
 .webgrid-botoes
 {
     width: 16px;

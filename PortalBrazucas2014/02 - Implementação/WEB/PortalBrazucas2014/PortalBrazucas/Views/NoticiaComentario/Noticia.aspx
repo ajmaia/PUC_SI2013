@@ -16,6 +16,17 @@
         <% Html.RenderPartial("_painelComentarios", (IEnumerable<PortalAdmnistrativo.Models.Comentario>)ViewBag.Comentarios); %>
     </div>
     <div>
-        <% Html.RenderPartial("_painelIncluirComentario", (PortalAdmnistrativo.Models.Comentario)ViewBag.NovoComentario); %>
+        <%
+            if (this.ViewBag.NovoComentario != null)
+            {
+                Html.RenderPartial("_painelIncluirComentario", (PortalAdmnistrativo.Models.Comentario)ViewBag.NovoComentario);
+            }
+            else
+            {
+        %>
+                <%: PortalBrazucas.Resource.PortalResource.AguardandoAprovacaoComentario %>
+        <%
+            }
+        %>
     </div>
 </asp:Content>

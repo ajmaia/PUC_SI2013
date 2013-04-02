@@ -38,9 +38,6 @@ namespace PortalAdmnistrativo.Models
             if (this.CodigoNoticia != 0)
                 query = query.Where(item => item.CodigoNoticia == this.CodigoNoticia);
 
-            if (this.DataCriacao != null)
-                query = query.Where(item => item.DataCriacao == this.DataCriacao);
-
             if (somenteAprovados)
                 query = query.Where(item => item.StatusAprovacao == "1");
             return query;

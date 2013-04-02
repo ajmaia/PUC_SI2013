@@ -112,6 +112,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AnuncioController.cs" />
+    <Compile Include="Controllers\ComentarioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NoticiaController.cs" />
     <Compile Include="Global.asax.cs">
@@ -306,7 +308,11 @@
     <Content Include="Content\themes\images\icones\home_icon_hover.png" />
     <Content Include="Content\themes\images\icones\icone_abrir_des.gif" />
     <Content Include="Content\themes\images\icones\icone_visualizar.gif" />
+    <Content Include="Content\themes\images\icones\ico_aprovar.gif" />
+    <Content Include="Content\themes\images\icones\ico_aprovar_off.gif" />
     <Content Include="Content\themes\images\icones\ico_calendar.gif" />
+    <Content Include="Content\themes\images\icones\ico_comentario.gif" />
+    <Content Include="Content\themes\images\icones\ico_comentario_off.gif" />
     <Content Include="Content\themes\images\icones\ico_delete.gif" />
     <Content Include="Content\themes\images\icones\ico_delete_off.gif" />
     <Content Include="Content\themes\images\icones\ico_edit.gif" />
@@ -319,6 +325,8 @@
     <Content Include="Content\themes\images\icones\ico_logout_hover.png" />
     <Content Include="Content\themes\images\icones\ico_portal.png" />
     <Content Include="Content\themes\images\icones\ico_portal_hover.png" />
+    <Content Include="Content\themes\images\icones\ico_reprovar.gif" />
+    <Content Include="Content\themes\images\icones\ico_reprovar_off.gif" />
     <Content Include="Content\themes\images\icones\ico_seta_painel.png" />
     <Content Include="Content\themes\images\icones\jogos_icon.png" />
     <Content Include="Content\themes\images\icones\jogos_icon_hover.png" />
@@ -620,6 +628,18 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Scripts\Site.js" />
+    <Content Include="Views\Anuncio\Create.aspx" />
+    <Content Include="Views\Anuncio\Delete.aspx" />
+    <Content Include="Views\Anuncio\Details.aspx" />
+    <Content Include="Views\Anuncio\Edit.aspx" />
+    <Content Include="Views\Anuncio\Index.aspx" />
+    <Content Include="Views\Comentario\Create.aspx" />
+    <Content Include="Views\Comentario\Delete.aspx" />
+    <Content Include="Views\Comentario\Details.aspx" />
+    <Content Include="Views\Comentario\Edit.aspx" />
+    <Content Include="Views\Comentario\Index.aspx" />
+    <Content Include="Views\Noticia\_painelComentariosNoticia.ascx" />
+    <Content Include="Views\Home\About.aspx" />
     <Content Include="Views\Imagens\agua_abertura.png" />
     <Content Include="Views\Noticia\_conteudo.ascx" />
     <Content Include="Views\Noticia\_editar.ascx" />
@@ -658,7 +678,6 @@
     <Content Include="Views\Account\ChangePasswordSuccess.aspx" />
     <Content Include="Views\Account\LogOn.aspx" />
     <Content Include="Views\Account\Register.aspx" />
-    <Content Include="Views\Home\About.aspx" />
     <Content Include="Views\Home\Index.aspx" />
     <Content Include="Views\Shared\Error.aspx" />
     <Content Include="Views\Shared\LogOnUserControl.ascx" />

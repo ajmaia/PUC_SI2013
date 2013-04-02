@@ -153,4 +153,10 @@
   <data name="NomeLoginCriacao" xml:space="preserve">
     <value>Nome</value>
   </data>
+  <data name="btnIncluir" xml:space="preserve">
+    <value>Salvar Comentário</value>
+  </data>
+  <data name="GerenciarComentarios" xml:space="preserve">
+    <value>Gerenciar Comentarios</value>
+  </data>
 </root>
