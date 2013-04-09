@@ -1,0 +1,2 @@
+Esta pasta contém a especificação de requisitos e os modelos
+elaborados para o projeto.
