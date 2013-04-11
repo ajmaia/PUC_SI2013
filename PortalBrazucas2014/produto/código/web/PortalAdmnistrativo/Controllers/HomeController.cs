@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace PortalAdmnistrativo.Controllers
 {
-    public class HomeController : Controller
+    public partial class HomeController : Controller
     {
         public ActionResult Index()
         {

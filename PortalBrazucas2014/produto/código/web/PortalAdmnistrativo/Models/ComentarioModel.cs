@@ -2,15 +2,28 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.ComponentModel.DataAnnotations;
-using PortalAdmnistrativo.Models.Metadata;
 
 namespace PortalAdmnistrativo.Models
 {
     public partial class Comentario
     {
+        public string DataCriacaoString
+        {
+            get
+            {
+                if (DataCriacao >= DateTime.Parse("2013-01-01"))
+                    return DataCriacao.ToLongDateString();
+                else
+                    return string.Empty;
+            }
+            set
+            {
+                if (value != null)
+                    DataCriacao = DateTime.Parse(value);
+            }
+        }
 
-        public IQueryable<Comentario> buscar()
+        public IQueryable<Comentario> buscar(bool somenteAprovados = false)
         {
             Entities entity = new Entities();
 
@@ -25,9 +38,8 @@ namespace PortalAdmnistrativo.Models
             if (this.CodigoNoticia != 0)
                 query = query.Where(item => item.CodigoNoticia == this.CodigoNoticia);
 
-            if (this.DataCriacao != null)
-                query = query.Where(item => item.DataCriacao == this.DataCriacao);
-
+            if (somenteAprovados)
+                query = query.Where(item => item.StatusAprovacao == "1");
             return query;
         }
     }

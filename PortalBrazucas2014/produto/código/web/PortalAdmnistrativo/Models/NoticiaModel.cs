@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
-using System.ComponentModel.DataAnnotations;
-using PortalAdmnistrativo.Models.Metadata;
+using System.Web.Mvc.Html;
 
 namespace PortalAdmnistrativo.Models
 {
     public partial class Noticia
     {
+
+        public HttpPostedFileBase Imagem;
+
         public string DataPublicacaoString
         {
             get

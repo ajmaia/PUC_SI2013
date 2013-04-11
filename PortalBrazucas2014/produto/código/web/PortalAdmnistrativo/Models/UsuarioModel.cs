@@ -2,13 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.ComponentModel.DataAnnotations;
-using PortalAdmnistrativo.Models.Metadata;
 
 namespace PortalAdmnistrativo.Models
 {
     public partial class Usuario
     {
+        public bool Anunciante
+        {
+            get 
+            {
+                if (string.IsNullOrEmpty(this.TipoPerfil))
+                    return false;
+
+                return (this.TipoPerfil.ToUpper() == "ANUNCIANTE");
+            }
+            set 
+            {
+                this.TipoPerfil = (value ? "Anunciante" : "Credenciado");
+            }
+        }
 
         public IQueryable<Usuario> buscar()
         {

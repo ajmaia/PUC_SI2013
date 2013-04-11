@@ -98,16 +98,16 @@
     function carregarPopUp(cod, acao) {
         $("body").append("<div id='popup'></div>")
         
-        var wid = 0;
+        var hei = 0;
         <% var tipo = ""; %>
 
         if(acao == "Excluir")
         {
-            wid = 400;
+            hei = 300;
             <% tipo = PortalAdmnistrativo.Resouces.Geral.pnlTituloExclusao; %>
         }
         else {
-            wid = 400;
+            hei = 600;
             <% tipo = PortalAdmnistrativo.Resouces.Geral.pnlTituloEdicao; %>
         }
 
@@ -124,8 +124,8 @@
                         },
                         resizable: false,
                         modal: true,
-                        width: 580,
-                        height: wid,
+                        width: 800,
+                        height: hei,
                         title: '<%: String.Format("{0} {1}", tipo, ViewContext.RouteData.Values["controller"].ToString()) %>',
                         buttons: {
                             Ok: function () {

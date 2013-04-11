@@ -1,5 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage" %>
-
+﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage" validateRequest="false" %>
 <asp:Content ID="IndexTitulo" ContentPlaceHolderID="TitleContent" runat="server">
     <%: PortalAdmnistrativo.Resouces.Noticia.CasoUso %>
 </asp:Content>
