@@ -4,13 +4,13 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc.Html;
+using System.Web.Helpers;
 
 namespace PortalAdmnistrativo.Models
 {
     public partial class Noticia
     {
-
-        public HttpPostedFileBase Imagem;
+        public string imagemUpload { get; set; }
 
         public string DataPublicacaoString
         {

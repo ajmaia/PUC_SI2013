@@ -68,11 +68,11 @@
 <div class="clear"></div>    
 <div class="conjunto_campo">
     <div class="campos">
-        <%: Html.LabelFor(item => item.Imagem) %>
+        <%: Html.LabelFor(item => item.CaminhoImagem) %>
     </div>
     <div class="campos">
-        <%: Html.TextBoxFor(item => item.Imagem, new { @class = "controle300", type = "file" }) %>
-        <%: Html.ValidationMessageFor(item => item.Imagem) %>
+        <%: Html.TextBoxFor(item => item.imagemUpload, new { @class = "controle300", type = "file", runat="server" }) %>
+        <%: Html.ValidationMessageFor(item => item.CaminhoImagem) %>
     </div>
 </div>
 <div class="conjunto_campo">
