@@ -68,6 +68,10 @@
       <End Role="Usuario" EntitySet="Usuario" />
       <End Role="PontuacaoBolao" EntitySet="PontuacaoBolao" />
     </AssociationSet>
+    <AssociationSet Name="FK_Selecao_Grupo1" Association="BRAZUCASModel.FK_Selecao_Grupo1">
+      <End Role="Grupo" EntitySet="Grupo" />
+      <End Role="Selecao" EntitySet="Selecao" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Anuncio">
     <Key>
@@ -76,7 +80,7 @@
     <Property Name="CodigoAnuncio" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
     <Property Name="Titulo" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
     <Property Name="CaminhoImagem" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
-    <Property Name="Conteudo" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Conteudo" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
     <Property Name="DataPublicacao" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="LoginCriacao" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
     <Property Name="StatusAprovacao" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
@@ -94,6 +98,7 @@
     <Property Name="DescricaoCategoria" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
     <NavigationProperty Name="Anuncio" Relationship="BRAZUCASModel.FK_Anuncio_Categoria" FromRole="Categoria" ToRole="Anuncio" />
     <NavigationProperty Name="Noticia" Relationship="BRAZUCASModel.FK_Noticia_Categoria" FromRole="Categoria" ToRole="Noticia" />
+    <Property Type="Boolean" Name="TipoCategoria" />
   </EntityType>
   <EntityType Name="Cidade">
     <Key>
@@ -130,6 +135,7 @@
     <Property Name="CodigoGrupo" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
     <Property Name="DescricaoGrupo" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
     <NavigationProperty Name="Selecao" Relationship="BRAZUCASModel.FK_Selecao_Grupo" FromRole="Grupo" ToRole="Selecao" />
+    <NavigationProperty Name="Selecao1" Relationship="BRAZUCASModel.FK_Selecao_Grupo1" FromRole="Grupo" ToRole="Selecao" />
   </EntityType>
   <EntityType Name="Historia">
     <Key>
@@ -228,6 +234,7 @@
     <NavigationProperty Name="Historia" Relationship="BRAZUCASModel.FK_Selecao_Historia" FromRole="Selecao" ToRole="Historia" />
     <NavigationProperty Name="Jogo" Relationship="BRAZUCASModel.FK_Jogo_SelecaoA" FromRole="Selecao" ToRole="Jogo" />
     <NavigationProperty Name="Jogo1" Relationship="BRAZUCASModel.FK_Jogo_SelecaoB" FromRole="Selecao" ToRole="Jogo" />
+    <NavigationProperty Name="Grupo1" Relationship="BRAZUCASModel.FK_Selecao_Grupo1" FromRole="Selecao" ToRole="Grupo" />
   </EntityType>
   <EntityType Name="Usuario">
     <Key>
@@ -450,6 +457,18 @@
       </Principal>
       <Dependent Role="PontuacaoBolao">
         <PropertyRef Name="LoginUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Selecao_Grupo1">
+    <End Type="BRAZUCASModel.Grupo" Role="Grupo" Multiplicity="1" />
+    <End Type="BRAZUCASModel.Selecao" Role="Selecao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Grupo">
+        <PropertyRef Name="CodigoGrupo" />
+      </Principal>
+      <Dependent Role="Selecao">
+        <PropertyRef Name="CodigoGrupo" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

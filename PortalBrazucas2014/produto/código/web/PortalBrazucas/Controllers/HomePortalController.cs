@@ -15,28 +15,35 @@ namespace PortalBrazucas.Controllers
 
         private void geraOrdemNoticia()
         {
-            var listaNoticia = (from item in db.Noticia
-                                select item.CodigoNoticia).AsEnumerable<int>();
+            try
+            {
+                var listaNoticia = (from item in db.Noticia
+                                    select item.CodigoNoticia).AsEnumerable<int>();
 
-            Random aleatorio = new Random(DateTime.Now.Millisecond);
-            int posNoticiaPrincipal, posNoticiaSecundaria, posNoticiaTerciaria;
-            int codNoticiaPrincipal, codNoticiaSecundaria, codNoticiaTerciaria;
+                Random aleatorio = new Random(DateTime.Now.Millisecond);
+                int posNoticiaPrincipal, posNoticiaSecundaria, posNoticiaTerciaria;
+                int codNoticiaPrincipal, codNoticiaSecundaria, codNoticiaTerciaria;
 
-            posNoticiaPrincipal = posNoticiaSecundaria = posNoticiaTerciaria = aleatorio.Next(0, listaNoticia.Count() - 1);
+                posNoticiaPrincipal = posNoticiaSecundaria = posNoticiaTerciaria = aleatorio.Next(0, listaNoticia.Count() - 1);
 
-            while (posNoticiaPrincipal == posNoticiaSecundaria)
-                posNoticiaSecundaria = aleatorio.Next(0, listaNoticia.Count() - 1);
+                while (posNoticiaPrincipal == posNoticiaSecundaria)
+                    posNoticiaSecundaria = aleatorio.Next(0, listaNoticia.Count() - 1);
 
-            while (posNoticiaPrincipal == posNoticiaTerciaria || posNoticiaSecundaria == posNoticiaTerciaria - 1)
-                posNoticiaTerciaria = aleatorio.Next(0, listaNoticia.Count());
+                while (posNoticiaPrincipal == posNoticiaTerciaria || posNoticiaSecundaria == posNoticiaTerciaria - 1)
+                    posNoticiaTerciaria = aleatorio.Next(0, listaNoticia.Count());
 
-            codNoticiaPrincipal = listaNoticia.ElementAt(posNoticiaPrincipal);
-            codNoticiaSecundaria = listaNoticia.ElementAt(posNoticiaSecundaria);
-            codNoticiaTerciaria = listaNoticia.ElementAt(posNoticiaTerciaria);
+                codNoticiaPrincipal = listaNoticia.ElementAt(posNoticiaPrincipal);
+                codNoticiaSecundaria = listaNoticia.ElementAt(posNoticiaSecundaria);
+                codNoticiaTerciaria = listaNoticia.ElementAt(posNoticiaTerciaria);
 
-            this.ViewBag.NoticiaPrincipal = db.Noticia.Single(noticia => noticia.CodigoNoticia == codNoticiaPrincipal);
-            this.ViewBag.NoticiaSecundaria = db.Noticia.Single(noticia => noticia.CodigoNoticia == codNoticiaSecundaria);
-            this.ViewBag.NoticiaTerciaria = db.Noticia.Single(noticia => noticia.CodigoNoticia == codNoticiaTerciaria);
+                this.ViewBag.NoticiaPrincipal = db.Noticia.Single(noticia => noticia.CodigoNoticia == codNoticiaPrincipal);
+                this.ViewBag.NoticiaSecundaria = db.Noticia.Single(noticia => noticia.CodigoNoticia == codNoticiaSecundaria);
+                this.ViewBag.NoticiaTerciaria = db.Noticia.Single(noticia => noticia.CodigoNoticia == codNoticiaTerciaria);
+            }
+            catch (Exception)
+            {
+
+            }
 
         }
 

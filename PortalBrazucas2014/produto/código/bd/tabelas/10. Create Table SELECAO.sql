@@ -31,7 +31,7 @@ CREATE TABLE [dbo].[Selecao](
 
 GO
 
-ALTER TABLE [dbo].[Selecao]  WITH CHECK ADD  CONSTRAINT [FK_Selecao_Grupo] FOREIGN KEY([CodigoSelecao])
+ALTER TABLE [dbo].[Selecao]  WITH CHECK ADD  CONSTRAINT [FK_Selecao_Grupo] FOREIGN KEY([CodigoGrupo])
 REFERENCES [dbo].[Grupo] ([CodigoGrupo])
 GO
 

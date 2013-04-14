@@ -273,6 +273,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\themes\images\cidades\" />
+    <Folder Include="Content\themes\images\historia\" />
     <Folder Include="Content\Uploads\" />
   </ItemGroup>
   <ItemGroup>
