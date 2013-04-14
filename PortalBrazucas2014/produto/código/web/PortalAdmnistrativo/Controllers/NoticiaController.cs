@@ -266,7 +266,7 @@ namespace PortalAdmnistrativo.Controllers
             this.ViewBag.Parametros = parametros;
             this.ViewBag.Resultado = parametros.buscar();
 
-            return PartialView("_painelComentariosNoticia", this.ViewBag.Resultado);
+            return RedirectToAction("Index");
         }
 
         public ActionResult ReprovarComentario(int id)
@@ -277,7 +277,7 @@ namespace PortalAdmnistrativo.Controllers
             db.ObjectStateManager.ChangeObjectState(comentario, EntityState.Modified);
             db.SaveChanges();
 
-            return View("_painelComentariosNoticia", this.ViewBag.Resultado);
+            return RedirectToAction("Index");
         }
 
         /// <summary>

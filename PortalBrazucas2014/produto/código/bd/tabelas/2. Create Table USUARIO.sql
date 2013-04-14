@@ -5,6 +5,10 @@
 USE BRAZUCAS
 GO
 
+IF OBJECT_ID ('Usuario') IS NOT NULL 
+	DROP TABLE [dbo].[Usuario]
+GO
+
 CREATE TABLE [dbo].[Usuario](
 	[LoginUsuario] [VARCHAR](8) NOT NULL,
 	[CpfCnpj] [NUMERIC](14,0) NOT NULL,

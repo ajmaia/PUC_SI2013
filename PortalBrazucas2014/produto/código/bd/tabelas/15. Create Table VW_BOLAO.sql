@@ -5,6 +5,10 @@
 USE BRAZUCAS
 GO
 
+IF OBJECT_ID ('Bolao') IS NOT NULL 
+	DROP VIEW [dbo].Bolao
+GO
+
 CREATE VIEW [dbo].[Bolao]
 AS
 
