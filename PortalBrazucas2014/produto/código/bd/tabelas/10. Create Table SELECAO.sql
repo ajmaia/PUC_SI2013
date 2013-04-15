@@ -5,6 +5,10 @@
 USE BRAZUCAS
 GO
 
+IF OBJECT_ID ('Selecao') IS NOT NULL 
+	DROP TABLE [dbo].Selecao
+GO
+
 CREATE TABLE [dbo].[Selecao](
 	[CodigoSelecao] [INT] IDENTITY(1,1) NOT NULL,
 	[Nome] [VARCHAR](128) NOT NULL,
@@ -27,7 +31,7 @@ CREATE TABLE [dbo].[Selecao](
 
 GO
 
-ALTER TABLE [dbo].[Selecao]  WITH CHECK ADD  CONSTRAINT [FK_Selecao_Grupo] FOREIGN KEY([CodigoSelecao])
+ALTER TABLE [dbo].[Selecao]  WITH CHECK ADD  CONSTRAINT [FK_Selecao_Grupo] FOREIGN KEY([CodigoGrupo])
 REFERENCES [dbo].[Grupo] ([CodigoGrupo])
 GO
 

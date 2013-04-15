@@ -18,7 +18,12 @@ namespace PortalBrazucas.Controllers
             return View();
         }
 
-        public ViewResult Noticia(int codNoticia)
+        public ActionResult redirecionar(int codNoticia)
+        {
+            return Redirect(String.Format("/NoticiaComentario/Noticia?CodNoticia={0}", codNoticia));
+        }
+
+        public ActionResult Noticia(int codNoticia)
         {
             Comentario novoComentario = new Comentario();
             novoComentario.CodigoNoticia = codNoticia;
@@ -29,7 +34,7 @@ namespace PortalBrazucas.Controllers
             this.ViewBag.Noticia = db.Noticia.Single(n => n.CodigoNoticia == codNoticia);
             this.ViewBag.Comentarios = db.Comentario.Where(c => c.CodigoNoticia == codNoticia && c.StatusAprovacao == "1").AsEnumerable<Comentario>();
             this.ViewBag.NovoComentario = novoComentario;
-            return View();
+            return View("Noticia");
         }
 
         [HttpPost]

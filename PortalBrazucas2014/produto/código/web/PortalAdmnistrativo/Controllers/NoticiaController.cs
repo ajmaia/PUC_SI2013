@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 using PortalAdmnistrativo.Models;
 
@@ -13,6 +15,15 @@ namespace PortalAdmnistrativo.Controllers
     public class NoticiaController : Controller
     {
         private Entities db = new Entities();
+
+        protected int proximaNoticia()
+        {
+            var context = new Entities();
+
+            Noticia noticia = db.Noticia.OrderByDescending(n => n.CodigoNoticia).Take(1).Single();
+
+            return noticia.CodigoNoticia + 1;
+        }
 
         /// <summary>
         /// 
@@ -92,16 +103,22 @@ namespace PortalAdmnistrativo.Controllers
         [ValidateInput(false)]
         public ActionResult Create(Noticia noticia)
         {
+            string caminho = "C:\\Users\\Alexandre\\PUC_SI2013\\PortalBrazucas2014\\produto\\código\\web\\PortalBrazucas\\Content\\Uploads\\";
+            int idAtual = proximaNoticia();
+            noticia.CaminhoImagem = String.Format("../../Content/Uploads/noticia_{0}.jpg", idAtual);
             noticia.DataPublicacaoString = DateTime.Now.ToShortTimeString();
             noticia.DescricaoCategoria = retornaCategorias(noticia.CodigoCategoria);
-
-            noticia.Imagem.SaveAs("../../Content/Uploads/img(5).jpg");
-
+            
+            HttpPostedFileBase file = Request.Files[0];
+            byte[] imageSize = new byte[file.ContentLength];
+            file.InputStream.Read(imageSize, 0, (int)file.ContentLength);
+            file.SaveAs(String.Format("{0}noticia_{1}.jpg", caminho, idAtual));
 
             if (ModelState.IsValid)
             {
                 db.Noticia.AddObject(noticia);
                 db.SaveChanges();
+
                 return RedirectToAction("Index");
             }
 
@@ -128,6 +145,16 @@ namespace PortalAdmnistrativo.Controllers
         [HttpPost, ActionName("Editar")]
         public ActionResult EditConfirmed(Noticia noticia)
         {
+            string caminho = "C:\\Users\\Alexandre\\PUC_SI2013\\PortalBrazucas2014\\produto\\código\\web\\PortalBrazucas\\Content\\Uploads\\";
+            noticia.CaminhoImagem = String.Format("../../Content/Uploads/noticia_{0}.jpg", noticia.CodigoNoticia);
+            noticia.DescricaoCategoria = retornaCategorias(noticia.CodigoCategoria);
+
+            HttpPostedFileBase file = Request.Files[0];
+            byte[] imageSize = new byte[file.ContentLength];
+            file.InputStream.Read(imageSize, 0, (int)file.ContentLength);
+            file.SaveAs(String.Format("{0}noticia_{1}.jpg", caminho, noticia.CodigoNoticia));
+
+            noticia.CaminhoImagem = String.Format("../../Content/Uploads/noticia_{0}.jpg", noticia.CodigoNoticia);
 
             if (ModelState.IsValid)
             {
@@ -184,6 +211,9 @@ namespace PortalAdmnistrativo.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Noticia noticia = db.Noticia.Single(n => n.CodigoNoticia == id);
+            foreach (Comentario comentario in db.Comentario.Where(c => c.CodigoNoticia == noticia.CodigoNoticia))
+                db.Comentario.DeleteObject(comentario);
+
             db.Noticia.DeleteObject(noticia);
             db.SaveChanges();
 
@@ -236,7 +266,7 @@ namespace PortalAdmnistrativo.Controllers
             this.ViewBag.Parametros = parametros;
             this.ViewBag.Resultado = parametros.buscar();
 
-            return PartialView("_painelComentariosNoticia", this.ViewBag.Resultado);
+            return RedirectToAction("Index");
         }
 
         public ActionResult ReprovarComentario(int id)
@@ -247,7 +277,7 @@ namespace PortalAdmnistrativo.Controllers
             db.ObjectStateManager.ChangeObjectState(comentario, EntityState.Modified);
             db.SaveChanges();
 
-            return View("_painelComentariosNoticia", this.ViewBag.Resultado);
+            return RedirectToAction("Index");
         }
 
         /// <summary>

@@ -33,6 +33,7 @@
         <AssociationConnector Association="BRAZUCASModel.FK_Palpite_Jogo" ManuallyRouted="false" />
         <AssociationConnector Association="BRAZUCASModel.FK_Palpite_Usuario" ManuallyRouted="false" />
         <AssociationConnector Association="BRAZUCASModel.FK_Pontuacao_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="BRAZUCASModel.FK_Selecao_Grupo1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

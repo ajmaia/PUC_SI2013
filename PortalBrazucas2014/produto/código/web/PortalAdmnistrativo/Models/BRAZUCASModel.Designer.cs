@@ -32,6 +32,7 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("BRAZUCASModel", "FK_Palpite_Jogo", "Jogo", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PortalAdmnistrativo.Models.Jogo), "PalpiteJogo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PortalAdmnistrativo.Models.PalpiteJogo), true)]
 [assembly: EdmRelationshipAttribute("BRAZUCASModel", "FK_Palpite_Usuario", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PortalAdmnistrativo.Models.Usuario), "PalpiteJogo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PortalAdmnistrativo.Models.PalpiteJogo), true)]
 [assembly: EdmRelationshipAttribute("BRAZUCASModel", "FK_Pontuacao_Usuario", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PortalAdmnistrativo.Models.Usuario), "PontuacaoBolao", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PortalAdmnistrativo.Models.PontuacaoBolao), true)]
+[assembly: EdmRelationshipAttribute("BRAZUCASModel", "FK_Selecao_Grupo1", "Grupo", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PortalAdmnistrativo.Models.Grupo), "Selecao", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PortalAdmnistrativo.Models.Selecao), true)]
 
 #endregion
 
@@ -1077,6 +1078,30 @@ namespace PortalAdmnistrativo.Models
         private global::System.String _DescricaoCategoria;
         partial void OnDescricaoCategoriaChanging(global::System.String value);
         partial void OnDescricaoCategoriaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Boolean> TipoCategoria
+        {
+            get
+            {
+                return _TipoCategoria;
+            }
+            set
+            {
+                OnTipoCategoriaChanging(value);
+                ReportPropertyChanging("TipoCategoria");
+                _TipoCategoria = StructuralObject.SetValidValue(value, "TipoCategoria");
+                ReportPropertyChanged("TipoCategoria");
+                OnTipoCategoriaChanged();
+            }
+        }
+        private Nullable<global::System.Boolean> _TipoCategoria;
+        partial void OnTipoCategoriaChanging(Nullable<global::System.Boolean> value);
+        partial void OnTipoCategoriaChanged();
 
         #endregion
 
@@ -1790,6 +1815,28 @@ namespace PortalAdmnistrativo.Models
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Selecao>("BRAZUCASModel.FK_Selecao_Grupo", "Selecao", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("BRAZUCASModel", "FK_Selecao_Grupo1", "Selecao")]
+        public EntityCollection<Selecao> Selecao1
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Selecao>("BRAZUCASModel.FK_Selecao_Grupo1", "Selecao");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Selecao>("BRAZUCASModel.FK_Selecao_Grupo1", "Selecao", value);
                 }
             }
         }
@@ -4385,6 +4432,44 @@ namespace PortalAdmnistrativo.Models
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Jogo>("BRAZUCASModel.FK_Jogo_SelecaoB", "Jogo", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("BRAZUCASModel", "FK_Selecao_Grupo1", "Grupo")]
+        public Grupo Grupo1
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Grupo>("BRAZUCASModel.FK_Selecao_Grupo1", "Grupo").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Grupo>("BRAZUCASModel.FK_Selecao_Grupo1", "Grupo").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Grupo> Grupo1Reference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Grupo>("BRAZUCASModel.FK_Selecao_Grupo1", "Grupo");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Grupo>("BRAZUCASModel.FK_Selecao_Grupo1", "Grupo", value);
                 }
             }
         }

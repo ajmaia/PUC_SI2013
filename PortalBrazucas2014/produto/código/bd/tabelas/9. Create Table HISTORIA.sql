@@ -5,6 +5,10 @@
 USE BRAZUCAS
 GO
 
+IF OBJECT_ID ('Historia') IS NOT NULL 
+	DROP TABLE [dbo].Historia
+GO
+
 CREATE TABLE [dbo].[Historia](
 	[CodigoHistoria] [INT] IDENTITY(1,1) NOT NULL,
 	[HistoriaSelecao] [TEXT] NULL,

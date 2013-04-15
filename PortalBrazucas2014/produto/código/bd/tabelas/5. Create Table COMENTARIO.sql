@@ -5,6 +5,10 @@
 USE BRAZUCAS
 GO
 
+IF OBJECT_ID ('Comentario') IS NOT NULL 
+	DROP TABLE [dbo].Comentario
+GO
+
 CREATE TABLE [dbo].[Comentario](
 	[CodigoComentario] [INT] IDENTITY(1,1) NOT NULL,
 	[Conteudo] [TEXT] NOT NULL,

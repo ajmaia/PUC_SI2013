@@ -5,6 +5,10 @@
 USE BRAZUCAS
 GO
 
+IF OBJECT_ID ('Anuncio') IS NOT NULL 
+	DROP TABLE [dbo].Anuncio
+GO
+
 CREATE TABLE [dbo].[Anuncio](
 	[CodigoAnuncio] [INT] IDENTITY(1,1) NOT NULL,
 	[Titulo] [VARCHAR] (128) NOT NULL,

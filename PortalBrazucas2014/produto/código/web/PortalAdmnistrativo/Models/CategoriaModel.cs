@@ -7,12 +7,11 @@ namespace PortalAdmnistrativo.Models
 {
     public partial class Categoria
     {
-
-        public IQueryable<Categoria> buscar()
+        public IQueryable<Categoria> buscar(bool? tipo = null)
         {
             Entities entity = new Entities();
 
-            var query = entity.Categoria.AsQueryable<Categoria>();
+            var query = entity.Categoria.Where(item => item.TipoCategoria == tipo).AsQueryable<Categoria>();
 
             if (this.CodigoCategoria != 0)
                 query = query.Where(item => item.CodigoCategoria == this.CodigoCategoria);

@@ -20,6 +20,7 @@
     <EntitySetMapping Name="Categoria">
       <EntityTypeMapping TypeName="BRAZUCASModel.Categoria">
         <MappingFragment StoreEntitySet="Categoria">
+          <ScalarProperty Name="TipoCategoria" ColumnName="TipoCategoria" />
           <ScalarProperty Name="CodigoCategoria" ColumnName="CodigoCategoria" />
           <ScalarProperty Name="DescricaoCategoria" ColumnName="DescricaoCategoria" />
         </MappingFragment>
@@ -172,37 +173,6 @@
           <ScalarProperty Name="Pontuacao" ColumnName="Pontuacao" />
           <ScalarProperty Name="RelativoPrimeiroColocado" ColumnName="RelativoPrimeiroColocado" />
           <ScalarProperty Name="RelativoColocadoAnterior" ColumnName="RelativoColocadoAnterior" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Ingresso">
-      <EntityTypeMapping TypeName="BRAZUCASModel.Ingresso">
-        <MappingFragment StoreEntitySet="Ingresso">
-          <ScalarProperty Name="CodigoJogo" ColumnName="CodigoJogo" />
-          <ScalarProperty Name="NomeCidade" ColumnName="NomeCidade" />
-          <ScalarProperty Name="LocalVendaIngresso" ColumnName="LocalVendaIngresso" />
-          <ScalarProperty Name="Rodada" ColumnName="Rodada" />
-          <ScalarProperty Name="CodigoSelecaoA" ColumnName="CodigoSelecaoA" />
-          <ScalarProperty Name="NomeSelecaoA" ColumnName="NomeSelecaoA" />
-          <ScalarProperty Name="CodigoSelecaoB" ColumnName="CodigoSelecaoB" />
-          <ScalarProperty Name="NomeSelecaoB" ColumnName="NomeSelecaoB" />
-          <ScalarProperty Name="DataHora" ColumnName="DataHora" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Rodada">
-      <EntityTypeMapping TypeName="BRAZUCASModel.Rodada">
-        <MappingFragment StoreEntitySet="Rodada">
-          <ScalarProperty Name="DescricaoRodada" ColumnName="DescricaoRodada" />
-          <ScalarProperty Name="Fase" ColumnName="Fase" />
-          <ScalarProperty Name="CodigoSelecao" ColumnName="CodigoSelecao" />
-          <ScalarProperty Name="NomeSelecao" ColumnName="NomeSelecao" />
-          <ScalarProperty Name="CodigoGrupo" ColumnName="CodigoGrupo" />
-          <ScalarProperty Name="Empates" ColumnName="Empates" />
-          <ScalarProperty Name="Vitorias" ColumnName="Vitorias" />
-          <ScalarProperty Name="Derrotas" ColumnName="Derrotas" />
-          <ScalarProperty Name="GolsRealizados" ColumnName="GolsRealizados" />
-          <ScalarProperty Name="GolsSofridos" ColumnName="GolsSofridos" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
