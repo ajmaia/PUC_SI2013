@@ -86,6 +86,20 @@ INSERT INTO Selecao (Nome, Pais, CaminhoImagem, CodigoGrupo, DescricaoGrupo, Cod
 INSERT INTO Selecao (Nome, Pais, CaminhoImagem, CodigoGrupo, DescricaoGrupo, CodigoHistoria) VALUES ('Honduras', 'Honduras', '../../Content/themes/images/bandeiras/flg_honduras.jpg', 8, 'H', 32)
 GO
 
+INSERT INTO Cidade VALUES('Belo Horizonte', 'MG', '../../Content/themes/images/bandeiras/fto_belohorizonte.jpg', 'Estádio Mineirão', 62547, 'PENDENTE: Inserir localização...')
+INSERT INTO Cidade VALUES('Brasília', 'DF', '../../Content/themes/images/bandeiras/fto_brasilia.jpg', 'Estádio Nacional Mané Garrincha', 70064, 'PENDENTE: Inserir localização...')
+INSERT INTO Cidade VALUES('Cuiabá', 'MT', '../../Content/themes/images/bandeiras/fto_cuiaba.jpg', 'Arena Pantanal', 42968, 'PENDENTE: Inserir localização...')
+INSERT INTO Cidade VALUES('Curitiba', 'PR', '../../Content/themes/images/bandeiras/fto_curitiba.jpg', 'Arena da Baixada', 42456, 'PENDENTE: Inserir localização...')
+INSERT INTO Cidade VALUES('Fortaleza', 'CE', '../../Content/themes/images/bandeiras/fto_fortaleza.jpg', 'Estádio Castelão', 64846, 'PENDENTE: Inserir localização...')
+INSERT INTO Cidade VALUES('Manaus', 'AM', '../../Content/themes/images/bandeiras/fto_manaus.jpg', 'Arena Amazônas', 42374, 'PENDENTE: Inserir localização...')
+INSERT INTO Cidade VALUES('Natal', 'RN', '../../Content/themes/images/bandeiras/fto_natal.jpg', 'Estádio das Dunas', 42086, 'PENDENTE: Inserir localização...')
+INSERT INTO Cidade VALUES('Porto Alegre', 'RS', '../../Content/themes/images/bandeiras/fto_portoalegre.jpg', 'Estádio Beira-Rio', 51000, 'PENDENTE: Inserir localização...')
+INSERT INTO Cidade VALUES('Recife', 'PE', '../../Content/themes/images/bandeiras/fto_recife.jpg', 'Arena Pernambuco', 44248, 'PENDENTE: Inserir localização...')
+INSERT INTO Cidade VALUES('Rio de Janeiro', 'RJ', '../../Content/themes/images/bandeiras/fto_riodejaneiro.jpg', 'Estádio do Maracanã', 76804, 'PENDENTE: Inserir localização...')
+INSERT INTO Cidade VALUES('Salvador', 'BA', '../../Content/themes/images/bandeiras/fto_salvador.jpg', 'Arena Fonte Nova', 48747, 'PENDENTE: Inserir localização...')
+INSERT INTO Cidade VALUES('São Paulo', 'SP', '../../Content/themes/images/bandeiras/fto_saopaulo.jpg', 'Arena de São Paulo', 65807, 'PENDENTE: Inserir localização...')
+GO
+
 INSERT INTO Jogo (CodigoCidade, NomeCidade, LocalVendaIngresso, Rodada, CodigoSelecaoA, NomeSelecaoA, CodigoSelecaoB, NomeSelecaoB, DataHora) VALUES (12, 'São Paulo', 'www.ingressorapido.com', 1, 1, 'Uruguai', 2, 'México', '12/06/2014 17:00')
 INSERT INTO Jogo (CodigoCidade, NomeCidade, LocalVendaIngresso, Rodada, CodigoSelecaoA, NomeSelecaoA, CodigoSelecaoB, NomeSelecaoB, DataHora) VALUES (7, 'Natal', 'www.ingressorapido.com', 1, 3, 'Africa do Sul', 4, 'França', '13/06/2014 13:00')
 INSERT INTO Jogo (CodigoCidade, NomeCidade, LocalVendaIngresso, Rodada, CodigoSelecaoA, NomeSelecaoA, CodigoSelecaoB, NomeSelecaoB, DataHora) VALUES (11, 'Salvador', 'www.ingressorapido.com', 1, 5, 'Argentina', 6, 'Coreia do Sul', '13/06/2014 16:00')
