@@ -124,10 +124,10 @@
     <value>Código Anuncio</value>
   </data>
   <data name="Conteudo" xml:space="preserve">
-    <value>Conteúdo do Anúncio</value>
+    <value>Descrição</value>
   </data>
   <data name="DataPublicacao" xml:space="preserve">
-    <value>Data Publicação</value>
+    <value>Publicar em</value>
   </data>
   <data name="pnlTituloExclusao" xml:space="preserve">
     <value>Excluir Anúncios</value>
@@ -139,7 +139,7 @@
     <value>Titulo Anúncio</value>
   </data>
   <data name="CaminhoImagem" xml:space="preserve">
-    <value>Caminho da Imagem</value>
+    <value>Imagem</value>
   </data>
   <data name="LoginCriacao" xml:space="preserve">
     <value>Login Criação</value>

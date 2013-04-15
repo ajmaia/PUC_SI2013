@@ -16,7 +16,7 @@ namespace PortalBrazucas.Controllers
         protected IQueryable listaSexo()
         {
             List<SelectListItem> lista = new List<SelectListItem>();
-            lista.Add(new SelectListItem() { Text = "Maculino", Value = "M" });
+            lista.Add(new SelectListItem() { Text = "Masculino", Value = "M" });
             lista.Add(new SelectListItem() { Text = "Feminino", Value = "F" });
 
             return lista.AsQueryable();

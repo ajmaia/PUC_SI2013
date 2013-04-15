@@ -61,7 +61,7 @@ namespace PortalAdmnistrativo.Resouces {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Caminho da Imagem.
+        ///   Looks up a localized string similar to Imagem.
         /// </summary>
         public static string CaminhoImagem {
             get {
@@ -88,7 +88,7 @@ namespace PortalAdmnistrativo.Resouces {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Conteúdo do Anúncio.
+        ///   Looks up a localized string similar to Descrição.
         /// </summary>
         public static string Conteudo {
             get {
@@ -97,7 +97,7 @@ namespace PortalAdmnistrativo.Resouces {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Data Publicação.
+        ///   Looks up a localized string similar to Publicar em.
         /// </summary>
         public static string DataPublicacao {
             get {
