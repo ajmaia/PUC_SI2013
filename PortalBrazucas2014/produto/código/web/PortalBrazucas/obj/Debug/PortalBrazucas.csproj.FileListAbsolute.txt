@@ -1,55 +1,3 @@
-C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalBrazucas\bin\PortalBrazucas.dll
-C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalBrazucas\bin\PortalBrazucas.pdb
-C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalBrazucas\bin\EntityFramework.dll
-C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalBrazucas\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalBrazucas\bin\System.Web.Helpers.dll
-C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalBrazucas\bin\System.Web.Mvc.dll
-C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalBrazucas\bin\System.Web.Providers.dll
-C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalBrazucas\bin\System.Web.Razor.dll
-C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalBrazucas\bin\System.Web.WebPages.Deployment.dll
-C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalBrazucas\bin\System.Web.WebPages.dll
-C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalBrazucas\bin\System.Web.WebPages.Razor.dll
-C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalBrazucas\bin\EntityFramework.xml
-C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalBrazucas\bin\System.Web.Helpers.xml
-C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalBrazucas\bin\System.Web.Mvc.xml
-C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalBrazucas\bin\System.Web.Razor.xml
-C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalBrazucas\bin\System.Web.WebPages.xml
-C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalBrazucas\bin\System.Web.WebPages.Deployment.xml
-C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalBrazucas\bin\System.Web.WebPages.Razor.xml
-C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalBrazucas\obj\Debug\PortalBrazucas.dll
-C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalBrazucas\obj\Debug\PortalBrazucas.pdb
-C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalBrazucas\bin\PortalAdmnistrativo.dll
-C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalBrazucas\bin\PortalAdmnistrativo.pdb
-C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalBrazucas\obj\Debug\PortalBrazucas.csprojResolveAssemblyReference.cache
-C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalBrazucas\obj\Debug\PortalBrazucas.Resource.PortalResource.resources
-C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\02 - Implementação\WEB\PortalBrazucas2014\PortalBrazucas\obj\Debug\PortalBrazucas.csproj.GenerateResource.Cache
-<<<<<<< HEAD
-C:\Users\Diogo\Desktop\TP TMS\PortalBrazucas2014\produto\código\web\PortalBrazucas\bin\PortalBrazucas.dll
-C:\Users\Diogo\Desktop\TP TMS\PortalBrazucas2014\produto\código\web\PortalBrazucas\bin\PortalBrazucas.pdb
-C:\Users\Diogo\Desktop\TP TMS\PortalBrazucas2014\produto\código\web\PortalBrazucas\bin\EntityFramework.dll
-C:\Users\Diogo\Desktop\TP TMS\PortalBrazucas2014\produto\código\web\PortalBrazucas\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\Diogo\Desktop\TP TMS\PortalBrazucas2014\produto\código\web\PortalBrazucas\bin\PortalAdmnistrativo.dll
-C:\Users\Diogo\Desktop\TP TMS\PortalBrazucas2014\produto\código\web\PortalBrazucas\bin\System.Web.Helpers.dll
-C:\Users\Diogo\Desktop\TP TMS\PortalBrazucas2014\produto\código\web\PortalBrazucas\bin\System.Web.Mvc.dll
-C:\Users\Diogo\Desktop\TP TMS\PortalBrazucas2014\produto\código\web\PortalBrazucas\bin\System.Web.Providers.dll
-C:\Users\Diogo\Desktop\TP TMS\PortalBrazucas2014\produto\código\web\PortalBrazucas\bin\System.Web.Razor.dll
-C:\Users\Diogo\Desktop\TP TMS\PortalBrazucas2014\produto\código\web\PortalBrazucas\bin\System.Web.WebPages.Deployment.dll
-C:\Users\Diogo\Desktop\TP TMS\PortalBrazucas2014\produto\código\web\PortalBrazucas\bin\System.Web.WebPages.dll
-C:\Users\Diogo\Desktop\TP TMS\PortalBrazucas2014\produto\código\web\PortalBrazucas\bin\System.Web.WebPages.Razor.dll
-C:\Users\Diogo\Desktop\TP TMS\PortalBrazucas2014\produto\código\web\PortalBrazucas\bin\PortalAdmnistrativo.pdb
-C:\Users\Diogo\Desktop\TP TMS\PortalBrazucas2014\produto\código\web\PortalBrazucas\bin\EntityFramework.xml
-C:\Users\Diogo\Desktop\TP TMS\PortalBrazucas2014\produto\código\web\PortalBrazucas\bin\System.Web.Helpers.xml
-C:\Users\Diogo\Desktop\TP TMS\PortalBrazucas2014\produto\código\web\PortalBrazucas\bin\System.Web.Mvc.xml
-C:\Users\Diogo\Desktop\TP TMS\PortalBrazucas2014\produto\código\web\PortalBrazucas\bin\System.Web.Razor.xml
-C:\Users\Diogo\Desktop\TP TMS\PortalBrazucas2014\produto\código\web\PortalBrazucas\bin\System.Web.WebPages.xml
-C:\Users\Diogo\Desktop\TP TMS\PortalBrazucas2014\produto\código\web\PortalBrazucas\bin\System.Web.WebPages.Deployment.xml
-C:\Users\Diogo\Desktop\TP TMS\PortalBrazucas2014\produto\código\web\PortalBrazucas\bin\System.Web.WebPages.Razor.xml
-C:\Users\Diogo\Desktop\TP TMS\PortalBrazucas2014\produto\código\web\PortalBrazucas\obj\Debug\PortalBrazucas.csprojResolveAssemblyReference.cache
-C:\Users\Diogo\Desktop\TP TMS\PortalBrazucas2014\produto\código\web\PortalBrazucas\obj\Debug\PortalBrazucas.Resource.PortalResource.resources
-C:\Users\Diogo\Desktop\TP TMS\PortalBrazucas2014\produto\código\web\PortalBrazucas\obj\Debug\PortalBrazucas.csproj.GenerateResource.Cache
-C:\Users\Diogo\Desktop\TP TMS\PortalBrazucas2014\produto\código\web\PortalBrazucas\obj\Debug\PortalBrazucas.dll
-C:\Users\Diogo\Desktop\TP TMS\PortalBrazucas2014\produto\código\web\PortalBrazucas\obj\Debug\PortalBrazucas.pdb
-=======
 C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\produto\código\web\PortalBrazucas\bin\PortalBrazucas.dll
 C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\produto\código\web\PortalBrazucas\bin\PortalBrazucas.pdb
 C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\produto\código\web\PortalBrazucas\bin\EntityFramework.dll
@@ -75,4 +23,3 @@ C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\produto\código\web\PortalBrazu
 C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\produto\código\web\PortalBrazucas\obj\Debug\PortalBrazucas.csproj.GenerateResource.Cache
 C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\produto\código\web\PortalBrazucas\obj\Debug\PortalBrazucas.dll
 C:\Users\Alexandre\PUC_SI2013\PortalBrazucas2014\produto\código\web\PortalBrazucas\obj\Debug\PortalBrazucas.pdb
->>>>>>> a3d035165d12939d75186e908257524919d856d1

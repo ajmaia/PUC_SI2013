@@ -7,8 +7,7 @@
 </div>
 
 <script language="javascript" type="text/javascript">
-
     function redirecionaNoticia(CodigoNoticia) {
-        $.post('/NoticiaComentario/redirecionar?CodNoticia=' + CodigoNoticia);
+        window.location.href = '/NoticiaComentario/redirecionar?CodNoticia=' + CodigoNoticia;
     }
 </script>

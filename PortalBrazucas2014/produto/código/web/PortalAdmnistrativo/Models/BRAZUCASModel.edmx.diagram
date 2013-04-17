@@ -5,21 +5,19 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="89ace1516a3a49dea7c95e239821fecb" Name="Diagram1">
-        <EntityTypeShape EntityType="BRAZUCASModel.Anuncio" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="BRAZUCASModel.Categoria" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BRAZUCASModel.Anuncio" Width="1.5" PointX="2.625" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BRAZUCASModel.Categoria" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="BRAZUCASModel.Cidade" Width="1.5" PointX="1.5" PointY="20" IsExpanded="true" />
         <EntityTypeShape EntityType="BRAZUCASModel.Comentario" Width="1.5" PointX="6" PointY="6.25" IsExpanded="true" />
         <EntityTypeShape EntityType="BRAZUCASModel.Grupo" Width="1.5" PointX="1.5" PointY="28" IsExpanded="true" />
         <EntityTypeShape EntityType="BRAZUCASModel.Historia" Width="1.5" PointX="1.5" PointY="30.25" IsExpanded="true" />
         <EntityTypeShape EntityType="BRAZUCASModel.Jogo" Width="1.5" PointX="10.625" PointY="12.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="BRAZUCASModel.Noticia" Width="1.5" PointX="3.75" PointY="10.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="BRAZUCASModel.PalpiteJogo" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BRAZUCASModel.Noticia" Width="1.5" PointX="0.5" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BRAZUCASModel.PalpiteJogo" Width="1.5" PointX="0.875" PointY="6.25" IsExpanded="true" />
         <EntityTypeShape EntityType="BRAZUCASModel.PontuacaoBolao" Width="1.5" PointX="3" PointY="16.375" IsExpanded="true" />
         <EntityTypeShape EntityType="BRAZUCASModel.Selecao" Width="1.5" PointX="1.5" PointY="23.375" IsExpanded="true" />
         <EntityTypeShape EntityType="BRAZUCASModel.Usuario" Width="1.5" PointX="5.875" PointY="3" IsExpanded="true" />
         <EntityTypeShape EntityType="BRAZUCASModel.Bolao" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BRAZUCASModel.Ingresso" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BRAZUCASModel.Rodada" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
         <AssociationConnector Association="BRAZUCASModel.FK_Anuncio_Categoria" ManuallyRouted="false" />
         <AssociationConnector Association="BRAZUCASModel.FK_Anuncio_Usuario" ManuallyRouted="false" />
         <AssociationConnector Association="BRAZUCASModel.FK_Noticia_Categoria" ManuallyRouted="false" />
@@ -34,6 +32,8 @@
         <AssociationConnector Association="BRAZUCASModel.FK_Palpite_Usuario" ManuallyRouted="false" />
         <AssociationConnector Association="BRAZUCASModel.FK_Pontuacao_Usuario" ManuallyRouted="false" />
         <AssociationConnector Association="BRAZUCASModel.FK_Selecao_Grupo1" />
+        <EntityTypeShape EntityType="BRAZUCASModel.Ingresso" Width="1.5" PointX="6.7764335194492862" PointY="21.967118198968059" />
+        <EntityTypeShape EntityType="BRAZUCASModel.Rodada" Width="1.5" PointX="9.3531318648500061" PointY="31.115251719539636" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

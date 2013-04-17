@@ -218,8 +218,16 @@
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.8.3.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-ui-1.8.11.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\jquery-ui-custom.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery.1.6.4.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\jquery.ui.datepicker-pt-BR.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
@@ -229,6 +237,13 @@
     <Content Include="Views\AnuncioPortal\Details.aspx" />
     <Content Include="Views\AnuncioPortal\Edit.aspx" />
     <Content Include="Views\AnuncioPortal\Index.aspx" />
+    <Content Include="Views\AnuncioPortal\_campos.ascx" />
+    <Content Include="Views\AnuncioPortal\_conteudo.ascx" />
+    <Content Include="Views\AnuncioPortal\_editar.ascx" />
+    <Content Include="Views\AnuncioPortal\_excluir.ascx" />
+    <Content Include="Views\AnuncioPortal\_incluir.ascx" />
+    <Content Include="Views\AnuncioPortal\_painelComentariosNoticia.ascx" />
+    <Content Include="Views\AnuncioPortal\_resultado.ascx" />
     <Content Include="Views\HomePortal\_painelNoticiaSecundaria.ascx" />
     <Content Include="Views\HomePortal\_painelNoticiaTerciaria.ascx" />
     <Content Include="Views\HomePortal\Index.aspx" />
@@ -243,6 +258,11 @@
     <Content Include="Views\SelecaoPortal\Details.aspx" />
     <Content Include="Views\SelecaoPortal\Edit.aspx" />
     <Content Include="Views\SelecaoPortal\Index.aspx" />
+    <Content Include="Views\Shared\_painelEdicao.ascx" />
+    <Content Include="Views\Shared\_painelExclusao.ascx" />
+    <Content Include="Views\Shared\_painelFiltros.ascx" />
+    <Content Include="Views\Shared\_painelInclusao.ascx" />
+    <Content Include="Views\Shared\_painelResultados.ascx" />
     <Content Include="Views\UsuarioPortal\Create.aspx" />
     <Content Include="Views\UsuarioPortal\Delete.aspx" />
     <Content Include="Views\UsuarioPortal\Details.aspx" />
@@ -275,7 +295,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Content\themes\images\cidades\" />
     <Folder Include="Content\themes\images\historia\" />
-    <Folder Include="Content\Uploads\" />
+    <Folder Include="Content\uploads\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

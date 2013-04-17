@@ -128,7 +128,7 @@ div.clear
 .webgrid-header
 {
     font: bold 15px Verdana, Arial, Helvetica, sans-serif;
-    background-color: #000;
+    background-color: #0e7019;
     color: #FFF;
     padding: 4px;
 }
@@ -139,7 +139,7 @@ div.clear
 }
 .webgrid-header a:hover
 {
-    color: #7F7F7F;
+    color: #A8CF45;
 }
 .grid_empty
 {
@@ -151,23 +151,23 @@ div.clear
 .webgrid-row
 {
     font: normal 12px Verdana, Arial, Helvetica, sans-serif;
-    background-color: #bdbdbd;
+    background-color: #D0E49D;
     color: #333333;
 }
 .webgrid-row:hover
 {
-    background-color: #7F7F7F;
+    background-color: #A8CF45;
     color: #333333;
 }
 .webgrid-row-alt
 {
     font: normal 12px Verdana, Arial, Helvetica, sans-serif;
-    background-color: #DDDDDD;
+    background-color: #AED252;
     color: #333333;
 }
 .webgrid-row-alt:hover
 {
-    background-color: #7F7F7F;
+    background-color: #A8CF45;
     color: #333333;
 }
 .webgrid-row-sel

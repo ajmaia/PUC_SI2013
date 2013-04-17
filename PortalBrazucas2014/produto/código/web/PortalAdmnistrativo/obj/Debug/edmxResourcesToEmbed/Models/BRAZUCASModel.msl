@@ -176,5 +176,36 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Ingresso">
+      <EntityTypeMapping TypeName="BRAZUCASModel.Ingresso">
+        <MappingFragment StoreEntitySet="Ingresso">
+          <ScalarProperty Name="DataHora" ColumnName="DataHora" />
+          <ScalarProperty Name="NomeSelecaoB" ColumnName="NomeSelecaoB" />
+          <ScalarProperty Name="CodigoSelecaoB" ColumnName="CodigoSelecaoB" />
+          <ScalarProperty Name="NomeSelecaoA" ColumnName="NomeSelecaoA" />
+          <ScalarProperty Name="CodigoSelecaoA" ColumnName="CodigoSelecaoA" />
+          <ScalarProperty Name="Rodada" ColumnName="Rodada" />
+          <ScalarProperty Name="LocalVendaIngresso" ColumnName="LocalVendaIngresso" />
+          <ScalarProperty Name="NomeCidade" ColumnName="NomeCidade" />
+          <ScalarProperty Name="CodigoJogo" ColumnName="CodigoJogo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rodada">
+      <EntityTypeMapping TypeName="BRAZUCASModel.Rodada">
+        <MappingFragment StoreEntitySet="Rodada">
+          <ScalarProperty Name="GolsSofridos" ColumnName="GolsSofridos" />
+          <ScalarProperty Name="GolsRealizados" ColumnName="GolsRealizados" />
+          <ScalarProperty Name="Derrotas" ColumnName="Derrotas" />
+          <ScalarProperty Name="Vitorias" ColumnName="Vitorias" />
+          <ScalarProperty Name="Empates" ColumnName="Empates" />
+          <ScalarProperty Name="CodigoGrupo" ColumnName="CodigoGrupo" />
+          <ScalarProperty Name="NomeSelecao" ColumnName="NomeSelecao" />
+          <ScalarProperty Name="CodigoSelecao" ColumnName="CodigoSelecao" />
+          <ScalarProperty Name="Fase" ColumnName="Fase" />
+          <ScalarProperty Name="DescricaoRodada" ColumnName="DescricaoRodada" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

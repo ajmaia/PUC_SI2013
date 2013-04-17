@@ -13,100 +13,121 @@ namespace PortalBrazucas.Controllers
     {
         private Entities db = new Entities();
 
-        //
-        // GET: /AnuncioPortal/
+        protected int proximoAnuncio()
+        {
+            try
+            {
+                var context = new Entities();
 
+                Anuncio anuncio = db.Anuncio.OrderByDescending(n => n.CodigoAnuncio).Take(1).SingleOrDefault();
+
+                return anuncio.CodigoAnuncio + 1;
+            }
+            catch (Exception)
+            {
+                return 1;
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="codCategoria"></param>
+        /// <returns></returns>
+        protected string retornaCategorias(int codCategoria)
+        {
+            var context = new Entities();
+
+            var resultado = (from item in context.Categoria
+                             where item.CodigoCategoria == codCategoria
+                             select item.DescricaoCategoria);
+
+            return resultado.Single();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        protected IQueryable listaCategorias()
+        {
+            var context = new Entities();
+
+            var resultado = (from item in context.Categoria
+                             where item.TipoCategoria != true
+                             orderby item.DescricaoCategoria
+                             select new { Text = item.DescricaoCategoria, Value = item.CodigoCategoria });
+
+            return resultado;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public ViewResult Index()
         {
-            var anuncio = db.Anuncio.Include("Categoria").Include("Usuario");
-            return View(anuncio.ToList());
+            var parametros = new Anuncio();
+            parametros.LoginCriacao = "ajmaia";
+            this.ViewBag.Parametros = parametros;
+            this.ViewBag.Resultados = parametros.buscar();
+            this.ViewBag.ListaCategorias = listaCategorias();
+
+            return View();
         }
 
-        //
-        // GET: /AnuncioPortal/Details/5
-
-        public ViewResult Details(int id)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="parametros"></param>
+        /// <returns></returns>
+        public ActionResult Buscar(Anuncio parametros)
         {
-            Anuncio anuncio = db.Anuncio.Single(a => a.CodigoAnuncio == id);
-            return View(anuncio);
+            this.ViewBag.ListaCategorias = listaCategorias();
+            this.ViewBag.Parametros = parametros;
+            this.ViewBag.Resultado = parametros.buscar();
+
+            return View("Index", this.ViewBag.Resultado);
         }
 
-        //
-        // GET: /AnuncioPortal/Create
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Create()
         {
-            ViewBag.CodigoCategoria = new SelectList(db.Categoria, "CodigoCategoria", "DescricaoCategoria");
-            ViewBag.LoginCriacao = new SelectList(db.Usuario, "LoginUsuario", "NomeRazaoSocial");
-            return View();
-        } 
+            this.ViewBag.ListaCategorias = listaCategorias();
+            return PartialView("_painelInclusao");
+        }
 
-        //
-        // POST: /AnuncioPortal/Create
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="noticia"></param>
+        /// <returns></returns>
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Create(Anuncio anuncio)
         {
+            string caminho = "C:\\Users\\Alexandre\\PUC_SI2013\\PortalBrazucas2014\\produto\\código\\web\\PortalBrazucas\\Content\\uploads\\";
+            int idAtual = proximoAnuncio();
+            anuncio.CaminhoImagem = String.Format("../../Content/uploads/noticia_{0}.jpg", idAtual);
+            anuncio.DescricaoCategoria = retornaCategorias(anuncio.CodigoCategoria);
+
+            HttpPostedFileBase file = Request.Files[0];
+            byte[] imageSize = new byte[file.ContentLength];
+            file.InputStream.Read(imageSize, 0, (int)file.ContentLength);
+            file.SaveAs(String.Format("{0}anuncio_{1}.jpg", caminho, idAtual));
+
             if (ModelState.IsValid)
             {
                 db.Anuncio.AddObject(anuncio);
                 db.SaveChanges();
-                return RedirectToAction("Index");  
-            }
 
-            ViewBag.CodigoCategoria = new SelectList(db.Categoria, "CodigoCategoria", "DescricaoCategoria", anuncio.CodigoCategoria);
-            ViewBag.LoginCriacao = new SelectList(db.Usuario, "LoginUsuario", "NomeRazaoSocial", anuncio.LoginCriacao);
-            return View(anuncio);
-        }
-        
-        //
-        // GET: /AnuncioPortal/Edit/5
- 
-        public ActionResult Edit(int id)
-        {
-            Anuncio anuncio = db.Anuncio.Single(a => a.CodigoAnuncio == id);
-            ViewBag.CodigoCategoria = new SelectList(db.Categoria, "CodigoCategoria", "DescricaoCategoria", anuncio.CodigoCategoria);
-            ViewBag.LoginCriacao = new SelectList(db.Usuario, "LoginUsuario", "NomeRazaoSocial", anuncio.LoginCriacao);
-            return View(anuncio);
-        }
-
-        //
-        // POST: /AnuncioPortal/Edit/5
-
-        [HttpPost]
-        public ActionResult Edit(Anuncio anuncio)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Anuncio.Attach(anuncio);
-                db.ObjectStateManager.ChangeObjectState(anuncio, EntityState.Modified);
-                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CodigoCategoria = new SelectList(db.Categoria, "CodigoCategoria", "DescricaoCategoria", anuncio.CodigoCategoria);
-            ViewBag.LoginCriacao = new SelectList(db.Usuario, "LoginUsuario", "NomeRazaoSocial", anuncio.LoginCriacao);
-            return View(anuncio);
-        }
 
-        //
-        // GET: /AnuncioPortal/Delete/5
- 
-        public ActionResult Delete(int id)
-        {
-            Anuncio anuncio = db.Anuncio.Single(a => a.CodigoAnuncio == id);
-            return View(anuncio);
-        }
-
-        //
-        // POST: /AnuncioPortal/Delete/5
-
-        [HttpPost, ActionName("Delete")]
-        public ActionResult DeleteConfirmed(int id)
-        {            
-            Anuncio anuncio = db.Anuncio.Single(a => a.CodigoAnuncio == id);
-            db.Anuncio.DeleteObject(anuncio);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            return PartialView("_painelInclusao", anuncio);
         }
 
         protected override void Dispose(bool disposing)

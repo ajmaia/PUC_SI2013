@@ -18,11 +18,18 @@ namespace PortalAdmnistrativo.Controllers
 
         protected int proximaNoticia()
         {
-            var context = new Entities();
+            try
+            {
+                var context = new Entities();
 
-            Noticia noticia = db.Noticia.OrderByDescending(n => n.CodigoNoticia).Take(1).Single();
+                Noticia noticia = db.Noticia.OrderByDescending(n => n.CodigoNoticia).Take(1).SingleOrDefault();
 
-            return noticia.CodigoNoticia + 1;
+                return noticia.CodigoNoticia + 1;
+            }
+            catch (Exception)
+            {
+                return 1;
+            }
         }
 
         /// <summary>
@@ -50,6 +57,7 @@ namespace PortalAdmnistrativo.Controllers
             var context = new Entities();
 
             var resultado = (from item in context.Categoria
+                             where item.TipoCategoria != false
                              orderby item.DescricaoCategoria
                              select new { Text = item.DescricaoCategoria, Value = item.CodigoCategoria });
 
@@ -103,9 +111,9 @@ namespace PortalAdmnistrativo.Controllers
         [ValidateInput(false)]
         public ActionResult Create(Noticia noticia)
         {
-            string caminho = "C:\\Users\\Alexandre\\PUC_SI2013\\PortalBrazucas2014\\produto\\código\\web\\PortalBrazucas\\Content\\Uploads\\";
+            string caminho = "C:\\Users\\Alexandre\\PUC_SI2013\\PortalBrazucas2014\\produto\\código\\web\\PortalBrazucas\\Content\\uploads\\";
             int idAtual = proximaNoticia();
-            noticia.CaminhoImagem = String.Format("../../Content/Uploads/noticia_{0}.jpg", idAtual);
+            noticia.CaminhoImagem = String.Format("../../Content/uploads/noticia_{0}.jpg", idAtual);
             noticia.DataPublicacaoString = DateTime.Now.ToShortTimeString();
             noticia.DescricaoCategoria = retornaCategorias(noticia.CodigoCategoria);
             
@@ -145,8 +153,8 @@ namespace PortalAdmnistrativo.Controllers
         [HttpPost, ActionName("Editar")]
         public ActionResult EditConfirmed(Noticia noticia)
         {
-            string caminho = "C:\\Users\\Alexandre\\PUC_SI2013\\PortalBrazucas2014\\produto\\código\\web\\PortalBrazucas\\Content\\Uploads\\";
-            noticia.CaminhoImagem = String.Format("../../Content/Uploads/noticia_{0}.jpg", noticia.CodigoNoticia);
+            string caminho = "C:\\Users\\Alexandre\\PUC_SI2013\\PortalBrazucas2014\\produto\\código\\web\\PortalBrazucas\\Content\\uploads\\";
+            noticia.CaminhoImagem = String.Format("../../Content/uploads/noticia_{0}.jpg", noticia.CodigoNoticia);
             noticia.DescricaoCategoria = retornaCategorias(noticia.CodigoCategoria);
 
             HttpPostedFileBase file = Request.Files[0];
@@ -154,7 +162,7 @@ namespace PortalAdmnistrativo.Controllers
             file.InputStream.Read(imageSize, 0, (int)file.ContentLength);
             file.SaveAs(String.Format("{0}noticia_{1}.jpg", caminho, noticia.CodigoNoticia));
 
-            noticia.CaminhoImagem = String.Format("../../Content/Uploads/noticia_{0}.jpg", noticia.CodigoNoticia);
+            noticia.CaminhoImagem = String.Format("../../Content/uploads/noticia_{0}.jpg", noticia.CodigoNoticia);
 
             if (ModelState.IsValid)
             {

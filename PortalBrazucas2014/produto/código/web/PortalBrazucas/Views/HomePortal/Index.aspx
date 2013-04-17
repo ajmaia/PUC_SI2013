@@ -26,6 +26,8 @@
     <div id="credencie">
         <div class='painel_titulo'><%: DateTime.Now.ToShortDateString() %></div>
 
-        Colocar uma imagem link pra redirecionar para cadastro
+        <div onclick="javascript: window.location.href='/UsuarioPortal/Create';" style="cursor: pointer;">
+            Cadastre-se em nosso portal...
+        </div>
     </div>
 </asp:Content>

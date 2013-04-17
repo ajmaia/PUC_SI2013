@@ -23,6 +23,33 @@
       [Bolao].[RelativoColocadoAnterior] AS [RelativoColocadoAnterior]
       FROM [dbo].[Bolao] AS [Bolao]</DefiningQuery>
     </EntitySet>
+    <EntitySet Name="Ingresso" EntityType="BRAZUCASModel.Store.Ingresso" store:Type="Views" store:Schema="dbo" store:Name="Ingresso">
+      <DefiningQuery>SELECT 
+      [Ingresso].[CodigoJogo] AS [CodigoJogo], 
+      [Ingresso].[NomeCidade] AS [NomeCidade], 
+      [Ingresso].[LocalVendaIngresso] AS [LocalVendaIngresso], 
+      [Ingresso].[Rodada] AS [Rodada], 
+      [Ingresso].[CodigoSelecaoA] AS [CodigoSelecaoA], 
+      [Ingresso].[NomeSelecaoA] AS [NomeSelecaoA], 
+      [Ingresso].[CodigoSelecaoB] AS [CodigoSelecaoB], 
+      [Ingresso].[NomeSelecaoB] AS [NomeSelecaoB], 
+      [Ingresso].[DataHora] AS [DataHora]
+      FROM [dbo].[Ingresso] AS [Ingresso]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Rodada" EntityType="BRAZUCASModel.Store.Rodada" store:Type="Views" store:Schema="dbo" store:Name="Rodada">
+      <DefiningQuery>SELECT 
+      [Rodada].[DescricaoRodada] AS [DescricaoRodada], 
+      [Rodada].[Fase] AS [Fase], 
+      [Rodada].[CodigoSelecao] AS [CodigoSelecao], 
+      [Rodada].[NomeSelecao] AS [NomeSelecao], 
+      [Rodada].[CodigoGrupo] AS [CodigoGrupo], 
+      [Rodada].[Empates] AS [Empates], 
+      [Rodada].[Vitorias] AS [Vitorias], 
+      [Rodada].[Derrotas] AS [Derrotas], 
+      [Rodada].[GolsRealizados] AS [GolsRealizados], 
+      [Rodada].[GolsSofridos] AS [GolsSofridos]
+      FROM [dbo].[Rodada] AS [Rodada]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="FK_Anuncio_Categoria" Association="BRAZUCASModel.Store.FK_Anuncio_Categoria">
       <End Role="Categoria" EntitySet="Categoria" />
       <End Role="Anuncio" EntitySet="Anuncio" />
@@ -241,6 +268,52 @@
     <Property Name="Pontuacao" Type="int" />
     <Property Name="RelativoPrimeiroColocado" Type="int" />
     <Property Name="RelativoColocadoAnterior" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'BRAZUCAS.dbo.Ingresso' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Ingresso">
+    <Key>
+      <PropertyRef Name="CodigoJogo" />
+      <PropertyRef Name="NomeCidade" />
+      <PropertyRef Name="Rodada" />
+      <PropertyRef Name="CodigoSelecaoA" />
+      <PropertyRef Name="NomeSelecaoA" />
+      <PropertyRef Name="CodigoSelecaoB" />
+      <PropertyRef Name="NomeSelecaoB" />
+      <PropertyRef Name="DataHora" />
+    </Key>
+    <Property Name="CodigoJogo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NomeCidade" Type="varchar" Nullable="false" MaxLength="128" />
+    <Property Name="LocalVendaIngresso" Type="varchar" MaxLength="128" />
+    <Property Name="Rodada" Type="int" Nullable="false" />
+    <Property Name="CodigoSelecaoA" Type="int" Nullable="false" />
+    <Property Name="NomeSelecaoA" Type="varchar" Nullable="false" MaxLength="128" />
+    <Property Name="CodigoSelecaoB" Type="int" Nullable="false" />
+    <Property Name="NomeSelecaoB" Type="varchar" Nullable="false" MaxLength="128" />
+    <Property Name="DataHora" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'BRAZUCAS.dbo.Rodada' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Rodada">
+    <Key>
+      <PropertyRef Name="DescricaoRodada" />
+      <PropertyRef Name="Fase" />
+      <PropertyRef Name="CodigoSelecao" />
+      <PropertyRef Name="NomeSelecao" />
+      <PropertyRef Name="CodigoGrupo" />
+    </Key>
+    <Property Name="DescricaoRodada" Type="int" Nullable="false" />
+    <Property Name="Fase" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="CodigoSelecao" Type="int" Nullable="false" />
+    <Property Name="NomeSelecao" Type="varchar" Nullable="false" MaxLength="128" />
+    <Property Name="CodigoGrupo" Type="int" Nullable="false" />
+    <Property Name="Empates" Type="int" />
+    <Property Name="Vitorias" Type="int" />
+    <Property Name="Derrotas" Type="int" />
+    <Property Name="GolsRealizados" Type="int" />
+    <Property Name="GolsSofridos" Type="int" />
   </EntityType>
   <Association Name="FK_Anuncio_Categoria">
     <End Role="Categoria" Type="BRAZUCASModel.Store.Categoria" Multiplicity="1" />

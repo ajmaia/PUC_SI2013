@@ -14,8 +14,6 @@
     <EntitySet Name="Selecao" EntityType="BRAZUCASModel.Selecao" />
     <EntitySet Name="Usuario" EntityType="BRAZUCASModel.Usuario" />
     <EntitySet Name="Bolao" EntityType="BRAZUCASModel.Bolao" />
-    <EntitySet Name="Ingresso" EntityType="BRAZUCASModel.Ingresso" />
-    <EntitySet Name="Rodada" EntityType="BRAZUCASModel.Rodada" />
     <AssociationSet Name="FK_Anuncio_Categoria" Association="BRAZUCASModel.FK_Anuncio_Categoria">
       <End Role="Categoria" EntitySet="Categoria" />
       <End Role="Anuncio" EntitySet="Anuncio" />
@@ -72,6 +70,8 @@
       <End Role="Grupo" EntitySet="Grupo" />
       <End Role="Selecao" EntitySet="Selecao" />
     </AssociationSet>
+    <EntitySet Name="Ingresso" EntityType="BRAZUCASModel.Ingresso" />
+    <EntitySet Name="Rodada" EntityType="BRAZUCASModel.Rodada" />
   </EntityContainer>
   <EntityType Name="Anuncio">
     <Key>
@@ -264,46 +264,6 @@
     <Property Name="RelativoPrimeiroColocado" Type="Int32" />
     <Property Name="RelativoColocadoAnterior" Type="Int32" />
   </EntityType>
-  <EntityType Name="Ingresso">
-    <Key>
-      <PropertyRef Name="CodigoJogo" />
-      <PropertyRef Name="NomeCidade" />
-      <PropertyRef Name="Rodada" />
-      <PropertyRef Name="CodigoSelecaoA" />
-      <PropertyRef Name="NomeSelecaoA" />
-      <PropertyRef Name="CodigoSelecaoB" />
-      <PropertyRef Name="NomeSelecaoB" />
-      <PropertyRef Name="DataHora" />
-    </Key>
-    <Property Name="CodigoJogo" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-    <Property Name="NomeCidade" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
-    <Property Name="LocalVendaIngresso" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
-    <Property Name="Rodada" Type="Int32" Nullable="false" />
-    <Property Name="CodigoSelecaoA" Type="Int32" Nullable="false" />
-    <Property Name="NomeSelecaoA" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
-    <Property Name="CodigoSelecaoB" Type="Int32" Nullable="false" />
-    <Property Name="NomeSelecaoB" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
-    <Property Name="DataHora" Type="DateTime" Nullable="false" Precision="3" />
-  </EntityType>
-  <EntityType Name="Rodada">
-    <Key>
-      <PropertyRef Name="DescricaoRodada" />
-      <PropertyRef Name="Fase" />
-      <PropertyRef Name="CodigoSelecao" />
-      <PropertyRef Name="NomeSelecao" />
-      <PropertyRef Name="CodigoGrupo" />
-    </Key>
-    <Property Name="DescricaoRodada" Type="Int32" Nullable="false" />
-    <Property Name="Fase" Type="String" Nullable="false" MaxLength="13" Unicode="false" FixedLength="false" />
-    <Property Name="CodigoSelecao" Type="Int32" Nullable="false" />
-    <Property Name="NomeSelecao" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
-    <Property Name="CodigoGrupo" Type="Int32" Nullable="false" />
-    <Property Name="Empates" Type="Int32" />
-    <Property Name="Vitorias" Type="Int32" />
-    <Property Name="Derrotas" Type="Int32" />
-    <Property Name="GolsRealizados" Type="Int32" />
-    <Property Name="GolsSofridos" Type="Int32" />
-  </EntityType>
   <Association Name="FK_Anuncio_Categoria">
     <End Role="Categoria" Type="BRAZUCASModel.Categoria" Multiplicity="1" />
     <End Role="Anuncio" Type="BRAZUCASModel.Anuncio" Multiplicity="*" />
@@ -472,4 +432,44 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="Ingresso">
+    <Key>
+      <PropertyRef Name="CodigoJogo" />
+      <PropertyRef Name="NomeCidade" />
+      <PropertyRef Name="Rodada" />
+      <PropertyRef Name="CodigoSelecaoA" />
+      <PropertyRef Name="NomeSelecaoA" />
+      <PropertyRef Name="CodigoSelecaoB" />
+      <PropertyRef Name="NomeSelecaoB" />
+      <PropertyRef Name="DataHora" />
+    </Key>
+    <Property Type="Int32" Name="CodigoJogo" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="NomeCidade" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="LocalVendaIngresso" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Rodada" Nullable="false" />
+    <Property Type="Int32" Name="CodigoSelecaoA" Nullable="false" />
+    <Property Type="String" Name="NomeSelecaoA" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="CodigoSelecaoB" Nullable="false" />
+    <Property Type="String" Name="NomeSelecaoB" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="DataHora" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Rodada">
+    <Key>
+      <PropertyRef Name="DescricaoRodada" />
+      <PropertyRef Name="Fase" />
+      <PropertyRef Name="CodigoSelecao" />
+      <PropertyRef Name="NomeSelecao" />
+      <PropertyRef Name="CodigoGrupo" />
+    </Key>
+    <Property Type="Int32" Name="DescricaoRodada" Nullable="false" />
+    <Property Type="String" Name="Fase" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="CodigoSelecao" Nullable="false" />
+    <Property Type="String" Name="NomeSelecao" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="CodigoGrupo" Nullable="false" />
+    <Property Type="Int32" Name="Empates" />
+    <Property Type="Int32" Name="Vitorias" />
+    <Property Type="Int32" Name="Derrotas" />
+    <Property Type="Int32" Name="GolsRealizados" />
+    <Property Type="Int32" Name="GolsSofridos" />
+  </EntityType>
 </Schema>

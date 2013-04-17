@@ -1,19 +1,18 @@
 ﻿$(document).ready(function () {
-    $("#icone_admin").hide();
 
-    $("#icone_admin").hover(function () {
-            $("#menu_admin").show();
+    $("#icone_portal").hover(function () {
+        $("#menu_portal").show();
         },
         function () {
-            $("#menu_admin").hide();
+            $("#menu_portal").hide();
         });
-        $("#menu_admin").hover(function () {
-            $("#menu_admin").show();
-            $("#icone_admin").attr("id", "ico_admin_hover");
+    $("#menu_portal").hover(function () {
+            $("#menu_portal").show();
+            $("#icone_portal").attr("id", "ico_portal_hover");
         },
         function () {
-            $("#menu_admin").hide();
-            $("#ico_admin_hover").attr("id", "icone_admin");
+            $("#menu_portal").hide();
+            $("#ico_portal_hover").attr("id", "icone_portal");
     });
 
 
