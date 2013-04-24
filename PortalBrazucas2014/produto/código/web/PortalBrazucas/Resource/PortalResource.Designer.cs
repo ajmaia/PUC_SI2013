@@ -88,7 +88,7 @@ namespace PortalBrazucas.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Crie seu usuário em nosso portal.
+        ///   Looks up a localized string similar to Crie seu usuário.
         /// </summary>
         public static string TituloCriarUsuario {
             get {

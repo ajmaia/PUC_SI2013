@@ -187,6 +187,7 @@
     <Property Name="GolsSelecaoB" Type="int" />
     <Property Name="DataHora" Type="datetime" Nullable="false" />
     <Property Name="CaminhoImagem" Type="varchar" MaxLength="128" />
+    <Property Name="Expulsoes" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Noticia">
     <Key>
@@ -253,6 +254,7 @@
     <Property Name="DataNascimento" Type="datetime" />
     <Property Name="Sexo" Type="char" MaxLength="1" />
     <Property Name="TipoPerfil" Type="varchar" Nullable="false" MaxLength="16" />
+    <Property Name="Senha" Type="varchar" Nullable="false" MaxLength="128" />
   </EntityType>
   <!--Errors Found During Generation:
       warning 6002: The table/view 'BRAZUCAS.dbo.Bolao' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.

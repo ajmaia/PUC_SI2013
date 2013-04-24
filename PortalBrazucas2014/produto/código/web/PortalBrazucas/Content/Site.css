@@ -385,9 +385,9 @@ body
 .bandeiras
 {
     height: 40px;
-    width: 60px;
+    width: 40px;
     float: left;
-    margin: 0 5px 0 5px;
+    margin: 0 2px 0 2px;
     background-position: right;
     background-repeat: no-repeat;
     background-size: contain;
@@ -448,15 +448,15 @@ body
     border: solid 1px #F1F1F1;
     float: left;
     margin-left: 10px;
-    text-align: center;
+    padding-bottom: 2px;
 }
 
 .anuncio
 {
-    height: 150px;
-    width: 350px;
-    padding: 5px;
+    height: 175px;
+    margin: 15px;
     clear: left;
+    border-bottom: 1px solid #DDDDDD;
 }
 
 /* ÁREA DE RODAPÉ */

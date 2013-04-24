@@ -647,7 +647,7 @@
     <Content Include="Views\Noticia\_painelComentariosNoticia.ascx" />
     <Content Include="Views\Home\About.aspx" />
     <Content Include="Views\Imagens\agua_abertura.png" />
-    <Content Include="Views\Noticia\_conteudo.ascx" />
+    <Content Include="Views\Noticia\x_conteudo.ascx" />
     <Content Include="Views\Noticia\_editar.ascx" />
     <Content Include="Views\Noticia\Index.aspx" />
     <Content Include="Views\Noticia\_campos.ascx" />

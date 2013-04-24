@@ -192,6 +192,7 @@
           <Property Name="GolsSelecaoB" Type="int" />
           <Property Name="DataHora" Type="datetime" Nullable="false" />
           <Property Name="CaminhoImagem" Type="varchar" MaxLength="128" />
+          <Property Name="Expulsoes" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Noticia">
           <Key>
@@ -258,6 +259,7 @@
           <Property Name="DataNascimento" Type="datetime" />
           <Property Name="Sexo" Type="char" MaxLength="1" />
           <Property Name="TipoPerfil" Type="varchar" Nullable="false" MaxLength="16" />
+          <Property Name="Senha" Type="varchar" Nullable="false" MaxLength="128" />
         </EntityType>
         <!--Errors Found During Generation:
       warning 6002: The table/view 'BRAZUCAS.dbo.Bolao' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
@@ -651,6 +653,7 @@
           <NavigationProperty Name="Selecao" Relationship="BRAZUCASModel.FK_Jogo_SelecaoA" FromRole="Jogo" ToRole="Selecao" />
           <NavigationProperty Name="Selecao1" Relationship="BRAZUCASModel.FK_Jogo_SelecaoB" FromRole="Jogo" ToRole="Selecao" />
           <NavigationProperty Name="PalpiteJogo" Relationship="BRAZUCASModel.FK_Palpite_Jogo" FromRole="Jogo" ToRole="PalpiteJogo" />
+          <Property Type="Int32" Name="Expulsoes" Nullable="false" />
         </EntityType>
         <EntityType Name="Noticia">
           <Key>
@@ -731,6 +734,7 @@
           <NavigationProperty Name="Comentario" Relationship="BRAZUCASModel.FK_Comentario_Usuario" FromRole="Usuario" ToRole="Comentario" />
           <NavigationProperty Name="PalpiteJogo" Relationship="BRAZUCASModel.FK_Palpite_Usuario" FromRole="Usuario" ToRole="PalpiteJogo" />
           <NavigationProperty Name="PontuacaoBolao" Relationship="BRAZUCASModel.FK_Pontuacao_Usuario" FromRole="Usuario" ToRole="PontuacaoBolao" />
+          <Property Type="String" Name="Senha" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Bolao">
           <Key>
@@ -1034,6 +1038,7 @@
           <EntitySetMapping Name="Jogo">
             <EntityTypeMapping TypeName="BRAZUCASModel.Jogo">
               <MappingFragment StoreEntitySet="Jogo">
+                <ScalarProperty Name="Expulsoes" ColumnName="Expulsoes" />
                 <ScalarProperty Name="CodigoJogo" ColumnName="CodigoJogo" />
                 <ScalarProperty Name="CodigoCidade" ColumnName="CodigoCidade" />
                 <ScalarProperty Name="NomeCidade" ColumnName="NomeCidade" />
@@ -1111,6 +1116,7 @@
           <EntitySetMapping Name="Usuario">
             <EntityTypeMapping TypeName="BRAZUCASModel.Usuario">
               <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="Senha" ColumnName="Senha" />
                 <ScalarProperty Name="LoginUsuario" ColumnName="LoginUsuario" />
                 <ScalarProperty Name="CpfCnpj" ColumnName="CpfCnpj" />
                 <ScalarProperty Name="NomeRazaoSocial" ColumnName="NomeRazaoSocial" />

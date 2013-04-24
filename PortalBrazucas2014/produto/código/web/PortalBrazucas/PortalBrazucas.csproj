@@ -232,17 +232,13 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Scripts\Site.js" />
-    <Content Include="Views\AnuncioPortal\Create.aspx" />
-    <Content Include="Views\AnuncioPortal\Delete.aspx" />
-    <Content Include="Views\AnuncioPortal\Details.aspx" />
-    <Content Include="Views\AnuncioPortal\Edit.aspx" />
     <Content Include="Views\AnuncioPortal\Index.aspx" />
+    <Content Include="Views\Shared\_anuncio.ascx" />
     <Content Include="Views\AnuncioPortal\_campos.ascx" />
-    <Content Include="Views\AnuncioPortal\_conteudo.ascx" />
-    <Content Include="Views\AnuncioPortal\_editar.ascx" />
-    <Content Include="Views\AnuncioPortal\_excluir.ascx" />
+    <Content Include="Views\AnuncioPortal\x_editar.ascx" />
+    <Content Include="Views\AnuncioPortal\x_excluir.ascx" />
     <Content Include="Views\AnuncioPortal\_incluir.ascx" />
-    <Content Include="Views\AnuncioPortal\_painelComentariosNoticia.ascx" />
+    <Content Include="Views\AnuncioPortal\_painelAnuncio.ascx" />
     <Content Include="Views\AnuncioPortal\_resultado.ascx" />
     <Content Include="Views\HomePortal\_painelNoticiaSecundaria.ascx" />
     <Content Include="Views\HomePortal\_painelNoticiaTerciaria.ascx" />
@@ -258,6 +254,7 @@
     <Content Include="Views\SelecaoPortal\Details.aspx" />
     <Content Include="Views\SelecaoPortal\Edit.aspx" />
     <Content Include="Views\SelecaoPortal\Index.aspx" />
+    <Content Include="Views\Shared\_painelAnuncio.ascx" />
     <Content Include="Views\Shared\_painelEdicao.ascx" />
     <Content Include="Views\Shared\_painelExclusao.ascx" />
     <Content Include="Views\Shared\_painelFiltros.ascx" />
@@ -268,6 +265,7 @@
     <Content Include="Views\UsuarioPortal\Details.aspx" />
     <Content Include="Views\UsuarioPortal\Edit.aspx" />
     <Content Include="Views\UsuarioPortal\Index.aspx" />
+    <Content Include="Views\UsuarioPortal\_controleLogin.ascx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

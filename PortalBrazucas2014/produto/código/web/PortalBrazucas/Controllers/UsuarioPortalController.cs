@@ -13,6 +13,17 @@ namespace PortalBrazucas.Controllers
     {
         private Entities db = new Entities();
 
+        public ActionResult EfetuaLogin(string user, string password)
+        {
+            UsuarioLogar usuario = new UsuarioLogar();
+            usuario.Login = user;
+            usuario.Senha = password;
+
+            
+
+            return RedirectToAction("Index", "HomePortal"); 
+        }
+
         protected IQueryable listaSexo()
         {
             List<SelectListItem> lista = new List<SelectListItem>();

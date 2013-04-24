@@ -2,11 +2,26 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Security.Cryptography;
 
 namespace PortalAdmnistrativo.Models
 {
     public partial class Usuario
     {
+        public string SenhaDescriptografada 
+        {
+            set
+            {
+                Senha = Criptografar(value);
+            }
+            get
+            {
+                return Descriptografar(Senha);
+            }
+        }
+
+        public string ConfirmaSenha { get; set; }
+
         public bool Anunciante
         {
             get 
@@ -18,7 +33,7 @@ namespace PortalAdmnistrativo.Models
             }
             set 
             {
-                this.TipoPerfil = (value ? "Anunciante" : "Credenciado");
+                this.TipoPerfil = (value ? "Pendente" : "Credenciado");
             }
         }
 
@@ -32,6 +47,97 @@ namespace PortalAdmnistrativo.Models
                 query = query.Where(item => item.LoginUsuario == this.LoginUsuario);
 
             return query;
+        }
+
+        private string Criptografar(string entrada)
+        {
+            string txtResultado = "";
+            if (String.IsNullOrEmpty(entrada))
+            {
+                byte[] txtMensagem = System.Text.Encoding.Default.GetBytes(entrada);// Criar o Hash Code
+                System.Security.Cryptography.MD5CryptoServiceProvider txtMD5provider = new MD5CryptoServiceProvider();
+                //Hash Code
+                byte[] txthashcode = txtMD5provider.ComputeHash(txtMensagem);
+                for (int i = 0; i < txthashcode.Length; i++)
+                    txtResultado += (char)(txthashcode[i]);
+            }
+            return txtResultado;
+        }
+
+        private string Descriptografar(string entrada)
+        {
+            string txtResultado = "";
+            if (String.IsNullOrEmpty(entrada))
+            {
+                byte[] txtMensagem = System.Text.Encoding.Default.GetBytes(entrada);// Criar o Hash Code
+                System.Security.Cryptography.MD5CryptoServiceProvider txtMD5provider = new MD5CryptoServiceProvider();
+                //Hash Code
+                byte[] txthashcode = txtMD5provider.ComputeHash(txtMensagem);
+                for (int i = 0; i < txthashcode.Length; i++)
+                    txtResultado += (char)(txthashcode[i]);
+            }
+            return txtResultado;
+        }
+    }
+
+    public class UsuarioLogar
+    {
+        public string Senha { get; set; }
+
+        public string SenhaDescriptografada
+        {
+            set
+            {
+                Senha = Criptografar(value);
+            }
+            get
+            {
+                return Descriptografar(Senha);
+            }
+        }
+        
+        public string Login { get; set; }
+
+        public Usuario EfetuarLogin()
+        {
+            Entities entity = new Entities();
+
+            Usuario usuario = entity.Usuario.Single(item => item.LoginUsuario == this.Login && item.Senha == this.SenhaDescriptografada);
+
+            if (usuario != null)
+                return usuario;
+
+            throw new Exception();
+        }
+
+        private string Criptografar(string entrada)
+        {
+            string txtResultado = "";
+            if (String.IsNullOrEmpty(entrada))
+            {
+                byte[] txtMensagem = System.Text.Encoding.Default.GetBytes(entrada);// Criar o Hash Code
+                System.Security.Cryptography.MD5CryptoServiceProvider txtMD5provider = new MD5CryptoServiceProvider();
+                //Hash Code
+                byte[] txthashcode = txtMD5provider.ComputeHash(txtMensagem);
+                for (int i = 0; i < txthashcode.Length; i++)
+                    txtResultado += (char)(txthashcode[i]);
+            }
+            return txtResultado;
+        }
+
+        private string Descriptografar(string entrada)
+        {
+            string txtResultado = "";
+            if (String.IsNullOrEmpty(entrada))
+            {
+                byte[] txtMensagem = System.Text.Encoding.Default.GetBytes(entrada);// Criar o Hash Code
+                System.Security.Cryptography.MD5CryptoServiceProvider txtMD5provider = new MD5CryptoServiceProvider();
+                //Hash Code
+                byte[] txthashcode = txtMD5provider.ComputeHash(txtMensagem);
+                for (int i = 0; i < txthashcode.Length; i++)
+                    txtResultado += (char)(txthashcode[i]);
+            }
+            return txtResultado;
         }
     }
 }

@@ -2380,7 +2380,8 @@ namespace PortalAdmnistrativo.Models
         /// <param name="codigoSelecaoB">Initial value of the CodigoSelecaoB property.</param>
         /// <param name="nomeSelecaoB">Initial value of the NomeSelecaoB property.</param>
         /// <param name="dataHora">Initial value of the DataHora property.</param>
-        public static Jogo CreateJogo(global::System.Int32 codigoJogo, global::System.Int32 codigoCidade, global::System.String nomeCidade, global::System.Int32 rodada, global::System.Int32 codigoSelecaoA, global::System.String nomeSelecaoA, global::System.Int32 codigoSelecaoB, global::System.String nomeSelecaoB, global::System.DateTime dataHora)
+        /// <param name="expulsoes">Initial value of the Expulsoes property.</param>
+        public static Jogo CreateJogo(global::System.Int32 codigoJogo, global::System.Int32 codigoCidade, global::System.String nomeCidade, global::System.Int32 rodada, global::System.Int32 codigoSelecaoA, global::System.String nomeSelecaoA, global::System.Int32 codigoSelecaoB, global::System.String nomeSelecaoB, global::System.DateTime dataHora, global::System.Int32 expulsoes)
         {
             Jogo jogo = new Jogo();
             jogo.CodigoJogo = codigoJogo;
@@ -2392,6 +2393,7 @@ namespace PortalAdmnistrativo.Models
             jogo.CodigoSelecaoB = codigoSelecaoB;
             jogo.NomeSelecaoB = nomeSelecaoB;
             jogo.DataHora = dataHora;
+            jogo.Expulsoes = expulsoes;
             return jogo;
         }
 
@@ -2713,6 +2715,30 @@ namespace PortalAdmnistrativo.Models
         private global::System.String _CaminhoImagem;
         partial void OnCaminhoImagemChanging(global::System.String value);
         partial void OnCaminhoImagemChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Expulsoes
+        {
+            get
+            {
+                return _Expulsoes;
+            }
+            set
+            {
+                OnExpulsoesChanging(value);
+                ReportPropertyChanging("Expulsoes");
+                _Expulsoes = StructuralObject.SetValidValue(value, "Expulsoes");
+                ReportPropertyChanged("Expulsoes");
+                OnExpulsoesChanged();
+            }
+        }
+        private global::System.Int32 _Expulsoes;
+        partial void OnExpulsoesChanging(global::System.Int32 value);
+        partial void OnExpulsoesChanged();
 
         #endregion
 
@@ -4496,7 +4522,8 @@ namespace PortalAdmnistrativo.Models
         /// <param name="nomeRazaoSocial">Initial value of the NomeRazaoSocial property.</param>
         /// <param name="email">Initial value of the Email property.</param>
         /// <param name="tipoPerfil">Initial value of the TipoPerfil property.</param>
-        public static Usuario CreateUsuario(global::System.String loginUsuario, global::System.Decimal cpfCnpj, global::System.String nomeRazaoSocial, global::System.String email, global::System.String tipoPerfil)
+        /// <param name="senha">Initial value of the Senha property.</param>
+        public static Usuario CreateUsuario(global::System.String loginUsuario, global::System.Decimal cpfCnpj, global::System.String nomeRazaoSocial, global::System.String email, global::System.String tipoPerfil, global::System.String senha)
         {
             Usuario usuario = new Usuario();
             usuario.LoginUsuario = loginUsuario;
@@ -4504,6 +4531,7 @@ namespace PortalAdmnistrativo.Models
             usuario.NomeRazaoSocial = nomeRazaoSocial;
             usuario.Email = email;
             usuario.TipoPerfil = tipoPerfil;
+            usuario.Senha = senha;
             return usuario;
         }
 
@@ -4681,6 +4709,30 @@ namespace PortalAdmnistrativo.Models
         private global::System.String _TipoPerfil;
         partial void OnTipoPerfilChanging(global::System.String value);
         partial void OnTipoPerfilChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Senha
+        {
+            get
+            {
+                return _Senha;
+            }
+            set
+            {
+                OnSenhaChanging(value);
+                ReportPropertyChanging("Senha");
+                _Senha = StructuralObject.SetValidValue(value, false, "Senha");
+                ReportPropertyChanged("Senha");
+                OnSenhaChanged();
+            }
+        }
+        private global::System.String _Senha;
+        partial void OnSenhaChanging(global::System.String value);
+        partial void OnSenhaChanged();
 
         #endregion
 
