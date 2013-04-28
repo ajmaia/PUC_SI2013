@@ -11,29 +11,26 @@
         <EntityTypeShape EntityType="BRAZUCASModel.Comentario" Width="1.5" PointX="2.625" PointY="3.25" IsExpanded="true" />
         <EntityTypeShape EntityType="BRAZUCASModel.Grupo" Width="1.5" PointX="12.5" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="BRAZUCASModel.Historia" Width="1.5" PointX="10.5" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="BRAZUCASModel.Jogo" Width="1.5" PointX="8.5" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="BRAZUCASModel.Noticia" Width="1.5" PointX="0.5" PointY="2.5" IsExpanded="true" />
         <EntityTypeShape EntityType="BRAZUCASModel.PalpiteJogo" Width="1.5" PointX="6.5" PointY="2.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BRAZUCASModel.PontuacaoBolao" Width="2.125" PointX="4.5" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="BRAZUCASModel.Selecao" Width="1.5" PointX="10.5" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="BRAZUCASModel.Usuario" Width="1.5" PointX="4.5" PointY="2.5" IsExpanded="true" />
         <EntityTypeShape EntityType="BRAZUCASModel.Bolao" Width="1.5" PointX="4.5" PointY="0.5" IsExpanded="true" />
         <AssociationConnector Association="BRAZUCASModel.FK_Anuncio_Categoria" ManuallyRouted="false" />
         <AssociationConnector Association="BRAZUCASModel.FK_Anuncio_Usuario" ManuallyRouted="false" />
         <AssociationConnector Association="BRAZUCASModel.FK_Noticia_Categoria" ManuallyRouted="false" />
-        <AssociationConnector Association="BRAZUCASModel.FK_Jogo_Cidade" ManuallyRouted="false" />
         <AssociationConnector Association="BRAZUCASModel.FK_Comentario_Noticia" ManuallyRouted="false" />
         <AssociationConnector Association="BRAZUCASModel.FK_Comentario_Usuario" ManuallyRouted="false" />
-        <AssociationConnector Association="BRAZUCASModel.FK_Selecao_Grupo" ManuallyRouted="false" />
-        <AssociationConnector Association="BRAZUCASModel.FK_Selecao_Historia" ManuallyRouted="false" />
-        <AssociationConnector Association="BRAZUCASModel.FK_Jogo_SelecaoA" ManuallyRouted="false" />
-        <AssociationConnector Association="BRAZUCASModel.FK_Jogo_SelecaoB" ManuallyRouted="false" />
-        <AssociationConnector Association="BRAZUCASModel.FK_Palpite_Jogo" ManuallyRouted="false" />
         <AssociationConnector Association="BRAZUCASModel.FK_Palpite_Usuario" ManuallyRouted="false" />
         <AssociationConnector Association="BRAZUCASModel.FK_Pontuacao_Usuario" ManuallyRouted="false" />
-        <AssociationConnector Association="BRAZUCASModel.FK_Selecao_Grupo1" />
         <EntityTypeShape EntityType="BRAZUCASModel.Ingresso" Width="1.5" PointX="12.625" PointY="4.5" />
-        <EntityTypeShape EntityType="BRAZUCASModel.Rodada" Width="1.5" PointX="8.5" PointY="4.5" />
+        <EntityTypeShape EntityType="BRAZUCASModel.Jogo" Width="1.5" PointX="8.5" PointY="0.5" />
+        <AssociationConnector Association="BRAZUCASModel.FK_Jogo_Cidade" />
+        <AssociationConnector Association="BRAZUCASModel.FK_Palpite_Jogo" />
+        <EntityTypeShape EntityType="BRAZUCASModel.Selecao" Width="1.5" PointX="10.5" PointY="0.5" />
+        <AssociationConnector Association="BRAZUCASModel.FK_Selecao_Grupo" />
+        <AssociationConnector Association="BRAZUCASModel.FK_Selecao_Historia" />
+        <EntityTypeShape EntityType="BRAZUCASModel.Rodada" Width="1.5" PointX="8.5" PointY="4.375" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

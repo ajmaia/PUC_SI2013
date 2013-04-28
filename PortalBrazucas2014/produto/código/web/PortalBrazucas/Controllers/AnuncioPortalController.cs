@@ -21,28 +21,40 @@ namespace PortalBrazucas.Controllers
                                     select item.CodigoAnuncio).AsEnumerable<int>();
 
                 Random aleatorio = new Random(DateTime.Now.Millisecond);
-                int posPrimeiroAnuncio, posSegundoAnuncio, posTerceiroAnuncio, porQuartoAnuncio, codPrimeiroAnuncio, codSegundoAnuncio, codTerceiroAnuncio, codQuartoAnuncio;
+                int posPrimeiroAnuncio, posSegundoAnuncio, posTerceiroAnuncio, porQuartoAnuncio;
+                int codPrimeiroAnuncio, codSegundoAnuncio, codTerceiroAnuncio, codQuartoAnuncio;
 
-                posPrimeiroAnuncio = posSegundoAnuncio = posTerceiroAnuncio = porQuartoAnuncio = aleatorio.Next(0, listaAnuncio.Count() - 1);
-
-                while (listaAnuncio.Count() > 1 && posPrimeiroAnuncio == posSegundoAnuncio)
-                    posSegundoAnuncio = aleatorio.Next(0, listaAnuncio.Count() - 1);
-
-                while (listaAnuncio.Count() > 2 && posPrimeiroAnuncio == posTerceiroAnuncio || posSegundoAnuncio == posTerceiroAnuncio)
-                    posTerceiroAnuncio = aleatorio.Next(0, listaAnuncio.Count() - 1);
-
-                while (listaAnuncio.Count() > 3 && posPrimeiroAnuncio == porQuartoAnuncio || posSegundoAnuncio == porQuartoAnuncio || posTerceiroAnuncio == porQuartoAnuncio)
-                    porQuartoAnuncio = aleatorio.Next(0, listaAnuncio.Count());
+                posPrimeiroAnuncio = posSegundoAnuncio = posTerceiroAnuncio = porQuartoAnuncio = aleatorio.Next(0, listaAnuncio.Count());
 
                 codPrimeiroAnuncio = listaAnuncio.ElementAt(posPrimeiroAnuncio);
-                codSegundoAnuncio = listaAnuncio.ElementAt(posSegundoAnuncio);
-                codTerceiroAnuncio = listaAnuncio.ElementAt(posTerceiroAnuncio);
-                codQuartoAnuncio = listaAnuncio.ElementAt(porQuartoAnuncio);
-
                 this.ViewBag.PrimeiroAnuncio = db.Anuncio.Single(anuncio => anuncio.CodigoAnuncio == codPrimeiroAnuncio);
-                this.ViewBag.SegundoAnuncio = db.Anuncio.Single(anuncio => anuncio.CodigoAnuncio == codSegundoAnuncio);
-                this.ViewBag.TerceiroAnuncio = db.Anuncio.Single(anuncio => anuncio.CodigoAnuncio == codTerceiroAnuncio);
-                this.ViewBag.QuartoAnuncio = db.Anuncio.Single(anuncio => anuncio.CodigoAnuncio == codQuartoAnuncio);
+
+                if (listaAnuncio.Count() > 1)
+                {
+                    while (posPrimeiroAnuncio == posSegundoAnuncio)
+                        posSegundoAnuncio = aleatorio.Next(0, listaAnuncio.Count());
+
+                    codSegundoAnuncio = listaAnuncio.ElementAt(posSegundoAnuncio);
+                    this.ViewBag.SegundoAnuncio = db.Anuncio.Single(anuncio => anuncio.CodigoAnuncio == codSegundoAnuncio);
+                }
+
+                if (listaAnuncio.Count() > 1)
+                {
+                    while (posPrimeiroAnuncio == posTerceiroAnuncio || posSegundoAnuncio == posTerceiroAnuncio)
+                        posTerceiroAnuncio = aleatorio.Next(0, listaAnuncio.Count());
+
+                    codTerceiroAnuncio = listaAnuncio.ElementAt(posTerceiroAnuncio);
+                    this.ViewBag.TerceiroAnuncio = db.Anuncio.Single(anuncio => anuncio.CodigoAnuncio == codTerceiroAnuncio);
+                }
+
+                if (listaAnuncio.Count() > 3)
+                {
+                    while (posPrimeiroAnuncio == porQuartoAnuncio || posSegundoAnuncio == porQuartoAnuncio || posTerceiroAnuncio == porQuartoAnuncio)
+                        porQuartoAnuncio = aleatorio.Next(0, listaAnuncio.Count());
+
+                    codQuartoAnuncio = listaAnuncio.ElementAt(porQuartoAnuncio);
+                    this.ViewBag.QuartoAnuncio = db.Anuncio.Single(anuncio => anuncio.CodigoAnuncio == codQuartoAnuncio);
+                }
             }
             catch (Exception)
             {

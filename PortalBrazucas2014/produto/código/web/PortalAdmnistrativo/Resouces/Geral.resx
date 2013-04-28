@@ -144,8 +144,14 @@
   <data name="grdGridVazio" xml:space="preserve">
     <value>Não há registros a serem exibidos</value>
   </data>
+  <data name="mnuGerenciarAnuncio" xml:space="preserve">
+    <value>Anuncios</value>
+  </data>
   <data name="mnuGerenciarNoticias" xml:space="preserve">
     <value>Notícias e Comentários</value>
+  </data>
+  <data name="mnuGerenciarSelecao" xml:space="preserve">
+    <value>Seleções</value>
   </data>
   <data name="msgConfirmaExclusao" xml:space="preserve">
     <value>Deseja realmente excluir o(s) registro(s) selecionado(s)?</value>

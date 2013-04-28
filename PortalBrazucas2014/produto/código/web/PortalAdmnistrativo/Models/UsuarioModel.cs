@@ -8,18 +8,6 @@ namespace PortalAdmnistrativo.Models
 {
     public partial class Usuario
     {
-        public string SenhaDescriptografada 
-        {
-            set
-            {
-                Senha = Criptografar(value);
-            }
-            get
-            {
-                return Descriptografar(Senha);
-            }
-        }
-
         public string ConfirmaSenha { get; set; }
 
         public bool Anunciante
@@ -49,52 +37,26 @@ namespace PortalAdmnistrativo.Models
             return query;
         }
 
-        private string Criptografar(string entrada)
+        public void CriptografarSenha()
         {
             string txtResultado = "";
-            if (String.IsNullOrEmpty(entrada))
+            if (String.IsNullOrEmpty(this.Senha))
             {
-                byte[] txtMensagem = System.Text.Encoding.Default.GetBytes(entrada);// Criar o Hash Code
+                byte[] txtMensagem = System.Text.Encoding.Default.GetBytes(this.Senha);// Criar o Hash Code
                 System.Security.Cryptography.MD5CryptoServiceProvider txtMD5provider = new MD5CryptoServiceProvider();
                 //Hash Code
                 byte[] txthashcode = txtMD5provider.ComputeHash(txtMensagem);
                 for (int i = 0; i < txthashcode.Length; i++)
                     txtResultado += (char)(txthashcode[i]);
             }
-            return txtResultado;
-        }
 
-        private string Descriptografar(string entrada)
-        {
-            string txtResultado = "";
-            if (String.IsNullOrEmpty(entrada))
-            {
-                byte[] txtMensagem = System.Text.Encoding.Default.GetBytes(entrada);// Criar o Hash Code
-                System.Security.Cryptography.MD5CryptoServiceProvider txtMD5provider = new MD5CryptoServiceProvider();
-                //Hash Code
-                byte[] txthashcode = txtMD5provider.ComputeHash(txtMensagem);
-                for (int i = 0; i < txthashcode.Length; i++)
-                    txtResultado += (char)(txthashcode[i]);
-            }
-            return txtResultado;
+            this.Senha = txtResultado;
         }
     }
 
     public class UsuarioLogar
     {
         public string Senha { get; set; }
-
-        public string SenhaDescriptografada
-        {
-            set
-            {
-                Senha = Criptografar(value);
-            }
-            get
-            {
-                return Descriptografar(Senha);
-            }
-        }
         
         public string Login { get; set; }
 
@@ -102,7 +64,7 @@ namespace PortalAdmnistrativo.Models
         {
             Entities entity = new Entities();
 
-            Usuario usuario = entity.Usuario.Single(item => item.LoginUsuario == this.Login && item.Senha == this.SenhaDescriptografada);
+            Usuario usuario = entity.Usuario.Single(item => item.LoginUsuario == this.Login && item.Senha == this.Senha);
 
             if (usuario != null)
                 return usuario;

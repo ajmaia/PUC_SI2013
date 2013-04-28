@@ -79,20 +79,20 @@ namespace PortalBrazucas.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        public static string String1 {
-            get {
-                return ResourceManager.GetString("String1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Crie seu usuário.
         /// </summary>
         public static string TituloCriarUsuario {
             get {
                 return ResourceManager.GetString("TituloCriarUsuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edite seu perfil.
+        /// </summary>
+        public static string TituloEditarUsuario {
+            get {
+                return ResourceManager.GetString("TituloEditarUsuario", resourceCulture);
             }
         }
         

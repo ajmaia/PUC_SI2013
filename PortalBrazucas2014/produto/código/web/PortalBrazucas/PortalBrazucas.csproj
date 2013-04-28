@@ -233,7 +233,7 @@
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Scripts\Site.js" />
     <Content Include="Views\AnuncioPortal\Index.aspx" />
-    <Content Include="Views\Shared\_anuncio.ascx" />
+    <Content Include="Views\AnuncioPortal\_anuncio.ascx" />
     <Content Include="Views\AnuncioPortal\_campos.ascx" />
     <Content Include="Views\AnuncioPortal\x_editar.ascx" />
     <Content Include="Views\AnuncioPortal\x_excluir.ascx" />
@@ -261,8 +261,6 @@
     <Content Include="Views\Shared\_painelInclusao.ascx" />
     <Content Include="Views\Shared\_painelResultados.ascx" />
     <Content Include="Views\UsuarioPortal\Create.aspx" />
-    <Content Include="Views\UsuarioPortal\Delete.aspx" />
-    <Content Include="Views\UsuarioPortal\Details.aspx" />
     <Content Include="Views\UsuarioPortal\Edit.aspx" />
     <Content Include="Views\UsuarioPortal\Index.aspx" />
     <Content Include="Views\UsuarioPortal\_controleLogin.ascx" />
@@ -299,16 +297,16 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PortalAdmnistrativo\PortalAdmnistrativo.csproj">
-      <Project>{87199c4f-bec5-45e1-9d26-2e6957ff5a09}</Project>
-      <Name>PortalAdmnistrativo</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Resource\PortalResource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>PortalResource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PortalAdmnistrativo\PortalAdmnistrativo.csproj">
+      <Project>{87199c4f-bec5-45e1-9d26-2e6957ff5a09}</Project>
+      <Name>PortalAdmnistrativo</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

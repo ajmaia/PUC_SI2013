@@ -22,17 +22,14 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("BRAZUCASModel", "FK_Anuncio_Categoria", "Categoria", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PortalAdmnistrativo.Models.Categoria), "Anuncio", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PortalAdmnistrativo.Models.Anuncio), true)]
 [assembly: EdmRelationshipAttribute("BRAZUCASModel", "FK_Anuncio_Usuario", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PortalAdmnistrativo.Models.Usuario), "Anuncio", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PortalAdmnistrativo.Models.Anuncio), true)]
 [assembly: EdmRelationshipAttribute("BRAZUCASModel", "FK_Noticia_Categoria", "Categoria", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PortalAdmnistrativo.Models.Categoria), "Noticia", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PortalAdmnistrativo.Models.Noticia), true)]
-[assembly: EdmRelationshipAttribute("BRAZUCASModel", "FK_Jogo_Cidade", "Cidade", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PortalAdmnistrativo.Models.Cidade), "Jogo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PortalAdmnistrativo.Models.Jogo), true)]
 [assembly: EdmRelationshipAttribute("BRAZUCASModel", "FK_Comentario_Noticia", "Noticia", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PortalAdmnistrativo.Models.Noticia), "Comentario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PortalAdmnistrativo.Models.Comentario), true)]
 [assembly: EdmRelationshipAttribute("BRAZUCASModel", "FK_Comentario_Usuario", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PortalAdmnistrativo.Models.Usuario), "Comentario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PortalAdmnistrativo.Models.Comentario), true)]
-[assembly: EdmRelationshipAttribute("BRAZUCASModel", "FK_Selecao_Grupo", "Grupo", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PortalAdmnistrativo.Models.Grupo), "Selecao", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(PortalAdmnistrativo.Models.Selecao), true)]
-[assembly: EdmRelationshipAttribute("BRAZUCASModel", "FK_Selecao_Historia", "Historia", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PortalAdmnistrativo.Models.Historia), "Selecao", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PortalAdmnistrativo.Models.Selecao), true)]
-[assembly: EdmRelationshipAttribute("BRAZUCASModel", "FK_Jogo_SelecaoA", "Selecao", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PortalAdmnistrativo.Models.Selecao), "Jogo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PortalAdmnistrativo.Models.Jogo), true)]
-[assembly: EdmRelationshipAttribute("BRAZUCASModel", "FK_Jogo_SelecaoB", "Selecao", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PortalAdmnistrativo.Models.Selecao), "Jogo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PortalAdmnistrativo.Models.Jogo), true)]
-[assembly: EdmRelationshipAttribute("BRAZUCASModel", "FK_Palpite_Jogo", "Jogo", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PortalAdmnistrativo.Models.Jogo), "PalpiteJogo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PortalAdmnistrativo.Models.PalpiteJogo), true)]
 [assembly: EdmRelationshipAttribute("BRAZUCASModel", "FK_Palpite_Usuario", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PortalAdmnistrativo.Models.Usuario), "PalpiteJogo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PortalAdmnistrativo.Models.PalpiteJogo), true)]
 [assembly: EdmRelationshipAttribute("BRAZUCASModel", "FK_Pontuacao_Usuario", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PortalAdmnistrativo.Models.Usuario), "PontuacaoBolao", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PortalAdmnistrativo.Models.PontuacaoBolao), true)]
-[assembly: EdmRelationshipAttribute("BRAZUCASModel", "FK_Selecao_Grupo1", "Grupo", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PortalAdmnistrativo.Models.Grupo), "Selecao", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PortalAdmnistrativo.Models.Selecao), true)]
+[assembly: EdmRelationshipAttribute("BRAZUCASModel", "FK_Jogo_Cidade", "Cidade", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PortalAdmnistrativo.Models.Cidade), "Jogo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PortalAdmnistrativo.Models.Jogo), true)]
+[assembly: EdmRelationshipAttribute("BRAZUCASModel", "FK_Palpite_Jogo", "Jogo", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PortalAdmnistrativo.Models.Jogo), "PalpiteJogo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PortalAdmnistrativo.Models.PalpiteJogo), true)]
+[assembly: EdmRelationshipAttribute("BRAZUCASModel", "FK_Selecao_Grupo", "Grupo", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PortalAdmnistrativo.Models.Grupo), "Selecao", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PortalAdmnistrativo.Models.Selecao), true)]
+[assembly: EdmRelationshipAttribute("BRAZUCASModel", "FK_Selecao_Historia", "Historia", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(PortalAdmnistrativo.Models.Historia), "Selecao", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PortalAdmnistrativo.Models.Selecao), true)]
 
 #endregion
 
@@ -183,22 +180,6 @@ namespace PortalAdmnistrativo.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<Jogo> Jogo
-        {
-            get
-            {
-                if ((_Jogo == null))
-                {
-                    _Jogo = base.CreateObjectSet<Jogo>("Jogo");
-                }
-                return _Jogo;
-            }
-        }
-        private ObjectSet<Jogo> _Jogo;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<Noticia> Noticia
         {
             get
@@ -247,22 +228,6 @@ namespace PortalAdmnistrativo.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<Selecao> Selecao
-        {
-            get
-            {
-                if ((_Selecao == null))
-                {
-                    _Selecao = base.CreateObjectSet<Selecao>("Selecao");
-                }
-                return _Selecao;
-            }
-        }
-        private ObjectSet<Selecao> _Selecao;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<Usuario> Usuario
         {
             get
@@ -307,6 +272,38 @@ namespace PortalAdmnistrativo.Models
             }
         }
         private ObjectSet<Ingresso> _Ingresso;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<Jogo> Jogo
+        {
+            get
+            {
+                if ((_Jogo == null))
+                {
+                    _Jogo = base.CreateObjectSet<Jogo>("Jogo");
+                }
+                return _Jogo;
+            }
+        }
+        private ObjectSet<Jogo> _Jogo;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<Selecao> Selecao
+        {
+            get
+            {
+                if ((_Selecao == null))
+                {
+                    _Selecao = base.CreateObjectSet<Selecao>("Selecao");
+                }
+                return _Selecao;
+            }
+        }
+        private ObjectSet<Selecao> _Selecao;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -377,14 +374,6 @@ namespace PortalAdmnistrativo.Models
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the Jogo EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToJogo(Jogo jogo)
-        {
-            base.AddObject("Jogo", jogo);
-        }
-    
-        /// <summary>
         /// Deprecated Method for adding a new object to the Noticia EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddToNoticia(Noticia noticia)
@@ -406,14 +395,6 @@ namespace PortalAdmnistrativo.Models
         public void AddToPontuacaoBolao(PontuacaoBolao pontuacaoBolao)
         {
             base.AddObject("PontuacaoBolao", pontuacaoBolao);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the Selecao EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToSelecao(Selecao selecao)
-        {
-            base.AddObject("Selecao", selecao);
         }
     
         /// <summary>
@@ -441,11 +422,70 @@ namespace PortalAdmnistrativo.Models
         }
     
         /// <summary>
+        /// Deprecated Method for adding a new object to the Jogo EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToJogo(Jogo jogo)
+        {
+            base.AddObject("Jogo", jogo);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the Selecao EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToSelecao(Selecao selecao)
+        {
+            base.AddObject("Selecao", selecao);
+        }
+    
+        /// <summary>
         /// Deprecated Method for adding a new object to the Rodada EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddToRodada(Rodada rodada)
         {
             base.AddObject("Rodada", rodada);
+        }
+
+        #endregion
+
+        #region Function Imports
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        /// <param name="cOD_SELECAO">No Metadata Documentation available.</param>
+        /// <param name="cOD_RODADA">No Metadata Documentation available.</param>
+        [EdmFunction("Entities", "FN_FASE_CONCLUIDA_2")]
+        public IQueryable<Nullable<global::System.Int32>> FN_FASE_CONCLUIDA_2(Nullable<global::System.Int32> cOD_SELECAO, Nullable<global::System.Int32> cOD_RODADA)
+        {
+            ObjectParameter cOD_SELECAOParameter;
+            if (cOD_SELECAO.HasValue)
+            {
+                cOD_SELECAOParameter = new ObjectParameter("COD_SELECAO", cOD_SELECAO);
+            }
+            else
+            {
+                cOD_SELECAOParameter = new ObjectParameter("COD_SELECAO", typeof(global::System.Int32));
+            }
+    
+            ObjectParameter cOD_RODADAParameter;
+            if (cOD_RODADA.HasValue)
+            {
+                cOD_RODADAParameter = new ObjectParameter("COD_RODADA", cOD_RODADA);
+            }
+            else
+            {
+                cOD_RODADAParameter = new ObjectParameter("COD_RODADA", typeof(global::System.Int32));
+            }
+    
+            return base.CreateQuery<Nullable<global::System.Int32>>("[Entities].[FN_FASE_CONCLUIDA_2](@COD_SELECAO, @COD_RODADA)", cOD_SELECAOParameter, cOD_RODADAParameter);
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public int PR_DEFINE_JOGOS_FASE_GRUPOS()
+        {
+            return base.ExecuteFunction("PR_DEFINE_JOGOS_FASE_GRUPOS");
         }
 
         #endregion
@@ -471,17 +511,15 @@ namespace PortalAdmnistrativo.Models
         /// </summary>
         /// <param name="codigoAnuncio">Initial value of the CodigoAnuncio property.</param>
         /// <param name="titulo">Initial value of the Titulo property.</param>
-        /// <param name="conteudo">Initial value of the Conteudo property.</param>
         /// <param name="dataPublicacao">Initial value of the DataPublicacao property.</param>
         /// <param name="loginCriacao">Initial value of the LoginCriacao property.</param>
         /// <param name="codigoCategoria">Initial value of the CodigoCategoria property.</param>
         /// <param name="descricaoCategoria">Initial value of the DescricaoCategoria property.</param>
-        public static Anuncio CreateAnuncio(global::System.Int32 codigoAnuncio, global::System.String titulo, global::System.String conteudo, global::System.DateTime dataPublicacao, global::System.String loginCriacao, global::System.Int32 codigoCategoria, global::System.String descricaoCategoria)
+        public static Anuncio CreateAnuncio(global::System.Int32 codigoAnuncio, global::System.String titulo, global::System.DateTime dataPublicacao, global::System.String loginCriacao, global::System.Int32 codigoCategoria, global::System.String descricaoCategoria)
         {
             Anuncio anuncio = new Anuncio();
             anuncio.CodigoAnuncio = codigoAnuncio;
             anuncio.Titulo = titulo;
-            anuncio.Conteudo = conteudo;
             anuncio.DataPublicacao = dataPublicacao;
             anuncio.LoginCriacao = loginCriacao;
             anuncio.CodigoCategoria = codigoCategoria;
@@ -571,7 +609,7 @@ namespace PortalAdmnistrativo.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
         public global::System.String Conteudo
         {
@@ -583,7 +621,7 @@ namespace PortalAdmnistrativo.Models
             {
                 OnConteudoChanging(value);
                 ReportPropertyChanging("Conteudo");
-                _Conteudo = StructuralObject.SetValidValue(value, false, "Conteudo");
+                _Conteudo = StructuralObject.SetValidValue(value, true, "Conteudo");
                 ReportPropertyChanged("Conteudo");
                 OnConteudoChanged();
             }
@@ -1788,55 +1826,17 @@ namespace PortalAdmnistrativo.Models
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("BRAZUCASModel", "FK_Selecao_Grupo", "Selecao")]
-        public Selecao Selecao
+        public EntityCollection<Selecao> Selecao
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Selecao>("BRAZUCASModel.FK_Selecao_Grupo", "Selecao").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Selecao>("BRAZUCASModel.FK_Selecao_Grupo", "Selecao").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Selecao> SelecaoReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Selecao>("BRAZUCASModel.FK_Selecao_Grupo", "Selecao");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Selecao>("BRAZUCASModel.FK_Selecao_Grupo", "Selecao");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Selecao>("BRAZUCASModel.FK_Selecao_Grupo", "Selecao", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("BRAZUCASModel", "FK_Selecao_Grupo1", "Selecao")]
-        public EntityCollection<Selecao> Selecao1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Selecao>("BRAZUCASModel.FK_Selecao_Grupo1", "Selecao");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Selecao>("BRAZUCASModel.FK_Selecao_Grupo1", "Selecao", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Selecao>("BRAZUCASModel.FK_Selecao_Grupo", "Selecao", value);
                 }
             }
         }
@@ -2375,25 +2375,15 @@ namespace PortalAdmnistrativo.Models
         /// <param name="codigoCidade">Initial value of the CodigoCidade property.</param>
         /// <param name="nomeCidade">Initial value of the NomeCidade property.</param>
         /// <param name="rodada">Initial value of the Rodada property.</param>
-        /// <param name="codigoSelecaoA">Initial value of the CodigoSelecaoA property.</param>
-        /// <param name="nomeSelecaoA">Initial value of the NomeSelecaoA property.</param>
-        /// <param name="codigoSelecaoB">Initial value of the CodigoSelecaoB property.</param>
-        /// <param name="nomeSelecaoB">Initial value of the NomeSelecaoB property.</param>
         /// <param name="dataHora">Initial value of the DataHora property.</param>
-        /// <param name="expulsoes">Initial value of the Expulsoes property.</param>
-        public static Jogo CreateJogo(global::System.Int32 codigoJogo, global::System.Int32 codigoCidade, global::System.String nomeCidade, global::System.Int32 rodada, global::System.Int32 codigoSelecaoA, global::System.String nomeSelecaoA, global::System.Int32 codigoSelecaoB, global::System.String nomeSelecaoB, global::System.DateTime dataHora, global::System.Int32 expulsoes)
+        public static Jogo CreateJogo(global::System.Int32 codigoJogo, global::System.Int32 codigoCidade, global::System.String nomeCidade, global::System.Int32 rodada, global::System.DateTime dataHora)
         {
             Jogo jogo = new Jogo();
             jogo.CodigoJogo = codigoJogo;
             jogo.CodigoCidade = codigoCidade;
             jogo.NomeCidade = nomeCidade;
             jogo.Rodada = rodada;
-            jogo.CodigoSelecaoA = codigoSelecaoA;
-            jogo.NomeSelecaoA = nomeSelecaoA;
-            jogo.CodigoSelecaoB = codigoSelecaoB;
-            jogo.NomeSelecaoB = nomeSelecaoB;
             jogo.DataHora = dataHora;
-            jogo.Expulsoes = expulsoes;
             return jogo;
         }
 
@@ -2527,9 +2517,9 @@ namespace PortalAdmnistrativo.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 CodigoSelecaoA
+        public Nullable<global::System.Int32> CodigoSelecaoA
         {
             get
             {
@@ -2544,14 +2534,14 @@ namespace PortalAdmnistrativo.Models
                 OnCodigoSelecaoAChanged();
             }
         }
-        private global::System.Int32 _CodigoSelecaoA;
-        partial void OnCodigoSelecaoAChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _CodigoSelecaoA;
+        partial void OnCodigoSelecaoAChanging(Nullable<global::System.Int32> value);
         partial void OnCodigoSelecaoAChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
         public global::System.String NomeSelecaoA
         {
@@ -2563,7 +2553,7 @@ namespace PortalAdmnistrativo.Models
             {
                 OnNomeSelecaoAChanging(value);
                 ReportPropertyChanging("NomeSelecaoA");
-                _NomeSelecaoA = StructuralObject.SetValidValue(value, false, "NomeSelecaoA");
+                _NomeSelecaoA = StructuralObject.SetValidValue(value, true, "NomeSelecaoA");
                 ReportPropertyChanged("NomeSelecaoA");
                 OnNomeSelecaoAChanged();
             }
@@ -2599,9 +2589,33 @@ namespace PortalAdmnistrativo.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 CodigoSelecaoB
+        public Nullable<global::System.Int32> ExpulsoesSelecaoA
+        {
+            get
+            {
+                return _ExpulsoesSelecaoA;
+            }
+            set
+            {
+                OnExpulsoesSelecaoAChanging(value);
+                ReportPropertyChanging("ExpulsoesSelecaoA");
+                _ExpulsoesSelecaoA = StructuralObject.SetValidValue(value, "ExpulsoesSelecaoA");
+                ReportPropertyChanged("ExpulsoesSelecaoA");
+                OnExpulsoesSelecaoAChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _ExpulsoesSelecaoA;
+        partial void OnExpulsoesSelecaoAChanging(Nullable<global::System.Int32> value);
+        partial void OnExpulsoesSelecaoAChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> CodigoSelecaoB
         {
             get
             {
@@ -2616,14 +2630,14 @@ namespace PortalAdmnistrativo.Models
                 OnCodigoSelecaoBChanged();
             }
         }
-        private global::System.Int32 _CodigoSelecaoB;
-        partial void OnCodigoSelecaoBChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _CodigoSelecaoB;
+        partial void OnCodigoSelecaoBChanging(Nullable<global::System.Int32> value);
         partial void OnCodigoSelecaoBChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
         public global::System.String NomeSelecaoB
         {
@@ -2635,7 +2649,7 @@ namespace PortalAdmnistrativo.Models
             {
                 OnNomeSelecaoBChanging(value);
                 ReportPropertyChanging("NomeSelecaoB");
-                _NomeSelecaoB = StructuralObject.SetValidValue(value, false, "NomeSelecaoB");
+                _NomeSelecaoB = StructuralObject.SetValidValue(value, true, "NomeSelecaoB");
                 ReportPropertyChanged("NomeSelecaoB");
                 OnNomeSelecaoBChanged();
             }
@@ -2667,6 +2681,30 @@ namespace PortalAdmnistrativo.Models
         private Nullable<global::System.Int32> _GolsSelecaoB;
         partial void OnGolsSelecaoBChanging(Nullable<global::System.Int32> value);
         partial void OnGolsSelecaoBChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> ExpulsoesSelecaoB
+        {
+            get
+            {
+                return _ExpulsoesSelecaoB;
+            }
+            set
+            {
+                OnExpulsoesSelecaoBChanging(value);
+                ReportPropertyChanging("ExpulsoesSelecaoB");
+                _ExpulsoesSelecaoB = StructuralObject.SetValidValue(value, "ExpulsoesSelecaoB");
+                ReportPropertyChanged("ExpulsoesSelecaoB");
+                OnExpulsoesSelecaoBChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _ExpulsoesSelecaoB;
+        partial void OnExpulsoesSelecaoBChanging(Nullable<global::System.Int32> value);
+        partial void OnExpulsoesSelecaoBChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -2715,30 +2753,6 @@ namespace PortalAdmnistrativo.Models
         private global::System.String _CaminhoImagem;
         partial void OnCaminhoImagemChanging(global::System.String value);
         partial void OnCaminhoImagemChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 Expulsoes
-        {
-            get
-            {
-                return _Expulsoes;
-            }
-            set
-            {
-                OnExpulsoesChanging(value);
-                ReportPropertyChanging("Expulsoes");
-                _Expulsoes = StructuralObject.SetValidValue(value, "Expulsoes");
-                ReportPropertyChanged("Expulsoes");
-                OnExpulsoesChanged();
-            }
-        }
-        private global::System.Int32 _Expulsoes;
-        partial void OnExpulsoesChanging(global::System.Int32 value);
-        partial void OnExpulsoesChanged();
 
         #endregion
 
@@ -2778,82 +2792,6 @@ namespace PortalAdmnistrativo.Models
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Cidade>("BRAZUCASModel.FK_Jogo_Cidade", "Cidade", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("BRAZUCASModel", "FK_Jogo_SelecaoA", "Selecao")]
-        public Selecao Selecao
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Selecao>("BRAZUCASModel.FK_Jogo_SelecaoA", "Selecao").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Selecao>("BRAZUCASModel.FK_Jogo_SelecaoA", "Selecao").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Selecao> SelecaoReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Selecao>("BRAZUCASModel.FK_Jogo_SelecaoA", "Selecao");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Selecao>("BRAZUCASModel.FK_Jogo_SelecaoA", "Selecao", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("BRAZUCASModel", "FK_Jogo_SelecaoB", "Selecao")]
-        public Selecao Selecao1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Selecao>("BRAZUCASModel.FK_Jogo_SelecaoB", "Selecao").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Selecao>("BRAZUCASModel.FK_Jogo_SelecaoB", "Selecao").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Selecao> Selecao1Reference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Selecao>("BRAZUCASModel.FK_Jogo_SelecaoB", "Selecao");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Selecao>("BRAZUCASModel.FK_Jogo_SelecaoB", "Selecao", value);
                 }
             }
         }
@@ -3376,44 +3314,6 @@ namespace PortalAdmnistrativo.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("BRAZUCASModel", "FK_Palpite_Jogo", "Jogo")]
-        public Jogo Jogo
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Jogo>("BRAZUCASModel.FK_Palpite_Jogo", "Jogo").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Jogo>("BRAZUCASModel.FK_Palpite_Jogo", "Jogo").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Jogo> JogoReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Jogo>("BRAZUCASModel.FK_Palpite_Jogo", "Jogo");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Jogo>("BRAZUCASModel.FK_Palpite_Jogo", "Jogo", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("BRAZUCASModel", "FK_Palpite_Usuario", "Usuario")]
         public Usuario Usuario
         {
@@ -3442,6 +3342,44 @@ namespace PortalAdmnistrativo.Models
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Usuario>("BRAZUCASModel.FK_Palpite_Usuario", "Usuario", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("BRAZUCASModel", "FK_Palpite_Jogo", "Jogo")]
+        public Jogo Jogo
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Jogo>("BRAZUCASModel.FK_Palpite_Jogo", "Jogo").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Jogo>("BRAZUCASModel.FK_Palpite_Jogo", "Jogo").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Jogo> JogoReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Jogo>("BRAZUCASModel.FK_Palpite_Jogo", "Jogo");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Jogo>("BRAZUCASModel.FK_Palpite_Jogo", "Jogo", value);
                 }
             }
         }
@@ -3710,15 +3648,17 @@ namespace PortalAdmnistrativo.Models
         /// Create a new Rodada object.
         /// </summary>
         /// <param name="descricaoRodada">Initial value of the DescricaoRodada property.</param>
-        /// <param name="fase">Initial value of the Fase property.</param>
+        /// <param name="numeroRodada">Initial value of the NumeroRodada property.</param>
+        /// <param name="concluida">Initial value of the Concluida property.</param>
         /// <param name="codigoSelecao">Initial value of the CodigoSelecao property.</param>
         /// <param name="nomeSelecao">Initial value of the NomeSelecao property.</param>
         /// <param name="codigoGrupo">Initial value of the CodigoGrupo property.</param>
-        public static Rodada CreateRodada(global::System.Int32 descricaoRodada, global::System.String fase, global::System.Int32 codigoSelecao, global::System.String nomeSelecao, global::System.Int32 codigoGrupo)
+        public static Rodada CreateRodada(global::System.String descricaoRodada, global::System.Int32 numeroRodada, global::System.Int32 concluida, global::System.Int32 codigoSelecao, global::System.String nomeSelecao, global::System.Int32 codigoGrupo)
         {
             Rodada rodada = new Rodada();
             rodada.DescricaoRodada = descricaoRodada;
-            rodada.Fase = fase;
+            rodada.NumeroRodada = numeroRodada;
+            rodada.Concluida = concluida;
             rodada.CodigoSelecao = codigoSelecao;
             rodada.NomeSelecao = nomeSelecao;
             rodada.CodigoGrupo = codigoGrupo;
@@ -3732,9 +3672,33 @@ namespace PortalAdmnistrativo.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> Rank
+        {
+            get
+            {
+                return _Rank;
+            }
+            set
+            {
+                OnRankChanging(value);
+                ReportPropertyChanging("Rank");
+                _Rank = StructuralObject.SetValidValue(value, "Rank");
+                ReportPropertyChanged("Rank");
+                OnRankChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _Rank;
+        partial void OnRankChanging(Nullable<global::System.Int64> value);
+        partial void OnRankChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 DescricaoRodada
+        public global::System.String DescricaoRodada
         {
             get
             {
@@ -3746,14 +3710,14 @@ namespace PortalAdmnistrativo.Models
                 {
                     OnDescricaoRodadaChanging(value);
                     ReportPropertyChanging("DescricaoRodada");
-                    _DescricaoRodada = StructuralObject.SetValidValue(value, "DescricaoRodada");
+                    _DescricaoRodada = StructuralObject.SetValidValue(value, false, "DescricaoRodada");
                     ReportPropertyChanged("DescricaoRodada");
                     OnDescricaoRodadaChanged();
                 }
             }
         }
-        private global::System.Int32 _DescricaoRodada;
-        partial void OnDescricaoRodadaChanging(global::System.Int32 value);
+        private global::System.String _DescricaoRodada;
+        partial void OnDescricaoRodadaChanging(global::System.String value);
         partial void OnDescricaoRodadaChanged();
     
         /// <summary>
@@ -3761,27 +3725,54 @@ namespace PortalAdmnistrativo.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String Fase
+        public global::System.Int32 NumeroRodada
         {
             get
             {
-                return _Fase;
+                return _NumeroRodada;
             }
             set
             {
-                if (_Fase != value)
+                if (_NumeroRodada != value)
                 {
-                    OnFaseChanging(value);
-                    ReportPropertyChanging("Fase");
-                    _Fase = StructuralObject.SetValidValue(value, false, "Fase");
-                    ReportPropertyChanged("Fase");
-                    OnFaseChanged();
+                    OnNumeroRodadaChanging(value);
+                    ReportPropertyChanging("NumeroRodada");
+                    _NumeroRodada = StructuralObject.SetValidValue(value, "NumeroRodada");
+                    ReportPropertyChanged("NumeroRodada");
+                    OnNumeroRodadaChanged();
                 }
             }
         }
-        private global::System.String _Fase;
-        partial void OnFaseChanging(global::System.String value);
-        partial void OnFaseChanged();
+        private global::System.Int32 _NumeroRodada;
+        partial void OnNumeroRodadaChanging(global::System.Int32 value);
+        partial void OnNumeroRodadaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Concluida
+        {
+            get
+            {
+                return _Concluida;
+            }
+            set
+            {
+                if (_Concluida != value)
+                {
+                    OnConcluidaChanging(value);
+                    ReportPropertyChanging("Concluida");
+                    _Concluida = StructuralObject.SetValidValue(value, "Concluida");
+                    ReportPropertyChanged("Concluida");
+                    OnConcluidaChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Concluida;
+        partial void OnConcluidaChanging(global::System.Int32 value);
+        partial void OnConcluidaChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -3983,6 +3974,54 @@ namespace PortalAdmnistrativo.Models
         private Nullable<global::System.Int32> _GolsSofridos;
         partial void OnGolsSofridosChanging(Nullable<global::System.Int32> value);
         partial void OnGolsSofridosChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> SaldoGols
+        {
+            get
+            {
+                return _SaldoGols;
+            }
+            set
+            {
+                OnSaldoGolsChanging(value);
+                ReportPropertyChanging("SaldoGols");
+                _SaldoGols = StructuralObject.SetValidValue(value, "SaldoGols");
+                ReportPropertyChanged("SaldoGols");
+                OnSaldoGolsChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _SaldoGols;
+        partial void OnSaldoGolsChanging(Nullable<global::System.Int32> value);
+        partial void OnSaldoGolsChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> Expulsoes
+        {
+            get
+            {
+                return _Expulsoes;
+            }
+            set
+            {
+                OnExpulsoesChanging(value);
+                ReportPropertyChanging("Expulsoes");
+                _Expulsoes = StructuralObject.SetValidValue(value, "Expulsoes");
+                ReportPropertyChanged("Expulsoes");
+                OnExpulsoesChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _Expulsoes;
+        partial void OnExpulsoesChanging(Nullable<global::System.Int32> value);
+        partial void OnExpulsoesChanged();
 
         #endregion
 
@@ -4003,16 +4042,14 @@ namespace PortalAdmnistrativo.Models
         /// </summary>
         /// <param name="codigoSelecao">Initial value of the CodigoSelecao property.</param>
         /// <param name="nome">Initial value of the Nome property.</param>
-        /// <param name="pais">Initial value of the Pais property.</param>
         /// <param name="codigoGrupo">Initial value of the CodigoGrupo property.</param>
         /// <param name="descricaoGrupo">Initial value of the DescricaoGrupo property.</param>
         /// <param name="codigoHistoria">Initial value of the CodigoHistoria property.</param>
-        public static Selecao CreateSelecao(global::System.Int32 codigoSelecao, global::System.String nome, global::System.String pais, global::System.Int32 codigoGrupo, global::System.String descricaoGrupo, global::System.Int32 codigoHistoria)
+        public static Selecao CreateSelecao(global::System.Int32 codigoSelecao, global::System.String nome, global::System.Int32 codigoGrupo, global::System.String descricaoGrupo, global::System.Int32 codigoHistoria)
         {
             Selecao selecao = new Selecao();
             selecao.CodigoSelecao = codigoSelecao;
             selecao.Nome = nome;
-            selecao.Pais = pais;
             selecao.CodigoGrupo = codigoGrupo;
             selecao.DescricaoGrupo = descricaoGrupo;
             selecao.CodigoHistoria = codigoHistoria;
@@ -4077,30 +4114,6 @@ namespace PortalAdmnistrativo.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String Pais
-        {
-            get
-            {
-                return _Pais;
-            }
-            set
-            {
-                OnPaisChanging(value);
-                ReportPropertyChanging("Pais");
-                _Pais = StructuralObject.SetValidValue(value, false, "Pais");
-                ReportPropertyChanged("Pais");
-                OnPaisChanged();
-            }
-        }
-        private global::System.String _Pais;
-        partial void OnPaisChanging(global::System.String value);
-        partial void OnPaisChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
         public global::System.String CaminhoImagem
@@ -4145,6 +4158,30 @@ namespace PortalAdmnistrativo.Models
         private global::System.Int32 _CodigoGrupo;
         partial void OnCodigoGrupoChanging(global::System.Int32 value);
         partial void OnCodigoGrupoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> OrdemGrupo
+        {
+            get
+            {
+                return _OrdemGrupo;
+            }
+            set
+            {
+                OnOrdemGrupoChanging(value);
+                ReportPropertyChanging("OrdemGrupo");
+                _OrdemGrupo = StructuralObject.SetValidValue(value, "OrdemGrupo");
+                ReportPropertyChanged("OrdemGrupo");
+                OnOrdemGrupoChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _OrdemGrupo;
+        partial void OnOrdemGrupoChanging(Nullable<global::System.Int32> value);
+        partial void OnOrdemGrupoChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -4337,6 +4374,30 @@ namespace PortalAdmnistrativo.Models
         private global::System.Int32 _CodigoHistoria;
         partial void OnCodigoHistoriaChanging(global::System.Int32 value);
         partial void OnCodigoHistoriaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> TotalExpulsoes
+        {
+            get
+            {
+                return _TotalExpulsoes;
+            }
+            set
+            {
+                OnTotalExpulsoesChanging(value);
+                ReportPropertyChanging("TotalExpulsoes");
+                _TotalExpulsoes = StructuralObject.SetValidValue(value, "TotalExpulsoes");
+                ReportPropertyChanged("TotalExpulsoes");
+                OnTotalExpulsoesChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _TotalExpulsoes;
+        partial void OnTotalExpulsoesChanging(Nullable<global::System.Int32> value);
+        partial void OnTotalExpulsoesChanged();
 
         #endregion
 
@@ -4414,88 +4475,6 @@ namespace PortalAdmnistrativo.Models
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Historia>("BRAZUCASModel.FK_Selecao_Historia", "Historia", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("BRAZUCASModel", "FK_Jogo_SelecaoA", "Jogo")]
-        public EntityCollection<Jogo> Jogo
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Jogo>("BRAZUCASModel.FK_Jogo_SelecaoA", "Jogo");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Jogo>("BRAZUCASModel.FK_Jogo_SelecaoA", "Jogo", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("BRAZUCASModel", "FK_Jogo_SelecaoB", "Jogo")]
-        public EntityCollection<Jogo> Jogo1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Jogo>("BRAZUCASModel.FK_Jogo_SelecaoB", "Jogo");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Jogo>("BRAZUCASModel.FK_Jogo_SelecaoB", "Jogo", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("BRAZUCASModel", "FK_Selecao_Grupo1", "Grupo")]
-        public Grupo Grupo1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Grupo>("BRAZUCASModel.FK_Selecao_Grupo1", "Grupo").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Grupo>("BRAZUCASModel.FK_Selecao_Grupo1", "Grupo").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Grupo> Grupo1Reference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Grupo>("BRAZUCASModel.FK_Selecao_Grupo1", "Grupo");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Grupo>("BRAZUCASModel.FK_Selecao_Grupo1", "Grupo", value);
                 }
             }
         }

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PortalAdmnistrativo.Models.Usuario>" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage<PortalAdmnistrativo.Models.Usuario>" %>
 
 <asp:Content ID="CreateTitulo" ContentPlaceHolderID="TitleContent" runat="server">
     Usuário | Crie seu usuário em nosso portal
@@ -83,11 +83,11 @@
         <br />
         <div class="conjunto_campo">
             <div class="campos">
-                <%: Html.LabelFor(model => model.SenhaDescriptografada) %>
+                <%: Html.LabelFor(model => model.Senha) %>
             </div>
             <div class="campos">
-                <%: Html.TextBoxFor(model => model.SenhaDescriptografada,  new { type = "password" }) %>
-                <%: Html.ValidationMessageFor(model => model.SenhaDescriptografada) %>
+                <%: Html.TextBoxFor(model => model.Senha,  new { type = "password" }) %>
+                <%: Html.ValidationMessageFor(model => model.Senha) %>
             </div>
         </div>
         <div class="clear"></div>

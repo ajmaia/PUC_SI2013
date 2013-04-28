@@ -18,18 +18,9 @@ CREATE TABLE [dbo].[Comentario](
 	[StatusAprovacao] [CHAR](1) NULL,
 	[UsuarioAprovacao] [VARCHAR](8) NULL,
 	[CodigoNoticia] [INT] NOT NULL,
- CONSTRAINT [PK_Comentario] PRIMARY KEY CLUSTERED 
-(
-	[CodigoComentario] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-
-ALTER TABLE [dbo].[Comentario]  WITH CHECK ADD  CONSTRAINT [FK_Comentario_Noticia] FOREIGN KEY([CodigoNoticia])
-REFERENCES [dbo].[Noticia] ([CodigoNoticia])
-GO
-
-ALTER TABLE [dbo].[Comentario]  WITH CHECK ADD  CONSTRAINT [FK_Comentario_Usuario] FOREIGN KEY([LoginCriacao])
-REFERENCES [dbo].[Usuario] ([LoginUsuario])
+ CONSTRAINT [PK_Comentario] PRIMARY KEY CLUSTERED ([CodigoComentario] ASC),
+ CONSTRAINT [FK_Comentario_Noticia] FOREIGN KEY([CodigoNoticia])
+	REFERENCES [dbo].[Noticia] ([CodigoNoticia])
+		ON DELETE CASCADE
+);
 GO

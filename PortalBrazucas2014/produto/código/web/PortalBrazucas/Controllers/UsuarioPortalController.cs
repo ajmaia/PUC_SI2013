@@ -42,6 +42,8 @@ namespace PortalBrazucas.Controllers
         [HttpPost]
         public ActionResult Create(Usuario usuario)
         {
+            usuario.CriptografarSenha();
+
             if (ModelState.IsValid)
             {
                 db.Usuario.AddObject(usuario);
@@ -49,7 +51,7 @@ namespace PortalBrazucas.Controllers
                 return RedirectToAction("Index", "HomePortal");
             }
 
-            return View(usuario);
+            return View("Edit", usuario);
         }
 
         protected override void Dispose(bool disposing)

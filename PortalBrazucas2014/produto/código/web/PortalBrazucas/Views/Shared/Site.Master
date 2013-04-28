@@ -20,7 +20,7 @@
             <div id="pesquisa">
                 <input type="text" value="" class="campo_pesquisa"/>
             </div>
-            <div id="icone_admin"></div>
+            <div id="icone_admin" onclick="javascript: window.location.href='http://localhost:2468/';"></div>
             <div id="icone_idioma"></div>
             <% Html.RenderPartial("LogOnUserControl"); %>
         </div>
@@ -59,11 +59,11 @@
                 </div>
                 <div class="clear"></div>
                 <div class="botao_menu" style="background-color: #E3961A; background-image: url('../../Content/themes/images/icones/cidades_icon.png');">
-                    Cidades Sede
+                    <%--Cidades Sede--%>
                 </div>
                 <div class="espaco10"></div>
                 <div class="botao_menu" style="background-color: #00FF21; background-image: url('../../Content/themes/images/icones/bolao_icon.png');">
-                    Bolão
+                    <%--Bolão--%>
                 </div>
                 <div class="espaco10"></div>
                 <div class="botao_menu" style="background-color: #FF006E; background-image: url('../../Content/themes/images/icones/cadastro_icon.png');" onclick="javascript: window.location.href='/UsuarioPortal/Create';">
@@ -150,10 +150,7 @@
             <div id="principal">
                 <asp:ContentPlaceHolder ID="MainContent" runat="server" />
             </div>
-
-            <div id="anuncios">
-
-            </div>
+            <div id="anuncios"></div>
             <script language="javascript" type="text/javascript">
                 $("body").ready(function () {
                     $("#anuncios").load("/AnuncioPortal/ListarAnuncios");
@@ -161,7 +158,7 @@
             </script>
         </div>
         <div class="linha10"></div>
-        <div id="rodape">RODAPE</div>
+        <div id="rodape">PORTAL BRAZUCAS | PUC Minas - Sistemas de Informação @2013</div>
     </div>
 </body>
 </html>

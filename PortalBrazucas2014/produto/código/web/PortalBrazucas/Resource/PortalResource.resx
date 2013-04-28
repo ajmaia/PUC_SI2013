@@ -123,8 +123,8 @@
   <data name="btnSalvar" xml:space="preserve">
     <value>Salvar</value>
   </data>
-  <data name="String1" xml:space="preserve">
-    <value />
+  <data name="TituloEditarUsuario" xml:space="preserve">
+    <value>Edite seu perfil</value>
   </data>
   <data name="TituloCriarUsuario" xml:space="preserve">
     <value>Crie seu usuário</value>

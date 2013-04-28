@@ -25,7 +25,7 @@
 <body>
     <div class="pagina">
         <div id="cabecalho">
-            <div id="icone_portal"></div>
+            <div id="icone_portal" onclick="javascript: window.location.href='http://localhost:2275/HomePortal';"></div>
             <div id="icone_idioma"></div>
             <div id="icone_login" onclick="trocaLogin();"></div>
             <div id="logado" class="controles_login" style="padding-right: 10px; margin-top: 10px; display: none;">Bem vindo(a) USUÁRIO!</div>
@@ -53,12 +53,12 @@
                     <%: PortalAdmnistrativo.Resouces.Geral.mnuGerenciarNoticias %>
                 </div>
                 <div class="espaco10"></div>
-                <div class="botao_menu" style="background-image: url('../../Content/themes/images/icones/noticias_icon.png');" onclick="javascript: window.location.href='/Noticia';">
-                    <%--Gerenciar História<br />das Seleções--%>
+                <div class="botao_menu" style="background-image: url('../../Content/themes/images/icones/noticias_icon.png');" onclick="javascript: window.location.href='/Anuncio';">
+                    <%: PortalAdmnistrativo.Resouces.Geral.mnuGerenciarAnuncio %>
                 </div>
                 <div class="espaco10"></div>
-                <div class="botao_menu" style="background-image: url('../../Content/themes/images/icones/jogos_icon.png');" onclick="javascript: window.location.href='/Noticia';">
-                    <%--Gerenciar Bolão--%>
+                <div class="botao_menu" style="background-image: url('../../Content/themes/images/icones/jogos_icon.png');" onclick="javascript: window.location.href='/Selecao';">
+                    <%: PortalAdmnistrativo.Resouces.Geral.mnuGerenciarSelecao %>
                 </div>
                 <div class="clear"></div>
                 <div class="botao_menu" style="background-image: url('../../Content/themes/images/icones/cidades_icon.png');" onclick="javascript: window.location.href='/Noticia';">
