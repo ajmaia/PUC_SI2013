@@ -29,7 +29,7 @@ AS
 		INSERT INTO @temp_RODADA
 		SELECT CodigoGrupo, Rank, CodigoSelecao, NomeSelecao
 		FROM Rodada
-		WHERE Rodada = 3 
+		WHERE NumeroRodada = 3 
 		  AND Rank in (1, 2) 
 		  AND Concluida = 1
 			

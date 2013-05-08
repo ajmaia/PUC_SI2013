@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.Entity;
 using System.Drawing;
@@ -111,7 +112,7 @@ namespace PortalAdmnistrativo.Controllers
         [ValidateInput(false)]
         public ActionResult Create(Noticia noticia)
         {
-            string caminho = "C:\\Users\\Alexandre\\PUC_SI2013\\PortalBrazucas2014\\produto\\código\\web\\PortalBrazucas\\Content\\uploads\\";
+            string caminho = ConfigurationSettings.AppSettings["caminhoUpload"];
             int idAtual = proximaNoticia();
             noticia.CaminhoImagem = String.Format("../../Content/uploads/noticia_{0}.jpg", idAtual);
             noticia.DataPublicacaoString = DateTime.Now.ToShortTimeString();

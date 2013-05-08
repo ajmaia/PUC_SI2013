@@ -26,11 +26,11 @@ namespace PortalAdmnistrativo.Models.Metadata
 
         [Required]
         [DataType(DataType.Password)]
-        public string SenhaDescriptografada { get; set; }
+        public string Senha { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
-        [System.Web.Mvc.Compare("SenhaDescriptografada", ErrorMessage = "A verificação não corresponde a senha informada.")]
+        [System.Web.Mvc.Compare("Senha", ErrorMessage = "A verificação não corresponde a senha informada.")]
         public string ConfirmaSenha { get; set; }
     }
 }

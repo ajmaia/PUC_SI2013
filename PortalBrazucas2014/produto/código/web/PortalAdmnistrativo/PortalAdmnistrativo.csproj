@@ -113,6 +113,7 @@
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AnuncioController.cs" />
+    <Compile Include="Controllers\CidadeController.cs" />
     <Compile Include="Controllers\ComentarioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NoticiaController.cs" />
@@ -221,6 +222,11 @@
       <DependentUpon>Anuncio.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resouces\Cidade.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cidade.resx</DependentUpon>
     </Compile>
     <Compile Include="Resouces\Comentario.Designer.cs">
       <DependentUpon>Comentario.resx</DependentUpon>
@@ -639,6 +645,16 @@
     <Content Include="Views\Anuncio\Details.aspx" />
     <Content Include="Views\Anuncio\Edit.aspx" />
     <Content Include="Views\Anuncio\Index.aspx" />
+    <Content Include="Views\Cidade\Create.aspx" />
+    <Content Include="Views\Cidade\Delete.aspx" />
+    <Content Include="Views\Cidade\Details.aspx" />
+    <Content Include="Views\Cidade\Edit.aspx" />
+    <Content Include="Views\Cidade\Index.aspx" />
+    <Content Include="Views\Cidade\_campos.ascx" />
+    <Content Include="Views\Cidade\_editar.ascx" />
+    <Content Include="Views\Cidade\_excluir.ascx" />
+    <Content Include="Views\Cidade\_incluir.ascx" />
+    <Content Include="Views\Cidade\_resultado.ascx" />
     <Content Include="Views\Comentario\Create.aspx" />
     <Content Include="Views\Comentario\Delete.aspx" />
     <Content Include="Views\Comentario\Details.aspx" />
@@ -712,6 +728,10 @@
     <EmbeddedResource Include="Resouces\Anuncio.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Anuncio.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resouces\Cidade.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Cidade.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resouces\Comentario.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

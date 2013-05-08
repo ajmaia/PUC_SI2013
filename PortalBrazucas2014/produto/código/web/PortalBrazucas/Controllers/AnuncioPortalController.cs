@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
@@ -17,7 +18,9 @@ namespace PortalBrazucas.Controllers
         {
             try
             {
+                DateTime hoje = DateTime.Now;
                 var listaAnuncio = (from item in db.Anuncio
+                                    where item.StatusAprovacao == "1" && item.DataPublicacao <= hoje
                                     select item.CodigoAnuncio).AsEnumerable<int>();
 
                 Random aleatorio = new Random(DateTime.Now.Millisecond);
@@ -159,7 +162,7 @@ namespace PortalBrazucas.Controllers
         [ValidateInput(false)]
         public ActionResult Create(Anuncio anuncio)
         {
-            string caminho = "C:\\Users\\Alexandre\\PUC_SI2013\\PortalBrazucas2014\\produto\\código\\web\\PortalBrazucas\\Content\\uploads\\";
+            string caminho = ConfigurationSettings.AppSettings["caminhoUpload"];
             int idAtual = proximoAnuncio();
             anuncio.CaminhoImagem = String.Format("../../Content/uploads/noticia_{0}.jpg", idAtual);
             anuncio.DescricaoCategoria = retornaCategorias(anuncio.CodigoCategoria);

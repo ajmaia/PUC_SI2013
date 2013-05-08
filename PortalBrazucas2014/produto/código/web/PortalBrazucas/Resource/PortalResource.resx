@@ -135,4 +135,7 @@
   <data name="TituloExibirNoticia" xml:space="preserve">
     <value>Notícias</value>
   </data>
+  <data name="TituloExibirCidade" xml:space="preserve">
+    <value>Cidade Sede</value>
+  </data>
 </root>

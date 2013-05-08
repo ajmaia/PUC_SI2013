@@ -151,6 +151,15 @@ namespace PortalAdmnistrativo.Resouces {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cidades.
+        /// </summary>
+        public static string mnuGerenciarCidade {
+            get {
+                return ResourceManager.GetString("mnuGerenciarCidade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Notícias e Comentários.
         /// </summary>
         public static string mnuGerenciarNoticias {

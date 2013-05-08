@@ -97,6 +97,15 @@ namespace PortalBrazucas.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cidade Sede.
+        /// </summary>
+        public static string TituloExibirCidade {
+            get {
+                return ResourceManager.GetString("TituloExibirCidade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Comentários.
         /// </summary>
         public static string TituloExibirComentario {

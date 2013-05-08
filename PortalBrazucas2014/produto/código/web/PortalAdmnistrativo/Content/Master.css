@@ -115,6 +115,7 @@ body
     background-repeat: no-repeat;
     background-size: contain;
     cursor: pointer;
+    margin-right: 1px;
 }
 
 #icone_portal_hover, #icone_portal:hover

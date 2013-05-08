@@ -46,7 +46,7 @@
             </div>
         </div>
         <div id="logotipo">
-            <div id="imagem_logo"></div>
+            <div id="imagem_logo" onclick="javascript: window.location.href='/Home';" style="cursor: pointer;"></div>
             <div id="menu">
 
                 <div class="botao_menu" style="background-image: url('../../Content/themes/images/icones/home_icon.png');" onclick="javascript: window.location.href='/Noticia';">
@@ -61,8 +61,8 @@
                     <%: PortalAdmnistrativo.Resouces.Geral.mnuGerenciarSelecao %>
                 </div>
                 <div class="clear"></div>
-                <div class="botao_menu" style="background-image: url('../../Content/themes/images/icones/cidades_icon.png');" onclick="javascript: window.location.href='/Noticia';">
-                    <%--Gerenciar Publicações<br />de Anúncios--%>
+                <div class="botao_menu" style="background-image: url('../../Content/themes/images/icones/cidades_icon.png');" onclick="javascript: window.location.href='/Cidade';">
+                    <%: PortalAdmnistrativo.Resouces.Geral.mnuGerenciarCidade %>
                 </div>
                 <div class="espaco10"></div>
                 <div class="botao_menu" style="background-image: url('../../Content/themes/images/icones/bolao_icon.png');" onclick="javascript: window.location.href='/Noticia';">
