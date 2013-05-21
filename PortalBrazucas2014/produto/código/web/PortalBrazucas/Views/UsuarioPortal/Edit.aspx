@@ -83,11 +83,11 @@
         <br />
         <div class="conjunto_campo">
             <div class="campos">
-                <%: Html.LabelFor(model => model.Senha) %>
+                <%: Html.LabelFor(model => model.SenhaDescriptografada) %>
             </div>
             <div class="campos">
-                <%: Html.TextBoxFor(model => model.Senha,  new { type = "password" }) %>
-                <%: Html.ValidationMessageFor(model => model.Senha) %>
+                <%: Html.TextBoxFor(model => model.SenhaDescriptografada,  new { type = "password" }) %>
+                <%: Html.ValidationMessageFor(model => model.SenhaDescriptografada) %>
             </div>
         </div>
         <div class="clear"></div>

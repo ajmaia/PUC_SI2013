@@ -96,8 +96,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AnuncioPortalController.cs" />
-    <Compile Include="Controllers\CidadeSedeController.cs" />
     <Compile Include="Controllers\HomePortalController.cs" />
+    <Compile Include="Controllers\JogoPortalController.cs" />
     <Compile Include="Controllers\NoticiaComentarioController.cs" />
     <Compile Include="Controllers\SelecaoPortalController.cs" />
     <Compile Include="Controllers\UsuarioPortalController.cs" />
@@ -236,18 +236,21 @@
     <Content Include="Views\AnuncioPortal\Index.aspx" />
     <Content Include="Views\AnuncioPortal\_anuncio.ascx" />
     <Content Include="Views\AnuncioPortal\_campos.ascx" />
+    <Content Include="Views\AnuncioPortal\x_editar.ascx" />
+    <Content Include="Views\AnuncioPortal\x_excluir.ascx" />
     <Content Include="Views\AnuncioPortal\_incluir.ascx" />
     <Content Include="Views\AnuncioPortal\_painelAnuncio.ascx" />
     <Content Include="Views\AnuncioPortal\_resultado.ascx" />
-    <Content Include="Views\CidadeSede\Cidade.aspx" />
-    <Content Include="Views\CidadeSede\Index.aspx" />
-    <Content Include="Views\CidadeSede\_cidade.ascx" />
-    <Content Include="Views\CidadeSede\_painelCidade.ascx" />
-    <Content Include="Views\NoticiaComentario\_noticia.ascx" />
     <Content Include="Views\HomePortal\_painelNoticiaSecundaria.ascx" />
     <Content Include="Views\HomePortal\_painelNoticiaTerciaria.ascx" />
     <Content Include="Views\HomePortal\Index.aspx" />
     <Content Include="Views\HomePortal\_painelNoticiaPrincipal.ascx" />
+    <Content Include="Views\JogoPortal\Create.aspx" />
+    <Content Include="Views\JogoPortal\Delete.aspx" />
+    <Content Include="Views\JogoPortal\Details.aspx" />
+    <Content Include="Views\JogoPortal\Edit.aspx" />
+    <Content Include="Views\JogoPortal\Index.aspx" />
+    <Content Include="Views\JogoPortal\_painelUltimoJogo.ascx" />
     <Content Include="Views\NoticiaComentario\Index.aspx" />
     <Content Include="Views\NoticiaComentario\Noticia.aspx" />
     <Content Include="Views\NoticiaComentario\_painelComentarios.ascx" />

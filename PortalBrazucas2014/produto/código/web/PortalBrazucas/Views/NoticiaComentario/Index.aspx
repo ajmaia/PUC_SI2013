@@ -5,7 +5,5 @@
 </asp:Content>
 
 <asp:Content ID="IndexConteudo" ContentPlaceHolderID="MainContent" runat="server">
-    <% foreach (var item in Model) {
-        Html.RenderPartial("_noticia", item);
-    } %>
+    
 </asp:Content>

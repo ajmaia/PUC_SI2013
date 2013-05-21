@@ -1,0 +1,51 @@
+﻿.linkCadastro
+{
+    background-image: url(../../Content/themes/images/etapasFaseGrupo/background_Etapas.png);
+    margin: 0px;
+    width: 270px;
+    height: 65px;
+    text-align: center;
+    position: relative;
+    float: left;
+    color:black;
+}
+
+    .linkCadastro a
+    {
+        color:white;
+        text-align: center;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    .linkCadastro a:hover
+    {
+        color:white;
+        text-align: center;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    .linkCadastro a:visited
+    {
+        color:white;
+        text-align: center;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+
+.posicaoLink
+{
+    position:absolute;
+    top:35%;
+    left:15%;
+}
+.semCadastro1
+{
+    text-align:center;
+    width:50%;
+}
+.semCadastro
+{
+   width:100%;
+}

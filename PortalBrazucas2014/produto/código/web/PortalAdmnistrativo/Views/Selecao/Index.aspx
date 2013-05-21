@@ -17,9 +17,6 @@
             Nome
         </th>
         <th>
-            Pais
-        </th>
-        <th>
             CaminhoImagem
         </th>
         <th>
@@ -56,9 +53,6 @@
     <tr>
         <td>
             <%: Html.DisplayFor(modelItem => item.Nome) %>
-        </td>
-        <td>
-            <%: Html.DisplayFor(modelItem => item.Pais) %>
         </td>
         <td>
             <%: Html.DisplayFor(modelItem => item.CaminhoImagem) %>

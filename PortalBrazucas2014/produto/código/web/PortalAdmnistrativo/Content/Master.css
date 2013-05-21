@@ -115,7 +115,6 @@ body
     background-repeat: no-repeat;
     background-size: contain;
     cursor: pointer;
-    margin-right: 1px;
 }
 
 #icone_portal_hover, #icone_portal:hover
@@ -248,6 +247,11 @@ body
     border: solid 1px #000;
     vertical-align: middle;
     float: left;
+}
+#mensagemErro
+{
+    text-align:left;
+    color:red;
 }
 
 /* ÁREA DE RODAPÉ */

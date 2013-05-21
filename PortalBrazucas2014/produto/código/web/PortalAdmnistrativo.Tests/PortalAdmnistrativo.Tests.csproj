@@ -40,6 +40,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.Extensions" />
@@ -49,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\BolaoControllerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
   </ItemGroup>
@@ -57,7 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PortalAdmnistrativo\PortalAdmnistrativo.csproj">
-      <Project>{87199C4F-BEC5-45E1-9D26-2E6957FF5A09}</Project>
+      <Project>{87199c4f-bec5-45e1-9d26-2e6957ff5a09}</Project>
       <Name>PortalAdmnistrativo</Name>
     </ProjectReference>
   </ItemGroup>

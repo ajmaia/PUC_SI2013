@@ -46,7 +46,7 @@
         <div id="logotipo">
             <div id="imagem_login" onclick="javascript: window.location.href='/HomePortal';" style="cursor: pointer;"></div>
             <div id="menu">
-                <div class="botao_menu" style="background-color: #FF3636; background-image: url('../../Content/themes/images/icones/home_icon.png');" onclick="javascript: window.location.href='/NoticiaComentario';">
+                <div class="botao_menu" style="background-color: #FF3636; background-image: url('../../Content/themes/images/icones/home_icon.png');" onclick="javascript: window.location.href='/HomePortal';">
                     Início
                 </div>
                 <div class="espaco10"></div>
@@ -58,8 +58,8 @@
                     Classificação<br />e Jogos
                 </div>
                 <div class="clear"></div>
-                <div class="botao_menu" style="background-color: #E3961A; background-image: url('../../Content/themes/images/icones/cidades_icon.png');" onclick="javascript: window.location.href='/CidadeSede';">
-                    Cidades Sede
+                <div class="botao_menu" style="background-color: #E3961A; background-image: url('../../Content/themes/images/icones/cidades_icon.png');">
+                    <%--Cidades Sede--%>
                 </div>
                 <div class="espaco10"></div>
                 <div class="botao_menu" style="background-color: #00FF21; background-image: url('../../Content/themes/images/icones/bolao_icon.png');">
@@ -67,7 +67,7 @@
                 </div>
                 <div class="espaco10"></div>
                 <div class="botao_menu" style="background-color: #FF006E; background-image: url('../../Content/themes/images/icones/cadastro_icon.png');" onclick="javascript: window.location.href='/UsuarioPortal/Create';">
-                    Cadastro
+                    Cadastro de <br /> Usuário
                 </div>
             </div>
         </div>
@@ -156,6 +156,7 @@
                     $("#anuncios").load("/AnuncioPortal/ListarAnuncios");
                 });
             </script>
+
         </div>
         <div class="linha10"></div>
         <div id="rodape">PORTAL BRAZUCAS | PUC Minas - Sistemas de Informação @2013</div>

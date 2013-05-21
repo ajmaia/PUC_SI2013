@@ -15,7 +15,7 @@ namespace PortalBrazucas.Controllers
 
         public ViewResult Index()
         {
-            return View(db.Noticia.OrderByDescending(item => item.DataPublicacao));
+            return View();
         }
 
         public ActionResult redirecionar(int codNoticia)
