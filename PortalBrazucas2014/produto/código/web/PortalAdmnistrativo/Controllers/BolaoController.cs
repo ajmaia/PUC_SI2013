@@ -13,7 +13,12 @@ namespace PortalAdmnistrativo.Controllers
     {
         public void ApuracaoPalpiteJogo(Bolao bolao, Jogo jogo, PalpiteJogo palpite)
         {
-            bolao.Pontuacao = 30;
+            if(jogo.GolsSelecaoA == palpite.PalpiteGolsSelecaoA && jogo.GolsSelecaoB == palpite.PalpiteGolsSelecaoB)
+                bolao.Pontuacao = 30;
+            else if ((jogo.GolsSelecaoA >= jogo.GolsSelecaoA && palpite.PalpiteGolsSelecaoA >= palpite.PalpiteGolsSelecaoB)
+                  || (jogo.GolsSelecaoA < jogo.GolsSelecaoA && palpite.PalpiteGolsSelecaoA < palpite.PalpiteGolsSelecaoB))
+                bolao.Pontuacao = 10;
+
         }
     }
 }
