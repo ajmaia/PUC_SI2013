@@ -31,5 +31,27 @@ namespace PortalAdmnistrativo.Controllers
             }
 
         }
+
+        public void ApuracaoPalpiteJogo(PontuacaoBolao bolao, Jogo jogo, PalpiteJogo palpite)
+        {
+            if ((jogo.GolsSelecaoA >= jogo.GolsSelecaoB && palpite.PalpiteGolsSelecaoA >= palpite.PalpiteGolsSelecaoB)
+             || (jogo.GolsSelecaoA < jogo.GolsSelecaoB && palpite.PalpiteGolsSelecaoA < palpite.PalpiteGolsSelecaoB))
+            {
+                //Acertou vencedor;
+                bolao.AcertosResultado += 10;
+
+                if (jogo.GolsSelecaoA == palpite.PalpiteGolsSelecaoA && jogo.GolsSelecaoB == palpite.PalpiteGolsSelecaoB)
+                    bolao.AcertosPlacarCompleto += 10;
+
+                //Acertou placar seleção A;
+                else if (jogo.GolsSelecaoA == palpite.PalpiteGolsSelecaoA)
+                    bolao.AcertosResultadoPlacarParcial += 10;
+
+                //Acertou placar seleção B;
+                else if (jogo.GolsSelecaoB == palpite.PalpiteGolsSelecaoB)
+                    bolao.AcertosResultadoPlacarParcial += 10;
+            }
+
+        }
     }
 }
