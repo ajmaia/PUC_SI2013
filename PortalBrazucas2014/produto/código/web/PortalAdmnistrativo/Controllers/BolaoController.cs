@@ -53,5 +53,13 @@ namespace PortalAdmnistrativo.Controllers
             }
 
         }
+
+        public IEnumerable<Bolao> ApuracaoFinal(IEnumerable<PontuacaoBolao> lista)
+        {
+            List<Bolao> boloes = new List<Bolao>();
+
+
+            return boloes;
+        }
     }
 }
