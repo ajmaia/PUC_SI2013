@@ -56,10 +56,17 @@ namespace PortalAdmnistrativo.Controllers
 
         public IEnumerable<Bolao> ApuracaoFinal(IEnumerable<PontuacaoBolao> lista)
         {
-            List<Bolao> boloes = new List<Bolao>();
+            List<Bolao> resultado = new List<Bolao>();
 
+            foreach (PontuacaoBolao item in lista)
+                resultado.Add(new Bolao { LoginUsuario = item.LoginUsuario, Pontuacao = item.AcertosPlacarCompleto + item.AcertosResultado + item.AcertosResultadoPlacarParcial });
 
-            return boloes;
+            int i = 1;
+
+            foreach (Bolao item in resultado.OrderByDescending(bol => bol.Pontuacao))
+                item.RankingBolao = i++;
+
+            return resultado;
         }
     }
 }
